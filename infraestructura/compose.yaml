@@ -32,6 +32,11 @@ services:
     depends_on:
       - n8n
 
+  qdrant:
+    image:
+    container_name: qdrant
+    volumes:
+
 volumes:
   n8n_data:
   ollama_data: 
