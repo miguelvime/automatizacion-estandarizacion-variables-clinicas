@@ -33,9 +33,13 @@ services:
       - n8n
 
   qdrant:
-    image:
+    image: qdrant/qdrant:latest
     container_name: qdrant
-    volumes:
+    ports:
+      - "6333:6333"
+    volumes: 
+      - ./qdrant_data:/qdrant/storage
+    restart: unless-stopped
 
 volumes:
   n8n_data:
