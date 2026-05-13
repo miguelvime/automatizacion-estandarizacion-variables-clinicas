@@ -1,0 +1,424 @@
+{
+  "name": "fromPDF_toRAG_ toanswer",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "0cad69b3-8e1d-4240-8baa-35197263618a",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        208,
+        0
+      ],
+      "id": "e4780745-3599-4fbc-af96-cc25d7487982",
+      "name": "Qdrant Vector Store",
+      "credentials": {
+        "qdrantApi": {
+          "id": "N16XiQnRZkPfvHkO",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "nomic-embed-text:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        144,
+        208
+      ],
+      "id": "7f98cf87-2bfc-4293-bc0a-bf4dbd5b7e7e",
+      "name": "Embeddings Ollama",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "formTitle": "documento_raw",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "documento_a_vectorizar",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        -80,
+        0
+      ],
+      "id": "627f1b80-3e43-4dfa-9075-15873cd1c281",
+      "name": "On form submission",
+      "webhookId": "179fef4e-69e0-4499-ba0e-e6a540e8634d"
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        368,
+        208
+      ],
+      "id": "89966acc-7361-4c1c-b554-5620a53ad45d",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "topK": 3
+      },
+      "type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+      "typeVersion": 1,
+      "position": [
+        272,
+        672
+      ],
+      "id": "24c3d468-ff3d-4869-8672-59b44e961265",
+      "name": "Vector Store Retriever1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Given the following text fragment and the list of codes retrieved from the knowledge base, assign the most appropriate code(s) to the text. \nReturn only the code(s) and a brief justification.\n\nText: {{ $json.json_extraido[0].data[0].Historia_Clinica }}\nRetrieved codes: {context}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+      "typeVersion": 1.7,
+      "position": [
+        128,
+        464
+      ],
+      "id": "17e334dd-b5c9-4ce4-a97e-ad41739fe12d",
+      "name": "Question and Answer Chain1",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "0cad69b3-8e1d-4240-8baa-35197263618a",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        192,
+        864
+      ],
+      "id": "6c95357a-7bcf-46f3-9fbd-ab815f8121cb",
+      "name": "Qdrant Vector Store3",
+      "credentials": {
+        "qdrantApi": {
+          "id": "N16XiQnRZkPfvHkO",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "nomic-embed-text:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        192,
+        1008
+      ],
+      "id": "b16303ed-f9ee-477e-9584-598cb79bd6f5",
+      "name": "Embeddings Ollama3",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "formTitle": "historia_del_paciente",
+        "formDescription": "Este formulario será el punto de entrada de la historia del paciente.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "documento_HC",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        -320,
+        464
+      ],
+      "id": "022b5843-9f59-4ecb-9d4c-69d36b1a90ba",
+      "name": "On form submission1",
+      "webhookId": "578a1b81-4066-47a3-bb70-174ab218b36b",
+      "alwaysOutputData": false,
+      "executeOnce": false,
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "binaryPropertyName": "documento_HC",
+        "destinationKey": "json_extraido",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -96,
+        464
+      ],
+      "id": "4cfdaed0-5791-470e-8bf5-414167c685b4",
+      "name": "Extract from File1"
+    },
+    {
+      "parameters": {
+        "content": "# From PDF_toRAG",
+        "height": 432,
+        "width": 896
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -288,
+        -96
+      ],
+      "typeVersion": 1,
+      "id": "45f99d6b-54ca-4dc0-bbed-66c2d0a67676",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# HC+RAG -> ICF_coding",
+        "height": 784,
+        "width": 1312
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -560,
+        368
+      ],
+      "typeVersion": 1,
+      "id": "af13ff7d-8b83-49ab-b2b9-7fba44f7841b",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-flash-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        672
+      ],
+      "id": "e484fcd3-653a-47c8-87fe-8274386fd0d4",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "uABaKCsWpWbwox3j",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "gemma4:e2b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmOllama",
+      "typeVersion": 1,
+      "position": [
+        112,
+        672
+      ],
+      "id": "82cf42d3-fc39-42cc-b9af-11e7123c373a",
+      "name": "Ollama Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Extract from File1": [
+      {
+        "json": {
+          "json_extraido": [
+            {
+              "data": [
+                {
+                  "patient_id": "GER-001",
+                  "Historia_Clinica": "La paciente de 94 años, diagnosticada con síndrome de fragilidad geriátrica y sarcopenia, presenta un cuadro clínico complejo caracterizado por un elevado nivel de dolor (8/10) y una grave dependencia (Índice de Barthel de 20). En el momento de la evaluación, la paciente se encuentra sentada en la cama, con una actitud postural caracterizada por una notable flexión de la columna vertebral y una leve inclinación hacia adelante, lo que sugiere una limitación en la flexibilidad articular y una posible kinesiofobia. La marcha es laboriosa y requiere de apoyo para mantener el equilibrio, lo que indica una disminución notable en el balance articular.\n\nEl dolor crónico produce una reducción significativa en la movilidad activa y pasiva, siendo difícil para la paciente realizar movimientos de flexión, extensión y rotación en las articulaciones de la cadera, rodilla y tobillo. La presencia de múltiples fármacos (polifarmacia) y la debilidad muscular provocada por la sarcopenia agudizan la situación, lo que hace que la paciente experimente un aumento en la fatiga y el aislamiento.\n\nLa paciente también presenta barreras psicosociales importantes, como un notable miedo al movimiento y a la posibilidad de perder el equilibrio, lo que la lleva a restringir sus actividades y a evitar cualquier tipo de esfuerzo físico. Esto, a su vez, contribuye a su aislamiento y a su sentimiento de impotencia.\n\nEn cuanto a la asistencia requerida para actividades básicas, la paciente necesita apoyo para realizar actividades como el aseo, vestirse y realizar transferencias entre la cama y la silla, lo que sugiere una gran dependencia en los cuidados de atención personal y en la movilización. La implementación de estrategias de fisioterapia específicas, como el trabajo en ROM y la educación en la prevención de caídas, es crucial para mejorar la movilidad y la autonomía de la paciente, así como para reducir su dolor y mejorar su calidad de vida."
+                }
+              ]
+            }
+          ]
+        },
+        "binary": {},
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Embeddings Ollama": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store": {
+      "main": [
+        []
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Retriever1": {
+      "ai_retriever": [
+        [
+          {
+            "node": "Question and Answer Chain1",
+            "type": "ai_retriever",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store3": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Retriever1",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Ollama3": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store3",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission1": {
+      "main": [
+        [
+          {
+            "node": "Extract from File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File1": {
+      "main": [
+        [
+          {
+            "node": "Question and Answer Chain1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Question and Answer Chain1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Model": {
+      "ai_languageModel": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "5e1b4d48-2f01-4c88-9172-d29fcce256ea",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "44fbf0ed6965a74a09769e18b367d9a9eaef6bc57579db2e8bdb7023c84df464"
+  },
+  "id": "Sz3ELEPQLBkjec2W",
+  "tags": [
+    {
+      "updatedAt": "2026-04-09T12:38:06.615Z",
+      "createdAt": "2026-04-09T12:38:06.615Z",
+      "id": "k1fBpOuJk1mN5dW2",
+      "name": "fromPDF_toRAG"
+    }
+  ]
+}

@@ -19,7 +19,7 @@ services:
       - "5678:5678"
     volumes:
       - n8n_data:/home/node/.n8n
-      - /home/miguelvime/TFM_docker/results:/home/node/results
+      - ./results:/home/node/results
     depends_on:
       - ollama
 
@@ -28,7 +28,6 @@ services:
     container_name: n8n-runners
     environment:
       - N8N_RUNNERS_TASK_BROKER_URI=http://n8n-main:5679 
-      - N8N_RUNNERS_AUTH_TOKEN=your-secret-here
     depends_on:
       - n8n
 

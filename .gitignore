@@ -1,3 +1,12 @@
 app/node_modules
 .vscode
 entregas
+# Ignorar bases de datos locales
+qdrant_data/
+n8n_data/
+ollama_data/
+results/
+
+# Ignorar archivos del sistema operativo
+.DS_Store
+Thumbs.db
