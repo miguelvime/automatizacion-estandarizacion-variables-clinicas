@@ -1,4 +1,4 @@
-# Proyecto TFM - Estandarización CIF con LLMs
+# Codificación de texto clínico no estructurado a CIF mediante LLMs
 
 ```
 2026-03-11_TFM
