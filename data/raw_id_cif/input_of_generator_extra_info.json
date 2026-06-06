@@ -1,30 +1,31 @@
 [
     {
         "id": "001",
-        "cif_code": ["b130","b134","b175","e1101"],
-        "cif_name":["b130-Energy and drive functions", "b134-Sleep functions","b175-solving problems,e1101-Drugs"],
+        "icf_code": ["b130","b134","b175","e1101"],
+        "icf_name":["b130-Energy and drive functions", "b134-Sleep functions","b175-solving problems,e1101-Drugs"],
         "clinical_profile": "low energy, low sleep, cognitive, sleep medication"
     },
     {
         "id": "002",
-        "cif_code": ["b152","b1602","b280","d240","d850","e570"],
-        "cif_name":["b152-Emotional functions","b1602-Content of thought",
+        "icf_code": ["b152","b1602","b280","d240","d850","e570"],
+        "icf_name":["b152-Emotional functions","b1602-Content of thought",
         "b280-Sensation of pain", "d240-Handling stress and other psychological demands",
         "d850-Remunerative employment","e570-Social security services, systems and policies"],
         "clinical_profile": "emotional, pain, work, stress"
     },
     {
         "id": "003",
-        "cif_code": ["b134","b152","b280","d240","d640","d760","d920","e310","e410"],
-        "cif_name":["b134-Sleep functions","b152-Emotional functions","b280-Sensation of pain",
+        "icf_code": ["b134","b152","b280","d240","d640","d760","d920","e310","e410"],
+        "icf_name":["b134-Sleep functions","b152-Emotional functions","b280-Sensation of pain",
         "d240-Handling stress and other psychological demands","d640-Doing housework", "d760-Family relationships",
     "d920-Recreation and leisure","e310-Immediate family","e410- Individual attitudes of immediate family members"],
         "clinical_profile": "family, housework, stress, emotional, sleep"
     },
     {
         "id": "004",
-        "cif_code":["b1602","b455","b730","d920"],
-        "cif_name":["b1602-Content of thought","b455-Exercise tolerance functions","b730-Muscle power functions","d920-Recreation and leisure"],
+        "icf_code":["b1602","b280","b455","b730","d920"],
+        "icf_name":["b1602-Content of thought","b280-Sensation of pain","b455-Exercise tolerance functions",
+        "b730-Muscle power functions","d920-Recreation and leisure"],
         "clinical_profile":"exsport,fear of movement, hardness in endurance or power."
 
     }
