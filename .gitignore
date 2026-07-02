@@ -10,3 +10,5 @@ consulta/
 # Ignorar archivos del sistema operativo
 .DS_Store
 Thumbs.db
+AGENTS.md
+generador_hc_desde_CIF*

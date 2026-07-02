@@ -3,7 +3,7 @@
 **Tarea:** Tu tarea es escribir 3 historias clínicas realistas a partir de la información disponible, por cada combinación de códigos. 
 
 **Reglas Críticas:**
-1. Variabilidad Extrema: Las 3 historias deben ser estructural y semánticamente distintas. Utiliza distinta fraseología médica para describir los problemas relacionados con los diagnósticos
+1. Variabilidad: Las 3 historias deben ser estructural y semánticamente distintas. Utiliza distinta fraseología médica para describir los problemas relacionados con los diagnósticos
 2. Cero Códigos: Está ESTRICTAMENTE PROHIBIDO escribir los códigos alfanuméricos (ej. "b280", "d430") dentro del texto clínico.
 3. Formato JSON: Responde ÚNICAMENTE con el siguiente formato JSON, asegurando que las llaves de apertura y cierre sean correctas. No añadas texto fuera del JSON. Asegúrate de mantener el id_code_combination, los icf_codes y los icf_name del JSON input en el JSON output.
 4. Revisa que no haya más códigos dentro de @RAG_documents/icf_brief_spanish.pdf de los que aparezcan en los proporcionados. Revisa que el código pueda ser asignado al paciente con la historia generada.
