@@ -1,6 +1,6 @@
 [
     {
-        "id": "001",
+        "id_code_combination": "001",
         "icf_code": [
             "b130",
             "b134",
@@ -10,7 +10,7 @@
         ]
     },
     {
-        "id": "002",
+        "id_code_combination": "002",
         "icf_code": [
             "b152",
             "b1602",
@@ -21,7 +21,7 @@
         ]
     },
     {
-        "id": "003",
+        "id_code_combination": "003",
         "icf_code": [
             "b134",
             "b152",
@@ -35,7 +35,7 @@
         ]
     },
     {
-        "id": "004",
+        "id_code_combination": "004",
         "icf_code": [
             "b1602",
             "b280",
@@ -45,7 +45,7 @@
         ]
     },
     {
-        "id": "005",
+        "id_code_combination": "005",
         "icf_code": [
             "b280",
             "d230",
@@ -54,7 +54,7 @@
         ]
     },
     {
-        "id": "006",
+        "id_code_combination": "006",
         "icf_code": [
             "b280",
             "d430",

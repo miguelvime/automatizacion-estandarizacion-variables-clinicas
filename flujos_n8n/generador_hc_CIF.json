@@ -2,17 +2,6 @@
   "name": "generador_hc_CIF",
   "nodes": [
     {
-      "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        0,
-        80
-      ],
-      "id": "3ef73cc0-c913-4ed6-9576-f7e674132105",
-      "name": "When clicking ‘Execute workflow’"
-    },
-    {
       "parameters": {
         "modelId": {
           "__rl": true,
@@ -36,8 +25,8 @@
       "type": "@n8n/n8n-nodes-langchain.ollama",
       "typeVersion": 1,
       "position": [
-        672,
-        -64
+        688,
+        -352
       ],
       "id": "fc559a7e-22a0-4452-b952-b2f3ef14d7c1",
       "name": "Message a model",
@@ -57,8 +46,8 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        448,
-        80
+        464,
+        -208
       ],
       "id": "d380ec5f-a0ad-45df-98a1-763c072694aa",
       "name": "Loop Over Items"
@@ -69,8 +58,8 @@
       "name": "Replace Me",
       "typeVersion": 1,
       "position": [
-        736,
-        128
+        752,
+        -160
       ],
       "id": "5aac0288-cc7a-4507-9c42-8a317bc2f3cb"
     },
@@ -85,8 +74,8 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        1472,
-        -64
+        1488,
+        -352
       ],
       "id": "7a10d5f2-4d5d-4207-9e91-f0b601c51bfe",
       "name": "Convert to File"
@@ -117,8 +106,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1024,
-        -64
+        1040,
+        -352
       ],
       "id": "8708f7ac-96a4-48c4-b549-c9f89f60e5f3",
       "name": "Edit Fields"
@@ -131,8 +120,8 @@
       "type": "n8n-nodes-base.aggregate",
       "typeVersion": 1,
       "position": [
-        1248,
-        -64
+        1264,
+        -352
       ],
       "id": "c88c21c6-4ecc-4a00-9e83-321c2ebab114",
       "name": "Aggregate"
@@ -144,11 +133,701 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        224,
-        80
+        240,
+        -208
       ],
       "id": "47016268-1358-4122-997a-e1313c344c5e",
       "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "content": "## Clinical text generator 1.0\nTriggers when click, it uses code with information of patients to create clinical stories from there",
+        "height": 560,
+        "width": 1952
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -64,
+        -480
+      ],
+      "typeVersion": 1,
+      "id": "39116d74-cafa-4ffd-bfa2-cf3f76a0313e",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Clinical text generator 2.0.\nIt uses icf_codes and ICF documentation to create the clinical free text.\nCONS: depends on the LLM for structuring on JSON. ",
+        "height": 800,
+        "width": 1952
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -128,
+        400
+      ],
+      "typeVersion": 1,
+      "id": "8b8f0009-be9b-457b-bb90-97afa83654dd",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "options": {
+          "format": true,
+          "fileName": "pacientes_silico.json"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1456,
+        528
+      ],
+      "id": "ab91b97d-385a-44bd-a082-fc627cee7541",
+      "name": "Convert to File1"
+    },
+    {
+      "parameters": {
+        "content": "## Version 1.0 -> 2.0\n- Promt usar RAG con documentos ICF para las historias clínicas\n- Las historias clínicas se crean una a una y se pasan al nodo código -> En futuras versiones simplemente se subirá el JSON con las historias pero para testeo esta forma lo simplifica",
+        "height": 192,
+        "width": 1104
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        384,
+        144
+      ],
+      "typeVersion": 1,
+      "id": "dc32339f-7843-4fab-8d34-8a8ddb38a001",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "##  RAG for Clinical text generator 2.0\nIt uses ICF document to create a Vector store for the generator to get information for ICF codes\n",
+        "height": 784,
+        "width": 912
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        2016,
+        416
+      ],
+      "typeVersion": 1,
+      "id": "731762b0-9280-4eb9-b56b-e72c3e34c9b8",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "formTitle": "documento_raw",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "documento_a_vectorizar",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        2176,
+        704
+      ],
+      "id": "79145de0-acc4-493f-80a5-034210112ba9",
+      "name": "On form submission",
+      "webhookId": "30dc0b85-fc1c-466e-8d8a-bb1829de650b",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        2624,
+        912
+      ],
+      "id": "357fecbb-d05a-41d1-a426-4c847a41b93c",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "28851843-597c-4fc6-b7ce-3f375d55dc76",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        2464,
+        704
+      ],
+      "id": "b2e16f8b-891f-4f5c-acf4-768cbf7dd69f",
+      "name": "Qdrant Vector Store1",
+      "credentials": {
+        "qdrantApi": {
+          "id": "Se6dS4EqhF06aYMR",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "nomic-embed-text:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        2400,
+        912
+      ],
+      "id": "3b81b505-d3b0-45d7-b966-181dd2f5e8f4",
+      "name": "Embeddings Ollama1",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        800,
+        976
+      ],
+      "id": "c69e9f76-8eb5-4bc9-9afa-692ef34cedec",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "JEETsbvwfH5JUXdD",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "embeddinggemma:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        976,
+        1024
+      ],
+      "id": "19b9470c-3203-48a5-b2f4-a2a9a5ebc4cb",
+      "name": "Embeddings Ollama",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+      "typeVersion": 1,
+      "position": [
+        1072,
+        720
+      ],
+      "id": "46e89ce6-bde9-419e-96b3-4206df384c33",
+      "name": "Vector Store Retriever"
+    },
+    {
+      "parameters": {
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "28851843-597c-4fc6-b7ce-3f375d55dc76",
+          "mode": "list",
+          "cachedResultName": "28851843-597c-4fc6-b7ce-3f375d55dc76"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        976,
+        880
+      ],
+      "id": "6e5942a0-1d63-49e8-b854-34487a165809",
+      "name": "Qdrant Vector Store",
+      "credentials": {
+        "qdrantApi": {
+          "id": "Se6dS4EqhF06aYMR",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me1",
+      "typeVersion": 1,
+      "position": [
+        640,
+        656
+      ],
+      "id": "e84fce7d-ed82-4821-8429-6887b7ead66e"
+    },
+    {
+      "parameters": {
+        "batchSize": 250,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        464,
+        592
+      ],
+      "id": "5632d5bf-092b-4dbf-8ff0-5c9dbf39acdf",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    json:{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d770\", \"d920\"],\n  \"icf_name\": [\"b280-Sensación de dolor\",\"d430-Levantar y llevar objetos\",\n        \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n    }\n  }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        80,
+        832
+      ],
+      "id": "d71935d3-83e9-44b7-8b12-b1881df7ae5d",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "formTitle": "documento_raw",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "documento_a_vectorizar",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        0,
+        656
+      ],
+      "id": "ce5e7edd-5671-4953-8500-4190f08c0c06",
+      "name": "On form submission1",
+      "webhookId": "e417b5d6-bb8e-4ce5-8def-d5418c0c198d"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Verificamos que existan datos binarios en el primer item\nconst firstItem = $input.first();\nif (!firstItem || !firstItem.binary) {\n  throw new Error('No se encontraron datos binarios en la entrada del Form Trigger.');\n}\n\n// 2. Obtenemos el nombre de la propiedad binaria (usualmente es 'data' o 'file')\nconst binaryKey = Object.keys(firstItem.binary)[0];\n\n// 3. Extraemos el archivo como un Buffer usando el helper nativo de n8n\nconst binaryBuffer = await this.helpers.getBinaryDataBuffer(0, binaryKey);\n\n// 4. Convertimos el Buffer a string (UTF-8) y parseamos el JSON\nconst rawString = binaryBuffer.toString('utf-8');\nconst parsedData = JSON.parse(rawString);\n\n// 5. Nos aseguramos de que parsedData sea un array para evitar errores al mapear\nconst itemsToProcess = Array.isArray(parsedData) ? parsedData : [parsedData];\n\n// 6. Retornamos la estructura esperada por n8n\nreturn itemsToProcess.map(item => ({\n  json: {\n    id_code_combination: item.id_code_combination,\n    icf_codes: item.icf_code,\n    icf_name: item.icf_name || null,\n    clinical_profile: item.clinical_profile || null\n  }\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        656
+      ],
+      "id": "f6f95cc6-9b17-4e7f-8e96-413448c1a524",
+      "name": "Code in JavaScript2"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse the LLM response into clean JSON\nconst response = $json.response;\nlet parsed = null;\n\nif (typeof response === 'object') {\n  parsed = response;\n}\n\nif (!parsed && typeof response === 'string') {\n  try {\n    parsed = JSON.parse(response);\n  } catch (e) {\n    const blockMatch = response.match(/```(?:json)?\\s*([\\s\\S]*?)```/);\n    if (blockMatch) {\n      try {\n        parsed = JSON.parse(blockMatch[1].trim());\n      } catch (e2) {\n        const braceMatch = response.match(/\\{([\\s\\S]*)\\}/);\n        if (braceMatch) {\n          try {\n            parsed = JSON.parse(braceMatch[0]);\n          } catch (e3) {\n            parsed = { error: 'No se pudo parsear la respuesta', raw: response };\n          }\n        }\n      }\n    }\n  }\n}\n\nif (!parsed) {\n  return [{ json: { error: 'Respuesta no parseable', raw: response } }];\n}\n\nreturn [{ json: parsed }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        416
+      ],
+      "id": "4a2a90aa-1f4c-485b-9c40-f731c66cb6d7",
+      "name": "parsea respuesta LLM"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse the LLM response into clean JSON\nconst response = $json.response;\nlet parsed = null;\n\nif (typeof response === 'object') {\n  parsed = response;\n}\n\nif (!parsed && typeof response === 'string') {\n  try {\n    parsed = JSON.parse(response);\n  } catch (e) {\n    const blockMatch = response.match(/```(?:json)?\\s*([\\s\\S]*?)```/);\n    if (blockMatch) {\n      try {\n        parsed = JSON.parse(blockMatch[1].trim());\n      } catch (e2) {\n        const braceMatch = response.match(/\\{([\\s\\S]*)\\}/);\n        if (braceMatch) {\n          try {\n            parsed = JSON.parse(braceMatch[0]);\n          } catch (e3) {\n            parsed = { error: 'No se pudo parsear la respuesta', raw: response };\n          }\n        }\n      }\n    }\n  }\n}\n\nif (!parsed) {\n  return [{ json: { error: 'Respuesta no parseable', raw: response } }];\n}\n\nreturn [{ json: parsed }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        544
+      ],
+      "id": "3d86df6d-fae2-4d56-8039-f9a00e1dc12c",
+      "name": "Parsear JSON del LLM y añade variables inicio"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Rol: Eres un médico rehabilitador. En vez de pacientes, la información de entrada que tienes son sus códigos de la Clasificación Internacional del Funcionamiento (CIF). Basándote en el Core Set de la CIF para el Dolor Crónico Generalizado (Chronic Widespread Pain), debes tener en cuenta las deficiencias exactas que representa cada código.\n\nTarea: Tu tarea es escribir 3 historias clínicas sintéticas y realistas a partir de la información proporcionada en la sección <INPUT_ACTUAL>, por cada combinación de códigos.\n\nReglas Críticas:\n1. Variabilidad: Las 3 historias deben ser estructural y semánticamente distintas. Utiliza distinta fraseología médica para describir los problemas\n2. Cero Códigos: Está ESTRICTAMENTE PROHIBIDO escribir los códigos alfanuméricos (ej. \"b280\" o \"d430\") dentro del texto de la historia clínica.\n3. Formato JSON: Responde ÚNICAMENTE con un objeto JSON válido, sin bloques de código Markdown ni texto introductorio. Mantén el id_code_combination, los icf_codes y los icf_name del JSON de entrada.\n4. Coherencia Clínica: Revisa que no haya más códigos de los que aparezcan en los proporcionados y que la historia refleje las deficiencias exactas.\n5. Trazabilidad de IDs: El campo \"id_clinical_text\" de cada historia generada debe seguir estrictamente el patrón \"[ID_INPUT]_[NUMERO]\". Para este procesamiento, el ID exacto que debes usar como base es \"{{ $json.id_code_combination }}\". Por tanto, los tres identificadores generados deben ser obligatoriamente: \"{{ $json.id_code_combination }}_1\", \"{{ $json.id_code_combination }}_2\" y \"{{ $json.id_code_combination }}_3\".\n\n<EJEMPLO>\nInput:\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d920\"],\n  \"icf_name\": [\"b280- Sensación de dolor\",\"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n}\n\nOutput:\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d920\"],\n  \"icf_name\": [\"b280- Sensación de dolor\",\"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"006_1\",\n      \"clinical_text\": \"Adolescente de 12 años acude a consulta por dolor de cadera tras notar un pinchazo desde hace más de un año tras un partido de hockey. Refiere que la molestia le impide cargar su mochila escolar y ha provocado discusiones constantes con sus padres al negarse a participar en las excursiones familiares de fin de semana.\"\n    }\n  ]\n}\n</EJEMPLO>\n\n<INPUT_ACTUAL>\n{{ JSON.stringify($json) }}\n</INPUT_ACTUAL>",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+      "typeVersion": 1.7,
+      "position": [
+        832,
+        528
+      ],
+      "id": "f83571ad-b90f-45d2-a4b6-8e617c27d4b5",
+      "name": "con puenteo de formato"
+    },
+    {
+      "parameters": {
+        "model": "gemma2:latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmOllama",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1120
+      ],
+      "id": "30c69249-0ee3-4244-8e6b-e415849d2d70",
+      "name": "Ollama Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        800,
+        864
+      ],
+      "id": "50bae73d-fed4-444d-bbdf-c3558952a8bd",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "80bZ0I6b53xGQCHD",
+          "name": "Groq account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:11434/api/generate",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"model\": \"gemma2\",\n  \"prompt\": \"Responde únicamente con la palabra RECIBIDO. No añadas nada más.\",\n  \"stream\": false\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        832,
+        352
+      ],
+      "id": "6c9bed22-a67e-479e-9169-01355445fe2e",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c92e8801-3230-486a-9f80-6ac72d30da58",
+              "name": "datos_procesados",
+              "value": "={{ JSON.parse($json.text.replace(/```json|```/g, '').trim()) }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1168,
+        304
+      ],
+      "id": "8b9df0ed-4678-46a5-b04a-9cd74e7dc314",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "options": {
+          "format": true,
+          "fileName": "pacientes_silico.json"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1664,
+        1680
+      ],
+      "id": "4a9b003b-cee7-445a-9c1a-ba1423d2d375",
+      "name": "Convert to File2"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1008,
+        2144
+      ],
+      "id": "89338680-0881-4df8-be80-d7654dff6a0c",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "JEETsbvwfH5JUXdD",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "embeddinggemma:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        1184,
+        2176
+      ],
+      "id": "91364f08-fef9-46fe-a565-68cb3675e7e3",
+      "name": "Embeddings Ollama2",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        1872
+      ],
+      "id": "c0056448-94f4-4511-82f7-133f91af651a",
+      "name": "Vector Store Retriever1"
+    },
+    {
+      "parameters": {
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "28851843-597c-4fc6-b7ce-3f375d55dc76",
+          "mode": "list",
+          "cachedResultName": "28851843-597c-4fc6-b7ce-3f375d55dc76"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        1184,
+        2032
+      ],
+      "id": "d1361c03-192f-45e3-be21-a6b918d7ec8a",
+      "name": "Qdrant Vector Store2",
+      "credentials": {
+        "qdrantApi": {
+          "id": "Se6dS4EqhF06aYMR",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me2",
+      "typeVersion": 1,
+      "position": [
+        880,
+        1808
+      ],
+      "id": "8180afc6-ea77-4e00-91a1-f509fc0444ba"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    json:{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d770\", \"d920\"],\n  \"icf_name\": [\"b280-Sensación de dolor\",\"d430-Levantar y llevar objetos\",\n        \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n    }\n  }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        80,
+        1984
+      ],
+      "id": "38a029ae-e65e-451e-8cf1-b91902e78414",
+      "name": "Code in JavaScript3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Rol: Eres un médico rehabilitador. En vez de pacientes, la información de entrada que tienes son sus códigos de la Clasificación Internacional del Funcionamiento (CIF). Basándote en el Core Set de la CIF para el Dolor Crónico Generalizado (Chronic Widespread Pain), debes tener en cuenta las deficiencias exactas que representa cada código.\n\nTarea: Tu tarea es escribir 3 historias clínicas realistas a partir de la información proporcionada en la sección <INPUT_ACTUAL>, por cada combinación de códigos.\n\nReglas Críticas:\n1. Variabilidad: Las 3 historias deben ser estructural y semánticamente distintas. Utiliza distinta fraseología médica para describir los problemas\n2. Cero Códigos: Está ESTRICTAMENTE PROHIBIDO escribir los códigos alfanuméricos (ej. \"b280\" o \"d430\") dentro del texto de la historia clínica.\n3. Restricción Tipográfica: Está ESTRICTAMENTE PROHIBIDO usar comillas dobles (\") dentro del texto generado. Si necesitas citar textualmente al paciente, usa obligatoriamente comillas simples (').\n4. Formato JSON: Responde ÚNICAMENTE con un objeto JSON válido, sin bloques de código Markdown ni texto introductorio. \n5. Coherencia Clínica: Revisa que no haya más códigos de los que aparezcan en los proporcionados y que la historia refleje las deficiencias exactas.\n\n\n<EJEMPLO>\nInput:\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d920\"],\n  \"icf_name\": [\"b280-Sensación de dolor\",\"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n}\n\nOutput:\n\n{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Adolescente de 12 años acude a consulta por dolor de cadera tras notar un pinchazo desde hace más de un año tras un partido de hockey, no acudió al médico en ese momento, actualmente las radiografías no muestran lesión, no realizada RMN. Actualmente refiere dificultad para llevar la mochila del colegio, y para jugar con su padre al hockey, que es su principal hobby. Le gustaría volver a poder jugar\"\n    },\n    {\n    \"clinical_text\": \"Varón de 40 años, acude a consulta por dolor de espalda recurrente que comenzó hace 5 años. Aproximadamente un episodio al mes. Trabaja de conductor de taxi, refiere no tener problemas para trabajar. Sin embargo dice tener dificultades para viajar, los episodios le impiden planificar viajes pues si le dan apenas puede moverse. Esto le limita a la hora de buscar espacios comunes con su pareja. Le gustaría poder reducir la frecuencia de episodios o saber qué puede hacer cuándo aparecen.\"\n    },\n    {\n    \"clinical_text\": \"Mujer 70 años, acude a consulta por dolor de MSD que apareció sin motivo aparente, dice que lo tiene 'de toda la vida'. Es activa, realiza actividades en el centro cultural del barrio como yoga y cerámica con su hermana. Se siente limitada a la hora de realizar yoga, sigue realizando la actividad para ver a su hermana.\"\n    }\n  ]\n}\n\n</EJEMPLO>\n\n<INPUT_ACTUAL>\n{{ JSON.stringify($json) }}\n</INPUT_ACTUAL>",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+      "typeVersion": 1.7,
+      "position": [
+        1040,
+        1680
+      ],
+      "id": "53fdf44d-bba7-4431-89c6-ca0db5056f6f",
+      "name": "con puenteo de formato1"
+    },
+    {
+      "parameters": {
+        "model": "gemma2:latest",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmOllama",
+      "typeVersion": 1,
+      "position": [
+        1008,
+        2288
+      ],
+      "id": "3c0c79d6-18a1-40ce-bf8b-33944384076a",
+      "name": "Ollama Model1",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        1008,
+        2016
+      ],
+      "id": "165c716d-1d64-4ec6-81dd-423163a4aec9",
+      "name": "Groq Chat Model1",
+      "credentials": {
+        "groqApi": {
+          "id": "80bZ0I6b53xGQCHD",
+          "name": "Groq account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Version 2.0 -> 3.0\n- El LLM solo se encarga de generar las historias, el parseo es fuera\n",
+        "height": 192,
+        "width": 1104
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        288,
+        1376
+      ],
+      "typeVersion": 1,
+      "id": "81904b2a-5bfc-4164-b93e-c431116b8e7e",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "formTitle": "documento_raw",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "documento_a_vectorizar",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        16,
+        1792
+      ],
+      "id": "d7dcebe2-3043-4d7f-b615-5ba9f1625b9d",
+      "name": "On form submission3",
+      "webhookId": "520c18b9-8379-4128-82b8-dd2c1f7244f4"
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  item.json = {\n    icf_codes: item.json.icf_codes,\n    icf_name: item.json.icf_name,\n    clinical_profile: item.json.clinical_profile\n  };\n}\n\nreturn $input.all();;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        1680
+      ],
+      "id": "d6cfbe1d-b105-4d9b-9079-8c6d8c9befc9",
+      "name": "quita el id del json"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Verificamos que existan datos binarios en el primer item\nconst firstItem = $input.first();\nif (!firstItem || !firstItem.binary) {\n  throw new Error('No se encontraron datos binarios en la entrada del Form Trigger.');\n}\n\n// 2. Obtenemos el nombre de la propiedad binaria (usualmente es 'data' o 'file')\nconst binaryKey = Object.keys(firstItem.binary)[0];\n\n// 3. Extraemos el archivo como un Buffer usando el helper nativo de n8n\nconst binaryBuffer = await this.helpers.getBinaryDataBuffer(0, binaryKey);\n\n// 4. Convertimos el Buffer a string (UTF-8) y parseamos el JSON\nconst rawString = binaryBuffer.toString('utf-8');\nconst parsedData = JSON.parse(rawString);\n\n// 5. Nos aseguramos de que parsedData sea un array para evitar errores al mapear\nconst itemsToProcess = Array.isArray(parsedData) ? parsedData : [parsedData];\n\n// 6. Retornamos la estructura esperada por n8n\nreturn itemsToProcess.map(item => ({\n  json: {\n    id_code_combination: item.id_code_combination,\n    icf_codes: item.icf_code,\n    icf_name: item.icf_name || null,\n    clinical_profile: item.clinical_profile || null\n  }\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        1776
+      ],
+      "id": "3b72b232-322c-4f23-a3d2-132eae74a6e1",
+      "name": "doc_to_json"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Funciones puras (Single Responsibility Principle)\nconst extraerTextoBruto = (json) => {\n  // El operador '?.' (Optional Chaining) evita errores si una propiedad no existe\n  return json.response || \n         json.choices?.[0]?.message?.content || \n         json.output || \n         json.message;\n};\n\nconst limpiarMarkdownJSON = (texto) => {\n  const match = texto.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/);\n  return match ? match[1] : texto;\n};\n\nconst parsearDatosLLM = (textoBruto, indice) => {\n  const textoLimpio = limpiarMarkdownJSON(textoBruto);\n  try {\n    return JSON.parse(textoLimpio.trim());\n  } catch (error) {\n    throw new Error(`JSON inválido en iteración ${indice}. Texto: ${textoLimpio}`);\n  }\n};\n\nconst formatearHistoriasClinicas = (datosParseados, idCombinacion) => {\n  const historias = datosParseados.clinical_object || datosParseados.historias_clinicas;\n  \n  if (!Array.isArray(historias)) return [];\n\n  // Mapeo directo en lugar de bucles manuales\n  return historias.map((historia, index) => ({\n    id_clinical_text: `${idCombinacion}_${index + 1}`,\n    clinical_text: historia.clinical_text\n  }));\n};\n\n// 2. Ejecución principal\nconst datosOriginales = $('doc_to_json').all();\nconst inputsActuales = $input.all();\n\n// En lugar de mutar un array con un bucle 'for', devolvemos uno nuevo con '.map()'\nconst resultadosFinales = inputsActuales.map((item, index) => {\n  const textoBruto = extraerTextoBruto(item.json);\n  \n  if (!textoBruto) {\n    throw new Error(`Variable de texto ausente en item ${index}.`);\n  }\n\n  const datosIA = parsearDatosLLM(textoBruto, index);\n  const datosBase = datosOriginales[index].json; // Datos de referencia\n\n  // 3. Ensamblaje final\n  return {\n    json: {\n      id_code_combination: datosBase.id_code_combination,\n      icf_codes: datosBase.icf_codes,\n      icf_name: datosBase.icf_name,\n      clinical_object: formatearHistoriasClinicas(datosIA, datosBase.id_code_combination)\n    }\n  };\n});\n\nreturn resultadosFinales;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1376,
+        1680
+      ],
+      "id": "369649d5-cc09-4bd3-9db1-b7285e1109ba",
+      "name": "from_llm_to_json"
+    },
+    {
+      "parameters": {
+        "batchSize": 250,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        464,
+        1744
+      ],
+      "id": "426c7719-539b-4168-8877-d46212d6fa0f",
+      "name": "loop"
     }
   ],
   "pinData": {
@@ -258,20 +937,317 @@
           "item": 4
         }
       }
+    ],
+    "On form submission1": [
+      {
+        "json": {
+          "documento_a_vectorizar": [
+            {
+              "filename": "input_of_generator_extra_info.json",
+              "mimetype": "application/json",
+              "size": 2401
+            }
+          ],
+          "submittedAt": "2026-07-04T11:30:16.516-04:00",
+          "formMode": "test"
+        },
+        "binary": {
+          "documento_a_vectorizar": {
+            "mimeType": "application/json",
+            "fileType": "json",
+            "fileExtension": "json",
+            "data": "filesystem-v2",
+            "fileName": "input_of_generator_extra_info.json",
+            "id": "filesystem-v2:workflows/xy2izDm6LQ62wrZC/executions/temp/binary_data/fb1582ed-befa-40d2-85ec-b0f722400766",
+            "fileSize": "2.4 kB",
+            "bytes": 2401
+          }
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ],
+    "con puenteo de formato": [
+      {
+        "json": {
+          "response": "```json\n{\n  \"id_code_combination\": \"001\",\n  \"icf_codes\": [\"b130\", \"b134\", \"b175\", \"b280\", \"e1101\"],\n  \"icf_name\": [\"b130-Energy and drive functions\", \"b134-Sleep functions\", \"b175-Solving problems\", \"b280-Sensación de dolor\", \"e1101-Drugs\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"001_1\",\n      \"clinical_text\": \"Paciente de 45 años acude a consulta refiriendo una disminución significativa de su energía y motivación para realizar actividades cotidianas desde los últimos 6 meses. Además, presenta dificultades para conciliar el sueño y mantiene un patrón de sueño irregular. La falta de descanso adecuado ha afectado su capacidad para resolver problemas en el trabajo, lo que ha generado estrés adicional. El paciente también refiere experimentar dolor crónico generalizado que afecta su calidad de vida. Actualmente, se encuentra bajo tratamiento con medicación para el dolor y para regular su sueño.\"\n    },\n    {\n      \"id_clinical_text\": \"001_2\",\n      \"clinical_text\": \"Nota de evolución: El paciente presenta una mejora leve en los niveles de energía después de ajustar la dosis de su medicación para el sueño. Sin embargo, persisten las dificultades para resolver problemas complejos, lo que sugiere la necesidad de apoyo cognitivo adicional. El dolor crónico sigue siendo un síntoma predominante, aunque la intensidad ha disminuido ligeramente con el tratamiento farmacológico actual. Se ha iniciado un programa de terapia cognitiva conductual para abordar las dificultades de sueño y los patrones de pensamiento negativos asociados con el dolor crónico.\"\n    },\n    {\n      \"id_clinical_text\": \"001_3\",\n      \"clinical_text\": \"Anamnesis en primera consulta: La paciente, una mujer de 38 años, describe una vida laboral y personal muy activa hasta hace un año, cuando comenzó a experimentar una fatiga inexplicable que la llevó a reducir significativamente sus actividades. También refiere haber tenido problemas para dormir y ha estado tomando medicación para ayudar a conciliar el sueño. Los problemas para resolver situaciones complejas en el trabajo han aumentado, y siente que su capacidad para tomar decisiones ha disminuido. El dolor generalizado es otro síntoma que ha afectado su calidad de vida. La paciente busca ayuda para recuperar su nivel de energía y bienestar, y para encontrar estrategias efectivas para manejar el dolor y mejorar su sueño.\"\n    }\n  ]\n}\n```"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "response": "```json\n{\n  \"id_code_combination\": \"002\",\n  \"icf_codes\": [\"b152\", \"b1602\", \"b280\", \"d240\", \"d850\", \"e570\"],\n  \"icf_name\": [\"b152-Emotional functions\", \"b1602-Content of thought\", \"b280-Sensación de dolor\", \"d240-Handling stress and other psychological demands\", \"d850-Remunerative employment\", \"e570-Social security services, systems and policies\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"002_1\",\n      \"clinical_text\": \"Paciente de 35 años, con antecedentes de estrés laboral y dolor crónico, presenta dificultades para manejar situaciones de estrés y demandas psicológicas en su lugar de trabajo. Además, refiere pensamientos intrusivos y rumiaciones que afectan su capacidad para realizar tareas y tomar decisiones. La situación se ha complicado por la percepción de dolor constante, lo que le ha llevado a buscar ayuda para mejorar su bienestar emocional y capacidad para realizar su trabajo de manera efectiva.\"\n    },\n    {\n      \"id_clinical_text\": \"002_2\",\n      \"clinical_text\": \"En la evaluación inicial, el paciente expresa sentirse abrumado por el estrés diario y la incapacidad para controlar su dolor, lo que ha impactado negativamente en su desempeño laboral. Los pensamientos recurrentes de ansiedad y la preocupación por su situación laboral han generado un círculo vicioso de estrés y malestar emocional. Es necesario abordar estos aspectos para mejorar su capacidad para manejar el estrés y recuperar su bienestar general.\"\n    },\n    {\n      \"id_clinical_text\": \"002_3\",\n      \"clinical_text\": \"Durante la sesión de seguimiento, el paciente menciona que ha estado experimentando dificultades para conciliar el estrés laboral con su salud emocional. El dolor crónico ha seguido siendo un factor limitante en su capacidad para realizar tareas y mantener relaciones saludables en el entorno laboral. Se ha vuelto dependiente de los servicios de seguridad social para ayudar a manejar su situación, pero se muestra motivado para encontrar estrategias para mejorar su resiliencia y capacidad para manejar el estrés, con el objetivo de retomar su vida laboral de manera satisfactoria.\"\n    }\n  ]\n}\n```"
+        },
+        "pairedItem": {
+          "item": 1
+        }
+      },
+      {
+        "json": {
+          "response": "```\n{\n  \"id_code_combination\": \"003\",\n  \"icf_codes\": [\"b134\", \"b152\", \"b280\", \"d240\", \"d640\", \"d760\", \"d920\", \"e310\", \"e410\"],\n  \"icf_name\": [\"b134-Sleep functions\", \"b152-Emotional functions\", \"b280-Sensación de dolor\", \"d240-Handling stress and other psychological demands\", \"d640-Realizar los quehaceres de la casa\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\", \"e310-Immediate family\", \"e410- Individual attitudes of immediate family members\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"003_1\",\n      \"clinical_text\": \"La paciente de 35 años presenta insomnio crónico y dolor generalizado, lo que le impide realizar las tareas domésticas y afecta su relación con su familia. Refiere sentirse abrumada por el estrés y la ansiedad, y ha notado un deterioro en su capacidad para manejar las demandas psicológicas diarias. Su familia inmediata muestra actitudes de apoyo, pero la paciente siente que no puede disfrutar de actividades de ocio debido a su condición.\"\n    },\n    {\n      \"id_clinical_text\": \"003_2\",\n      \"clinical_text\": \"En la evaluación inicial, el paciente de 42 años informa que ha estado experimentando dolor crónico y alteraciones del sueño, lo que le dificulta realizar las tareas del hogar y mantener una relación saludable con su familia. Se observa que el paciente tiene dificultades para manejar el estrés y otras demandas psicológicas, y su capacidad para disfrutar del tiempo libre y el ocio se ve limitada. La actitud de su familia inmediata es de apoyo, pero el paciente siente que necesita mejorar su capacidad para manejar el estrés y la ansiedad.\"\n    },\n    {\n      \"id_clinical_text\": \"003_3\",\n      \"clinical_text\": \"La nota de evolución del paciente de 28 años indica que ha habido una mejora en su capacidad para dormir y manejar el dolor, lo que le ha permitido retomar algunas de las tareas domésticas y participar en actividades de ocio con su familia. Sin embargo, todavía se observan dificultades para manejar el estrés y la ansiedad, y se requiere un seguimiento para evaluar la efectividad de las estrategias de afrontamiento y el apoyo familiar. La actitud de su familia inmediata sigue siendo de apoyo, y se espera que el paciente continúe progresando en su capacidad para manejar las demandas psicológicas diarias.\"\n    }\n  ]\n}\n```"
+        },
+        "pairedItem": {
+          "item": 2
+        }
+      },
+      {
+        "json": {
+          "response": "```\n{\n  \"id_code_combination\": \"004\",\n  \"icf_codes\": [\"b1602\", \"b280\", \"b455\", \"b730\", \"d920\"],\n  \"icf_name\": [\"b1602-Content of thought\", \"b280-Sensación de dolor\", \"b455-Exercise tolerance functions\", \"b730-Muscle power functions\", \"d920-Tiempo libre y ocio\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"004_1\",\n      \"clinical_text\": \"Paciente de 35 años con antecedentes de lesiones deportivas crónicas, se presenta con dolor persistente en las articulaciones y miedo a realizar actividades físicas intensas debido a la posibilidad de empeorar su condición. Refiere dificultad para realizar ejercicios prolongados y nota una disminución significativa en su resistencia y fuerza muscular, lo que le impide disfrutar de sus hobbies favoritos como el ciclismo y el senderismo.\"\n    },\n    {\n      \"id_clinical_text\": \"004_2\",\n      \"clinical_text\": \"Nota de evolución: Paciente sigue refiriendo dolor crónico y limitaciones en su capacidad para realizar actividades físicas, especialmente aquellas que requieren esfuerzo muscular sostenido. Se ha observado una disminución en su tolerancia al ejercicio y una notable reducción en su capacidad para realizar movimientos que requieren fuerza, afectando negativamente su calidad de vida y participación en actividades de ocio como jugar con sus hijos o practicar yoga.\"\n    },\n    {\n      \"id_clinical_text\": \"004_3\",\n      \"clinical_text\": \"Anamnesis: Paciente informa que su capacidad para pensar y concentrarse se ve afectada por el dolor constante y la fatiga muscular. Expresa temor a realizar actividades que puedan agravar su condición, lo que limita su participación en actividades recreativas y sociales. Se ha notado una disminución en su capacidad aeróbica y una mayor sensibilidad al esfuerzo físico, afectando su autonomía y bienestar general, y expresando deseos de retomar actividades como correr y nadar sin experimentar dolor o agotamiento excesivo.\"\n    }\n  ]\n}\n```"
+        },
+        "pairedItem": {
+          "item": 3
+        }
+      },
+      {
+        "json": {
+          "response": "```json\n{\n  \"id_code_combination\": \"005\",\n  \"icf_codes\": [\"b280\", \"d230\", \"d450\", \"d640\"],\n  \"icf_name\": [\"b280- Sensación de dolor\", \"d230-Llevar a cabo rutinas diarias\", \"d450-Andar\", \"d640-Realizar los quehaceres de la casa\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"005_1\",\n      \"clinical_text\": \"Paciente de 50 años presenta dolor crónico generalizado que le impide realizar sus quehaceres domésticos con la misma eficiencia que antes. Refiere dificultad para caminar durante largas distancias y necesidad de frecuentes paradas para descansar. La rutina diaria se ha visto afectada, con necesidad de ayuda para tareas como la compra y la limpieza.\"\n    },\n    {\n      \"id_clinical_text\": \"005_2\",\n      \"clinical_text\": \"En la evaluación de seguimiento, se observa que el paciente ha experimentado una disminución en su capacidad para realizar actividades como caminar y realizar tareas domésticas debido a un aumento en el dolor generalizado. Se han iniciado ajustes en la rutina diaria para minimizar el esfuerzo físico y se está considerando la implementación de terapias para manejar el dolor y mejorar la movilidad.\"\n    },\n    {\n      \"id_clinical_text\": \"005_3\",\n      \"clinical_text\": \"Anamnesis de paciente que refiere dolor persistente que afecta su capacidad para realizar tareas cotidianas. La dificultad para caminar y realizar quehaceres domésticos ha llevado a una disminución en su autonomía y ha requerido el apoyo de familiares y amigos. Se ha programado una evaluación detallada para determinar el impacto del dolor en su calidad de vida y desarrollar un plan de manejo integral.\"\n    }\n  ]\n}\n```"
+        },
+        "pairedItem": {
+          "item": 4
+        }
+      },
+      {
+        "json": {
+          "response": "```\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d770\", \"d920\"],\n  \"icf_name\": [\"b280- Sensación de dolor\", \"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d770-Relaciones íntimas\", \"d920-Tiempo libre y ocio\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"006_1\",\n      \"clinical_text\": \"Paciente de 35 años con dolor crónico generalizado que afecta su capacidad para realizar actividades cotidianas como cargar objetos pesados, lo que ha impactado en su relación con su pareja debido a la falta de intimidad y en su participación en actividades recreativas con su familia, como ir al cine o practicar deportes.\"\n    },\n    {\n      \"id_clinical_text\": \"006_2\",\n      \"clinical_text\": \"En la evaluación de seguimiento, se observa que la paciente presenta dificultades para mantener relaciones familiares y sociales debido a su dolor crónico, que le impide participar en eventos sociales y familiares, y también afecta su relación con su pareja, generando tensiones y conflictos en su vida íntima. Además, refiere que ya no puede disfrutar de sus hobbies favoritos, como tocar el piano o leer, debido a la molestia persistente.\"\n    },\n    {\n      \"id_clinical_text\": \"006_3\",\n      \"clinical_text\": \"Anamnesis de paciente con antecedentes de dolor generalizado crónico que ha afectado significativamente su calidad de vida. Refiere que el dolor le impide realizar tareas domésticas que requieren levantar objetos pesados, lo que ha generado conflictos con sus familiares y ha afectado su relación con su pareja. La paciente expresa que ya no puede disfrutar de actividades de ocio como ir al teatro o practicar yoga con su pareja, lo que ha aumentado su sentimiento de aislamiento y ha deteriorado su relación familiar y social.\"\n    }\n  ]\n}\n```"
+        },
+        "pairedItem": {
+          "item": 5
+        }
+      }
+    ],
+    "On form submission3": [
+      {
+        "json": {
+          "documento_a_vectorizar": [
+            {
+              "filename": "input_of_generator_extra_info.json",
+              "mimetype": "application/json",
+              "size": 2401
+            }
+          ],
+          "submittedAt": "2026-07-06T06:27:52.221-04:00",
+          "formMode": "test"
+        },
+        "binary": {
+          "documento_a_vectorizar": {
+            "mimeType": "application/json",
+            "fileType": "json",
+            "fileExtension": "json",
+            "data": "filesystem-v2",
+            "fileName": "input_of_generator_extra_info.json",
+            "id": "filesystem-v2:workflows/xy2izDm6LQ62wrZC/executions/temp/binary_data/8049deb7-ae83-4165-a95f-c03069e45306",
+            "fileSize": "2.4 kB",
+            "bytes": 2401
+          }
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ],
+    "doc_to_json": [
+      {
+        "json": {
+          "id_code_combination": "001",
+          "icf_codes": [
+            "b130",
+            "b134",
+            "b175",
+            "b280",
+            "e1101"
+          ],
+          "icf_name": [
+            "b130-Energy and drive functions",
+            "b134-Sleep functions",
+            "b175-solving problems",
+            "b280-Sensación de dolor",
+            "e1101-Drugs"
+          ],
+          "clinical_profile": "low energy, low sleep, cognitive, sleep medication"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "002",
+          "icf_codes": [
+            "b152",
+            "b1602",
+            "b280",
+            "d240",
+            "d850",
+            "e570"
+          ],
+          "icf_name": [
+            "b152-Emotional functions",
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d850-Remunerative employment",
+            "e570-Social security services, systems and policies"
+          ],
+          "clinical_profile": "emotional, pain, work, stress"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "003",
+          "icf_codes": [
+            "b134",
+            "b152",
+            "b280",
+            "d240",
+            "d640",
+            "d760",
+            "d920",
+            "e310",
+            "e410"
+          ],
+          "icf_name": [
+            "b134-Sleep functions",
+            "b152-Emotional functions",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d640-Realizar los quehaceres de la casa",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio",
+            "e310-Immediate family",
+            "e410- Individual attitudes of immediate family members"
+          ],
+          "clinical_profile": "family, housework, stress, emotional, sleep"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "004",
+          "icf_codes": [
+            "b1602",
+            "b280",
+            "b455",
+            "b730",
+            "d920"
+          ],
+          "icf_name": [
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "b455-Exercise tolerance functions",
+            "b730-Muscle power functions",
+            "d920-Tiempo libre y ocio"
+          ],
+          "clinical_profile": "exsport,fear of movement, hardness in endurance or power."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "005",
+          "icf_codes": [
+            "b280",
+            "d230",
+            "d450",
+            "d640"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d230-Llevar a cabo rutinas diarias",
+            "d430-Levantar y llevar objetos",
+            "d450-Andar",
+            "d640-Realizar los quehaceres de la casa"
+          ],
+          "clinical_profile": "housework, walk, free time"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "006",
+          "icf_codes": [
+            "b280",
+            "d430",
+            "d760",
+            "d770",
+            "d920"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d430-Levantar y llevar objetos",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio"
+          ],
+          "clinical_profile": "social"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ],
+    "con puenteo de formato1": [
+      {
+        "json": {
+          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 30 años acude a consulta refiriendo una disminución significativa en su energía y motivación para realizar actividades cotidianas, acompañada de una alteración en su patrón de sueño que le impide descansar adecuadamente. Además, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor crónico que experimenta. Está tomando medicación para ayudar a regular su sueño, pero siente que esto no está mejorando su capacidad para afrontar desafíos diarios de manera efectiva.\"\n    },\n    {\n      \"clinical_text\": \"Una mujer de 50 años se presenta con quejas de falta de energía y fatiga persistente, que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. También reporta problemas para conciliar el sueño y permanecer dormida durante la noche, lo que empeora su estado de ánimo y concentración. El dolor crónico que padece aumenta su frustración y sentimiento de abrumación, dificultando su capacidad para resolver problemas cotidianos. La medicación para el sueño le brinda algo de alivio, pero busca ayuda para mejorar su calidad de vida en general.\"\n    },\n    {\n      \"clinical_text\": \"Varón de 45 años acude a la consulta debido a una disminución progresiva en su nivel de energía y motivación, que se ha visto acompañada de un patrón de sueño irregular y dificultades para resolver problemas y tomar decisiones de manera efectiva. El dolor crónico que experimenta es un factor importante que contribuye a su estado de malestar general. Aunque ha iniciado tratamiento con medicación para regular su sueño, busca apoyo para superar los desafíos que enfrenta en su vida diaria y mejorar su capacidad para manejar el dolor y otros síntomas que lo aquejan.\"\n    }\n  ]\n}"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 35 años con antecedentes de depresión, refiere sentir una persistente sensación de tristeza y dolor crónico generalizado, que le dificulta mantener su empleo como contadora. La paciente menciona que 'su mente está llena de pensamientos negativos', lo que le impide manejar el estrés laboral y le causa problemas para dormir. Expresa su deseo de encontrar un trabajo que se adapte a sus necesidades y pueda acceder a servicios de seguridad social que la apoyen en su situación actual.\"\n    },\n    {\n      \"clinical_text\": \"Varón de 42 años, trabajador autónomo, acude a consulta por dolor crónico y problemas para mantener su negocio debido a la dificultad para manejar el estrés y la ansiedad. Refiere que 'su mente es un torbellino de ideas negativas' que le impiden tomar decisiones claras y efectivas en su trabajo. Busca encontrar estrategias para manejar su estrés y dolor, y así poder mantener su empleo remunerado y acceder a los servicios de seguridad social que lo ayuden a superar esta situación.\"\n    },\n    {\n      \"clinical_text\": \"Mujer de 50 años, empleada en una empresa de servicios, presenta dolor crónico generalizado y problemas emocionales, incluyendo pensamientos recurrentes de ansiedad y depresión. La paciente expresa que 'le cuesta mucho trabajo' manejar las demandas psicológicas de su empleo y que el dolor crónico la limita en su capacidad para realizar tareas laborales y acceder a los servicios de seguridad social que necesita. Su deseo es encontrar un equilibrio entre su salud y su empleo remunerado.\"\n    }\n  ]\n}"
+        },
+        "pairedItem": {
+          "item": 1
+        }
+      },
+      {
+        "json": {
+          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 35 años, madre de dos hijos, acude a consulta refiriendo dificultades para dormir y un estado de ánimo bajo desde hace varios meses. Manifiesta sentir dolor generalizado en su cuerpo, especialmente en las mañanas, lo que le dificulta realizar las tareas domésticas y cuidar a sus hijos. Además, se siente abrumada por el estrés diario y tiene problemas para manejar las demandas psicológicas de su entorno. Le gustaría encontrar una forma de mejorar su calidad de sueño y reducir su dolor para poder disfrutar más tiempo con su familia y retomar sus actividades de ocio, como la pintura, que tanto le aprecia.\"\n    },\n    {\n      \"clinical_text\": \"Varón de 42 años, casado, acude a consulta por problemas de dolor crónico que le impiden realizar sus tareas domésticas con la misma eficiencia que antes. Se siente estresado por no poder cumplir con sus responsabilidades familiares y manifiesta dificultades para manejar el estrés y las demandas psicológicas de su trabajo y su vida familiar. Además, refiere problemas para conciliar el sueño y se encuentra en un estado de ánimo bajo la mayor parte del tiempo. Le preocupa cómo afectará su situación a sus relaciones familiares y su capacidad para disfrutar de actividades de ocio con su esposa, como el senderismo, que siempre han disfrutado juntos.\"\n    },\n    {\n      \"clinical_text\": \"Mujer de 50 años, divorciada, acude a consulta refiriendo un estado de ánimo depresivo y dificultades para dormir desde la muerte de su madre, hace un año. Ha notado un aumento en su dolor generalizado, especialmente en las articulaciones, lo que le dificulta realizar las tareas del hogar y pasar tiempo con sus nietos, lo que más disfruta. Se siente abrumada por el estrés de cuidar a sus nietos y manejar su hogar sola, y manifiesta problemas para manejar las demandas psicológicas de su nueva situación familiar. Le gustaría encontrar una forma de mejorar su calidad de vida y poder disfrutar más tiempo con sus seres queridos, y retomar sus actividades de ocio, como la jardinería, que siempre le ha apasionado.\"\n    }\n  ]\n}"
+        },
+        "pairedItem": {
+          "item": 2
+        }
+      },
+      {
+        "json": {
+          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 35 años, ex deportista de alto nivel, acude a consulta por dolor crónico en las articulaciones que le limita para realizar actividades físicas, tiene miedo a empeorar el dolor si vuelve a practicar deporte, presenta pensamientos catastrofistas sobre su capacidad para realizar actividades que requieren esfuerzo físico, como subir escaleras o caminar largas distancias. Refiere dificultad para realizar actividades de ocio como ir al cine o salir con amigos debido a la fatiga y el dolor crónico.\"\n    },\n    {\n      \"clinical_text\": \"Mujer de 50 años, con antecedentes de lesiones musculoesqueléticas, acude a consulta por dolor persistente en la región lumbar que le impide realizar actividades que requieren esfuerzo físico, como levantar objetos pesados o realizar tareas domésticas, también presenta dificultad para realizar actividades de ocio como bailar o practicar yoga, debido a la falta de tolerancia al ejercicio y la disminución de la fuerza muscular.\"\n    },\n    {\n      \"clinical_text\": \"Varón de 28 años, con historial de lesiones deportivas, acude a consulta por dolor crónico en las extremidades que le limita para realizar actividades físicas intensas, presenta pensamientos de evitación hacia el ejercicio físico debido al miedo a empeorar el dolor, también refiere dificultad para realizar actividades de ocio como jugar con sus hijos o practicar deportes de equipo, debido a la falta de resistencia y la disminución de la fuerza muscular, lo que le genera sentimientos de frustración y ansiedad.\"\n    }\n  ]\n}"
+        },
+        "pairedItem": {
+          "item": 3
+        }
+      },
+      {
+        "json": {
+          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 50 años acude a consulta refiriendo dolor crónico generalizado que le impide realizar las tareas domésticas con la misma facilidad que antes, sobre todo debido a la dificultad para caminar durante largos periodos. La paciente menciona que 'le duele mucho' cuando intenta hacer las compras o andar al parque con su familia. Le preocupa no poder mantener su casa limpia y organizada como siempre ha hecho.\"\n    },\n    {\n      \"clinical_text\": \"Varón de 35 años, después de varios años de dolor crónico, se siente limitado en sus actividades diarias, especialmente al realizar quehaceres de la casa y al caminar. Comenta que siente un dolor constante que le hace difícil levantar objetos pesados, lo que le impide ayudar en las tareas del hogar como antes. Le gustaría poder retomar sus actividades cotidianas sin sentir dolor.\"\n    },\n    {\n      \"clinical_text\": \"Mujer de 60 años acude a consulta por dolor crónico que le afecta significativamente su capacidad para realizar las tareas domésticas y caminar sin dificultad. Refiere que 'no puede hacer nada' sin sentir dolor, lo que la ha llevado a depender de su familia para realizar las compras y los quehaceres de la casa. Le preocupa perder su independencia y no poder disfrutar de su tiempo libre como solía hacer.\"\n    }\n  ]\n}"
+        },
+        "pairedItem": {
+          "item": 4
+        }
+      },
+      {
+        "json": {
+          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 35 años con antecedentes de dolor crónico generalizado, presenta dificultades para realizar actividades cotidianas como levantar y llevar objetos debido a la intensidad del dolor. Esto ha afectado su relación con su pareja, ya que siente que no puede realizar actividades juntos como antes, y también ha limitado su participación en eventos sociales con su familia. Le gustaría encontrar una manera de manejar su dolor para mejorar su calidad de vida y relaciones interpersonales.\"\n    },\n    {\n      \"clinical_text\": \"Mujer de 50 años que acude a consulta por dolor persistente que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. La dificultad para levantar y llevar objetos la ha obligado a depender más de su pareja y familiares, lo que ha generado tensiones en sus relaciones. Además, el dolor le ha impedido disfrutar de actividades de ocio como la pintura y la lectura, que eran fundamentales para su bienestar emocional. Busca una solución para su dolor y recuperar su independencia.\"\n    },\n    {\n      \"clinical_text\": \"Varón de 28 años que se queja de dolor crónico generalizado que le impide realizar actividades físicas con su pareja y amigos. La dificultad para levantar y llevar objetos le ha limitado su capacidad para participar en deportes y actividades al aire libre, lo que ha afectado su relación con su pareja y su autoestima. Además, el dolor ha interferido con su capacidad para disfrutar de su tiempo libre y ocio, lo que ha generado sentimientos de frustración y aislamiento. Desea encontrar una forma de manejar su dolor y recuperar su calidad de vida.\"\n    }\n  ]\n}"
+        },
+        "pairedItem": {
+          "item": 5
+        }
+      }
     ]
   },
   "connections": {
-    "When clicking ‘Execute workflow’": {
-      "main": [
-        [
-          {
-            "node": "Code in JavaScript",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Loop Over Items": {
       "main": [
         [
@@ -349,6 +1325,298 @@
           }
         ]
       ]
+    },
+    "On form submission": {
+      "main": [
+        []
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Ollama1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "Vector Store Retriever": {
+      "ai_retriever": [
+        [
+          {
+            "node": "con puenteo de formato",
+            "type": "ai_retriever",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Ollama": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Retriever",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [
+          {
+            "node": "con puenteo de formato",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        []
+      ]
+    },
+    "On form submission1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "parsea respuesta LLM": {
+      "main": [
+        []
+      ]
+    },
+    "Parsear JSON del LLM y añade variables inicio": {
+      "main": [
+        [
+          {
+            "node": "Convert to File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "con puenteo de formato": {
+      "main": [
+        [
+          {
+            "node": "Parsear JSON del LLM y añade variables inicio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Model": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "con puenteo de formato",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Ollama2": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store2",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Retriever1": {
+      "ai_retriever": [
+        [
+          {
+            "node": "con puenteo de formato1",
+            "type": "ai_retriever",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store2": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Retriever1",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me2": {
+      "main": [
+        [
+          {
+            "node": "loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "con puenteo de formato1": {
+      "main": [
+        [
+          {
+            "node": "from_llm_to_json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "con puenteo de formato1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission3": {
+      "main": [
+        [
+          {
+            "node": "doc_to_json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "quita el id del json": {
+      "main": [
+        [
+          {
+            "node": "con puenteo de formato1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "doc_to_json": {
+      "main": [
+        [
+          {
+            "node": "loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "from_llm_to_json": {
+      "main": [
+        [
+          {
+            "node": "Convert to File2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "loop": {
+      "main": [
+        [
+          {
+            "node": "quita el id del json",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -357,7 +1625,7 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "7019b06c-f465-48ac-9f3b-1d89929e3187",
+  "versionId": "7f74a9ab-5169-4f4d-a8a5-7154bd06b5bf",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "44fbf0ed6965a74a09769e18b367d9a9eaef6bc57579db2e8bdb7023c84df464"

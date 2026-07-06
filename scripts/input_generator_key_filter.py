@@ -3,7 +3,7 @@ import os
 
 json_to_be_filtered_path = 'data/raw_id_cif/input_of_generator_extra_info.json'
 filtered_json_path = 'data/raw_id_cif/input_of_generator_id_icf.json'
-key_1 = 'id'
+key_1 = 'id_code_combination'
 key_2 = 'icf_code'
 
 def filter_json_keys(json_to_be_filtered_path,filtered_json_path,key_1,key_2):
@@ -29,6 +29,6 @@ def filter_json_keys(json_to_be_filtered_path,filtered_json_path,key_1,key_2):
 
     return len(filtered_list_of_objects) 
 
-filtered_count = filter_json_keys(json_to_be_filtered_path, filtered_json_path, 'id', 'icf_code')
-print(f"Process complete: Successfully extracted {filtered_count} objects with keys ('id' and 'icf_code') to {filtered_json_path}")
+filtered_count = filter_json_keys(json_to_be_filtered_path, filtered_json_path, 'id_code_combination', 'icf_code')
+print(f"Process complete: Successfully extracted {filtered_count} objects with keys ('id_code_combination' and 'icf_code') to {filtered_json_path}")
     
