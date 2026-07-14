@@ -1,0 +1,1317 @@
+{
+  "name": "codifier_workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "0cad69b3-8e1d-4240-8baa-35197263618a",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        208,
+        0
+      ],
+      "id": "e4780745-3599-4fbc-af96-cc25d7487982",
+      "name": "Qdrant Vector Store",
+      "credentials": {
+        "qdrantApi": {
+          "id": "Se6dS4EqhF06aYMR",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "nomic-embed-text:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        144,
+        208
+      ],
+      "id": "7f98cf87-2bfc-4293-bc0a-bf4dbd5b7e7e",
+      "name": "Embeddings Ollama",
+      "alwaysOutputData": false,
+      "executeOnce": false,
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "formTitle": "documento_raw",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "documento_a_vectorizar",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        -80,
+        0
+      ],
+      "id": "627f1b80-3e43-4dfa-9075-15873cd1c281",
+      "name": "On form submission",
+      "webhookId": "179fef4e-69e0-4499-ba0e-e6a540e8634d"
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        368,
+        208
+      ],
+      "id": "89966acc-7361-4c1c-b554-5620a53ad45d",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "topK": 3
+      },
+      "type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+      "typeVersion": 1,
+      "position": [
+        272,
+        672
+      ],
+      "id": "24c3d468-ff3d-4869-8672-59b44e961265",
+      "name": "Vector Store Retriever1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Given the following text fragment and the list of codes retrieved from the knowledge base, assign the most appropriate code(s) to the text. \nReturn only the code(s) and a brief justification.\n\nText: {{ $json.json_extraido[0].data[0].Historia_Clinica }}\nRetrieved codes: {context}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+      "typeVersion": 1.7,
+      "position": [
+        128,
+        464
+      ],
+      "id": "17e334dd-b5c9-4ce4-a97e-ad41739fe12d",
+      "name": "Question and Answer Chain1",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "0cad69b3-8e1d-4240-8baa-35197263618a",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        192,
+        864
+      ],
+      "id": "6c95357a-7bcf-46f3-9fbd-ab815f8121cb",
+      "name": "Qdrant Vector Store3",
+      "credentials": {
+        "qdrantApi": {
+          "id": "Se6dS4EqhF06aYMR",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "nomic-embed-text:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        192,
+        1008
+      ],
+      "id": "b16303ed-f9ee-477e-9584-598cb79bd6f5",
+      "name": "Embeddings Ollama3",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "formTitle": "historia_del_paciente",
+        "formDescription": "Este formulario será el punto de entrada de la historia del paciente.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "documento_HC",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        -320,
+        464
+      ],
+      "id": "022b5843-9f59-4ecb-9d4c-69d36b1a90ba",
+      "name": "On form submission1",
+      "webhookId": "578a1b81-4066-47a3-bb70-174ab218b36b",
+      "alwaysOutputData": false,
+      "executeOnce": false,
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "operation": "fromJson",
+        "binaryPropertyName": "documento_HC",
+        "destinationKey": "json_extraido",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1.1,
+      "position": [
+        -96,
+        464
+      ],
+      "id": "4cfdaed0-5791-470e-8bf5-414167c685b4",
+      "name": "Extract from File1"
+    },
+    {
+      "parameters": {
+        "content": "# From PDF_toRAG",
+        "height": 432,
+        "width": 896
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -288,
+        -96
+      ],
+      "typeVersion": 1,
+      "id": "45f99d6b-54ca-4dc0-bbed-66c2d0a67676",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Codifier 1.0\n",
+        "height": 784,
+        "width": 1312
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -560,
+        368
+      ],
+      "typeVersion": 1,
+      "id": "af13ff7d-8b83-49ab-b2b9-7fba44f7841b",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3-flash-preview",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -48,
+        672
+      ],
+      "id": "e484fcd3-653a-47c8-87fe-8274386fd0d4",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "uABaKCsWpWbwox3j",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "gemma4:e2b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmOllama",
+      "typeVersion": 1,
+      "position": [
+        112,
+        672
+      ],
+      "id": "82cf42d3-fc39-42cc-b9af-11e7123c373a",
+      "name": "Ollama Model",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Codifier 2.0\n - \n",
+        "height": 912,
+        "width": 2224
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -544,
+        1280
+      ],
+      "typeVersion": 1,
+      "id": "229d4fbe-fcc8-43a9-99ec-8cca7ca14f26",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "formTitle": "historia_del_paciente",
+        "formDescription": "Este formulario será el punto de entrada de la historia del paciente.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "documento_HC",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        -480,
+        1488
+      ],
+      "id": "85961fba-4777-40fe-9c32-83c4a4b514f2",
+      "name": "On form submission2",
+      "webhookId": "993fd058-62b9-46bc-8439-8a638a8c7f31",
+      "alwaysOutputData": false,
+      "executeOnce": false,
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "jsCode": "const crypto = require('crypto'); \n\nconst inputItem = $input.first();\n\nif (!inputItem?.binary){throw new Error (\"No se encontraron datos binarios en la entrada del nodo.\");\n                       }\nconst [binaryKey] = Object.keys(inputItem.binary);\n\nif (!binaryKey) {throw new Error (\"El objeto binario está vacío o mal estructurado.\");\n                }\n\nlet parsedData;\n\ntry {\n  const binaryBuffer = await this.helpers.getBinaryDataBuffer(0,binaryKey);\n  const rawString = binaryBuffer.toString('utf-8');\n  parsedData = JSON.parse(rawString)\n} catch (error) { throw new Error (`Fallo al parsear el archivo binario a JSON: ${error.message}`);\n        }\n\nconst itemsToProcess = Array.isArray(parsedData) ? parsedData : [parsedData];\n\nreturn itemsToProcess.flatMap(item =>\n  (item.clinical_object || []).map((co, i) => ({\n    json: {\n      id_code_combination: item.id_code_combination,\n      icf_codes: item.icf_codes,\n      icf_names: item.icf_names,\n      id_clinical_text: co.id_clinical_text,\n      uuid_clinical_text: crypto.randomUUID(),\n      clinical_text: co.clinical_text,\n    }\n  }))\n);\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -304,
+        1488
+      ],
+      "id": "91ca54e3-e49f-4b5d-880d-ae231eb6b013",
+      "name": "binary_json_parser"
+    },
+    {
+      "parameters": {
+        "batchSize": 100,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -96,
+        1488
+      ],
+      "id": "f1d10591-9261-4cfc-90e5-101b41d5161c",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me",
+      "typeVersion": 1,
+      "position": [
+        224,
+        1600
+      ],
+      "id": "047b02d6-653c-42ac-864f-815f6813f0bb"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        432,
+        1904
+      ],
+      "id": "f1712942-5ed2-4aad-ac09-ba792b99489c",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "JEETsbvwfH5JUXdD",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "embeddinggemma:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        608,
+        1936
+      ],
+      "id": "9d04905a-132e-4fab-8497-befddbe77a7e",
+      "name": "Embeddings Ollama2",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "28851843-597c-4fc6-b7ce-3f375d55dc76",
+          "mode": "list",
+          "cachedResultName": "28851843-597c-4fc6-b7ce-3f375d55dc76"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        608,
+        1792
+      ],
+      "id": "4d644ce5-d7d2-40f4-b6e0-8223b28116dc",
+      "name": "Qdrant Vector Store2",
+      "credentials": {
+        "qdrantApi": {
+          "id": "Se6dS4EqhF06aYMR",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Rol: Eres un médico rehabilitador. Tienes las historias clínicas de tus pacientes y tienes que codificarla según los estándares de la Clasificación Internacional del Funcionamiento (CIF). Basándote en el Core Set de la CIF para el Dolor Crónico Generalizado (Chronic Widespread Pain), debes tener en cuenta las deficiencias de tu paciente para asociarlas a un código.\n\nTarea: Tu tarea es extraer los códigos CIF a partir de las historias clínicas proporcionadas en la sección <INPUT_ACTUAL>.\n\nReglas críticas:\n1. Formato JSON: responde ÚNICAMENTE con un objeto JSON válido, sin bloques de código Markdown ni texto introductorio.\n2. Coherencia clínica: Revisa que no haya más códigos que los que codifiquen la información de la historia clínica proporcionada.\n\n<EJEMPLO>\nInput:\n{\n  \n\"clinical_text\": \n\"Paciente de 30 años acude a consulta refiriendo una disminución significativa en su energía y motivación para realizar actividades cotidianas, acompañada de una alteración en su patrón de sueño que le impide descansar adecuadamente. Además, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor crónico que experimenta. Está tomando medicación para ayudar a regular su sueño, pero siente que esto no está mejorando su capacidad para afrontar desafíos diarios de manera efectiva.\"\n  \n}\n\nOutput:\n\n{\n    \"predicted_icf_codes\": [\n      \"b130\",\n      \"b134\",\n      \"b175\",\n      \"b280\",\n      \"e1101\"\n    ],\n}\n\n</EJEMPLO>\n\n<INPUT_ACTUAL>\n{{JSON.stringify($json)}}\n\n</INPUT_ACTUAL>",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+      "typeVersion": 1.7,
+      "position": [
+        464,
+        1440
+      ],
+      "id": "546ae573-ce94-47e2-a3ed-4239f97d0ca0",
+      "name": "con puenteo de formato1"
+    },
+    {
+      "parameters": {
+        "model": "gemma2:latest",
+        "options": {
+          "temperature": 0,
+          "format": "json"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmOllama",
+      "typeVersion": 1,
+      "position": [
+        432,
+        2048
+      ],
+      "id": "d1a25f79-597b-4cb5-884b-06df7ce536d8",
+      "name": "Ollama Model1",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-8b-instant",
+        "options": {
+          "temperature": 0
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        432,
+        1776
+      ],
+      "id": "294b154f-ae58-4004-b4be-8687011c9d94",
+      "name": "Groq Chat Model1",
+      "retryOnFail": true,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "groqApi": {
+          "id": "80bZ0I6b53xGQCHD",
+          "name": "Groq account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const textExtractor = (json) => {\n    return json.response ||\n           json.choices?.[0]?.message?.content ||\n           json.output ||\n           json.message;\n};\n\nconst cleanMarkdownJSON = (text) => {\n    const match = text.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/);\n    return match ? match[1] : text;\n};\n\nconst llmDataParser = (rawText, index) => {\n    const cleanText = cleanMarkdownJSON(rawText);\n    try {\n        return JSON.parse(cleanText.trim());\n    } catch (error) {\n        throw new Error(`Invalid JSON in iteration ${index}. Text: ${cleanText}`);\n    }\n};\n\nconst formatPredictedCodes = (parsedData) => {\n    const predictedCodes = parsedData.clinical_object || parsedData.historias_clinicas || parsedData;\n    if (!Array.isArray(predictedCodes)) return predictedCodes;\n    \n    return predictedCodes.map(story => story.predicted_icf_codes || story);\n};\n\nconst originalData = $('binary_json_parser').all();\nconst llm_output = $input.all();\n\nconst structuredCodifiedJson = llm_output.map((item, index) => {\n    const rawText = textExtractor(item.json);\n\n    if (!rawText) {\n        throw new Error(`There's no text variable in item ${index}.`);\n    }\n\n    const parsedLlmData = llmDataParser(rawText, index);\n    const extracted_codes = formatPredictedCodes(parsedLlmData);\n    const originalDataConnection = originalData[index].json;\n\n    return {\n        json: {\n            id_code_combination: originalDataConnection.id_code_combination,\n            icf_codes: originalDataConnection.icf_codes,\n            icf_names: originalDataConnection.icf_names,\n            predicted_icf_codes: extracted_codes,\n            id_clinical_text: originalDataConnection.id_clinical_text,\n            clinical_text: originalDataConnection.clinical_text\n        }\n    };\n});\n\nreturn structuredCodifiedJson;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        1440
+      ],
+      "id": "38dfe798-556e-4654-85f3-a04fb9f3064f",
+      "name": "from_llm_to_json"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+      "typeVersion": 1,
+      "position": [
+        704,
+        1632
+      ],
+      "id": "839403df-8011-467c-8401-b3e71e941647",
+      "name": "Vector Store Retriever"
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "options": {
+          "format": true,
+          "fileName": "pacientes_silico.json"
+        }
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        1024,
+        1440
+      ],
+      "id": "022c4921-ec4a-441f-aebd-48549d4425a1",
+      "name": "file_output"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Only the clinical_text for the LLM  \nfor (const item of $input.all()){\n    item.json = {\n    clinical_text: item.json.clinical_text,\n    }};\nreturn $input.all()\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        1456
+      ],
+      "id": "36ef566f-7e19-4779-98bc-7058325855c5",
+      "name": "clinical_text_extractor"
+    }
+  ],
+  "pinData": {
+    "On form submission2": [
+      {
+        "json": {
+          "documento_HC": [
+            {
+              "filename": "pacientes_silico.json",
+              "mimetype": "application/json",
+              "size": 13452
+            }
+          ],
+          "submittedAt": "2026-07-09T13:39:08.446-04:00",
+          "formMode": "test"
+        },
+        "binary": {
+          "documento_HC": {
+            "mimeType": "application/json",
+            "fileType": "json",
+            "fileExtension": "json",
+            "data": "filesystem-v2",
+            "fileName": "pacientes_silico.json",
+            "id": "filesystem-v2:workflows/Sz3ELEPQLBkjec2W/executions/temp/binary_data/7ea58eca-2bad-46e5-a3aa-2e2032b9479b",
+            "fileSize": "13.5 kB",
+            "bytes": 13452
+          }
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ],
+    "binary_json_parser": [
+      {
+        "json": {
+          "id_code_combination": "001",
+          "icf_codes": [
+            "b130",
+            "b134",
+            "b175",
+            "b280",
+            "e1101"
+          ],
+          "id_clinical_text": "001_1",
+          "uuid_clinical_text": "134008c3-dee5-45c4-a15b-0ebc20c4a2bc",
+          "clinical_text": "Paciente de 30 años acude a consulta refiriendo una disminución significativa en su energía y motivación para realizar actividades cotidianas, acompañada de una alteración en su patrón de sueño que le impide descansar adecuadamente. Además, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor crónico que experimenta. Está tomando medicación para ayudar a regular su sueño, pero siente que esto no está mejorando su capacidad para afrontar desafíos diarios de manera efectiva."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "001",
+          "icf_codes": [
+            "b130",
+            "b134",
+            "b175",
+            "b280",
+            "e1101"
+          ],
+          "id_clinical_text": "001_2",
+          "uuid_clinical_text": "52997e49-7d10-4b9f-81d4-d54d5029aefd",
+          "clinical_text": "Una mujer de 50 años se presenta con quejas de falta de energía y fatiga persistente, que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. También reporta problemas para conciliar el sueño y permanecer dormida durante la noche, lo que empeora su estado de ánimo y concentración. El dolor crónico que padece aumenta su frustración y sentimiento de abrumación, dificultando su capacidad para resolver problemas cotidianos. La medicación para el sueño le brinda algo de alivio, pero busca ayuda para mejorar su calidad de vida en general."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "001",
+          "icf_codes": [
+            "b130",
+            "b134",
+            "b175",
+            "b280",
+            "e1101"
+          ],
+          "id_clinical_text": "001_3",
+          "uuid_clinical_text": "c2b03b19-db16-4635-aff6-408400fe0422",
+          "clinical_text": "Varón de 45 años acude a la consulta debido a una disminución progresiva en su nivel de energía y motivación, que se ha visto acompañada de un patrón de sueño irregular y dificultades para resolver problemas y tomar decisiones de manera efectiva. El dolor crónico que experimenta es un factor importante que contribuye a su estado de malestar general. Aunque ha iniciado tratamiento con medicación para regular su sueño, busca apoyo para superar los desafíos que enfrenta en su vida diaria y mejorar su capacidad para manejar el dolor y otros síntomas que lo aquejan."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "002",
+          "icf_codes": [
+            "b152",
+            "b1602",
+            "b280",
+            "d240",
+            "d850",
+            "e570"
+          ],
+          "id_clinical_text": "002_1",
+          "uuid_clinical_text": "ef8a1f21-22df-4628-b497-fdbd66234814",
+          "clinical_text": "Paciente de 35 años con antecedentes de depresión, refiere sentir una persistente sensación de tristeza y dolor crónico generalizado, que le dificulta mantener su empleo como contadora. La paciente menciona que 'su mente está llena de pensamientos negativos', lo que le impide manejar el estrés laboral y le causa problemas para dormir. Expresa su deseo de encontrar un trabajo que se adapte a sus necesidades y pueda acceder a servicios de seguridad social que la apoyen en su situación actual."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "002",
+          "icf_codes": [
+            "b152",
+            "b1602",
+            "b280",
+            "d240",
+            "d850",
+            "e570"
+          ],
+          "id_clinical_text": "002_2",
+          "uuid_clinical_text": "b3efc729-155c-47e1-aa22-a7d1464b7b30",
+          "clinical_text": "Varón de 42 años, trabajador autónomo, acude a consulta por dolor crónico y problemas para mantener su negocio debido a la dificultad para manejar el estrés y la ansiedad. Refiere que 'su mente es un torbellino de ideas negativas' que le impiden tomar decisiones claras y efectivas en su trabajo. Busca encontrar estrategias para manejar su estrés y dolor, y así poder mantener su empleo remunerado y acceder a los servicios de seguridad social que lo ayuden a superar esta situación."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "002",
+          "icf_codes": [
+            "b152",
+            "b1602",
+            "b280",
+            "d240",
+            "d850",
+            "e570"
+          ],
+          "id_clinical_text": "002_3",
+          "uuid_clinical_text": "cfb8d518-01dd-4c7a-b43c-c9334e3d3640",
+          "clinical_text": "Mujer de 50 años, empleada en una empresa de servicios, presenta dolor crónico generalizado y problemas emocionales, incluyendo pensamientos recurrentes de ansiedad y depresión. La paciente expresa que 'le cuesta mucho trabajo' manejar las demandas psicológicas de su empleo y que el dolor crónico la limita en su capacidad para realizar tareas laborales y acceder a los servicios de seguridad social que necesita. Su deseo es encontrar un equilibrio entre su salud y su empleo remunerado."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "003",
+          "icf_codes": [
+            "b134",
+            "b152",
+            "b280",
+            "d240",
+            "d640",
+            "d760",
+            "d920",
+            "e310",
+            "e410"
+          ],
+          "id_clinical_text": "003_1",
+          "uuid_clinical_text": "1d83d73d-ddfc-473c-8a4b-4a8332efa63d",
+          "clinical_text": "Paciente de 35 años, madre de dos hijos, acude a consulta refiriendo dificultades para dormir y un estado de ánimo bajo desde hace varios meses. Manifiesta sentir dolor generalizado en su cuerpo, especialmente en las mañanas, lo que le dificulta realizar las tareas domésticas y cuidar a sus hijos. Además, se siente abrumada por el estrés diario y tiene problemas para manejar las demandas psicológicas de su entorno. Le gustaría encontrar una forma de mejorar su calidad de sueño y reducir su dolor para poder disfrutar más tiempo con su familia y retomar sus actividades de ocio, como la pintura, que tanto le aprecia."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "003",
+          "icf_codes": [
+            "b134",
+            "b152",
+            "b280",
+            "d240",
+            "d640",
+            "d760",
+            "d920",
+            "e310",
+            "e410"
+          ],
+          "id_clinical_text": "003_2",
+          "uuid_clinical_text": "5c7f8884-03f4-428a-9e94-dd04a9114467",
+          "clinical_text": "Varón de 42 años, casado, acude a consulta por problemas de dolor crónico que le impiden realizar sus tareas domésticas con la misma eficiencia que antes. Se siente estresado por no poder cumplir con sus responsabilidades familiares y manifiesta dificultades para manejar el estrés y las demandas psicológicas de su trabajo y su vida familiar. Además, refiere problemas para conciliar el sueño y se encuentra en un estado de ánimo bajo la mayor parte del tiempo. Le preocupa cómo afectará su situación a sus relaciones familiares y su capacidad para disfrutar de actividades de ocio con su esposa, como el senderismo, que siempre han disfrutado juntos."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "003",
+          "icf_codes": [
+            "b134",
+            "b152",
+            "b280",
+            "d240",
+            "d640",
+            "d760",
+            "d920",
+            "e310",
+            "e410"
+          ],
+          "id_clinical_text": "003_3",
+          "uuid_clinical_text": "7c6d35af-bcd2-41c9-b39e-2c3bd841f5c1",
+          "clinical_text": "Mujer de 50 años, divorciada, acude a consulta refiriendo un estado de ánimo depresivo y dificultades para dormir desde la muerte de su madre, hace un año. Ha notado un aumento en su dolor generalizado, especialmente en las articulaciones, lo que le dificulta realizar las tareas del hogar y pasar tiempo con sus nietos, lo que más disfruta. Se siente abrumada por el estrés de cuidar a sus nietos y manejar su hogar sola, y manifiesta problemas para manejar las demandas psicológicas de su nueva situación familiar. Le gustaría encontrar una forma de mejorar su calidad de vida y poder disfrutar más tiempo con sus seres queridos, y retomar sus actividades de ocio, como la jardinería, que siempre le ha apasionado."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "004",
+          "icf_codes": [
+            "b1602",
+            "b280",
+            "b455",
+            "b730",
+            "d920"
+          ],
+          "id_clinical_text": "004_1",
+          "uuid_clinical_text": "61625578-5259-4a97-9cd0-7ae71e219b17",
+          "clinical_text": "Paciente de 35 años, ex deportista de alto nivel, acude a consulta por dolor crónico en las articulaciones que le limita para realizar actividades físicas, tiene miedo a empeorar el dolor si vuelve a practicar deporte, presenta pensamientos catastrofistas sobre su capacidad para realizar actividades que requieren esfuerzo físico, como subir escaleras o caminar largas distancias. Refiere dificultad para realizar actividades de ocio como ir al cine o salir con amigos debido a la fatiga y el dolor crónico."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "004",
+          "icf_codes": [
+            "b1602",
+            "b280",
+            "b455",
+            "b730",
+            "d920"
+          ],
+          "id_clinical_text": "004_2",
+          "uuid_clinical_text": "431b016b-0ac3-4d12-a9ae-b80212990a4d",
+          "clinical_text": "Mujer de 50 años, con antecedentes de lesiones musculoesqueléticas, acude a consulta por dolor persistente en la región lumbar que le impide realizar actividades que requieren esfuerzo físico, como levantar objetos pesados o realizar tareas domésticas, también presenta dificultad para realizar actividades de ocio como bailar o practicar yoga, debido a la falta de tolerancia al ejercicio y la disminución de la fuerza muscular."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "004",
+          "icf_codes": [
+            "b1602",
+            "b280",
+            "b455",
+            "b730",
+            "d920"
+          ],
+          "id_clinical_text": "004_3",
+          "uuid_clinical_text": "e83c3003-11f0-4d8d-ac31-c4a7f9101ce1",
+          "clinical_text": "Varón de 28 años, con historial de lesiones deportivas, acude a consulta por dolor crónico en las extremidades que le limita para realizar actividades físicas intensas, presenta pensamientos de evitación hacia el ejercicio físico debido al miedo a empeorar el dolor, también refiere dificultad para realizar actividades de ocio como jugar con sus hijos o practicar deportes de equipo, debido a la falta de resistencia y la disminución de la fuerza muscular, lo que le genera sentimientos de frustración y ansiedad."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "005",
+          "icf_codes": [
+            "b280",
+            "d230",
+            "d450",
+            "d640"
+          ],
+          "id_clinical_text": "005_1",
+          "uuid_clinical_text": "f51f9eec-89bf-48c8-931a-911f0758966d",
+          "clinical_text": "Paciente de 50 años acude a consulta refiriendo dolor crónico generalizado que le impide realizar las tareas domésticas con la misma facilidad que antes, sobre todo debido a la dificultad para caminar durante largos periodos. La paciente menciona que 'le duele mucho' cuando intenta hacer las compras o andar al parque con su familia. Le preocupa no poder mantener su casa limpia y organizada como siempre ha hecho."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "005",
+          "icf_codes": [
+            "b280",
+            "d230",
+            "d450",
+            "d640"
+          ],
+          "id_clinical_text": "005_2",
+          "uuid_clinical_text": "d2a5a1d7-ea00-42ef-b02b-8ebf27f7bae9",
+          "clinical_text": "Varón de 35 años, después de varios años de dolor crónico, se siente limitado en sus actividades diarias, especialmente al realizar quehaceres de la casa y al caminar. Comenta que siente un dolor constante que le hace difícil levantar objetos pesados, lo que le impide ayudar en las tareas del hogar como antes. Le gustaría poder retomar sus actividades cotidianas sin sentir dolor."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "005",
+          "icf_codes": [
+            "b280",
+            "d230",
+            "d450",
+            "d640"
+          ],
+          "id_clinical_text": "005_3",
+          "uuid_clinical_text": "1f99f3c2-6f2b-49fc-b0fd-b77cc48f5064",
+          "clinical_text": "Mujer de 60 años acude a consulta por dolor crónico que le afecta significativamente su capacidad para realizar las tareas domésticas y caminar sin dificultad. Refiere que 'no puede hacer nada' sin sentir dolor, lo que la ha llevado a depender de su familia para realizar las compras y los quehaceres de la casa. Le preocupa perder su independencia y no poder disfrutar de su tiempo libre como solía hacer."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "006",
+          "icf_codes": [
+            "b280",
+            "d430",
+            "d760",
+            "d770",
+            "d920"
+          ],
+          "id_clinical_text": "006_1",
+          "uuid_clinical_text": "eca7431f-c6b0-4095-99c6-1e9d0ed15998",
+          "clinical_text": "Paciente de 35 años con antecedentes de dolor crónico generalizado, presenta dificultades para realizar actividades cotidianas como levantar y llevar objetos debido a la intensidad del dolor. Esto ha afectado su relación con su pareja, ya que siente que no puede realizar actividades juntos como antes, y también ha limitado su participación en eventos sociales con su familia. Le gustaría encontrar una manera de manejar su dolor para mejorar su calidad de vida y relaciones interpersonales."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "006",
+          "icf_codes": [
+            "b280",
+            "d430",
+            "d760",
+            "d770",
+            "d920"
+          ],
+          "id_clinical_text": "006_2",
+          "uuid_clinical_text": "af312f9d-ede2-45e7-ae4e-1e87e5025e22",
+          "clinical_text": "Mujer de 50 años que acude a consulta por dolor persistente que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. La dificultad para levantar y llevar objetos la ha obligado a depender más de su pareja y familiares, lo que ha generado tensiones en sus relaciones. Además, el dolor le ha impedido disfrutar de actividades de ocio como la pintura y la lectura, que eran fundamentales para su bienestar emocional. Busca una solución para su dolor y recuperar su independencia."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "006",
+          "icf_codes": [
+            "b280",
+            "d430",
+            "d760",
+            "d770",
+            "d920"
+          ],
+          "id_clinical_text": "006_3",
+          "uuid_clinical_text": "a271e46a-00ff-43f8-b35a-07acf4cf07af",
+          "clinical_text": "Varón de 28 años que se queja de dolor crónico generalizado que le impide realizar actividades físicas con su pareja y amigos. La dificultad para levantar y llevar objetos le ha limitado su capacidad para participar en deportes y actividades al aire libre, lo que ha afectado su relación con su pareja y su autoestima. Además, el dolor ha interferido con su capacidad para disfrutar de su tiempo libre y ocio, lo que ha generado sentimientos de frustración y aislamiento. Desea encontrar una forma de manejar su dolor y recuperar su calidad de vida."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ],
+    "clinical_text_extractor": [
+      {
+        "json": {
+          "clinical_text": "Paciente de 30 años acude a consulta refiriendo una disminución significativa en su energía y motivación para realizar actividades cotidianas, acompañada de una alteración en su patrón de sueño que le impide descansar adecuadamente. Además, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor crónico que experimenta. Está tomando medicación para ayudar a regular su sueño, pero siente que esto no está mejorando su capacidad para afrontar desafíos diarios de manera efectiva."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Una mujer de 50 años se presenta con quejas de falta de energía y fatiga persistente, que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. También reporta problemas para conciliar el sueño y permanecer dormida durante la noche, lo que empeora su estado de ánimo y concentración. El dolor crónico que padece aumenta su frustración y sentimiento de abrumación, dificultando su capacidad para resolver problemas cotidianos. La medicación para el sueño le brinda algo de alivio, pero busca ayuda para mejorar su calidad de vida en general."
+        },
+        "pairedItem": {
+          "item": 1
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Varón de 45 años acude a la consulta debido a una disminución progresiva en su nivel de energía y motivación, que se ha visto acompañada de un patrón de sueño irregular y dificultades para resolver problemas y tomar decisiones de manera efectiva. El dolor crónico que experimenta es un factor importante que contribuye a su estado de malestar general. Aunque ha iniciado tratamiento con medicación para regular su sueño, busca apoyo para superar los desafíos que enfrenta en su vida diaria y mejorar su capacidad para manejar el dolor y otros síntomas que lo aquejan."
+        },
+        "pairedItem": {
+          "item": 2
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Paciente de 35 años con antecedentes de depresión, refiere sentir una persistente sensación de tristeza y dolor crónico generalizado, que le dificulta mantener su empleo como contadora. La paciente menciona que 'su mente está llena de pensamientos negativos', lo que le impide manejar el estrés laboral y le causa problemas para dormir. Expresa su deseo de encontrar un trabajo que se adapte a sus necesidades y pueda acceder a servicios de seguridad social que la apoyen en su situación actual."
+        },
+        "pairedItem": {
+          "item": 3
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Varón de 42 años, trabajador autónomo, acude a consulta por dolor crónico y problemas para mantener su negocio debido a la dificultad para manejar el estrés y la ansiedad. Refiere que 'su mente es un torbellino de ideas negativas' que le impiden tomar decisiones claras y efectivas en su trabajo. Busca encontrar estrategias para manejar su estrés y dolor, y así poder mantener su empleo remunerado y acceder a los servicios de seguridad social que lo ayuden a superar esta situación."
+        },
+        "pairedItem": {
+          "item": 4
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Mujer de 50 años, empleada en una empresa de servicios, presenta dolor crónico generalizado y problemas emocionales, incluyendo pensamientos recurrentes de ansiedad y depresión. La paciente expresa que 'le cuesta mucho trabajo' manejar las demandas psicológicas de su empleo y que el dolor crónico la limita en su capacidad para realizar tareas laborales y acceder a los servicios de seguridad social que necesita. Su deseo es encontrar un equilibrio entre su salud y su empleo remunerado."
+        },
+        "pairedItem": {
+          "item": 5
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Paciente de 35 años, madre de dos hijos, acude a consulta refiriendo dificultades para dormir y un estado de ánimo bajo desde hace varios meses. Manifiesta sentir dolor generalizado en su cuerpo, especialmente en las mañanas, lo que le dificulta realizar las tareas domésticas y cuidar a sus hijos. Además, se siente abrumada por el estrés diario y tiene problemas para manejar las demandas psicológicas de su entorno. Le gustaría encontrar una forma de mejorar su calidad de sueño y reducir su dolor para poder disfrutar más tiempo con su familia y retomar sus actividades de ocio, como la pintura, que tanto le aprecia."
+        },
+        "pairedItem": {
+          "item": 6
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Varón de 42 años, casado, acude a consulta por problemas de dolor crónico que le impiden realizar sus tareas domésticas con la misma eficiencia que antes. Se siente estresado por no poder cumplir con sus responsabilidades familiares y manifiesta dificultades para manejar el estrés y las demandas psicológicas de su trabajo y su vida familiar. Además, refiere problemas para conciliar el sueño y se encuentra en un estado de ánimo bajo la mayor parte del tiempo. Le preocupa cómo afectará su situación a sus relaciones familiares y su capacidad para disfrutar de actividades de ocio con su esposa, como el senderismo, que siempre han disfrutado juntos."
+        },
+        "pairedItem": {
+          "item": 7
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Mujer de 50 años, divorciada, acude a consulta refiriendo un estado de ánimo depresivo y dificultades para dormir desde la muerte de su madre, hace un año. Ha notado un aumento en su dolor generalizado, especialmente en las articulaciones, lo que le dificulta realizar las tareas del hogar y pasar tiempo con sus nietos, lo que más disfruta. Se siente abrumada por el estrés de cuidar a sus nietos y manejar su hogar sola, y manifiesta problemas para manejar las demandas psicológicas de su nueva situación familiar. Le gustaría encontrar una forma de mejorar su calidad de vida y poder disfrutar más tiempo con sus seres queridos, y retomar sus actividades de ocio, como la jardinería, que siempre le ha apasionado."
+        },
+        "pairedItem": {
+          "item": 8
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Paciente de 35 años, ex deportista de alto nivel, acude a consulta por dolor crónico en las articulaciones que le limita para realizar actividades físicas, tiene miedo a empeorar el dolor si vuelve a practicar deporte, presenta pensamientos catastrofistas sobre su capacidad para realizar actividades que requieren esfuerzo físico, como subir escaleras o caminar largas distancias. Refiere dificultad para realizar actividades de ocio como ir al cine o salir con amigos debido a la fatiga y el dolor crónico."
+        },
+        "pairedItem": {
+          "item": 9
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Mujer de 50 años, con antecedentes de lesiones musculoesqueléticas, acude a consulta por dolor persistente en la región lumbar que le impide realizar actividades que requieren esfuerzo físico, como levantar objetos pesados o realizar tareas domésticas, también presenta dificultad para realizar actividades de ocio como bailar o practicar yoga, debido a la falta de tolerancia al ejercicio y la disminución de la fuerza muscular."
+        },
+        "pairedItem": {
+          "item": 10
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Varón de 28 años, con historial de lesiones deportivas, acude a consulta por dolor crónico en las extremidades que le limita para realizar actividades físicas intensas, presenta pensamientos de evitación hacia el ejercicio físico debido al miedo a empeorar el dolor, también refiere dificultad para realizar actividades de ocio como jugar con sus hijos o practicar deportes de equipo, debido a la falta de resistencia y la disminución de la fuerza muscular, lo que le genera sentimientos de frustración y ansiedad."
+        },
+        "pairedItem": {
+          "item": 11
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Paciente de 50 años acude a consulta refiriendo dolor crónico generalizado que le impide realizar las tareas domésticas con la misma facilidad que antes, sobre todo debido a la dificultad para caminar durante largos periodos. La paciente menciona que 'le duele mucho' cuando intenta hacer las compras o andar al parque con su familia. Le preocupa no poder mantener su casa limpia y organizada como siempre ha hecho."
+        },
+        "pairedItem": {
+          "item": 12
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Varón de 35 años, después de varios años de dolor crónico, se siente limitado en sus actividades diarias, especialmente al realizar quehaceres de la casa y al caminar. Comenta que siente un dolor constante que le hace difícil levantar objetos pesados, lo que le impide ayudar en las tareas del hogar como antes. Le gustaría poder retomar sus actividades cotidianas sin sentir dolor."
+        },
+        "pairedItem": {
+          "item": 13
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Mujer de 60 años acude a consulta por dolor crónico que le afecta significativamente su capacidad para realizar las tareas domésticas y caminar sin dificultad. Refiere que 'no puede hacer nada' sin sentir dolor, lo que la ha llevado a depender de su familia para realizar las compras y los quehaceres de la casa. Le preocupa perder su independencia y no poder disfrutar de su tiempo libre como solía hacer."
+        },
+        "pairedItem": {
+          "item": 14
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Paciente de 35 años con antecedentes de dolor crónico generalizado, presenta dificultades para realizar actividades cotidianas como levantar y llevar objetos debido a la intensidad del dolor. Esto ha afectado su relación con su pareja, ya que siente que no puede realizar actividades juntos como antes, y también ha limitado su participación en eventos sociales con su familia. Le gustaría encontrar una manera de manejar su dolor para mejorar su calidad de vida y relaciones interpersonales."
+        },
+        "pairedItem": {
+          "item": 15
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Mujer de 50 años que acude a consulta por dolor persistente que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. La dificultad para levantar y llevar objetos la ha obligado a depender más de su pareja y familiares, lo que ha generado tensiones en sus relaciones. Además, el dolor le ha impedido disfrutar de actividades de ocio como la pintura y la lectura, que eran fundamentales para su bienestar emocional. Busca una solución para su dolor y recuperar su independencia."
+        },
+        "pairedItem": {
+          "item": 16
+        }
+      },
+      {
+        "json": {
+          "clinical_text": "Varón de 28 años que se queja de dolor crónico generalizado que le impide realizar actividades físicas con su pareja y amigos. La dificultad para levantar y llevar objetos le ha limitado su capacidad para participar en deportes y actividades al aire libre, lo que ha afectado su relación con su pareja y su autoestima. Además, el dolor ha interferido con su capacidad para disfrutar de su tiempo libre y ocio, lo que ha generado sentimientos de frustración y aislamiento. Desea encontrar una forma de manejar su dolor y recuperar su calidad de vida."
+        },
+        "pairedItem": {
+          "item": 17
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Embeddings Ollama": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store": {
+      "main": [
+        []
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Retriever1": {
+      "ai_retriever": [
+        [
+          {
+            "node": "Question and Answer Chain1",
+            "type": "ai_retriever",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store3": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Retriever1",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Ollama3": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store3",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission1": {
+      "main": [
+        [
+          {
+            "node": "Extract from File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File1": {
+      "main": [
+        [
+          {
+            "node": "Question and Answer Chain1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Question and Answer Chain1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ollama Model": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "On form submission2": {
+      "main": [
+        [
+          {
+            "node": "binary_json_parser",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "binary_json_parser": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "clinical_text_extractor",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Ollama2": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store2",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store2": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Retriever",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "con puenteo de formato1": {
+      "main": [
+        [
+          {
+            "node": "from_llm_to_json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "con puenteo de formato1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Retriever": {
+      "ai_retriever": [
+        [
+          {
+            "node": "con puenteo de formato1",
+            "type": "ai_retriever",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "from_llm_to_json": {
+      "main": [
+        [
+          {
+            "node": "file_output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "clinical_text_extractor": {
+      "main": [
+        [
+          {
+            "node": "con puenteo de formato1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        []
+      ]
+    },
+    "Ollama Model1": {
+      "ai_languageModel": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "47f44cc5-3bb4-4e47-86b6-079279878f97",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "44fbf0ed6965a74a09769e18b367d9a9eaef6bc57579db2e8bdb7023c84df464"
+  },
+  "id": "Sz3ELEPQLBkjec2W",
+  "tags": [
+    {
+      "updatedAt": "2026-04-09T12:38:06.615Z",
+      "createdAt": "2026-04-09T12:38:06.615Z",
+      "id": "k1fBpOuJk1mN5dW2",
+      "name": "fromPDF_toRAG"
+    }
+  ]
+}

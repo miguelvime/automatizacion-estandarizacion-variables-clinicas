@@ -2,44 +2,44 @@
     {
         "id_code_combination": "001",
         "icf_code": ["b130","b134","b175","b280","e1101"],
-        "icf_name":["b130-Energy and drive functions", "b134-Sleep functions","b175-solving problems","b280-Sensación de dolor","e1101-Drugs"],
+        "icf_name":["b130-Funciones relacionadas con la energía y los impulsos","b134-Funciones del sueño","d175-Resolver problemas","b280-Sensación de dolor","e1101-Medicamentos"],
         "clinical_profile": "low energy, low sleep, cognitive, sleep medication"
     },
     {
         "id_code_combination": "002",
         "icf_code": ["b152","b1602","b280","d240","d850","e570"],
-        "icf_name":["b152-Emotional functions","b1602-Content of thought",
-        "b280-Sensación de dolor", "d240-Handling stress and other psychological demands",
-        "d850-Remunerative employment","e570-Social security services, systems and policies"],
+        "icf_name":["b152-Funciones emocionales","b1602-Contenido del pensamiento",
+        "b280-Sensación de dolor", "d240-Manejo del estrés y otras demandas psicológicas",
+        "d850-Trabajo remunerado","e570-Servicios, sistemas y politicas de seguridad social"],
         "clinical_profile": "emotional, pain, work, stress"
     },
     {
         "id_code_combination": "003",
         "icf_code": ["b134","b152","b280","d240","d640","d760","d920","e310","e410"],
-        "icf_name":["b134-Sleep functions","b152-Emotional functions","b280-Sensación de dolor",
-        "d240-Handling stress and other psychological demands","d640-Realizar los quehaceres de la casa", "d760-Relaciones Familiares",
+        "icf_name":["b134-Funciones del sueño","b152-Funciones emocionales","b280-Sensación de dolor",
+        "d240-Manejo del estrés y otras demandas psicológicas","d640-Realizar los quehaceres de la casa", "d760-Relaciones Familiares",
     "d920-Tiempo libre y ocio","e310-Immediate family","e410- Individual attitudes of immediate family members"],
         "clinical_profile": "family, housework, stress, emotional, sleep"
     },
     {
         "id_code_combination": "004",
         "icf_code":["b1602","b280","b455","b730","d920"],
-        "icf_name":["b1602-Content of thought","b280-Sensación de dolor","b455-Exercise tolerance functions",
-        "b730-Muscle power functions","d920-Tiempo libre y ocio"],
+        "icf_name":["b1602-Contenido del pensamiento","b280-Sensación de dolor","b455-Funciones relacionadas con la tolerancia al ejercicio",
+        "b730-Funciones relacionadas con la fuerza muscular","d920-Tiempo libre y ocio"],
         "clinical_profile":"exsport,fear of movement, hardness in endurance or power."
 
     },
     {
         "id_code_combination": "005",
         "icf_code":["b280","d230","d450", "d640"],
-        "icf_name": ["b280- Sensación de dolor", "d230-Llevar a cabo rutinas diarias",
+        "icf_name": ["b280-Sensación de dolor", "d230-Llevar a cabo rutinas diarias",
         "d430-Levantar y llevar objetos", "d450-Andar","d640-Realizar los quehaceres de la casa"],
         "clinical_profile": "housework, walk, free time"
     },
     {
         "id_code_combination": "006",
         "icf_code":["b280", "d430","d760","d770", "d920"],
-        "icf_name": ["b280- Sensación de dolor","d430-Levantar y llevar objetos",
+        "icf_name": ["b280-Sensación de dolor","d430-Levantar y llevar objetos",
         "d760-Relaciones Familiares", "d920-Tiempo libre y ocio"],
         "clinical_profile": "social"
     }
