@@ -1,0 +1,5 @@
+["b280-Sensación de dolor",
+"d230-Llevar a cabo rutinas diarias",
+"d430-Levantar y llevar objetos",
+"d450-Andar",
+"d640-Realizar los quehaceres de la casa"],

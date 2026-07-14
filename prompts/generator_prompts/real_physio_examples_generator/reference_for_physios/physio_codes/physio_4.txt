@@ -1,0 +1,5 @@
+["b1602-Contenido del pensamiento",
+"b280-Sensación de dolor",
+"b455-Funciones relacionadas con la tolerancia al ejercicio",
+"b730-Funciones relacionadas con la fuerza muscular",
+"d920-Tiempo libre y ocio"]

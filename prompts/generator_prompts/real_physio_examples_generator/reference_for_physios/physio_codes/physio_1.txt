@@ -1,0 +1,5 @@
+["b130-Funciones relacionadas con la energía y los impulsos",
+"b134-Funciones del sueño",
+"d175-Resolver problemas",
+"b280-Sensación de dolor",
+"e1101-Medicamentos"].

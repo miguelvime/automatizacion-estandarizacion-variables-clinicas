@@ -1,0 +1,6 @@
+["b152-Funciones emocionales",
+"b1602-Contenido del pensamiento",
+"b280-Sensación de dolor",
+"d240-Manejo del estrés y otras demandas psicológicas",
+"d850-Trabajo remunerado",
+"e570-Servicios, sistemas y politicas de seguridad social"],

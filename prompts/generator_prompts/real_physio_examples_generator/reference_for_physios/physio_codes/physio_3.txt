@@ -1,0 +1,10 @@
+["b134-Funciones del sueño",
+"b152-Funciones emocionales",
+"b280-Sensación de dolor",
+"d240-Manejo del estrés y otras demandas psicológicas",
+"d640-Realizar los quehaceres de la casa",
+"d760-Relaciones Familiares",
+"d920-Tiempo libre y ocio",
+"e310-Immediate family",
+"e410- Individual attitudes of immediate family members"],
+        
