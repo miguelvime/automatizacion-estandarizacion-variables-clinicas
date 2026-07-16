@@ -39,68 +39,73 @@
     },
     {
         "id_code_combination": "007",
-        "icf_code":[],
-        "icf_name":[]
+        "icf_code":["b134","b280","e1101"],
+        "icf_name":["b134-Funciones del sueño","b280-Sensación de dolor","e1101-Medicamentos"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "008",
+        "icf_code":["b280","b152","d920"],
+        "icf_name":["b280-Sensación de dolor","b152-Funciones emocionales","d920-Tiempo libre y ocio"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "009",
+        "icf_code":["b152","b1602"],
+        "icf_name":["b152-Funciones emocionales","b1602-Contenido del pensamiento"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "010",
+        "icf_code":["b280","d430"],
+        "icf_name":["b280-Sensación de dolor","d430-Levantar y llevar objetos"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "011",
+        "icf_code":["b280","d430"],
+        "icf_name":["b280-Sensación de dolor","d430-Levantar y llevar objetos"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "012",
+        "icf_code":["b280","e310","e410"],
+        "icf_name":["b280-Sensación de dolor","e310-Familiares cercanos","e410-Actitudes individuales de miembros de la familia cercana"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "013",
+        "icf_code":["b240","b280","d175","d230","d850"],
+        "icf_name":["b240-Manejo del estrés y otras demandas psicológicas","b280-Sensación de dolor","d175-Resolver problemas","d230-Llevar a cabo rutinas diarias",
+    "d850-Trabajo remunerado"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "014",
+        "icf_code":["b455","b730","b760","e355"],
+        "icf_name":["b455-Funciones relacionadas con la tolerancia al ejercicio","b730-Funciones relacionadas con la fuerza muscular",
+    "b760-Funciones relacionadas con el control de los movimientos voluntarios","e355-Profesionales de la salud"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "015",
+        "icf_code":["b280","d850","e355","e570","e1101"],
+        "icf_name":["b280-Sensación de dolor","d850-Trabajo remunerado","e355-Profesionales de la salud",
+    "d850-Trabajo remunerado","e1101-Medicamentos"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "016",
+        "icf_code":["b280","d450","d770"],
+        "icf_name":["b280-Sensación de dolor","d450-Andar","d770-Relaciones íntimas"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "017",
+        "icf_code":["b147","b280","b130"],
+        "icf_name":["b147-Funciones psicomotoras","b280-Sensación de dolor","b130-Funciones relacionadas con la energía y los impulsos"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "018",
+        "icf_code":["b280","d640","d760","d770"],
+        "icf_name":["b280-Sensación de dolor","d640-Realizar los quehaceres de la casa",
+    "d760-Relaciones Familiares","d770-Relaciones íntimas"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "019",
+        "icf_code":["b280","b1602","d175","d230","d240"],
+        "icf_name":["b280-Sensación de dolor","b1602-Contenido del pensamiento","d175-Resolver problemas",
+        "d230-Llevar a cabo rutinas diarias","d240-Manejo del estrés y otras demandas psicológicas"]
     },
     {
         "id_code_combination": "00",

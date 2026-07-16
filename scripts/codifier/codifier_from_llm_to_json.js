@@ -38,7 +38,7 @@ const structuredCodifiedJson = llm_output.map((item, index) => {
 
     const parsedLlmData = llmDataParser(rawText, index);
     const extracted_codes = formatPredictedCodes(parsedLlmData);
-    const originalDataConnection = originalData[index].json;
+    const originalDataConnection = originalData[$runIndex].json;
 
     return {
         json: {
