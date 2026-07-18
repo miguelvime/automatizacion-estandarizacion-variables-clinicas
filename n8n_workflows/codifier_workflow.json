@@ -4,11 +4,7 @@
     {
       "parameters": {
         "mode": "insert",
-        "qdrantCollection": {
-          "__rl": true,
-          "value": "0cad69b3-8e1d-4240-8baa-35197263618a",
-          "mode": "id"
-        },
+        "qdrantCollection": "icf_brief_spanish",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
@@ -115,11 +111,7 @@
     },
     {
       "parameters": {
-        "qdrantCollection": {
-          "__rl": true,
-          "value": "0cad69b3-8e1d-4240-8baa-35197263618a",
-          "mode": "id"
-        },
+        "qdrantCollection": "icf_brief_spanish",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
@@ -159,7 +151,7 @@
     {
       "parameters": {
         "formTitle": "historia_del_paciente",
-        "formDescription": "Este formulario será el punto de entrada de la historia del paciente.",
+        "formDescription": "Este formulario ser\u00e1 el punto de entrada de la historia del paciente.",
         "formFields": {
           "values": [
             {
@@ -287,7 +279,7 @@
     {
       "parameters": {
         "formTitle": "historia_del_paciente",
-        "formDescription": "Este formulario será el punto de entrada de la historia del paciente.",
+        "formDescription": "Este formulario ser\u00e1 el punto de entrada de la historia del paciente.",
         "formFields": {
           "values": [
             {
@@ -313,7 +305,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const crypto = require('crypto'); \n\nconst inputItem = $input.first();\n\nif (!inputItem?.binary){throw new Error (\"No se encontraron datos binarios en la entrada del nodo.\");\n                       }\nconst [binaryKey] = Object.keys(inputItem.binary);\n\nif (!binaryKey) {throw new Error (\"El objeto binario está vacío o mal estructurado.\");\n                }\n\nlet parsedData;\n\ntry {\n  const binaryBuffer = await this.helpers.getBinaryDataBuffer(0,binaryKey);\n  const rawString = binaryBuffer.toString('utf-8');\n  parsedData = JSON.parse(rawString)\n} catch (error) { throw new Error (`Fallo al parsear el archivo binario a JSON: ${error.message}`);\n        }\n\nconst itemsToProcess = Array.isArray(parsedData) ? parsedData : [parsedData];\n\nreturn itemsToProcess.flatMap(item =>\n  (item.clinical_object || []).map((co, i) => ({\n    json: {\n      id_code_combination: item.id_code_combination,\n      icf_codes: item.icf_codes,\n      icf_names: item.icf_names,\n      id_clinical_text: co.id_clinical_text,\n      uuid_clinical_text: crypto.randomUUID(),\n      clinical_text: co.clinical_text,\n    }\n  }))\n);\n"
+        "jsCode": "const crypto = require('crypto'); \n\nconst inputItem = $input.first();\n\nif (!inputItem?.binary){throw new Error (\"No se encontraron datos binarios en la entrada del nodo.\");\n                       }\nconst [binaryKey] = Object.keys(inputItem.binary);\n\nif (!binaryKey) {throw new Error (\"El objeto binario est\u00e1 vac\u00edo o mal estructurado.\");\n                }\n\nlet parsedData;\n\ntry {\n  const binaryBuffer = await this.helpers.getBinaryDataBuffer(0,binaryKey);\n  const rawString = binaryBuffer.toString('utf-8');\n  parsedData = JSON.parse(rawString)\n} catch (error) { throw new Error (`Fallo al parsear el archivo binario a JSON: ${error.message}`);\n        }\n\nconst itemsToProcess = Array.isArray(parsedData) ? parsedData : [parsedData];\n\nreturn itemsToProcess.flatMap(item =>\n  (item.clinical_object || []).map((co, i) => ({\n    json: {\n      id_code_combination: item.id_code_combination,\n      icf_codes: item.icf_codes,\n      icf_names: item.icf_names,\n      id_clinical_text: co.id_clinical_text,\n      uuid_clinical_text: crypto.randomUUID(),\n      clinical_text: co.clinical_text,\n    }\n  }))\n);\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -388,12 +380,7 @@
     },
     {
       "parameters": {
-        "qdrantCollection": {
-          "__rl": true,
-          "value": "28851843-597c-4fc6-b7ce-3f375d55dc76",
-          "mode": "list",
-          "cachedResultName": "28851843-597c-4fc6-b7ce-3f375d55dc76"
-        },
+        "qdrantCollection": "icf_brief_spanish",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
@@ -414,7 +401,7 @@
     {
       "parameters": {
         "promptType": "define",
-        "text": "=Rol: Eres un médico rehabilitador. Tienes las historias clínicas de tus pacientes y tienes que codificarla según los estándares de la Clasificación Internacional del Funcionamiento (CIF). Basándote en el Core Set de la CIF para el Dolor Crónico Generalizado (Chronic Widespread Pain), debes tener en cuenta las deficiencias de tu paciente para asociarlas a un código.\n\nTarea: Tu tarea es extraer los códigos CIF a partir de las historias clínicas proporcionadas en la sección <INPUT_ACTUAL>.\n\nReglas críticas:\n1. Formato JSON: responde ÚNICAMENTE con un objeto JSON válido, sin bloques de código Markdown ni texto introductorio.\n2. Coherencia clínica: Revisa que no haya más códigos que los que codifiquen la información de la historia clínica proporcionada.\n\n<EJEMPLO>\nInput:\n{\n  \n\"clinical_text\": \n\"Paciente de 30 años acude a consulta refiriendo una disminución significativa en su energía y motivación para realizar actividades cotidianas, acompañada de una alteración en su patrón de sueño que le impide descansar adecuadamente. Además, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor crónico que experimenta. Está tomando medicación para ayudar a regular su sueño, pero siente que esto no está mejorando su capacidad para afrontar desafíos diarios de manera efectiva.\"\n  \n}\n\nOutput:\n\n{\n    \"predicted_icf_codes\": [\n      \"b130\",\n      \"b134\",\n      \"b175\",\n      \"b280\",\n      \"e1101\"\n    ]\n}\n\n</EJEMPLO>\n\n<INPUT_ACTUAL>\n{{ $json.clinical_text }}\n\n</INPUT_ACTUAL>",
+        "text": "=Rol: Eres un m\u00e9dico rehabilitador. Tienes las historias cl\u00ednicas de tus pacientes y tienes que codificarla seg\u00fan los est\u00e1ndares de la Clasificaci\u00f3n Internacional del Funcionamiento (CIF). Bas\u00e1ndote en el Core Set de la CIF para el Dolor Cr\u00f3nico Generalizado (Chronic Widespread Pain), debes tener en cuenta las deficiencias de tu paciente para asociarlas a un c\u00f3digo.\n\nA continuaci\u00f3n tienes las descripciones de las categor\u00edas CIF recuperadas de la base de conocimiento, para ayudarte a identificar los c\u00f3digos correctos:\n{context}\n\nTarea: Tu tarea es extraer los c\u00f3digos CIF a partir de las historias cl\u00ednicas proporcionadas en la secci\u00f3n <INPUT_ACTUAL>.\n\nReglas cr\u00edticas:\n1. Formato JSON: responde \u00daNICAMENTE con un objeto JSON v\u00e1lido, sin bloques de c\u00f3digo Markdown ni texto introductorio.\n2. Coherencia cl\u00ednica: Revisa que no haya m\u00e1s c\u00f3digos que los que codifiquen la informaci\u00f3n de la historia cl\u00ednica proporcionada.\n\n<EJEMPLO>\nInput:\n{\n  \n\"clinical_text\": \n\"Paciente de 30 a\u00f1os acude a consulta refiriendo una disminuci\u00f3n significativa en su energ\u00eda y motivaci\u00f3n para realizar actividades cotidianas, acompa\u00f1ada de una alteraci\u00f3n en su patr\u00f3n de sue\u00f1o que le impide descansar adecuadamente. Adem\u00e1s, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor cr\u00f3nico que experimenta. Est\u00e1 tomando medicaci\u00f3n para ayudar a regular su sue\u00f1o, pero siente que esto no est\u00e1 mejorando su capacidad para afrontar desaf\u00edos diarios de manera efectiva.\"\n  \n}\n\nOutput:\n\n{\n    \"predicted_icf_codes\": [\n      \"b130\",\n      \"b134\",\n      \"b175\",\n      \"b280\",\n      \"e1101\"\n    ]\n}\n\n</EJEMPLO>\n\n<INPUT_ACTUAL>\n{{ $json.clinical_text }}\n\n</INPUT_ACTUAL>",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
@@ -544,7 +531,7 @@
     },
     {
       "parameters": {
-        "content": "# 1.0 -> 2.0\n- Evito que el llm lea los códigos\n- Estructuración de datos ocurre fuera del LLM\n- Añado bucle con wait para no llegar al límite de peticiones por minuto\n",
+        "content": "# 1.0 -> 2.0\n- Evito que el llm lea los c\u00f3digos\n- Estructuraci\u00f3n de datos ocurre fuera del LLM\n- A\u00f1ado bucle con wait para no llegar al l\u00edmite de peticiones por minuto\n",
         "height": 144,
         "width": 1312
       },
@@ -592,7 +579,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// 1. Recogemos los 10 ítems individuales que salen del bucle\nconst todosLosPacientes = $input.all().map(item => item.json);\n\n// 2. Lo convertimos a una cadena de texto JSON pura y formateada (array real)\nconst jsonPlano = JSON.stringify(todosLosPacientes, null, 2);\n\n// 3. Lo metemos en una única propiedad limpia para que el siguiente nodo lo lea\nreturn {\n  json: {\n    archivo_final: jsonPlano\n  }\n};"
+        "jsCode": "// 1. Recogemos los 10 \u00edtems individuales que salen del bucle\nconst todosLosPacientes = $input.all().map(item => item.json);\n\n// 2. Lo convertimos a una cadena de texto JSON pura y formateada (array real)\nconst jsonPlano = JSON.stringify(todosLosPacientes, null, 2);\n\n// 3. Lo metemos en una \u00fanica propiedad limpia para que el siguiente nodo lo lea\nreturn {\n  json: {\n    archivo_final: jsonPlano\n  }\n};"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -659,7 +646,7 @@
           ],
           "id_clinical_text": "001_1",
           "uuid_clinical_text": "134008c3-dee5-45c4-a15b-0ebc20c4a2bc",
-          "clinical_text": "Paciente de 30 años acude a consulta refiriendo una disminución significativa en su energía y motivación para realizar actividades cotidianas, acompañada de una alteración en su patrón de sueño que le impide descansar adecuadamente. Además, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor crónico que experimenta. Está tomando medicación para ayudar a regular su sueño, pero siente que esto no está mejorando su capacidad para afrontar desafíos diarios de manera efectiva."
+          "clinical_text": "Paciente de 30 a\u00f1os acude a consulta refiriendo una disminuci\u00f3n significativa en su energ\u00eda y motivaci\u00f3n para realizar actividades cotidianas, acompa\u00f1ada de una alteraci\u00f3n en su patr\u00f3n de sue\u00f1o que le impide descansar adecuadamente. Adem\u00e1s, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor cr\u00f3nico que experimenta. Est\u00e1 tomando medicaci\u00f3n para ayudar a regular su sue\u00f1o, pero siente que esto no est\u00e1 mejorando su capacidad para afrontar desaf\u00edos diarios de manera efectiva."
         },
         "pairedItem": {
           "item": 0
@@ -677,7 +664,7 @@
           ],
           "id_clinical_text": "001_2",
           "uuid_clinical_text": "52997e49-7d10-4b9f-81d4-d54d5029aefd",
-          "clinical_text": "Una mujer de 50 años se presenta con quejas de falta de energía y fatiga persistente, que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. También reporta problemas para conciliar el sueño y permanecer dormida durante la noche, lo que empeora su estado de ánimo y concentración. El dolor crónico que padece aumenta su frustración y sentimiento de abrumación, dificultando su capacidad para resolver problemas cotidianos. La medicación para el sueño le brinda algo de alivio, pero busca ayuda para mejorar su calidad de vida en general."
+          "clinical_text": "Una mujer de 50 a\u00f1os se presenta con quejas de falta de energ\u00eda y fatiga persistente, que afecta su capacidad para realizar tareas dom\u00e9sticas y cuidar de su familia. Tambi\u00e9n reporta problemas para conciliar el sue\u00f1o y permanecer dormida durante la noche, lo que empeora su estado de \u00e1nimo y concentraci\u00f3n. El dolor cr\u00f3nico que padece aumenta su frustraci\u00f3n y sentimiento de abrumaci\u00f3n, dificultando su capacidad para resolver problemas cotidianos. La medicaci\u00f3n para el sue\u00f1o le brinda algo de alivio, pero busca ayuda para mejorar su calidad de vida en general."
         },
         "pairedItem": {
           "item": 0
@@ -695,7 +682,7 @@
           ],
           "id_clinical_text": "001_3",
           "uuid_clinical_text": "c2b03b19-db16-4635-aff6-408400fe0422",
-          "clinical_text": "Varón de 45 años acude a la consulta debido a una disminución progresiva en su nivel de energía y motivación, que se ha visto acompañada de un patrón de sueño irregular y dificultades para resolver problemas y tomar decisiones de manera efectiva. El dolor crónico que experimenta es un factor importante que contribuye a su estado de malestar general. Aunque ha iniciado tratamiento con medicación para regular su sueño, busca apoyo para superar los desafíos que enfrenta en su vida diaria y mejorar su capacidad para manejar el dolor y otros síntomas que lo aquejan."
+          "clinical_text": "Var\u00f3n de 45 a\u00f1os acude a la consulta debido a una disminuci\u00f3n progresiva en su nivel de energ\u00eda y motivaci\u00f3n, que se ha visto acompa\u00f1ada de un patr\u00f3n de sue\u00f1o irregular y dificultades para resolver problemas y tomar decisiones de manera efectiva. El dolor cr\u00f3nico que experimenta es un factor importante que contribuye a su estado de malestar general. Aunque ha iniciado tratamiento con medicaci\u00f3n para regular su sue\u00f1o, busca apoyo para superar los desaf\u00edos que enfrenta en su vida diaria y mejorar su capacidad para manejar el dolor y otros s\u00edntomas que lo aquejan."
         },
         "pairedItem": {
           "item": 0
@@ -714,7 +701,7 @@
           ],
           "id_clinical_text": "002_1",
           "uuid_clinical_text": "ef8a1f21-22df-4628-b497-fdbd66234814",
-          "clinical_text": "Paciente de 35 años con antecedentes de depresión, refiere sentir una persistente sensación de tristeza y dolor crónico generalizado, que le dificulta mantener su empleo como contadora. La paciente menciona que 'su mente está llena de pensamientos negativos', lo que le impide manejar el estrés laboral y le causa problemas para dormir. Expresa su deseo de encontrar un trabajo que se adapte a sus necesidades y pueda acceder a servicios de seguridad social que la apoyen en su situación actual."
+          "clinical_text": "Paciente de 35 a\u00f1os con antecedentes de depresi\u00f3n, refiere sentir una persistente sensaci\u00f3n de tristeza y dolor cr\u00f3nico generalizado, que le dificulta mantener su empleo como contadora. La paciente menciona que 'su mente est\u00e1 llena de pensamientos negativos', lo que le impide manejar el estr\u00e9s laboral y le causa problemas para dormir. Expresa su deseo de encontrar un trabajo que se adapte a sus necesidades y pueda acceder a servicios de seguridad social que la apoyen en su situaci\u00f3n actual."
         },
         "pairedItem": {
           "item": 0
@@ -733,7 +720,7 @@
           ],
           "id_clinical_text": "002_2",
           "uuid_clinical_text": "b3efc729-155c-47e1-aa22-a7d1464b7b30",
-          "clinical_text": "Varón de 42 años, trabajador autónomo, acude a consulta por dolor crónico y problemas para mantener su negocio debido a la dificultad para manejar el estrés y la ansiedad. Refiere que 'su mente es un torbellino de ideas negativas' que le impiden tomar decisiones claras y efectivas en su trabajo. Busca encontrar estrategias para manejar su estrés y dolor, y así poder mantener su empleo remunerado y acceder a los servicios de seguridad social que lo ayuden a superar esta situación."
+          "clinical_text": "Var\u00f3n de 42 a\u00f1os, trabajador aut\u00f3nomo, acude a consulta por dolor cr\u00f3nico y problemas para mantener su negocio debido a la dificultad para manejar el estr\u00e9s y la ansiedad. Refiere que 'su mente es un torbellino de ideas negativas' que le impiden tomar decisiones claras y efectivas en su trabajo. Busca encontrar estrategias para manejar su estr\u00e9s y dolor, y as\u00ed poder mantener su empleo remunerado y acceder a los servicios de seguridad social que lo ayuden a superar esta situaci\u00f3n."
         },
         "pairedItem": {
           "item": 0
@@ -752,7 +739,7 @@
           ],
           "id_clinical_text": "002_3",
           "uuid_clinical_text": "cfb8d518-01dd-4c7a-b43c-c9334e3d3640",
-          "clinical_text": "Mujer de 50 años, empleada en una empresa de servicios, presenta dolor crónico generalizado y problemas emocionales, incluyendo pensamientos recurrentes de ansiedad y depresión. La paciente expresa que 'le cuesta mucho trabajo' manejar las demandas psicológicas de su empleo y que el dolor crónico la limita en su capacidad para realizar tareas laborales y acceder a los servicios de seguridad social que necesita. Su deseo es encontrar un equilibrio entre su salud y su empleo remunerado."
+          "clinical_text": "Mujer de 50 a\u00f1os, empleada en una empresa de servicios, presenta dolor cr\u00f3nico generalizado y problemas emocionales, incluyendo pensamientos recurrentes de ansiedad y depresi\u00f3n. La paciente expresa que 'le cuesta mucho trabajo' manejar las demandas psicol\u00f3gicas de su empleo y que el dolor cr\u00f3nico la limita en su capacidad para realizar tareas laborales y acceder a los servicios de seguridad social que necesita. Su deseo es encontrar un equilibrio entre su salud y su empleo remunerado."
         },
         "pairedItem": {
           "item": 0
@@ -774,7 +761,7 @@
           ],
           "id_clinical_text": "003_1",
           "uuid_clinical_text": "1d83d73d-ddfc-473c-8a4b-4a8332efa63d",
-          "clinical_text": "Paciente de 35 años, madre de dos hijos, acude a consulta refiriendo dificultades para dormir y un estado de ánimo bajo desde hace varios meses. Manifiesta sentir dolor generalizado en su cuerpo, especialmente en las mañanas, lo que le dificulta realizar las tareas domésticas y cuidar a sus hijos. Además, se siente abrumada por el estrés diario y tiene problemas para manejar las demandas psicológicas de su entorno. Le gustaría encontrar una forma de mejorar su calidad de sueño y reducir su dolor para poder disfrutar más tiempo con su familia y retomar sus actividades de ocio, como la pintura, que tanto le aprecia."
+          "clinical_text": "Paciente de 35 a\u00f1os, madre de dos hijos, acude a consulta refiriendo dificultades para dormir y un estado de \u00e1nimo bajo desde hace varios meses. Manifiesta sentir dolor generalizado en su cuerpo, especialmente en las ma\u00f1anas, lo que le dificulta realizar las tareas dom\u00e9sticas y cuidar a sus hijos. Adem\u00e1s, se siente abrumada por el estr\u00e9s diario y tiene problemas para manejar las demandas psicol\u00f3gicas de su entorno. Le gustar\u00eda encontrar una forma de mejorar su calidad de sue\u00f1o y reducir su dolor para poder disfrutar m\u00e1s tiempo con su familia y retomar sus actividades de ocio, como la pintura, que tanto le aprecia."
         },
         "pairedItem": {
           "item": 0
@@ -796,7 +783,7 @@
           ],
           "id_clinical_text": "003_2",
           "uuid_clinical_text": "5c7f8884-03f4-428a-9e94-dd04a9114467",
-          "clinical_text": "Varón de 42 años, casado, acude a consulta por problemas de dolor crónico que le impiden realizar sus tareas domésticas con la misma eficiencia que antes. Se siente estresado por no poder cumplir con sus responsabilidades familiares y manifiesta dificultades para manejar el estrés y las demandas psicológicas de su trabajo y su vida familiar. Además, refiere problemas para conciliar el sueño y se encuentra en un estado de ánimo bajo la mayor parte del tiempo. Le preocupa cómo afectará su situación a sus relaciones familiares y su capacidad para disfrutar de actividades de ocio con su esposa, como el senderismo, que siempre han disfrutado juntos."
+          "clinical_text": "Var\u00f3n de 42 a\u00f1os, casado, acude a consulta por problemas de dolor cr\u00f3nico que le impiden realizar sus tareas dom\u00e9sticas con la misma eficiencia que antes. Se siente estresado por no poder cumplir con sus responsabilidades familiares y manifiesta dificultades para manejar el estr\u00e9s y las demandas psicol\u00f3gicas de su trabajo y su vida familiar. Adem\u00e1s, refiere problemas para conciliar el sue\u00f1o y se encuentra en un estado de \u00e1nimo bajo la mayor parte del tiempo. Le preocupa c\u00f3mo afectar\u00e1 su situaci\u00f3n a sus relaciones familiares y su capacidad para disfrutar de actividades de ocio con su esposa, como el senderismo, que siempre han disfrutado juntos."
         },
         "pairedItem": {
           "item": 0
@@ -818,7 +805,7 @@
           ],
           "id_clinical_text": "003_3",
           "uuid_clinical_text": "7c6d35af-bcd2-41c9-b39e-2c3bd841f5c1",
-          "clinical_text": "Mujer de 50 años, divorciada, acude a consulta refiriendo un estado de ánimo depresivo y dificultades para dormir desde la muerte de su madre, hace un año. Ha notado un aumento en su dolor generalizado, especialmente en las articulaciones, lo que le dificulta realizar las tareas del hogar y pasar tiempo con sus nietos, lo que más disfruta. Se siente abrumada por el estrés de cuidar a sus nietos y manejar su hogar sola, y manifiesta problemas para manejar las demandas psicológicas de su nueva situación familiar. Le gustaría encontrar una forma de mejorar su calidad de vida y poder disfrutar más tiempo con sus seres queridos, y retomar sus actividades de ocio, como la jardinería, que siempre le ha apasionado."
+          "clinical_text": "Mujer de 50 a\u00f1os, divorciada, acude a consulta refiriendo un estado de \u00e1nimo depresivo y dificultades para dormir desde la muerte de su madre, hace un a\u00f1o. Ha notado un aumento en su dolor generalizado, especialmente en las articulaciones, lo que le dificulta realizar las tareas del hogar y pasar tiempo con sus nietos, lo que m\u00e1s disfruta. Se siente abrumada por el estr\u00e9s de cuidar a sus nietos y manejar su hogar sola, y manifiesta problemas para manejar las demandas psicol\u00f3gicas de su nueva situaci\u00f3n familiar. Le gustar\u00eda encontrar una forma de mejorar su calidad de vida y poder disfrutar m\u00e1s tiempo con sus seres queridos, y retomar sus actividades de ocio, como la jardiner\u00eda, que siempre le ha apasionado."
         },
         "pairedItem": {
           "item": 0
@@ -836,7 +823,7 @@
           ],
           "id_clinical_text": "004_1",
           "uuid_clinical_text": "61625578-5259-4a97-9cd0-7ae71e219b17",
-          "clinical_text": "Paciente de 35 años, ex deportista de alto nivel, acude a consulta por dolor crónico en las articulaciones que le limita para realizar actividades físicas, tiene miedo a empeorar el dolor si vuelve a practicar deporte, presenta pensamientos catastrofistas sobre su capacidad para realizar actividades que requieren esfuerzo físico, como subir escaleras o caminar largas distancias. Refiere dificultad para realizar actividades de ocio como ir al cine o salir con amigos debido a la fatiga y el dolor crónico."
+          "clinical_text": "Paciente de 35 a\u00f1os, ex deportista de alto nivel, acude a consulta por dolor cr\u00f3nico en las articulaciones que le limita para realizar actividades f\u00edsicas, tiene miedo a empeorar el dolor si vuelve a practicar deporte, presenta pensamientos catastrofistas sobre su capacidad para realizar actividades que requieren esfuerzo f\u00edsico, como subir escaleras o caminar largas distancias. Refiere dificultad para realizar actividades de ocio como ir al cine o salir con amigos debido a la fatiga y el dolor cr\u00f3nico."
         },
         "pairedItem": {
           "item": 0
@@ -854,7 +841,7 @@
           ],
           "id_clinical_text": "004_2",
           "uuid_clinical_text": "431b016b-0ac3-4d12-a9ae-b80212990a4d",
-          "clinical_text": "Mujer de 50 años, con antecedentes de lesiones musculoesqueléticas, acude a consulta por dolor persistente en la región lumbar que le impide realizar actividades que requieren esfuerzo físico, como levantar objetos pesados o realizar tareas domésticas, también presenta dificultad para realizar actividades de ocio como bailar o practicar yoga, debido a la falta de tolerancia al ejercicio y la disminución de la fuerza muscular."
+          "clinical_text": "Mujer de 50 a\u00f1os, con antecedentes de lesiones musculoesquel\u00e9ticas, acude a consulta por dolor persistente en la regi\u00f3n lumbar que le impide realizar actividades que requieren esfuerzo f\u00edsico, como levantar objetos pesados o realizar tareas dom\u00e9sticas, tambi\u00e9n presenta dificultad para realizar actividades de ocio como bailar o practicar yoga, debido a la falta de tolerancia al ejercicio y la disminuci\u00f3n de la fuerza muscular."
         },
         "pairedItem": {
           "item": 0
@@ -872,7 +859,7 @@
           ],
           "id_clinical_text": "004_3",
           "uuid_clinical_text": "e83c3003-11f0-4d8d-ac31-c4a7f9101ce1",
-          "clinical_text": "Varón de 28 años, con historial de lesiones deportivas, acude a consulta por dolor crónico en las extremidades que le limita para realizar actividades físicas intensas, presenta pensamientos de evitación hacia el ejercicio físico debido al miedo a empeorar el dolor, también refiere dificultad para realizar actividades de ocio como jugar con sus hijos o practicar deportes de equipo, debido a la falta de resistencia y la disminución de la fuerza muscular, lo que le genera sentimientos de frustración y ansiedad."
+          "clinical_text": "Var\u00f3n de 28 a\u00f1os, con historial de lesiones deportivas, acude a consulta por dolor cr\u00f3nico en las extremidades que le limita para realizar actividades f\u00edsicas intensas, presenta pensamientos de evitaci\u00f3n hacia el ejercicio f\u00edsico debido al miedo a empeorar el dolor, tambi\u00e9n refiere dificultad para realizar actividades de ocio como jugar con sus hijos o practicar deportes de equipo, debido a la falta de resistencia y la disminuci\u00f3n de la fuerza muscular, lo que le genera sentimientos de frustraci\u00f3n y ansiedad."
         },
         "pairedItem": {
           "item": 0
@@ -889,7 +876,7 @@
           ],
           "id_clinical_text": "005_1",
           "uuid_clinical_text": "f51f9eec-89bf-48c8-931a-911f0758966d",
-          "clinical_text": "Paciente de 50 años acude a consulta refiriendo dolor crónico generalizado que le impide realizar las tareas domésticas con la misma facilidad que antes, sobre todo debido a la dificultad para caminar durante largos periodos. La paciente menciona que 'le duele mucho' cuando intenta hacer las compras o andar al parque con su familia. Le preocupa no poder mantener su casa limpia y organizada como siempre ha hecho."
+          "clinical_text": "Paciente de 50 a\u00f1os acude a consulta refiriendo dolor cr\u00f3nico generalizado que le impide realizar las tareas dom\u00e9sticas con la misma facilidad que antes, sobre todo debido a la dificultad para caminar durante largos periodos. La paciente menciona que 'le duele mucho' cuando intenta hacer las compras o andar al parque con su familia. Le preocupa no poder mantener su casa limpia y organizada como siempre ha hecho."
         },
         "pairedItem": {
           "item": 0
@@ -906,7 +893,7 @@
           ],
           "id_clinical_text": "005_2",
           "uuid_clinical_text": "d2a5a1d7-ea00-42ef-b02b-8ebf27f7bae9",
-          "clinical_text": "Varón de 35 años, después de varios años de dolor crónico, se siente limitado en sus actividades diarias, especialmente al realizar quehaceres de la casa y al caminar. Comenta que siente un dolor constante que le hace difícil levantar objetos pesados, lo que le impide ayudar en las tareas del hogar como antes. Le gustaría poder retomar sus actividades cotidianas sin sentir dolor."
+          "clinical_text": "Var\u00f3n de 35 a\u00f1os, despu\u00e9s de varios a\u00f1os de dolor cr\u00f3nico, se siente limitado en sus actividades diarias, especialmente al realizar quehaceres de la casa y al caminar. Comenta que siente un dolor constante que le hace dif\u00edcil levantar objetos pesados, lo que le impide ayudar en las tareas del hogar como antes. Le gustar\u00eda poder retomar sus actividades cotidianas sin sentir dolor."
         },
         "pairedItem": {
           "item": 0
@@ -923,7 +910,7 @@
           ],
           "id_clinical_text": "005_3",
           "uuid_clinical_text": "1f99f3c2-6f2b-49fc-b0fd-b77cc48f5064",
-          "clinical_text": "Mujer de 60 años acude a consulta por dolor crónico que le afecta significativamente su capacidad para realizar las tareas domésticas y caminar sin dificultad. Refiere que 'no puede hacer nada' sin sentir dolor, lo que la ha llevado a depender de su familia para realizar las compras y los quehaceres de la casa. Le preocupa perder su independencia y no poder disfrutar de su tiempo libre como solía hacer."
+          "clinical_text": "Mujer de 60 a\u00f1os acude a consulta por dolor cr\u00f3nico que le afecta significativamente su capacidad para realizar las tareas dom\u00e9sticas y caminar sin dificultad. Refiere que 'no puede hacer nada' sin sentir dolor, lo que la ha llevado a depender de su familia para realizar las compras y los quehaceres de la casa. Le preocupa perder su independencia y no poder disfrutar de su tiempo libre como sol\u00eda hacer."
         },
         "pairedItem": {
           "item": 0
@@ -941,7 +928,7 @@
           ],
           "id_clinical_text": "006_1",
           "uuid_clinical_text": "eca7431f-c6b0-4095-99c6-1e9d0ed15998",
-          "clinical_text": "Paciente de 35 años con antecedentes de dolor crónico generalizado, presenta dificultades para realizar actividades cotidianas como levantar y llevar objetos debido a la intensidad del dolor. Esto ha afectado su relación con su pareja, ya que siente que no puede realizar actividades juntos como antes, y también ha limitado su participación en eventos sociales con su familia. Le gustaría encontrar una manera de manejar su dolor para mejorar su calidad de vida y relaciones interpersonales."
+          "clinical_text": "Paciente de 35 a\u00f1os con antecedentes de dolor cr\u00f3nico generalizado, presenta dificultades para realizar actividades cotidianas como levantar y llevar objetos debido a la intensidad del dolor. Esto ha afectado su relaci\u00f3n con su pareja, ya que siente que no puede realizar actividades juntos como antes, y tambi\u00e9n ha limitado su participaci\u00f3n en eventos sociales con su familia. Le gustar\u00eda encontrar una manera de manejar su dolor para mejorar su calidad de vida y relaciones interpersonales."
         },
         "pairedItem": {
           "item": 0
@@ -959,7 +946,7 @@
           ],
           "id_clinical_text": "006_2",
           "uuid_clinical_text": "af312f9d-ede2-45e7-ae4e-1e87e5025e22",
-          "clinical_text": "Mujer de 50 años que acude a consulta por dolor persistente que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. La dificultad para levantar y llevar objetos la ha obligado a depender más de su pareja y familiares, lo que ha generado tensiones en sus relaciones. Además, el dolor le ha impedido disfrutar de actividades de ocio como la pintura y la lectura, que eran fundamentales para su bienestar emocional. Busca una solución para su dolor y recuperar su independencia."
+          "clinical_text": "Mujer de 50 a\u00f1os que acude a consulta por dolor persistente que afecta su capacidad para realizar tareas dom\u00e9sticas y cuidar de su familia. La dificultad para levantar y llevar objetos la ha obligado a depender m\u00e1s de su pareja y familiares, lo que ha generado tensiones en sus relaciones. Adem\u00e1s, el dolor le ha impedido disfrutar de actividades de ocio como la pintura y la lectura, que eran fundamentales para su bienestar emocional. Busca una soluci\u00f3n para su dolor y recuperar su independencia."
         },
         "pairedItem": {
           "item": 0
@@ -977,7 +964,7 @@
           ],
           "id_clinical_text": "006_3",
           "uuid_clinical_text": "a271e46a-00ff-43f8-b35a-07acf4cf07af",
-          "clinical_text": "Varón de 28 años que se queja de dolor crónico generalizado que le impide realizar actividades físicas con su pareja y amigos. La dificultad para levantar y llevar objetos le ha limitado su capacidad para participar en deportes y actividades al aire libre, lo que ha afectado su relación con su pareja y su autoestima. Además, el dolor ha interferido con su capacidad para disfrutar de su tiempo libre y ocio, lo que ha generado sentimientos de frustración y aislamiento. Desea encontrar una forma de manejar su dolor y recuperar su calidad de vida."
+          "clinical_text": "Var\u00f3n de 28 a\u00f1os que se queja de dolor cr\u00f3nico generalizado que le impide realizar actividades f\u00edsicas con su pareja y amigos. La dificultad para levantar y llevar objetos le ha limitado su capacidad para participar en deportes y actividades al aire libre, lo que ha afectado su relaci\u00f3n con su pareja y su autoestima. Adem\u00e1s, el dolor ha interferido con su capacidad para disfrutar de su tiempo libre y ocio, lo que ha generado sentimientos de frustraci\u00f3n y aislamiento. Desea encontrar una forma de manejar su dolor y recuperar su calidad de vida."
         },
         "pairedItem": {
           "item": 0
@@ -1002,7 +989,7 @@
             "d920"
           ],
           "id_clinical_text": "001_1",
-          "clinical_text": "Paciente de 30 años acude a consulta refiriendo una disminución significativa en su energía y motivación para realizar actividades cotidianas, acompañada de una alteración en su patrón de sueño que le impide descansar adecuadamente. Además, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor crónico que experimenta. Está tomando medicación para ayudar a regular su sueño, pero siente que esto no está mejorando su capacidad para afrontar desafíos diarios de manera efectiva."
+          "clinical_text": "Paciente de 30 a\u00f1os acude a consulta refiriendo una disminuci\u00f3n significativa en su energ\u00eda y motivaci\u00f3n para realizar actividades cotidianas, acompa\u00f1ada de una alteraci\u00f3n en su patr\u00f3n de sue\u00f1o que le impide descansar adecuadamente. Adem\u00e1s, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor cr\u00f3nico que experimenta. Est\u00e1 tomando medicaci\u00f3n para ayudar a regular su sue\u00f1o, pero siente que esto no est\u00e1 mejorando su capacidad para afrontar desaf\u00edos diarios de manera efectiva."
         },
         "pairedItem": {
           "item": 0
@@ -1026,7 +1013,7 @@
             "d920"
           ],
           "id_clinical_text": "001_2",
-          "clinical_text": "Una mujer de 50 años se presenta con quejas de falta de energía y fatiga persistente, que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. También reporta problemas para conciliar el sueño y permanecer dormida durante la noche, lo que empeora su estado de ánimo y concentración. El dolor crónico que padece aumenta su frustración y sentimiento de abrumación, dificultando su capacidad para resolver problemas cotidianos. La medicación para el sueño le brinda algo de alivio, pero busca ayuda para mejorar su calidad de vida en general."
+          "clinical_text": "Una mujer de 50 a\u00f1os se presenta con quejas de falta de energ\u00eda y fatiga persistente, que afecta su capacidad para realizar tareas dom\u00e9sticas y cuidar de su familia. Tambi\u00e9n reporta problemas para conciliar el sue\u00f1o y permanecer dormida durante la noche, lo que empeora su estado de \u00e1nimo y concentraci\u00f3n. El dolor cr\u00f3nico que padece aumenta su frustraci\u00f3n y sentimiento de abrumaci\u00f3n, dificultando su capacidad para resolver problemas cotidianos. La medicaci\u00f3n para el sue\u00f1o le brinda algo de alivio, pero busca ayuda para mejorar su calidad de vida en general."
         },
         "pairedItem": {
           "item": 1
@@ -1050,7 +1037,7 @@
             "d920"
           ],
           "id_clinical_text": "001_3",
-          "clinical_text": "Varón de 45 años acude a la consulta debido a una disminución progresiva en su nivel de energía y motivación, que se ha visto acompañada de un patrón de sueño irregular y dificultades para resolver problemas y tomar decisiones de manera efectiva. El dolor crónico que experimenta es un factor importante que contribuye a su estado de malestar general. Aunque ha iniciado tratamiento con medicación para regular su sueño, busca apoyo para superar los desafíos que enfrenta en su vida diaria y mejorar su capacidad para manejar el dolor y otros síntomas que lo aquejan."
+          "clinical_text": "Var\u00f3n de 45 a\u00f1os acude a la consulta debido a una disminuci\u00f3n progresiva en su nivel de energ\u00eda y motivaci\u00f3n, que se ha visto acompa\u00f1ada de un patr\u00f3n de sue\u00f1o irregular y dificultades para resolver problemas y tomar decisiones de manera efectiva. El dolor cr\u00f3nico que experimenta es un factor importante que contribuye a su estado de malestar general. Aunque ha iniciado tratamiento con medicaci\u00f3n para regular su sue\u00f1o, busca apoyo para superar los desaf\u00edos que enfrenta en su vida diaria y mejorar su capacidad para manejar el dolor y otros s\u00edntomas que lo aquejan."
         },
         "pairedItem": {
           "item": 2
@@ -1075,7 +1062,7 @@
             "d760"
           ],
           "id_clinical_text": "002_1",
-          "clinical_text": "Paciente de 35 años con antecedentes de depresión, refiere sentir una persistente sensación de tristeza y dolor crónico generalizado, que le dificulta mantener su empleo como contadora. La paciente menciona que 'su mente está llena de pensamientos negativos', lo que le impide manejar el estrés laboral y le causa problemas para dormir. Expresa su deseo de encontrar un trabajo que se adapte a sus necesidades y pueda acceder a servicios de seguridad social que la apoyen en su situación actual."
+          "clinical_text": "Paciente de 35 a\u00f1os con antecedentes de depresi\u00f3n, refiere sentir una persistente sensaci\u00f3n de tristeza y dolor cr\u00f3nico generalizado, que le dificulta mantener su empleo como contadora. La paciente menciona que 'su mente est\u00e1 llena de pensamientos negativos', lo que le impide manejar el estr\u00e9s laboral y le causa problemas para dormir. Expresa su deseo de encontrar un trabajo que se adapte a sus necesidades y pueda acceder a servicios de seguridad social que la apoyen en su situaci\u00f3n actual."
         },
         "pairedItem": {
           "item": 3
@@ -1100,7 +1087,7 @@
             "b134"
           ],
           "id_clinical_text": "002_2",
-          "clinical_text": "Varón de 42 años, trabajador autónomo, acude a consulta por dolor crónico y problemas para mantener su negocio debido a la dificultad para manejar el estrés y la ansiedad. Refiere que 'su mente es un torbellino de ideas negativas' que le impiden tomar decisiones claras y efectivas en su trabajo. Busca encontrar estrategias para manejar su estrés y dolor, y así poder mantener su empleo remunerado y acceder a los servicios de seguridad social que lo ayuden a superar esta situación."
+          "clinical_text": "Var\u00f3n de 42 a\u00f1os, trabajador aut\u00f3nomo, acude a consulta por dolor cr\u00f3nico y problemas para mantener su negocio debido a la dificultad para manejar el estr\u00e9s y la ansiedad. Refiere que 'su mente es un torbellino de ideas negativas' que le impiden tomar decisiones claras y efectivas en su trabajo. Busca encontrar estrategias para manejar su estr\u00e9s y dolor, y as\u00ed poder mantener su empleo remunerado y acceder a los servicios de seguridad social que lo ayuden a superar esta situaci\u00f3n."
         },
         "pairedItem": {
           "item": 4
@@ -1125,7 +1112,7 @@
             "s123"
           ],
           "id_clinical_text": "002_3",
-          "clinical_text": "Mujer de 50 años, empleada en una empresa de servicios, presenta dolor crónico generalizado y problemas emocionales, incluyendo pensamientos recurrentes de ansiedad y depresión. La paciente expresa que 'le cuesta mucho trabajo' manejar las demandas psicológicas de su empleo y que el dolor crónico la limita en su capacidad para realizar tareas laborales y acceder a los servicios de seguridad social que necesita. Su deseo es encontrar un equilibrio entre su salud y su empleo remunerado."
+          "clinical_text": "Mujer de 50 a\u00f1os, empleada en una empresa de servicios, presenta dolor cr\u00f3nico generalizado y problemas emocionales, incluyendo pensamientos recurrentes de ansiedad y depresi\u00f3n. La paciente expresa que 'le cuesta mucho trabajo' manejar las demandas psicol\u00f3gicas de su empleo y que el dolor cr\u00f3nico la limita en su capacidad para realizar tareas laborales y acceder a los servicios de seguridad social que necesita. Su deseo es encontrar un equilibrio entre su salud y su empleo remunerado."
         },
         "pairedItem": {
           "item": 5
@@ -1154,7 +1141,7 @@
             "b175"
           ],
           "id_clinical_text": "003_1",
-          "clinical_text": "Paciente de 35 años, madre de dos hijos, acude a consulta refiriendo dificultades para dormir y un estado de ánimo bajo desde hace varios meses. Manifiesta sentir dolor generalizado en su cuerpo, especialmente en las mañanas, lo que le dificulta realizar las tareas domésticas y cuidar a sus hijos. Además, se siente abrumada por el estrés diario y tiene problemas para manejar las demandas psicológicas de su entorno. Le gustaría encontrar una forma de mejorar su calidad de sueño y reducir su dolor para poder disfrutar más tiempo con su familia y retomar sus actividades de ocio, como la pintura, que tanto le aprecia."
+          "clinical_text": "Paciente de 35 a\u00f1os, madre de dos hijos, acude a consulta refiriendo dificultades para dormir y un estado de \u00e1nimo bajo desde hace varios meses. Manifiesta sentir dolor generalizado en su cuerpo, especialmente en las ma\u00f1anas, lo que le dificulta realizar las tareas dom\u00e9sticas y cuidar a sus hijos. Adem\u00e1s, se siente abrumada por el estr\u00e9s diario y tiene problemas para manejar las demandas psicol\u00f3gicas de su entorno. Le gustar\u00eda encontrar una forma de mejorar su calidad de sue\u00f1o y reducir su dolor para poder disfrutar m\u00e1s tiempo con su familia y retomar sus actividades de ocio, como la pintura, que tanto le aprecia."
         },
         "pairedItem": {
           "item": 6
@@ -1183,7 +1170,7 @@
             "b175"
           ],
           "id_clinical_text": "003_2",
-          "clinical_text": "Varón de 42 años, casado, acude a consulta por problemas de dolor crónico que le impiden realizar sus tareas domésticas con la misma eficiencia que antes. Se siente estresado por no poder cumplir con sus responsabilidades familiares y manifiesta dificultades para manejar el estrés y las demandas psicológicas de su trabajo y su vida familiar. Además, refiere problemas para conciliar el sueño y se encuentra en un estado de ánimo bajo la mayor parte del tiempo. Le preocupa cómo afectará su situación a sus relaciones familiares y su capacidad para disfrutar de actividades de ocio con su esposa, como el senderismo, que siempre han disfrutado juntos."
+          "clinical_text": "Var\u00f3n de 42 a\u00f1os, casado, acude a consulta por problemas de dolor cr\u00f3nico que le impiden realizar sus tareas dom\u00e9sticas con la misma eficiencia que antes. Se siente estresado por no poder cumplir con sus responsabilidades familiares y manifiesta dificultades para manejar el estr\u00e9s y las demandas psicol\u00f3gicas de su trabajo y su vida familiar. Adem\u00e1s, refiere problemas para conciliar el sue\u00f1o y se encuentra en un estado de \u00e1nimo bajo la mayor parte del tiempo. Le preocupa c\u00f3mo afectar\u00e1 su situaci\u00f3n a sus relaciones familiares y su capacidad para disfrutar de actividades de ocio con su esposa, como el senderismo, que siempre han disfrutado juntos."
         },
         "pairedItem": {
           "item": 7
@@ -1212,7 +1199,7 @@
             "b760"
           ],
           "id_clinical_text": "003_3",
-          "clinical_text": "Mujer de 50 años, divorciada, acude a consulta refiriendo un estado de ánimo depresivo y dificultades para dormir desde la muerte de su madre, hace un año. Ha notado un aumento en su dolor generalizado, especialmente en las articulaciones, lo que le dificulta realizar las tareas del hogar y pasar tiempo con sus nietos, lo que más disfruta. Se siente abrumada por el estrés de cuidar a sus nietos y manejar su hogar sola, y manifiesta problemas para manejar las demandas psicológicas de su nueva situación familiar. Le gustaría encontrar una forma de mejorar su calidad de vida y poder disfrutar más tiempo con sus seres queridos, y retomar sus actividades de ocio, como la jardinería, que siempre le ha apasionado."
+          "clinical_text": "Mujer de 50 a\u00f1os, divorciada, acude a consulta refiriendo un estado de \u00e1nimo depresivo y dificultades para dormir desde la muerte de su madre, hace un a\u00f1o. Ha notado un aumento en su dolor generalizado, especialmente en las articulaciones, lo que le dificulta realizar las tareas del hogar y pasar tiempo con sus nietos, lo que m\u00e1s disfruta. Se siente abrumada por el estr\u00e9s de cuidar a sus nietos y manejar su hogar sola, y manifiesta problemas para manejar las demandas psicol\u00f3gicas de su nueva situaci\u00f3n familiar. Le gustar\u00eda encontrar una forma de mejorar su calidad de vida y poder disfrutar m\u00e1s tiempo con sus seres queridos, y retomar sus actividades de ocio, como la jardiner\u00eda, que siempre le ha apasionado."
         },
         "pairedItem": {
           "item": 8
@@ -1236,7 +1223,7 @@
             "e1101"
           ],
           "id_clinical_text": "004_1",
-          "clinical_text": "Paciente de 35 años, ex deportista de alto nivel, acude a consulta por dolor crónico en las articulaciones que le limita para realizar actividades físicas, tiene miedo a empeorar el dolor si vuelve a practicar deporte, presenta pensamientos catastrofistas sobre su capacidad para realizar actividades que requieren esfuerzo físico, como subir escaleras o caminar largas distancias. Refiere dificultad para realizar actividades de ocio como ir al cine o salir con amigos debido a la fatiga y el dolor crónico."
+          "clinical_text": "Paciente de 35 a\u00f1os, ex deportista de alto nivel, acude a consulta por dolor cr\u00f3nico en las articulaciones que le limita para realizar actividades f\u00edsicas, tiene miedo a empeorar el dolor si vuelve a practicar deporte, presenta pensamientos catastrofistas sobre su capacidad para realizar actividades que requieren esfuerzo f\u00edsico, como subir escaleras o caminar largas distancias. Refiere dificultad para realizar actividades de ocio como ir al cine o salir con amigos debido a la fatiga y el dolor cr\u00f3nico."
         },
         "pairedItem": {
           "item": 9
@@ -1259,7 +1246,7 @@
             "d920"
           ],
           "id_clinical_text": "004_2",
-          "clinical_text": "Mujer de 50 años, con antecedentes de lesiones musculoesqueléticas, acude a consulta por dolor persistente en la región lumbar que le impide realizar actividades que requieren esfuerzo físico, como levantar objetos pesados o realizar tareas domésticas, también presenta dificultad para realizar actividades de ocio como bailar o practicar yoga, debido a la falta de tolerancia al ejercicio y la disminución de la fuerza muscular."
+          "clinical_text": "Mujer de 50 a\u00f1os, con antecedentes de lesiones musculoesquel\u00e9ticas, acude a consulta por dolor persistente en la regi\u00f3n lumbar que le impide realizar actividades que requieren esfuerzo f\u00edsico, como levantar objetos pesados o realizar tareas dom\u00e9sticas, tambi\u00e9n presenta dificultad para realizar actividades de ocio como bailar o practicar yoga, debido a la falta de tolerancia al ejercicio y la disminuci\u00f3n de la fuerza muscular."
         },
         "pairedItem": {
           "item": 10
@@ -1283,7 +1270,7 @@
             "d920"
           ],
           "id_clinical_text": "004_3",
-          "clinical_text": "Varón de 28 años, con historial de lesiones deportivas, acude a consulta por dolor crónico en las extremidades que le limita para realizar actividades físicas intensas, presenta pensamientos de evitación hacia el ejercicio físico debido al miedo a empeorar el dolor, también refiere dificultad para realizar actividades de ocio como jugar con sus hijos o practicar deportes de equipo, debido a la falta de resistencia y la disminución de la fuerza muscular, lo que le genera sentimientos de frustración y ansiedad."
+          "clinical_text": "Var\u00f3n de 28 a\u00f1os, con historial de lesiones deportivas, acude a consulta por dolor cr\u00f3nico en las extremidades que le limita para realizar actividades f\u00edsicas intensas, presenta pensamientos de evitaci\u00f3n hacia el ejercicio f\u00edsico debido al miedo a empeorar el dolor, tambi\u00e9n refiere dificultad para realizar actividades de ocio como jugar con sus hijos o practicar deportes de equipo, debido a la falta de resistencia y la disminuci\u00f3n de la fuerza muscular, lo que le genera sentimientos de frustraci\u00f3n y ansiedad."
         },
         "pairedItem": {
           "item": 11
@@ -1306,7 +1293,7 @@
             "d9201"
           ],
           "id_clinical_text": "005_1",
-          "clinical_text": "Paciente de 50 años acude a consulta refiriendo dolor crónico generalizado que le impide realizar las tareas domésticas con la misma facilidad que antes, sobre todo debido a la dificultad para caminar durante largos periodos. La paciente menciona que 'le duele mucho' cuando intenta hacer las compras o andar al parque con su familia. Le preocupa no poder mantener su casa limpia y organizada como siempre ha hecho."
+          "clinical_text": "Paciente de 50 a\u00f1os acude a consulta refiriendo dolor cr\u00f3nico generalizado que le impide realizar las tareas dom\u00e9sticas con la misma facilidad que antes, sobre todo debido a la dificultad para caminar durante largos periodos. La paciente menciona que 'le duele mucho' cuando intenta hacer las compras o andar al parque con su familia. Le preocupa no poder mantener su casa limpia y organizada como siempre ha hecho."
         },
         "pairedItem": {
           "item": 12
@@ -1329,7 +1316,7 @@
             "d920"
           ],
           "id_clinical_text": "005_2",
-          "clinical_text": "Varón de 35 años, después de varios años de dolor crónico, se siente limitado en sus actividades diarias, especialmente al realizar quehaceres de la casa y al caminar. Comenta que siente un dolor constante que le hace difícil levantar objetos pesados, lo que le impide ayudar en las tareas del hogar como antes. Le gustaría poder retomar sus actividades cotidianas sin sentir dolor."
+          "clinical_text": "Var\u00f3n de 35 a\u00f1os, despu\u00e9s de varios a\u00f1os de dolor cr\u00f3nico, se siente limitado en sus actividades diarias, especialmente al realizar quehaceres de la casa y al caminar. Comenta que siente un dolor constante que le hace dif\u00edcil levantar objetos pesados, lo que le impide ayudar en las tareas del hogar como antes. Le gustar\u00eda poder retomar sus actividades cotidianas sin sentir dolor."
         },
         "pairedItem": {
           "item": 13
@@ -1351,7 +1338,7 @@
             "d920"
           ],
           "id_clinical_text": "005_3",
-          "clinical_text": "Mujer de 60 años acude a consulta por dolor crónico que le afecta significativamente su capacidad para realizar las tareas domésticas y caminar sin dificultad. Refiere que 'no puede hacer nada' sin sentir dolor, lo que la ha llevado a depender de su familia para realizar las compras y los quehaceres de la casa. Le preocupa perder su independencia y no poder disfrutar de su tiempo libre como solía hacer."
+          "clinical_text": "Mujer de 60 a\u00f1os acude a consulta por dolor cr\u00f3nico que le afecta significativamente su capacidad para realizar las tareas dom\u00e9sticas y caminar sin dificultad. Refiere que 'no puede hacer nada' sin sentir dolor, lo que la ha llevado a depender de su familia para realizar las compras y los quehaceres de la casa. Le preocupa perder su independencia y no poder disfrutar de su tiempo libre como sol\u00eda hacer."
         },
         "pairedItem": {
           "item": 14
@@ -1374,7 +1361,7 @@
             "d920"
           ],
           "id_clinical_text": "006_1",
-          "clinical_text": "Paciente de 35 años con antecedentes de dolor crónico generalizado, presenta dificultades para realizar actividades cotidianas como levantar y llevar objetos debido a la intensidad del dolor. Esto ha afectado su relación con su pareja, ya que siente que no puede realizar actividades juntos como antes, y también ha limitado su participación en eventos sociales con su familia. Le gustaría encontrar una manera de manejar su dolor para mejorar su calidad de vida y relaciones interpersonales."
+          "clinical_text": "Paciente de 35 a\u00f1os con antecedentes de dolor cr\u00f3nico generalizado, presenta dificultades para realizar actividades cotidianas como levantar y llevar objetos debido a la intensidad del dolor. Esto ha afectado su relaci\u00f3n con su pareja, ya que siente que no puede realizar actividades juntos como antes, y tambi\u00e9n ha limitado su participaci\u00f3n en eventos sociales con su familia. Le gustar\u00eda encontrar una manera de manejar su dolor para mejorar su calidad de vida y relaciones interpersonales."
         },
         "pairedItem": {
           "item": 15
@@ -1398,7 +1385,7 @@
             "d9202"
           ],
           "id_clinical_text": "006_2",
-          "clinical_text": "Mujer de 50 años que acude a consulta por dolor persistente que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. La dificultad para levantar y llevar objetos la ha obligado a depender más de su pareja y familiares, lo que ha generado tensiones en sus relaciones. Además, el dolor le ha impedido disfrutar de actividades de ocio como la pintura y la lectura, que eran fundamentales para su bienestar emocional. Busca una solución para su dolor y recuperar su independencia."
+          "clinical_text": "Mujer de 50 a\u00f1os que acude a consulta por dolor persistente que afecta su capacidad para realizar tareas dom\u00e9sticas y cuidar de su familia. La dificultad para levantar y llevar objetos la ha obligado a depender m\u00e1s de su pareja y familiares, lo que ha generado tensiones en sus relaciones. Adem\u00e1s, el dolor le ha impedido disfrutar de actividades de ocio como la pintura y la lectura, que eran fundamentales para su bienestar emocional. Busca una soluci\u00f3n para su dolor y recuperar su independencia."
         },
         "pairedItem": {
           "item": 16
@@ -1422,7 +1409,7 @@
             "d770"
           ],
           "id_clinical_text": "006_3",
-          "clinical_text": "Varón de 28 años que se queja de dolor crónico generalizado que le impide realizar actividades físicas con su pareja y amigos. La dificultad para levantar y llevar objetos le ha limitado su capacidad para participar en deportes y actividades al aire libre, lo que ha afectado su relación con su pareja y su autoestima. Además, el dolor ha interferido con su capacidad para disfrutar de su tiempo libre y ocio, lo que ha generado sentimientos de frustración y aislamiento. Desea encontrar una forma de manejar su dolor y recuperar su calidad de vida."
+          "clinical_text": "Var\u00f3n de 28 a\u00f1os que se queja de dolor cr\u00f3nico generalizado que le impide realizar actividades f\u00edsicas con su pareja y amigos. La dificultad para levantar y llevar objetos le ha limitado su capacidad para participar en deportes y actividades al aire libre, lo que ha afectado su relaci\u00f3n con su pareja y su autoestima. Adem\u00e1s, el dolor ha interferido con su capacidad para disfrutar de su tiempo libre y ocio, lo que ha generado sentimientos de frustraci\u00f3n y aislamiento. Desea encontrar una forma de manejar su dolor y recuperar su calidad de vida."
         },
         "pairedItem": {
           "item": 17

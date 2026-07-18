@@ -23,7 +23,9 @@ const formatPredictedCodes = (parsedData) => {
     const predictedCodes = parsedData.clinical_object || parsedData.historias_clinicas || parsedData.predicted_icf_codes || parsedData;
     if (!Array.isArray(predictedCodes)) return predictedCodes;
     
-    return predictedCodes.map(story => story.predicted_icf_codes || story);
+    const extractedArray = predictedCodes.map(story => story.predicted_icf_codes || story);
+
+    return [...new Set(extractedArray)];
 };
 
 const originalData = $('binary_json_parser').all();

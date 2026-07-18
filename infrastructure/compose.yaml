@@ -9,8 +9,11 @@ services:
     ports:
       - "5679:5678"
     volumes:
+      volumes:
       - n8n_data:/home/node/.n8n
       - ./results:/home/node/results
+      - ./RAG_documents:/home/node/RAG_documents
+      - .d/RAG_documents:/home/node/.n8n-files
     extra_hosts:
       - "host.docker.internal:host-gateway"
 

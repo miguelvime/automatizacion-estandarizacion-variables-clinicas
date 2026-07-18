@@ -1,0 +1,185 @@
+{
+  "name": "ingest_icf_brief_workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "documento_raw",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "documento_a_vectorizar",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        -144,
+        -112
+      ],
+      "id": "ce7eb224-4eb7-4ada-82b3-e9ed0e2ba46c",
+      "name": "On form submission",
+      "webhookId": "3dcc4226-be8b-4a2b-99f0-a89dd8fb467d"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "28851843-597c-4fc6-b7ce-3f375d55dc76",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        336,
+        -112
+      ],
+      "id": "0392cbbb-e72c-4ee1-b280-1fae28396554",
+      "name": "Qdrant Vector Store1",
+      "credentials": {
+        "qdrantApi": {
+          "id": "Se6dS4EqhF06aYMR",
+          "name": "QdrantApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "embeddinggemma:latest"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "typeVersion": 1,
+      "position": [
+        272,
+        96
+      ],
+      "id": "3c464abd-8ba1-40e7-ba65-e986081f6a32",
+      "name": "Embeddings Ollama1",
+      "credentials": {
+        "ollamaApi": {
+          "id": "UtWcKdNytXqpLqaV",
+          "name": "Ollama account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "binaryMode": "specificField",
+        "loader": "jsonLoader",
+        "binaryDataKey": "documento_a_vectorizar",
+        "options": {
+          "pointers": "=/icf_code_description"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        496,
+        96
+      ],
+      "id": "1b61006c-cece-440e-a037-aedfc13b7687",
+      "name": "Default Data Loader1"
+    },
+    {
+      "parameters": {
+        "content": "##  RAG for Clinical text generator 2.0\nIt uses ICF document to create a Vector store for the generator to get information for ICF codes\n",
+        "height": 560,
+        "width": 976
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -192,
+        -240
+      ],
+      "typeVersion": 1,
+      "id": "0abf51b5-1ea5-4d3f-aa34-408be06a69d5",
+      "name": "Sticky Note3"
+    }
+  ],
+  "pinData": {
+    "On form submission": [
+      {
+        "json": {
+          "documento_a_vectorizar": [
+            {
+              "filename": "icf_brief_spanish.json",
+              "mimetype": "application/json",
+              "size": 13341
+            }
+          ],
+          "submittedAt": "2026-07-18T07:46:53.191-04:00",
+          "formMode": "test"
+        },
+        "binary": {
+          "documento_a_vectorizar": {
+            "mimeType": "application/json",
+            "fileType": "json",
+            "fileExtension": "json",
+            "data": "filesystem-v2",
+            "fileName": "icf_brief_spanish.json",
+            "id": "filesystem-v2:workflows/8i3HkYhPF3wdlzv2/executions/temp/binary_data/c4eba35f-e308-45a8-b5c7-c70ba3e7e852",
+            "fileSize": "13.3 kB",
+            "bytes": 13341
+          }
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Ollama1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader1": {
+      "ai_document": [
+        [
+          {
+            "node": "Qdrant Vector Store1",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "dbcc79fd-d0ef-4362-9a79-ab6cf1d638fe",
+  "meta": {
+    "instanceId": "44fbf0ed6965a74a09769e18b367d9a9eaef6bc57579db2e8bdb7023c84df464"
+  },
+  "id": "8i3HkYhPF3wdlzv2",
+  "tags": []
+}

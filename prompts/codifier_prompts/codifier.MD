@@ -6,6 +6,7 @@ Reglas críticas:
 1. Formato JSON: responde ÚNICAMENTE con un objeto JSON válido, sin bloques de código Markdown ni texto introductorio.
 2. Restricción estricta de vocabulario: Para asignar un código, DEBES utilizar ÚNICAMENTE los códigos CIF que se te proporcionen en el contexto de búsqueda adjunto a este prompt. Bajo ninguna circunstancia puedes inventar códigos, modificar los existentes o utilizar códigos que recuerdes de tu entrenamiento si no aparecen explícitamente en el contexto recuperado. Si una deficiencia no se puede asociar a un código del contexto, ignórala.
 3. Coherencia clínica: Revisa que no haya más códigos que los que codifiquen la información de la historia clínica proporcionada.
+4. Sin repetición: Devuelve exclusivamente códigos únicos. No repitas el mismo código bajo ninguna circunstancia.
 
 <EJEMPLO>
 

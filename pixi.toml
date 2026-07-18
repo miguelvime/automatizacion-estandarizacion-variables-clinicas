@@ -1,0 +1,14 @@
+[workspace]
+authors = ["miguelvime <>"]
+channels = ["conda-forge"]
+name = "2026-03-11_TFM"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+f1_calc = "python scripts/statistics/f1_calculation.py"
+
+[dependencies]
+python = "3.11.*"
+pandas = ">=3.0.3,<4"
+scikit-learn = ">=1.9.0,<2"
