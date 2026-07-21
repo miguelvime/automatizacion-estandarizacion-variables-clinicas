@@ -15,3 +15,4 @@ generador_hc_desde_CIF*
 qdrant_data/# pixi environments
 .pixi/*
 !.pixi/config.toml
+venv/
