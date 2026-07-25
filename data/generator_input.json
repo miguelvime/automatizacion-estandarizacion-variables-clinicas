@@ -108,32 +108,33 @@
         "d230-Llevar a cabo rutinas diarias","d240-Manejo del estrés y otras demandas psicológicas"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "020",
+        "icf_code":["b130","d240","d920","e410"],
+        "icf_name":["b130-Funciones relacionadas con la energía y los impulsos","d240-Manejo del estrés y otras demandas psicológicas","d920-Tiempo libre y ocio","e410-Actitudes individuales de miembros de la familia cercana"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "021",
+        "icf_code":["b134","b280","e310","e410","e1101"],
+        "icf_name":["b134-Funciones del sueño","b280-Sensación de dolor","e310-Familiares cercanos","e410-Actitudes individuales de miembros de la familia cercana","e1101-Medicamentos"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "022",
+        "icf_code":["b280","b455","e355"],
+        "icf_name":["b280-Sensación de dolor","b455-Funciones relacionadas con la tolerancia al ejercicio","e355-Profesionales de la salud"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "023",
+        "icf_code":["b280","b730","b760"],
+        "icf_name":["b280-Sensación de dolor","b730-Funciones relacionadas con la fuerza muscular","b760-Funciones relacionadas con el control de los movimientos voluntarios"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "024",
+        "icf_code":["b152","b280","b1602","d230","d430","d450","d640","e355"],
+        "icf_name":["b152-Funciones emocionales","b280-Sensación de dolor","b1602-Contenido del pensamiento","d230-Llevar a cabo rutinas diarias",
+        "d430-Levantar y llevar objetos","d450-Andar","d640-Realizar los quehaceres de la casa","e355-Profesionales de la salud"]
     },
     {
-        "id_code_combination": "00",
+        "id_code_combination": "025",
         "icf_code":[],
         "icf_name":[]
     },
