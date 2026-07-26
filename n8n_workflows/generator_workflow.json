@@ -12,7 +12,7 @@
         "messages": {
           "values": [
             {
-              "content": "=INSTRUCCIONES DE COMPORTAMIENTO:\nEres un fisioterapeuta cl\u00ednico especializado en geriatr\u00eda y dolor cr\u00f3nico. Redacta notas de evoluci\u00f3n en texto libre, utilizando terminolog\u00eda t\u00e9cnica de fisioterapia (ej. ROM, balance articular, kinesiofobia, ABVD). Queda estrictamente prohibido usar listas o formato estructurado. Escribe un p\u00e1rrafo narrativo y denso.\n\nDATOS DEL PACIENTE:\n- G\u00e9nero: {{ $json.gender }}\n- Edad: {{ $json.age }} a\u00f1os\n- Diagn\u00f3stico principal: {{ $json.main_diagnosis }}\n- Nivel de dolor (EVA): {{ $json.pain_level }}\n- \u00cdndice de Barthel: {{ $json.barthel_index }}\n- Contexto cl\u00ednico: {{ $json.comorbid_context }}\n\nTAREA:\nRedacta la nota de evaluaci\u00f3n inicial integrando los datos anteriores. En la narrativa, describe detalladamente:\n1. Su actitud postural y alteraciones en el patr\u00f3n de la marcha o necesidad de ayudas t\u00e9cnicas.\n2. Limitaciones de movilidad activa/pasiva relacionadas con el dolor.\n3. Barreras psicosociales (miedo al movimiento, fatiga, aislamiento).\n4. Nivel de asistencia requerida para actividades b\u00e1sicas (aseo, vestido, transferencias)."
+              "content": "=INSTRUCCIONES DE COMPORTAMIENTO:\nEres un fisioterapeuta clínico especializado en geriatría y dolor crónico. Redacta notas de evolución en texto libre, utilizando terminología técnica de fisioterapia (ej. ROM, balance articular, kinesiofobia, ABVD). Queda estrictamente prohibido usar listas o formato estructurado. Escribe un párrafo narrativo y denso.\n\nDATOS DEL PACIENTE:\n- Género: {{ $json.gender }}\n- Edad: {{ $json.age }} años\n- Diagnóstico principal: {{ $json.main_diagnosis }}\n- Nivel de dolor (EVA): {{ $json.pain_level }}\n- Índice de Barthel: {{ $json.barthel_index }}\n- Contexto clínico: {{ $json.comorbid_context }}\n\nTAREA:\nRedacta la nota de evaluación inicial integrando los datos anteriores. En la narrativa, describe detalladamente:\n1. Su actitud postural y alteraciones en el patrón de la marcha o necesidad de ayudas técnicas.\n2. Limitaciones de movilidad activa/pasiva relacionadas con el dolor.\n3. Barreras psicosociales (miedo al movimiento, fatiga, aislamiento).\n4. Nivel de asistencia requerida para actividades básicas (aseo, vestido, transferencias)."
             },
             {}
           ]
@@ -128,7 +128,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const numPatients = 5;\n\nconst diagnoses = [\n  'Artrosis severa de rodilla bilateral', \n  'Lumbalgia cr\u00f3nica inespec\u00edfica con kinesiofobia', \n  'S\u00edndrome de fragilidad geri\u00e1trica y sarcopenia', \n  'Dolor cr\u00f3nico generalizado (sospecha de sensibilizaci\u00f3n central)', \n  'Fractura de cadera reciente post-quir\u00fargica'\n];\n\nconst barthelScores = [\n  '20 (Dependencia grave)', \n  '45 (Dependencia moderada)', \n  '60 (Dependencia leve)', \n  '90 (Independiente para ABVD)'\n];\n\nconst painVAS = ['4/10', '6/10', '8/10', '9/10 (Dolor irruptivo)'];\n\nconst comorbidities = [\n  'Deterioro cognitivo leve', \n  'Polifarmacia (m\u00e1s de 8 f\u00e1rmacos)', \n  'Aislamiento social y estado an\u00edmico bajo', \n  'Hipertensi\u00f3n y riesgo moderado de ca\u00eddas'\n];\n\nconst genders = ['Hombre', 'Mujer'];\n\n// Funci\u00f3n auxiliar para elegir un elemento aleatorio\nconst getRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];\n\nlet syntheticPatients = [];\n\nfor (let i = 0; i < numPatients; i++) {\n  // Edad aleatoria entre 18 y 95 a\u00f1os (ambos inclusive)\nlet age = Math.floor(Math.random() * (95 - 18 + 1)) + 18;\n  \n  // ID con formato GER-001, GER-002...\n  let patientId = String(i + 1).padStart(3, '0');\n  \n  syntheticPatients.push({\n    json: {\n      patient_id: patientId,\n      age: age,\n      gender: getRandom(genders),\n      main_diagnosis: getRandom(diagnoses),\n      barthel_index: getRandom(barthelScores),\n      pain_level: getRandom(painVAS),\n      comorbid_context: getRandom(comorbidities)\n    }\n  });\n}\n\nreturn syntheticPatients;;"
+        "jsCode": "const numPatients = 5;\n\nconst diagnoses = [\n  'Artrosis severa de rodilla bilateral', \n  'Lumbalgia crónica inespecífica con kinesiofobia', \n  'Síndrome de fragilidad geriátrica y sarcopenia', \n  'Dolor crónico generalizado (sospecha de sensibilización central)', \n  'Fractura de cadera reciente post-quirúrgica'\n];\n\nconst barthelScores = [\n  '20 (Dependencia grave)', \n  '45 (Dependencia moderada)', \n  '60 (Dependencia leve)', \n  '90 (Independiente para ABVD)'\n];\n\nconst painVAS = ['4/10', '6/10', '8/10', '9/10 (Dolor irruptivo)'];\n\nconst comorbidities = [\n  'Deterioro cognitivo leve', \n  'Polifarmacia (más de 8 fármacos)', \n  'Aislamiento social y estado anímico bajo', \n  'Hipertensión y riesgo moderado de caídas'\n];\n\nconst genders = ['Hombre', 'Mujer'];\n\n// Función auxiliar para elegir un elemento aleatorio\nconst getRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];\n\nlet syntheticPatients = [];\n\nfor (let i = 0; i < numPatients; i++) {\n  // Edad aleatoria entre 18 y 95 años (ambos inclusive)\nlet age = Math.floor(Math.random() * (95 - 18 + 1)) + 18;\n  \n  // ID con formato GER-001, GER-002...\n  let patientId = String(i + 1).padStart(3, '0');\n  \n  syntheticPatients.push({\n    json: {\n      patient_id: patientId,\n      age: age,\n      gender: getRandom(genders),\n      main_diagnosis: getRandom(diagnoses),\n      barthel_index: getRandom(barthelScores),\n      pain_level: getRandom(painVAS),\n      comorbid_context: getRandom(comorbidities)\n    }\n  });\n}\n\nreturn syntheticPatients;;"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -188,7 +188,7 @@
     },
     {
       "parameters": {
-        "content": "## Version 1.0 -> 2.0\n- Promt usar RAG con documentos ICF para las historias cl\u00ednicas\n- Las historias cl\u00ednicas se crean una a una y se pasan al nodo c\u00f3digo -> En futuras versiones simplemente se subir\u00e1 el JSON con las historias pero para testeo esta forma lo simplifica",
+        "content": "## Version 1.0 -> 2.0\n- Promt usar RAG con documentos ICF para las historias clínicas\n- Las historias clínicas se crean una a una y se pasan al nodo código -> En futuras versiones simplemente se subirá el JSON con las historias pero para testeo esta forma lo simplifica",
         "height": 192,
         "width": 1104
       },
@@ -200,99 +200,6 @@
       "typeVersion": 1,
       "id": "dc32339f-7843-4fab-8d34-8a8ddb38a001",
       "name": "Sticky Note2"
-    },
-    {
-      "parameters": {
-        "content": "##  RAG for Clinical text generator 2.0\nIt uses ICF document to create a Vector store for the generator to get information for ICF codes\n",
-        "height": 784,
-        "width": 912
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        2016,
-        416
-      ],
-      "typeVersion": 1,
-      "id": "731762b0-9280-4eb9-b56b-e72c3e34c9b8",
-      "name": "Sticky Note3"
-    },
-    {
-      "parameters": {
-        "formTitle": "documento_raw",
-        "formFields": {
-          "values": [
-            {
-              "fieldLabel": "documento_a_vectorizar",
-              "fieldType": "file"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.formTrigger",
-      "typeVersion": 2.5,
-      "position": [
-        2176,
-        704
-      ],
-      "id": "79145de0-acc4-493f-80a5-034210112ba9",
-      "name": "On form submission",
-      "webhookId": "30dc0b85-fc1c-466e-8d8a-bb1829de650b",
-      "disabled": true
-    },
-    {
-      "parameters": {
-        "dataType": "binary",
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
-      "typeVersion": 1.1,
-      "position": [
-        2624,
-        912
-      ],
-      "id": "357fecbb-d05a-41d1-a426-4c847a41b93c",
-      "name": "Default Data Loader"
-    },
-    {
-      "parameters": {
-        "mode": "insert",
-        "qdrantCollection": "icf_brief_spanish",
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
-      "typeVersion": 1.3,
-      "position": [
-        2464,
-        704
-      ],
-      "id": "b2e16f8b-891f-4f5c-acf4-768cbf7dd69f",
-      "name": "Qdrant Vector Store1",
-      "credentials": {
-        "qdrantApi": {
-          "id": "Se6dS4EqhF06aYMR",
-          "name": "QdrantApi account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "model": "nomic-embed-text:latest"
-      },
-      "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
-      "typeVersion": 1,
-      "position": [
-        2400,
-        912
-      ],
-      "id": "3b81b505-d3b0-45d7-b966-181dd2f5e8f4",
-      "name": "Embeddings Ollama1",
-      "credentials": {
-        "ollamaApi": {
-          "id": "UtWcKdNytXqpLqaV",
-          "name": "Ollama account"
-        }
-      }
     },
     {
       "parameters": {
@@ -345,7 +252,12 @@
     },
     {
       "parameters": {
-        "qdrantCollection": "icf_brief_spanish",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "28851843-597c-4fc6-b7ce-3f375d55dc76",
+          "mode": "list",
+          "cachedResultName": "28851843-597c-4fc6-b7ce-3f375d55dc76"
+        },
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
@@ -390,7 +302,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return [\n  {\n    json:{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d770\", \"d920\"],\n  \"icf_name\": [\"b280-Sensaci\u00f3n de dolor\",\"d430-Levantar y llevar objetos\",\n        \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n    }\n  }];\n"
+        "jsCode": "return [\n  {\n    json:{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d770\", \"d920\"],\n  \"icf_name\": [\"b280-Sensación de dolor\",\"d430-Levantar y llevar objetos\",\n        \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n    }\n  }];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -439,34 +351,8 @@
     },
     {
       "parameters": {
-        "jsCode": "// Parse the LLM response into clean JSON\nconst response = $json.response;\nlet parsed = null;\n\nif (typeof response === 'object') {\n  parsed = response;\n}\n\nif (!parsed && typeof response === 'string') {\n  try {\n    parsed = JSON.parse(response);\n  } catch (e) {\n    const blockMatch = response.match(/```(?:json)?\\s*([\\s\\S]*?)```/);\n    if (blockMatch) {\n      try {\n        parsed = JSON.parse(blockMatch[1].trim());\n      } catch (e2) {\n        const braceMatch = response.match(/\\{([\\s\\S]*)\\}/);\n        if (braceMatch) {\n          try {\n            parsed = JSON.parse(braceMatch[0]);\n          } catch (e3) {\n            parsed = { error: 'No se pudo parsear la respuesta', raw: response };\n          }\n        }\n      }\n    }\n  }\n}\n\nif (!parsed) {\n  return [{ json: { error: 'Respuesta no parseable', raw: response } }];\n}\n\nreturn [{ json: parsed }];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        1168,
-        416
-      ],
-      "id": "4a2a90aa-1f4c-485b-9c40-f731c66cb6d7",
-      "name": "parsea respuesta LLM"
-    },
-    {
-      "parameters": {
-        "jsCode": "// Parse the LLM response into clean JSON\nconst response = $json.response;\nlet parsed = null;\n\nif (typeof response === 'object') {\n  parsed = response;\n}\n\nif (!parsed && typeof response === 'string') {\n  try {\n    parsed = JSON.parse(response);\n  } catch (e) {\n    const blockMatch = response.match(/```(?:json)?\\s*([\\s\\S]*?)```/);\n    if (blockMatch) {\n      try {\n        parsed = JSON.parse(blockMatch[1].trim());\n      } catch (e2) {\n        const braceMatch = response.match(/\\{([\\s\\S]*)\\}/);\n        if (braceMatch) {\n          try {\n            parsed = JSON.parse(braceMatch[0]);\n          } catch (e3) {\n            parsed = { error: 'No se pudo parsear la respuesta', raw: response };\n          }\n        }\n      }\n    }\n  }\n}\n\nif (!parsed) {\n  return [{ json: { error: 'Respuesta no parseable', raw: response } }];\n}\n\nreturn [{ json: parsed }];"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        1168,
-        544
-      ],
-      "id": "3d86df6d-fae2-4d56-8039-f9a00e1dc12c",
-      "name": "Parsear JSON del LLM y a\u00f1ade variables inicio"
-    },
-    {
-      "parameters": {
         "promptType": "define",
-        "text": "=Rol: Eres un m\u00e9dico rehabilitador. En vez de pacientes, la informaci\u00f3n de entrada que tienes son sus c\u00f3digos de la Clasificaci\u00f3n Internacional del Funcionamiento (CIF). Bas\u00e1ndote en el Core Set de la CIF para el Dolor Cr\u00f3nico Generalizado (Chronic Widespread Pain), debes tener en cuenta las deficiencias exactas que representa cada c\u00f3digo.\n\nA continuaci\u00f3n tienes las descripciones de las categor\u00edas CIF recuperadas de la base de conocimiento, para ayudarte a entender el significado de cada c\u00f3digo:\n{context}\n\nTarea: Tu tarea es escribir 3 historias cl\u00ednicas sint\u00e9ticas y realistas a partir de la informaci\u00f3n proporcionada en la secci\u00f3n <INPUT_ACTUAL>, por cada combinaci\u00f3n de c\u00f3digos.\n\nReglas Cr\u00edticas:\n1. Variabilidad: Las 3 historias deben ser estructural y sem\u00e1nticamente distintas. Utiliza distinta fraseolog\u00eda m\u00e9dica para describir los problemas\n2. Cero C\u00f3digos: Est\u00e1 ESTRICTAMENTE PROHIBIDO escribir los c\u00f3digos alfanum\u00e9ricos (ej. \"b280\" o \"d430\") dentro del texto de la historia cl\u00ednica.\n3. Formato JSON: Responde \u00daNICAMENTE con un objeto JSON v\u00e1lido, sin bloques de c\u00f3digo Markdown ni texto introductorio. Mant\u00e9n el id_code_combination, los icf_codes y los icf_name del JSON de entrada.\n4. Coherencia Cl\u00ednica: Revisa que no haya m\u00e1s c\u00f3digos de los que aparezcan en los proporcionados y que la historia refleje las deficiencias exactas.\n5. Trazabilidad de IDs: El campo \"id_clinical_text\" de cada historia generada debe seguir estrictamente el patr\u00f3n \"[ID_INPUT]_[NUMERO]\". Para este procesamiento, el ID exacto que debes usar como base es \"{{ $json.id_code_combination }}\". Por tanto, los tres identificadores generados deben ser obligatoriamente: \"{{ $json.id_code_combination }}_1\", \"{{ $json.id_code_combination }}_2\" y \"{{ $json.id_code_combination }}_3\".\n\n<EJEMPLO>\nInput:\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d920\"],\n  \"icf_name\": [\"b280- Sensaci\u00f3n de dolor\",\"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n}\n\nOutput:\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d920\"],\n  \"icf_name\": [\"b280- Sensaci\u00f3n de dolor\",\"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"006_1\",\n      \"clinical_text\": \"Adolescente de 12 a\u00f1os acude a consulta por dolor de cadera tras notar un pinchazo desde hace m\u00e1s de un a\u00f1o tras un partido de hockey. Refiere que la molestia le impide cargar su mochila escolar y ha provocado discusiones constantes con sus padres al negarse a participar en las excursiones familiares de fin de semana.\"\n    }\n  ]\n}\n</EJEMPLO>\n\n<INPUT_ACTUAL>\n{{ JSON.stringify($json) }}\n</INPUT_ACTUAL>",
+        "text": "=Rol: Eres un médico rehabilitador. En vez de pacientes, la información de entrada que tienes son sus códigos de la Clasificación Internacional del Funcionamiento (CIF). Basándote en el Core Set de la CIF para el Dolor Crónico Generalizado (Chronic Widespread Pain), debes tener en cuenta las deficiencias exactas que representa cada código.\n\nTarea: Tu tarea es escribir 3 historias clínicas sintéticas y realistas a partir de la información proporcionada en la sección <INPUT_ACTUAL>, por cada combinación de códigos.\n\nReglas Críticas:\n1. Variabilidad: Las 3 historias deben ser estructural y semánticamente distintas. Utiliza distinta fraseología médica para describir los problemas\n2. Cero Códigos: Está ESTRICTAMENTE PROHIBIDO escribir los códigos alfanuméricos (ej. \"b280\" o \"d430\") dentro del texto de la historia clínica.\n3. Formato JSON: Responde ÚNICAMENTE con un objeto JSON válido, sin bloques de código Markdown ni texto introductorio. Mantén el id_code_combination, los icf_codes y los icf_name del JSON de entrada.\n4. Coherencia Clínica: Revisa que no haya más códigos de los que aparezcan en los proporcionados y que la historia refleje las deficiencias exactas.\n5. Trazabilidad de IDs: El campo \"id_clinical_text\" de cada historia generada debe seguir estrictamente el patrón \"[ID_INPUT]_[NUMERO]\". Para este procesamiento, el ID exacto que debes usar como base es \"{{ $json.id_code_combination }}\". Por tanto, los tres identificadores generados deben ser obligatoriamente: \"{{ $json.id_code_combination }}_1\", \"{{ $json.id_code_combination }}_2\" y \"{{ $json.id_code_combination }}_3\".\n\n<EJEMPLO>\nInput:\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d920\"],\n  \"icf_name\": [\"b280- Sensación de dolor\",\"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n}\n\nOutput:\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d920\"],\n  \"icf_name\": [\"b280- Sensación de dolor\",\"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"006_1\",\n      \"clinical_text\": \"Adolescente de 12 años acude a consulta por dolor de cadera tras notar un pinchazo desde hace más de un año tras un partido de hockey. Refiere que la molestia le impide cargar su mochila escolar y ha provocado discusiones constantes con sus padres al negarse a participar en las excursiones familiares de fin de semana.\"\n    }\n  ]\n}\n</EJEMPLO>\n\n<INPUT_ACTUAL>\n{{ JSON.stringify($json) }}\n</INPUT_ACTUAL>",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
@@ -520,47 +406,6 @@
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "http://host.docker.internal:11434/api/generate",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "{\n  \"model\": \"gemma2\",\n  \"prompt\": \"Responde \u00fanicamente con la palabra RECIBIDO. No a\u00f1adas nada m\u00e1s.\",\n  \"stream\": false\n}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.4,
-      "position": [
-        832,
-        352
-      ],
-      "id": "6c9bed22-a67e-479e-9169-01355445fe2e",
-      "name": "HTTP Request"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "c92e8801-3230-486a-9f80-6ac72d30da58",
-              "name": "datos_procesados",
-              "value": "={{ JSON.parse($json.text.replace(/```json|```/g, '').trim()) }}",
-              "type": "object"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        1168,
-        304
-      ],
-      "id": "8b9df0ed-4678-46a5-b04a-9cd74e7dc314",
-      "name": "Edit Fields1"
-    },
-    {
-      "parameters": {
         "operation": "toJson",
         "options": {
           "format": true,
@@ -602,8 +447,8 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsOllama",
       "typeVersion": 1,
       "position": [
-        1184,
-        2176
+        1520,
+        2336
       ],
       "id": "91364f08-fef9-46fe-a565-68cb3675e7e3",
       "name": "Embeddings Ollama2",
@@ -615,7 +460,9 @@
       }
     },
     {
-      "parameters": {},
+      "parameters": {
+        "topK": 24
+      },
       "type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
       "typeVersion": 1,
       "position": [
@@ -627,7 +474,12 @@
     },
     {
       "parameters": {
-        "qdrantCollection": "icf_brief_spanish",
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "28851843-597c-4fc6-b7ce-3f375d55dc76",
+          "mode": "list",
+          "cachedResultName": "28851843-597c-4fc6-b7ce-3f375d55dc76"
+        },
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
@@ -658,21 +510,8 @@
     },
     {
       "parameters": {
-        "jsCode": "return [\n  {\n    json:{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d770\", \"d920\"],\n  \"icf_name\": [\"b280-Sensaci\u00f3n de dolor\",\"d430-Levantar y llevar objetos\",\n        \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n    }\n  }];\n"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        80,
-        1984
-      ],
-      "id": "38a029ae-e65e-451e-8cf1-b91902e78414",
-      "name": "Code in JavaScript3"
-    },
-    {
-      "parameters": {
         "promptType": "define",
-        "text": "=Rol: Eres un m\u00e9dico rehabilitador. En vez de pacientes, la informaci\u00f3n de entrada que tienes son sus c\u00f3digos de la Clasificaci\u00f3n Internacional del Funcionamiento (CIF). Bas\u00e1ndote en el Core Set de la CIF para el Dolor Cr\u00f3nico Generalizado (Chronic Widespread Pain), debes tener en cuenta las deficiencias exactas que representa cada c\u00f3digo.\n\nA continuaci\u00f3n tienes las descripciones de las categor\u00edas CIF recuperadas de la base de conocimiento, para ayudarte a entender el significado de cada c\u00f3digo:\n{context}\n\nTarea: Tu tarea es escribir 3 historias cl\u00ednicas realistas a partir de la informaci\u00f3n proporcionada en la secci\u00f3n <INPUT_ACTUAL>, por cada combinaci\u00f3n de c\u00f3digos.\n\nReglas Cr\u00edticas:\n1. Variabilidad: Las 3 historias deben ser estructural y sem\u00e1nticamente distintas. Utiliza distinta fraseolog\u00eda m\u00e9dica para describir los problemas\n2. Cero C\u00f3digos: Est\u00e1 ESTRICTAMENTE PROHIBIDO escribir los c\u00f3digos alfanum\u00e9ricos (ej. \"b280\" o \"d430\") dentro del texto de la historia cl\u00ednica.\n3. Restricci\u00f3n Tipogr\u00e1fica: Est\u00e1 ESTRICTAMENTE PROHIBIDO usar comillas dobles (\") dentro del texto generado. Si necesitas citar textualmente al paciente, usa obligatoriamente comillas simples (').\n4. Formato JSON: Responde \u00daNICAMENTE con un objeto JSON v\u00e1lido, sin bloques de c\u00f3digo Markdown ni texto introductorio. \n5. Coherencia Cl\u00ednica: Revisa que no haya m\u00e1s c\u00f3digos de los que aparezcan en los proporcionados y que la historia refleje las deficiencias exactas.\n\n\n<EJEMPLO>\nInput:\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d920\"],\n  \"icf_name\": [\"b280-Sensaci\u00f3n de dolor\",\"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n}\n\nOutput:\n\n{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Adolescente de 12 a\u00f1os acude a consulta por dolor de cadera tras notar un pinchazo desde hace m\u00e1s de un a\u00f1o tras un partido de hockey, no acudi\u00f3 al m\u00e9dico en ese momento, actualmente las radiograf\u00edas no muestran lesi\u00f3n, no realizada RMN. Actualmente refiere dificultad para llevar la mochila del colegio, y para jugar con su padre al hockey, que es su principal hobby. Le gustar\u00eda volver a poder jugar\"\n    },\n    {\n    \"clinical_text\": \"Var\u00f3n de 40 a\u00f1os, acude a consulta por dolor de espalda recurrente que comenz\u00f3 hace 5 a\u00f1os. Aproximadamente un episodio al mes. Trabaja de conductor de taxi, refiere no tener problemas para trabajar. Sin embargo dice tener dificultades para viajar, los episodios le impiden planificar viajes pues si le dan apenas puede moverse. Esto le limita a la hora de buscar espacios comunes con su pareja. Le gustar\u00eda poder reducir la frecuencia de episodios o saber qu\u00e9 puede hacer cu\u00e1ndo aparecen.\"\n    },\n    {\n    \"clinical_text\": \"Mujer 70 a\u00f1os, acude a consulta por dolor de MSD que apareci\u00f3 sin motivo aparente, dice que lo tiene 'de toda la vida'. Es activa, realiza actividades en el centro cultural del barrio como yoga y cer\u00e1mica con su hermana. Se siente limitada a la hora de realizar yoga, sigue realizando la actividad para ver a su hermana.\"\n    }\n  ]\n}\n\n</EJEMPLO>\n\n<INPUT_ACTUAL>\n{{ JSON.stringify($json) }}\n</INPUT_ACTUAL>",
+        "text": "=Rol: Eres un médico rehabilitador. En vez de pacientes, la información de entrada que tienes son sus códigos de la Clasificación Internacional del Funcionamiento (CIF). Basándote en el Core Set de la CIF para el Dolor Crónico Generalizado (Chronic Widespread Pain), debes tener en cuenta las deficiencias exactas que representa cada código.\n\nTarea: Tu tarea es escribir 3 historias clínicas realistas a partir de la información proporcionada en la sección <INPUT_ACTUAL>, por cada combinación de códigos.\n\nReglas Críticas:\n1. Variabilidad: Las 3 historias deben ser estructural y semánticamente distintas. Utiliza distinta fraseología médica para describir los problemas\n2. Cero Códigos: Está ESTRICTAMENTE PROHIBIDO escribir los códigos alfanuméricos (ej. \"b280\" o \"d430\") dentro del texto de la historia clínica.\n3. Restricción Tipográfica: Está ESTRICTAMENTE PROHIBIDO usar comillas dobles (\") dentro del texto generado. Si necesitas citar textualmente al paciente, usa obligatoriamente comillas simples (').\n4. Formato JSON: Responde ÚNICAMENTE con un objeto JSON válido, sin bloques de código Markdown ni texto introductorio. \n5. Restricción estricta de vocabulario: DEBES basarte en los códigos CIF que se te proporcionen en el contexto de búsqueda adjunto a este prompt. Bajo ninguna circunstancia puedes inventar códigos, modificar los existentes o utilizar códigos que recuerdes de tu entrenamiento si no aparecen explícitamente en el contexto recuperado. \n6. Coherencia clínica: Revisa que en el texto no haya más códigos de los que aparecen en el contexto de búsqueda adjunto. La historia debe reflejar las deficiencias exactas.\n\n\n<EJEMPLO_1>\nInput:\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d920\"],\n  \"icf_name\": [\"b280-Sensación de dolor\",\"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n}\n\nOutput:\n  [{\n    \"clinical_text\": \"Adolescente de 12 años acude a consulta por dolor de cadera tras notar un pinchazo desde hace más de un año tras un partido de hockey, no acudió al médico en ese momento, actualmente las radiografías no muestran lesión, no realizada RMN. Actualmente refiere dificultad para llevar la mochila del colegio, y para jugar con su padre al hockey, que es su principal hobby. Le gustaría volver a poder jugar.\\n\\nComenta que el dolor comenzó en la cadera pero que actualmente llega hasta el pie.\\n\\nExploración física: movilidad pasiva indolora salvo en extensión de cadera en prono, isométrico en flexión doloroso, FADDIR +,FABDRE +, desrot test -, SLR + con diferenciación de tobillo. Dolor a extensión lumbar activa de pie, no dolor al levantarse de la camilla ni en la sentadilla.\"\n    },\n    {\n    \"clinical_text\": \"Varón de 40 años, acude a consulta por dolor de espalda recurrente que comenzó hace 5 años. Aproximadamente un episodio al mes. Trabaja de conductor de taxi, refiere no tener problemas para trabajar pero le cuesta meter maletas en el maletero del taxi. Además dice tener dificultades para viajar, los episodios le impiden planificar viajes pues si le dan apenas puede moverse. Esto le limita a la hora de buscar espacios comunes con su pareja. Le gustaría poder reducir la frecuencia de episodios o saber qué puede hacer cuándo aparecen.\\n\\nExploración física: dolor a movimientos activos lumbares, principalmente flexión, dolor central en extensión, SLR reproduce dolor a nivel lumbar, Bragard +, slump +. EIL reduce dolor a la movilidad activa, slump y SLR. \\n\\n RM:12/24 \\n\\n Rx: Enseño ejercicios repetidos lumbares EIL 3-5/día x10 y enseño posibles respuestas y señales de stop\"\n    },\n    {\n    \"clinical_text\": \"Mujer 70 años, acude a consulta por dolor de MSD que apareció sin motivo aparente, dice que lo tiene 'de toda la vida'. Es activa, realiza actividades en el centro cultural del barrio como yoga y cerámica con su hermana. Se siente limitada a la hora de realizar yoga, sigue realizando la actividad para ver a su hermana.\\n\\nEn exploracion no dolor a movimientos pasivos de hombro, dolor a isométricos en RE, F, ABD y push, no observo limitación de movimiento a movimiento activo aunque refiere dolor. Dificultad para levantar mancuerna de 1kg con ese MS con respecto a contralateral. \\n\\n QuickDash:25% \\n\\n Tto: Enseño ejercicios isométricos de hombro, explico historia natural y gestión de la carga según respuesta sintomática, cito en una semana para progresar ejercicios.\"\n    }]\n  \n\n</EJEMPLO_1>\n\n<EJEMPLO_2>\nInput:\n{\n  \"id_code_combination\": \"002\",\n  \"icf_codes\": [\"b152\",\"b1602\",\"b280\",\"d240\",\"d850\",\"e570\"],\n  \"icf_name\":[\"b152-Funciones emocionales\",\"b1602-Contenido del pensamiento\",\"b280-Sensación de dolor\", \"d240-Manejo del estrés y otras demandas psicológicas\",\"d850-Trabajo remunerado\",\"e570-Servicios, sistemas y politicas de seguridad social\"]\n}\n\nOutput:\n[{\n  \"clinical_text\":\"Varón de 50 años que acude a consulta por dolor lumbar de 2 semanas de evolución.\\nRefiere que se hizo daño trabajando (construcción), posiblemente en alguna acción cargando peso, aunque no recuerda bien. Acudió al médico de su mutua y le aconsejó reposo y analgésicos, pero no lo mantiene y sigue trabajando a pesar del dolor.\\n\\nSíntomas / signos:\\nEs un dolor localizado en la región central de la espalda y zona glútea que asocia principalmente al movimiento (flexión lumbar y pasar a bipedestación desde sedestación). El dolor le va aumentando durante el día, sobre todo en el trabajo, llegando a tener dolor durante la noche y afectando su descanso. Los fines de semana le duele menos, ya que tiene menos actividad.\\nEscala numérica de intensidad de dolor: 7/10 en los peores momentos.\\n\\nAspectos psicosociales: Durante la entrevista explica que está intentando evitar esos movimientos en el trabajo, centrándose en tareas que no le duelen. Pero no quiere dejar de trabajar porque la empresa tiene mucho trabajo ahora, siente que tiene que ayudar o si no podrían echarle (ha habido despidos antes). Su situación económica le genera ansiedad y no puede dejar el trabajo.\"\n  },\n  {\n    \"clinical_text\": \"Mujer, 36 años. Acude a consulta por dolor cervical crónico (años de evolución).\\nRefiere que lleva muchos años así, desde el instituto. Describe su dolor como un dolor que siempre está presente pero de intensidad variable. No sabe localizar un punto concreto de dolor, pero se señala desde la base del craneo hacia la cabeza. Comenta que es \\'dolor tensional por el estrés\\'.\\nEscala numerica de intensidad del dolor: oscila entre un 2/10 y un 5/10. Asocia el aumento del dolor al estrés y a épocas en las que tiene más carga de trabajo.\\n\\nCuando le pregunto por si ha visto qué es lo que le mejora el dolor, me dice que la\\nmedicación le alivia parcialmente y que en vacaciones, cuando tiene más tiempo para retomar el deporte (salir a caminar, pádel) siente que le duele menos.\\n\\nAspectos psicosociales: Al iniciar la anamnesis, la paciente muestra \\'poca confianza\\' en el tratamiento, refiriendo que ha pasado por muchos fisios y que está aquí porque lo ha pedido su médico, pero sabe que su dolor no va a mejorar nunca.\"\n  },\n  {\n    \"clinical_text\": \"Mujer de 58 años que acude a consulta por dolor generalizado.\\nRefiere que cree que tiene fibromialgia aunque no tiene diagnóstico médico confirmado todavía. Se encuentra de baja desde hace 10 meses porque se siente incapaz de hacer su trabajo (enfermera) y lleva desde entonces con pruebas médicas para confirmar el diagnóstico.\\n\\nSíntomas / signos:\\nExplica que \\'le duele todo el cuerpo siempre\\'. Las zonas que más dolor presentan son ambos hombros y la espalda (tanto zona torácica como zona lumbar). No se aprecia inflamación y pérdida de movilidad en ninguna de las articulaciones, aunque el rango de movimiento no está libre de dolor. La intensidad del dolor de hombros es de un 6/10 (escala\\nnumérica), en zona torácica es 5/10 y en zona lumbar 5/10. El comportamiento de los síntomas varía:\\n- Hombros parece que hay un factor mecánico, ya que hay movimientos como la ABD que incrementan más su dolor que otros.\\n- Dolor torácico parece ser un dolor continuo y no varía por factores mecánicos\\n- Dolor lumbar empeora con la flexión\\n\\nTanto el dolor de hombros como el dolor lumbar empeoran con el movimiento y con la carga. Dice que desde hace unos meses ya no puede coger en brazos a su nieto, ahora que pasa más tiempo con él (se encarga de él todo el día mientras sus padres trabajan). Para ella, esto (no poder coger en brazos a su nieto) tiene un impacto emocional importante.\\n\\nComenta que no tiene prisa por volver a trabajar. Ahora su objetivo es poder ayudar a su hija cuidando de su nieto.\"\n  }]\n\n</EJEMPLO_2>\n\n<INPUT_ACTUAL>\n{{ JSON.stringify($json) }}\n</INPUT_ACTUAL>",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
@@ -777,7 +616,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const inputItem = $input.first();\n\nif (!inputItem?.binary) {\n  throw new Error(\"No se encontraron datos binarios en la entrada del nodo de activaci\u00f3n.\");\n}\n\nconst [binaryKey] = Object.keys(inputItem.binary);\nif (!binaryKey) {\n  throw new Error(\"El objeto binario est\u00e1 vac\u00edo o mal estructurado.\");\n}\n\nlet parsedData;\ntry {\n  const binaryBuffer = await this.helpers.getBinaryDataBuffer(0, binaryKey);\n  const rawString = binaryBuffer.toString('utf-8');\n  parsedData = JSON.parse(rawString);\n} catch (error) {\n  throw new Error(`Fallo cr\u00edtico al parsear el archivo binario a JSON: ${error.message}`);\n}\n\nconst itemsToProcess = Array.isArray(parsedData) ? parsedData : [parsedData];\n\nreturn itemsToProcess.map(({ id_code_combination, icf_code, icf_name, clinical_profile }) => ({\n  json: {\n    id_code_combination,\n    icf_codes: icf_code,\n    icf_name: icf_name ?? null,\n  }\n}));"
+        "jsCode": "const inputItem = $input.first();\n\nif (!inputItem?.binary) {\n  throw new Error(\"No se encontraron datos binarios en la entrada del nodo de activación.\");\n}\n\nconst [binaryKey] = Object.keys(inputItem.binary);\nif (!binaryKey) {\n  throw new Error(\"El objeto binario está vacío o mal estructurado.\");\n}\n\nlet parsedData;\ntry {\n  const binaryBuffer = await this.helpers.getBinaryDataBuffer(0, binaryKey);\n  const rawString = binaryBuffer.toString('utf-8');\n  parsedData = JSON.parse(rawString);\n} catch (error) {\n  throw new Error(`Fallo crítico al parsear el archivo binario a JSON: ${error.message}`);\n}\n\nconst itemsToProcess = Array.isArray(parsedData) ? parsedData : [parsedData];\n\nreturn itemsToProcess.map(({ id_code_combination, icf_code, icf_name, clinical_profile }) => ({\n  json: {\n    id_code_combination,\n    icf_codes: icf_code,\n    icf_name: icf_name ?? null,\n  }\n}));"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -790,7 +629,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// 1. Funciones puras (Single Responsibility Principle)\nconst extraerTextoBruto = (json) => {\n  // El operador '?.' (Optional Chaining) evita errores si una propiedad no existe\n  return json.response || \n         json.choices?.[0]?.message?.content || \n         json.output || \n         json.message;\n};\n\nconst limpiarMarkdownJSON = (texto) => {\n  const match = texto.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/);\n  return match ? match[1] : texto;\n};\n\nconst parsearDatosLLM = (textoBruto, indice) => {\n  const textoLimpio = limpiarMarkdownJSON(textoBruto);\n  try {\n    return JSON.parse(textoLimpio.trim());\n  } catch (error) {\n    throw new Error(`JSON inv\u00e1lido en iteraci\u00f3n ${indice}. Texto: ${textoLimpio}`);\n  }\n};\n\nconst formatearHistoriasClinicas = (datosParseados, idCombinacion) => {\n  const historias = datosParseados.clinical_object || datosParseados.historias_clinicas;\n  \n  if (!Array.isArray(historias)) return [];\n\n  // Mapeo directo en lugar de bucles manuales\n  return historias.map((historia, index) => ({\n    id_clinical_text: `${idCombinacion}_${index + 1}`,\n    clinical_text: historia.clinical_text\n  }));\n};\n\n// 2. Ejecuci\u00f3n principal\nconst datosOriginales = $('doc_to_json').all();\nconst inputsActuales = $input.all();\n\n// En lugar de mutar un array con un bucle 'for', devolvemos uno nuevo con '.map()'\nconst resultadosFinales = inputsActuales.map((item, index) => {\n  const textoBruto = extraerTextoBruto(item.json);\n  \n  if (!textoBruto) {\n    throw new Error(`Variable de texto ausente en item ${index}.`);\n  }\n\n  const datosIA = parsearDatosLLM(textoBruto, index);\n  const datosBase = datosOriginales[index].json; // Datos de referencia\n\n  // 3. Ensamblaje final\n  return {\n    json: {\n      id_code_combination: datosBase.id_code_combination,\n      icf_codes: datosBase.icf_codes,\n      icf_name: datosBase.icf_name,\n      clinical_object: formatearHistoriasClinicas(datosIA, datosBase.id_code_combination)\n    }\n  };\n});\n\nreturn resultadosFinales;"
+        "jsCode": "// 1. Pure Functions (Single Responsibility Principle)\nconst extractRawText = (json) => {\n  // Optional Chaining avoids errors if a property is missing\n  return json.response || \n         json.choices?.[0]?.message?.content || \n         json.output || \n         json.message;\n};\n\nconst cleanMarkdownJSON = (text) => {\n  const match = text.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/);\n  return match ? match[1] : text;\n};\n\nconst parseLLMData = (rawText, index) => {\n  const cleanText = cleanMarkdownJSON(rawText);\n  try {\n    return JSON.parse(cleanText.trim());\n  } catch (error) {\n    throw new Error(`Invalid JSON at iteration ${index}. Text: ${cleanText}`);\n  }\n};\n\nconst formatClinicalHistories = (parsedData, baseData) => {\n  // Accommodate direct arrays or nested objects from the LLM\n  const histories = Array.isArray(parsedData) \n      ? parsedData \n      : (parsedData.clinical_object || parsedData.historias_clinicas || parsedData);\n  \n  if (!Array.isArray(histories)) return [];\n\n  // Map each history into a flat structure that includes the base data\n  return histories.map((history, index) => ({\n    id_code_combination: baseData.id_code_combination,\n    icf_codes: baseData.icf_codes,\n    icf_name: baseData.icf_name,\n    id_clinical_text: `${baseData.id_code_combination}_${index + 1}`,\n    clinical_text: history.clinical_text || history // Fallback just in case\n  }));\n};\n\n// 2. Main Execution (Adapted for n8n format)\nconst originalData = $('doc_to_json').all();\nconst currentInputs = $input.all();\n\n// Use flatMap to avoid nested arrays, returning a flat array of items\nconst finalResults = currentInputs.flatMap((item, index) => {\n  const rawText = extractRawText(item.json);\n  \n  if (!rawText) {\n    throw new Error(`Missing text variable at item ${index}.`);\n  }\n\n  const aiData = parseLLMData(rawText, index);\n  const baseData = originalData[index].json; // Reference data\n\n  // 3. Final Assembly\n  const formattedHistories = formatClinicalHistories(aiData, baseData);\n\n  // Return each history wrapped in the \"json\" object expected by n8n\n  return formattedHistories.map(history => ({\n    json: history\n  }));\n});\n\nreturn finalResults;"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -823,12 +662,293 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -448,
-        1600
+        -288,
+        1664
       ],
       "typeVersion": 1,
       "id": "cd596e42-58b5-4dfa-8c7b-ec580e35e89f",
       "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse the LLM response into clean JSON\nconst response = $json.response;\nlet parsed = null;\n\nif (typeof response === 'object') {\n  parsed = response;\n}\n\nif (!parsed && typeof response === 'string') {\n  try {\n    parsed = JSON.parse(response);\n  } catch (e) {\n    const blockMatch = response.match(/```(?:json)?\\s*([\\s\\S]*?)```/);\n    if (blockMatch) {\n      try {\n        parsed = JSON.parse(blockMatch[1].trim());\n      } catch (e2) {\n        const braceMatch = response.match(/\\{([\\s\\S]*)\\}/);\n        if (braceMatch) {\n          try {\n            parsed = JSON.parse(braceMatch[0]);\n          } catch (e3) {\n            parsed = { error: 'No se pudo parsear la respuesta', raw: response };\n          }\n        }\n      }\n    }\n  }\n}\n\nif (!parsed) {\n  return [{ json: { error: 'Respuesta no parseable', raw: response } }];\n}\n\nreturn [{ json: parsed }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1168,
+        544
+      ],
+      "id": "3d86df6d-fae2-4d56-8039-f9a00e1dc12c",
+      "name": "structure_response_into_json"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-embedding-2"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        2208
+      ],
+      "id": "f72b7a9e-5840-4650-917f-9fec64682002",
+      "name": "Embeddings Google Gemini",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "JEETsbvwfH5JUXdD",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.5-flash-lite",
+        "options": {
+          "temperature": 0,
+          "safetySettings": {
+            "values": []
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        544,
+        3744
+      ],
+      "id": "62850a47-0872-42fc-8c5d-269dd895f853",
+      "name": "Google Gemini Chat Model2",
+      "retryOnFail": true,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "UO3uWnOiqfW0Ifnw",
+          "name": "freeicf"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "topK": 3
+      },
+      "type": "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+      "typeVersion": 1,
+      "position": [
+        800,
+        3456
+      ],
+      "id": "1faa447b-36d6-49e6-ad75-f9d92d244c9b",
+      "name": "Vector Store Retriever2"
+    },
+    {
+      "parameters": {
+        "qdrantCollection": {
+          "__rl": true,
+          "value": "google_embeddings_001",
+          "mode": "list",
+          "cachedResultName": "google_embeddings_001"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "typeVersion": 1.3,
+      "position": [
+        832,
+        3600
+      ],
+      "id": "44e73ff5-4e21-4f50-9e8e-bc65bbeed5f6",
+      "name": "Qdrant Vector Store3",
+      "credentials": {
+        "qdrantApi": {
+          "id": "nsyLPDWnLwsGHtUe",
+          "name": "qdrant_local"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "name": "Replace Me3",
+      "typeVersion": 1,
+      "position": [
+        400,
+        3024
+      ],
+      "id": "874b5dab-7de2-4bba-a03f-5aad5db72bde"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Rol: Eres un médico rehabilitador. En vez de pacientes, la información de entrada que tienes son sus códigos de la Clasificación Internacional del Funcionamiento (CIF). Basándote en el Core Set de la CIF para el Dolor Crónico Generalizado (Chronic Widespread Pain), debes tener en cuenta las deficiencias exactas que representa cada código.\n\nTarea: Tu tarea es escribir 3 historias clínicas realistas a partir de la información proporcionada en la sección <INPUT_ACTUAL>, por cada combinación de códigos.\n\nReglas Críticas:\n1. Variabilidad: Las 3 historias deben ser estructural y semánticamente distintas. Utiliza distinta fraseología médica para describir los problemas\n2. Cero Códigos: Está ESTRICTAMENTE PROHIBIDO escribir los códigos alfanuméricos (ej. \"b280\" o \"d430\") dentro del texto de la historia clínica.\n3. Restricción Tipográfica: Está ESTRICTAMENTE PROHIBIDO usar comillas dobles (\") dentro del texto generado. Si necesitas citar textualmente al paciente, usa obligatoriamente comillas simples (').\n4. Formato JSON: Responde ÚNICAMENTE con un objeto JSON válido, sin bloques de código Markdown ni texto introductorio. \n5. Restricción estricta de vocabulario: DEBES basarte en los códigos CIF que se te proporcionen en el contexto de búsqueda adjunto a este prompt. Bajo ninguna circunstancia puedes inventar códigos, modificar los existentes o utilizar códigos que recuerdes de tu entrenamiento si no aparecen explícitamente en el contexto recuperado. \n6. Coherencia clínica: Revisa que en el texto no haya más códigos de los que aparecen en el contexto de búsqueda adjunto. La historia debe reflejar las deficiencias exactas.\n\n\n<EJEMPLO_1>\nInput:\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d920\"],\n  \"icf_name\": [\"b280-Sensación de dolor\",\"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\"]\n}\n\nOutput:\n  [{\n    \"clinical_text\": \"Adolescente de 12 años acude a consulta por dolor de cadera tras notar un pinchazo desde hace más de un año tras un partido de hockey, no acudió al médico en ese momento, actualmente las radiografías no muestran lesión, no realizada RMN. Actualmente refiere dificultad para llevar la mochila del colegio, y para jugar con su padre al hockey, que es su principal hobby. Le gustaría volver a poder jugar.\\n\\nComenta que el dolor comenzó en la cadera pero que actualmente llega hasta el pie.\\n\\nExploración física: movilidad pasiva indolora salvo en extensión de cadera en prono, isométrico en flexión doloroso, FADDIR +,FABDRE +, desrot test -, SLR + con diferenciación de tobillo. Dolor a extensión lumbar activa de pie, no dolor al levantarse de la camilla ni en la sentadilla.\"\n    },\n    {\n    \"clinical_text\": \"Varón de 40 años, acude a consulta por dolor de espalda recurrente que comenzó hace 5 años. Aproximadamente un episodio al mes. Trabaja de conductor de taxi, refiere no tener problemas para trabajar pero le cuesta meter maletas en el maletero del taxi. Además dice tener dificultades para viajar, los episodios le impiden planificar viajes pues si le dan apenas puede moverse. Esto le limita a la hora de buscar espacios comunes con su pareja. Le gustaría poder reducir la frecuencia de episodios o saber qué puede hacer cuándo aparecen.\\n\\nExploración física: dolor a movimientos activos lumbares, principalmente flexión, dolor central en extensión, SLR reproduce dolor a nivel lumbar, Bragard +, slump +. EIL reduce dolor a la movilidad activa, slump y SLR. \\n\\n RM:12/24 \\n\\n Rx: Enseño ejercicios repetidos lumbares EIL 3-5/día x10 y enseño posibles respuestas y señales de stop\"\n    },\n    {\n    \"clinical_text\": \"Mujer 70 años, acude a consulta por dolor de MSD que apareció sin motivo aparente, dice que lo tiene 'de toda la vida'. Es activa, realiza actividades en el centro cultural del barrio como yoga y cerámica con su hermana. Se siente limitada a la hora de realizar yoga, sigue realizando la actividad para ver a su hermana.\\n\\nEn exploracion no dolor a movimientos pasivos de hombro, dolor a isométricos en RE, F, ABD y push, no observo limitación de movimiento a movimiento activo aunque refiere dolor. Dificultad para levantar mancuerna de 1kg con ese MS con respecto a contralateral. \\n\\n QuickDash:25% \\n\\n Tto: Enseño ejercicios isométricos de hombro, explico historia natural y gestión de la carga según respuesta sintomática, cito en una semana para progresar ejercicios.\"\n    }]\n  \n\n</EJEMPLO_1>\n\n<EJEMPLO_2>\nInput:\n{\n  \"id_code_combination\": \"002\",\n  \"icf_codes\": [\"b152\",\"b1602\",\"b280\",\"d240\",\"d850\",\"e570\"],\n  \"icf_name\":[\"b152-Funciones emocionales\",\"b1602-Contenido del pensamiento\",\"b280-Sensación de dolor\", \"d240-Manejo del estrés y otras demandas psicológicas\",\"d850-Trabajo remunerado\",\"e570-Servicios, sistemas y politicas de seguridad social\"]\n}\n\nOutput:\n[{\n  \"clinical_text\":\"Varón de 50 años que acude a consulta por dolor lumbar de 2 semanas de evolución.\\nRefiere que se hizo daño trabajando (construcción), posiblemente en alguna acción cargando peso, aunque no recuerda bien. Acudió al médico de su mutua y le aconsejó reposo y analgésicos, pero no lo mantiene y sigue trabajando a pesar del dolor.\\n\\nSíntomas / signos:\\nEs un dolor localizado en la región central de la espalda y zona glútea que asocia principalmente al movimiento (flexión lumbar y pasar a bipedestación desde sedestación). El dolor le va aumentando durante el día, sobre todo en el trabajo, llegando a tener dolor durante la noche y afectando su descanso. Los fines de semana le duele menos, ya que tiene menos actividad.\\nEscala numérica de intensidad de dolor: 7/10 en los peores momentos.\\n\\nAspectos psicosociales: Durante la entrevista explica que está intentando evitar esos movimientos en el trabajo, centrándose en tareas que no le duelen. Pero no quiere dejar de trabajar porque la empresa tiene mucho trabajo ahora, siente que tiene que ayudar o si no podrían echarle (ha habido despidos antes). Su situación económica le genera ansiedad y no puede dejar el trabajo.\"\n  },\n  {\n    \"clinical_text\": \"Mujer, 36 años. Acude a consulta por dolor cervical crónico (años de evolución).\\nRefiere que lleva muchos años así, desde el instituto. Describe su dolor como un dolor que siempre está presente pero de intensidad variable. No sabe localizar un punto concreto de dolor, pero se señala desde la base del craneo hacia la cabeza. Comenta que es \\'dolor tensional por el estrés\\'.\\nEscala numerica de intensidad del dolor: oscila entre un 2/10 y un 5/10. Asocia el aumento del dolor al estrés y a épocas en las que tiene más carga de trabajo.\\n\\nCuando le pregunto por si ha visto qué es lo que le mejora el dolor, me dice que la\\nmedicación le alivia parcialmente y que en vacaciones, cuando tiene más tiempo para retomar el deporte (salir a caminar, pádel) siente que le duele menos.\\n\\nAspectos psicosociales: Al iniciar la anamnesis, la paciente muestra \\'poca confianza\\' en el tratamiento, refiriendo que ha pasado por muchos fisios y que está aquí porque lo ha pedido su médico, pero sabe que su dolor no va a mejorar nunca.\"\n  },\n  {\n    \"clinical_text\": \"Mujer de 58 años que acude a consulta por dolor generalizado.\\nRefiere que cree que tiene fibromialgia aunque no tiene diagnóstico médico confirmado todavía. Se encuentra de baja desde hace 10 meses porque se siente incapaz de hacer su trabajo (enfermera) y lleva desde entonces con pruebas médicas para confirmar el diagnóstico.\\n\\nSíntomas / signos:\\nExplica que \\'le duele todo el cuerpo siempre\\'. Las zonas que más dolor presentan son ambos hombros y la espalda (tanto zona torácica como zona lumbar). No se aprecia inflamación y pérdida de movilidad en ninguna de las articulaciones, aunque el rango de movimiento no está libre de dolor. La intensidad del dolor de hombros es de un 6/10 (escala\\nnumérica), en zona torácica es 5/10 y en zona lumbar 5/10. El comportamiento de los síntomas varía:\\n- Hombros parece que hay un factor mecánico, ya que hay movimientos como la ABD que incrementan más su dolor que otros.\\n- Dolor torácico parece ser un dolor continuo y no varía por factores mecánicos\\n- Dolor lumbar empeora con la flexión\\n\\nTanto el dolor de hombros como el dolor lumbar empeoran con el movimiento y con la carga. Dice que desde hace unos meses ya no puede coger en brazos a su nieto, ahora que pasa más tiempo con él (se encarga de él todo el día mientras sus padres trabajan). Para ella, esto (no poder coger en brazos a su nieto) tiene un impacto emocional importante.\\n\\nComenta que no tiene prisa por volver a trabajar. Ahora su objetivo es poder ayudar a su hija cuidando de su nieto.\"\n  }]\n\n</EJEMPLO_2>\n\n<DOCUMENTACION_CIF_RECUPERADA>\n{context}\n</DOCUMENTACION_CIF_RECUPERADA>\n\n<INPUT_ACTUAL>\n{question}\n</INPUT_ACTUAL>",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+      "typeVersion": 1.7,
+      "position": [
+        672,
+        3232
+      ],
+      "id": "dad0787e-a43a-4e4a-842c-f13dc22e14c3",
+      "name": "con puenteo de formato2"
+    },
+    {
+      "parameters": {
+        "formTitle": "documento_raw",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "documento_a_vectorizar",
+              "fieldType": "file"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        -192,
+        2864
+      ],
+      "id": "3d2e8e41-fc14-4579-9db6-a1e71e407d89",
+      "name": "On form submission",
+      "webhookId": "8a609f89-8bcc-49a6-a139-9aed901d7d17"
+    },
+    {
+      "parameters": {
+        "jsCode": "for (const item of $input.all()) {\n  item.json = {\n    icf_codes: item.json.icf_codes,\n    icf_name: item.json.icf_name,\n  };\n}\n\nreturn $input.all();;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        544,
+        3104
+      ],
+      "id": "ff4f0282-226f-4f86-a40e-36276e571842",
+      "name": "quita el id del json1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const inputItem = $input.first();\n\nif (!inputItem?.binary) {\n  throw new Error(\"No se encontraron datos binarios en la entrada del nodo de activación.\");\n}\n\nconst [binaryKey] = Object.keys(inputItem.binary);\nif (!binaryKey) {\n  throw new Error(\"El objeto binario está vacío o mal estructurado.\");\n}\n\nlet parsedData;\ntry {\n  const binaryBuffer = await this.helpers.getBinaryDataBuffer(0, binaryKey);\n  const rawString = binaryBuffer.toString('utf-8');\n  parsedData = JSON.parse(rawString);\n} catch (error) {\n  throw new Error(`Fallo crítico al parsear el archivo binario a JSON: ${error.message}`);\n}\n\nconst itemsToProcess = Array.isArray(parsedData) ? parsedData : [parsedData];\n\nreturn itemsToProcess.map(({ id_code_combination, icf_code, icf_name, clinical_profile }) => ({\n  json: {\n    id_code_combination,\n    icf_codes: icf_code,\n    icf_name: icf_name ?? null,\n  }\n}));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        16,
+        2864
+      ],
+      "id": "85eaf6ff-616a-4389-a353-c9b66a61d3fd",
+      "name": "doc_to_json1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 1. Pure Functions (Single Responsibility Principle)\nconst extractRawText = (json) => {\n  // Optional Chaining avoids errors if a property is missing\n  return json.response || \n         json.choices?.[0]?.message?.content || \n         json.output || \n         json.message;\n};\n\nconst cleanMarkdownJSON = (text) => {\n  const match = text.match(/```(?:json)?\\s*([\\s\\S]*?)\\s*```/);\n  return match ? match[1] : text;\n};\n\nconst parseLLMData = (rawText, index) => {\n  const cleanText = cleanMarkdownJSON(rawText);\n  try {\n    return JSON.parse(cleanText.trim());\n  } catch (error) {\n    throw new Error(`Invalid JSON at iteration ${index}. Text: ${cleanText}`);\n  }\n};\n\nconst formatClinicalHistories = (parsedData, baseData) => {\n  // Accommodate direct arrays or nested objects from the LLM\n  const histories = Array.isArray(parsedData) \n      ? parsedData \n      : (parsedData.clinical_object || parsedData.historias_clinicas || parsedData);\n  \n  if (!Array.isArray(histories)) return [];\n\n  // Map each history into a flat structure that includes the base data\n  return histories.map((history, index) => ({\n    id_code_combination: baseData.id_code_combination,\n    icf_codes: baseData.icf_codes,\n    icf_name: baseData.icf_name,\n    id_clinical_text: `${baseData.id_code_combination}_${index + 1}`,\n    clinical_text: history.clinical_text || history // Fallback just in case\n  }));\n};\n\n// 2. Main Execution (Adapted for n8n format)\nconst originalData = $('doc_to_json1').all();\nconst currentInputs = $input.all();\n\n// Use flatMap to avoid nested arrays, returning a flat array of items\nconst finalResults = currentInputs.flatMap((item, index) => {\n  const rawText = extractRawText(item.json);\n  \n  if (!rawText) {\n    throw new Error(`Missing text variable at item ${index}.`);\n  }\n\n  const aiData = parseLLMData(rawText, index);\n  const baseData = originalData[index].json; // Reference data\n\n  // 3. Final Assembly\n  const formattedHistories = formatClinicalHistories(aiData, baseData);\n\n  // Return each history wrapped in the \"json\" object expected by n8n\n  return formattedHistories.map(history => ({\n    json: history\n  }));\n});\n\nreturn finalResults;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -96,
+        3248
+      ],
+      "id": "55fe5191-6e06-4ecd-8399-d645eef9cfe3",
+      "name": "from_llm_to_json1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        256,
+        2832
+      ],
+      "id": "2d264f8c-e518-468c-8cb5-8d2d415d18cf",
+      "name": "loop1"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-embedding-001"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        832,
+        3776
+      ],
+      "id": "ea6b2de1-8b8d-4260-8d0b-57c0d3362253",
+      "name": "Embeddings Google Gemini1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "UO3uWnOiqfW0Ifnw",
+          "name": "freeicf"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        96,
+        3040
+      ],
+      "id": "c2ea7c83-d5bb-4ad8-8da7-75ff5f31a7b6",
+      "name": "Wait",
+      "webhookId": "ff5cfb94-9790-48a7-ac31-f61e51fa8a89"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        576,
+        2816
+      ],
+      "id": "eca0290b-484e-4157-8b03-c2a56f3df225",
+      "name": "No Operation, do nothing"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        240,
+        3616
+      ],
+      "id": "6dc090d6-7daf-4c15-8a31-4b18736470b0",
+      "name": "No Operation, do nothing1"
+    },
+    {
+      "parameters": {
+        "amount": 60
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        224,
+        3392
+      ],
+      "id": "12df494f-7a11-4337-a109-22cdce877309",
+      "name": "Wait1",
+      "webhookId": "9a5986cb-9d73-489b-b285-d274773ffbe0"
+    },
+    {
+      "parameters": {
+        "content": "## Clinical text generator 3.0.\ninclude the structuring in the loop to control wait times between request",
+        "height": 1472,
+        "width": 2352
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -352,
+        2592
+      ],
+      "typeVersion": 1,
+      "id": "5a6a95ff-b746-44cf-bd21-fa995aeb5bc6",
+      "name": "Sticky Note6"
     }
   ],
   "pinData": {
@@ -839,7 +959,7 @@
           "created_at": "2026-03-11T16:00:54.811302776Z",
           "message": {
             "role": "assistant",
-            "content": "La paciente de 94 a\u00f1os, diagnosticada con s\u00edndrome de fragilidad geri\u00e1trica y sarcopenia, presenta un cuadro cl\u00ednico complejo caracterizado por un elevado nivel de dolor (8/10) y una grave dependencia (\u00cdndice de Barthel de 20). En el momento de la evaluaci\u00f3n, la paciente se encuentra sentada en la cama, con una actitud postural caracterizada por una notable flexi\u00f3n de la columna vertebral y una leve inclinaci\u00f3n hacia adelante, lo que sugiere una limitaci\u00f3n en la flexibilidad articular y una posible kinesiofobia. La marcha es laboriosa y requiere de apoyo para mantener el equilibrio, lo que indica una disminuci\u00f3n notable en el balance articular.\n\nEl dolor cr\u00f3nico produce una reducci\u00f3n significativa en la movilidad activa y pasiva, siendo dif\u00edcil para la paciente realizar movimientos de flexi\u00f3n, extensi\u00f3n y rotaci\u00f3n en las articulaciones de la cadera, rodilla y tobillo. La presencia de m\u00faltiples f\u00e1rmacos (polifarmacia) y la debilidad muscular provocada por la sarcopenia agudizan la situaci\u00f3n, lo que hace que la paciente experimente un aumento en la fatiga y el aislamiento.\n\nLa paciente tambi\u00e9n presenta barreras psicosociales importantes, como un notable miedo al movimiento y a la posibilidad de perder el equilibrio, lo que la lleva a restringir sus actividades y a evitar cualquier tipo de esfuerzo f\u00edsico. Esto, a su vez, contribuye a su aislamiento y a su sentimiento de impotencia.\n\nEn cuanto a la asistencia requerida para actividades b\u00e1sicas, la paciente necesita apoyo para realizar actividades como el aseo, vestirse y realizar transferencias entre la cama y la silla, lo que sugiere una gran dependencia en los cuidados de atenci\u00f3n personal y en la movilizaci\u00f3n. La implementaci\u00f3n de estrategias de fisioterapia espec\u00edficas, como el trabajo en ROM y la educaci\u00f3n en la prevenci\u00f3n de ca\u00eddas, es crucial para mejorar la movilidad y la autonom\u00eda de la paciente, as\u00ed como para reducir su dolor y mejorar su calidad de vida."
+            "content": "La paciente de 94 años, diagnosticada con síndrome de fragilidad geriátrica y sarcopenia, presenta un cuadro clínico complejo caracterizado por un elevado nivel de dolor (8/10) y una grave dependencia (Índice de Barthel de 20). En el momento de la evaluación, la paciente se encuentra sentada en la cama, con una actitud postural caracterizada por una notable flexión de la columna vertebral y una leve inclinación hacia adelante, lo que sugiere una limitación en la flexibilidad articular y una posible kinesiofobia. La marcha es laboriosa y requiere de apoyo para mantener el equilibrio, lo que indica una disminución notable en el balance articular.\n\nEl dolor crónico produce una reducción significativa en la movilidad activa y pasiva, siendo difícil para la paciente realizar movimientos de flexión, extensión y rotación en las articulaciones de la cadera, rodilla y tobillo. La presencia de múltiples fármacos (polifarmacia) y la debilidad muscular provocada por la sarcopenia agudizan la situación, lo que hace que la paciente experimente un aumento en la fatiga y el aislamiento.\n\nLa paciente también presenta barreras psicosociales importantes, como un notable miedo al movimiento y a la posibilidad de perder el equilibrio, lo que la lleva a restringir sus actividades y a evitar cualquier tipo de esfuerzo físico. Esto, a su vez, contribuye a su aislamiento y a su sentimiento de impotencia.\n\nEn cuanto a la asistencia requerida para actividades básicas, la paciente necesita apoyo para realizar actividades como el aseo, vestirse y realizar transferencias entre la cama y la silla, lo que sugiere una gran dependencia en los cuidados de atención personal y en la movilización. La implementación de estrategias de fisioterapia específicas, como el trabajo en ROM y la educación en la prevención de caídas, es crucial para mejorar la movilidad y la autonomía de la paciente, así como para reducir su dolor y mejorar su calidad de vida."
           },
           "done": true,
           "done_reason": "stop",
@@ -860,7 +980,7 @@
           "created_at": "2026-03-11T16:04:41.457665333Z",
           "message": {
             "role": "assistant",
-            "content": "La paciente, una mujer de 69 a\u00f1os, presenta un diagn\u00f3stico principal de lumbalgia cr\u00f3nica inespec\u00edfica con kinesiofobia, lo que implica una franca resistencia a moverse y una considerable ansiedad asociada. En el momento de la evaluaci\u00f3n, observo una actitud postural marcada por una curvatura lateral de la columna vertebral y una leve inclinaci\u00f3n hacia un lado, lo que sugiere una p\u00e9rdida de la estabilidad articular y una compensaci\u00f3n por el dolor. La marcha es caracterizada por un giro lateral y una leve flexi\u00f3n de la rodilla, lo que demuestra una p\u00e9rdida de balance articular y una dependencia moderada para mantener el equilibrio. Aunque no utiliza ayudas t\u00e9cnicas, observo un aumento en la fatiga al caminar, lo que sugiere una limitaci\u00f3n importante en la capacidad para realizar actividades diarias.\n\nEn cuanto a la movilidad, observo una limitaci\u00f3n significativa en la flexi\u00f3n de la cadera y la rodilla, lo que hace que el paciente presente un ROM (range of motion) reducido en estas articulaciones. La movilidad pasiva es moderadamente afectada, lo que sugiere una rigidez en la articulaci\u00f3n lumbosacra y una posible lesi\u00f3n en la aponeurosis iliopsoas. El dolor es irruptivo, con un nivel de 9/10 en la escala de evaluaci\u00f3n visual, lo que impide cualquier intento de movilidad activa.\n\nEn cuanto a las barreras psicosociales, la paciente presenta una franca kinesiofobia, lo que la lleva a evitar cualquier tipo de movimiento que implique flexi\u00f3n o rotura de la columna vertebral. Esto, a su vez, ha llevado a una situaci\u00f3n de aislamiento social y un estado an\u00edmico bajo, lo que sugiere una importante influencia del dolor en su calidad de vida. La paciente requiere una asistencia significativa para realizar actividades b\u00e1sicas, como el aseo, el vestido y las transferencias, lo que sugiere una dependencia importante en la atenci\u00f3n a largo plazo. En general, la paciente presenta un panorama cl\u00ednico complejo que requiere un enfoque integral y un abordaje multidisciplinario para abordar sus necesidades y mejorar su calidad de vida."
+            "content": "La paciente, una mujer de 69 años, presenta un diagnóstico principal de lumbalgia crónica inespecífica con kinesiofobia, lo que implica una franca resistencia a moverse y una considerable ansiedad asociada. En el momento de la evaluación, observo una actitud postural marcada por una curvatura lateral de la columna vertebral y una leve inclinación hacia un lado, lo que sugiere una pérdida de la estabilidad articular y una compensación por el dolor. La marcha es caracterizada por un giro lateral y una leve flexión de la rodilla, lo que demuestra una pérdida de balance articular y una dependencia moderada para mantener el equilibrio. Aunque no utiliza ayudas técnicas, observo un aumento en la fatiga al caminar, lo que sugiere una limitación importante en la capacidad para realizar actividades diarias.\n\nEn cuanto a la movilidad, observo una limitación significativa en la flexión de la cadera y la rodilla, lo que hace que el paciente presente un ROM (range of motion) reducido en estas articulaciones. La movilidad pasiva es moderadamente afectada, lo que sugiere una rigidez en la articulación lumbosacra y una posible lesión en la aponeurosis iliopsoas. El dolor es irruptivo, con un nivel de 9/10 en la escala de evaluación visual, lo que impide cualquier intento de movilidad activa.\n\nEn cuanto a las barreras psicosociales, la paciente presenta una franca kinesiofobia, lo que la lleva a evitar cualquier tipo de movimiento que implique flexión o rotura de la columna vertebral. Esto, a su vez, ha llevado a una situación de aislamiento social y un estado anímico bajo, lo que sugiere una importante influencia del dolor en su calidad de vida. La paciente requiere una asistencia significativa para realizar actividades básicas, como el aseo, el vestido y las transferencias, lo que sugiere una dependencia importante en la atención a largo plazo. En general, la paciente presenta un panorama clínico complejo que requiere un enfoque integral y un abordaje multidisciplinario para abordar sus necesidades y mejorar su calidad de vida."
           },
           "done": true,
           "done_reason": "stop",
@@ -881,7 +1001,7 @@
           "created_at": "2026-03-11T16:08:03.256754564Z",
           "message": {
             "role": "assistant",
-            "content": "La paciente, una mujer de 66 a\u00f1os, se presenta en mi consultorio con un diagn\u00f3stico principal de fractura de cadera reciente post-quir\u00fargica. Su nivel de dolor es alto, evaluado en 9 sobre 10, con un patr\u00f3n irruptivo. En cuanto a su actitud postural, observo que presenta una postura cerrada y apoyada en la cadera lesionada, lo que sugiere una posible kinesiofobia y resistencia a moverse. La marcha es lenta y laboriosa, con un patr\u00f3n de giro y balance articular alterado, lo que requiere de una asistencia t\u00e9cnica para evitar ca\u00eddas y lesiones adicionales.\n\nEn cuanto a la movilidad, la paciente presenta limitaciones significativas en el rango de movimiento (ROM) activo y pasivo en la cadera y pierna afectada, debido al dolor y la inestabilidad articular. La movilidad pasiva es mejor que la activa, pero a\u00fan as\u00ed, se ve afectada por la falta de fuerza muscular y la inestabilidad articular. La paciente tambi\u00e9n presenta barreras psicosociales importantes, como un miedo razonable a moverse y a experimentar dolor, lo que la lleva a un estado de aislamiento y fatiga cr\u00f3nica. A pesar de tener un \u00edndice de Barthel de 60, la paciente requiere una asistencia significativa para realizar actividades b\u00e1sicas como el aseo, vestido y transferencias, lo que sugiere un deterioro cognitivo leve y una dependencia leve.\n\nEn general, la paciente presenta una complejidad cl\u00ednica significativa, con un dolor cr\u00f3nico que afecta su capacidad para moverse y realizar actividades de la vida diaria, y barreras psicosociales importantes que la llevan a un estado de aislamiento y fatiga cr\u00f3nica. Es fundamental abordar estas barreras y trabajar con la paciente para establecer objetivos y estrategias para mejorar su movilidad, reducir su dolor y aumentar su autonom\u00eda y independencia."
+            "content": "La paciente, una mujer de 66 años, se presenta en mi consultorio con un diagnóstico principal de fractura de cadera reciente post-quirúrgica. Su nivel de dolor es alto, evaluado en 9 sobre 10, con un patrón irruptivo. En cuanto a su actitud postural, observo que presenta una postura cerrada y apoyada en la cadera lesionada, lo que sugiere una posible kinesiofobia y resistencia a moverse. La marcha es lenta y laboriosa, con un patrón de giro y balance articular alterado, lo que requiere de una asistencia técnica para evitar caídas y lesiones adicionales.\n\nEn cuanto a la movilidad, la paciente presenta limitaciones significativas en el rango de movimiento (ROM) activo y pasivo en la cadera y pierna afectada, debido al dolor y la inestabilidad articular. La movilidad pasiva es mejor que la activa, pero aún así, se ve afectada por la falta de fuerza muscular y la inestabilidad articular. La paciente también presenta barreras psicosociales importantes, como un miedo razonable a moverse y a experimentar dolor, lo que la lleva a un estado de aislamiento y fatiga crónica. A pesar de tener un índice de Barthel de 60, la paciente requiere una asistencia significativa para realizar actividades básicas como el aseo, vestido y transferencias, lo que sugiere un deterioro cognitivo leve y una dependencia leve.\n\nEn general, la paciente presenta una complejidad clínica significativa, con un dolor crónico que afecta su capacidad para moverse y realizar actividades de la vida diaria, y barreras psicosociales importantes que la llevan a un estado de aislamiento y fatiga crónica. Es fundamental abordar estas barreras y trabajar con la paciente para establecer objetivos y estrategias para mejorar su movilidad, reducir su dolor y aumentar su autonomía y independencia."
           },
           "done": true,
           "done_reason": "stop",
@@ -902,7 +1022,7 @@
           "created_at": "2026-03-11T16:12:38.175501753Z",
           "message": {
             "role": "assistant",
-            "content": "La paciente de 95 a\u00f1os presenta una actitud postural caracterizada por una postura encorvada y con una leve inclinaci\u00f3n hacia adelante, lo que sugiere una cierta limitaci\u00f3n en el control de la curvatura de la espalda y una posible disminuci\u00f3n de la capacidad de estabilizaci\u00f3n del tronco. En cuanto a la marcha, observo que ella presenta un patr\u00f3n de gait caracterizado por una leve marcha de \"tierra\", con una tendencia a apoyar m\u00e1s peso en el pie izquierdo, lo que puede estar relacionado con la artrosis severa de rodilla bilateral. A pesar de tener una leve dependencia (\u00cdndice de Barthel de 60), ella no requiere ayuda t\u00e9cnica para caminar, aunque puede necesitar un apoyo leve en el brazo derecho para mantener el equilibrio.\n\nEn cuanto a las limitaciones de movilidad, la paciente presenta un rango de movimiento (ROM) reducido en ambas rodillas, especialmente en la flexi\u00f3n, lo que se traduce en una capacidad limitada para doblarse o sentarse. El dolor en la rodilla bilateral (EVA de 4/10) tambi\u00e9n parece influir en su capacidad para realizar movimientos activos, como sentarse o pararse, ya que se nota una cierta hesitaci\u00f3n antes de iniciar cualquier movimiento. La movilidad pasiva es mejor en ambos miembros inferiores, pero a\u00fan as\u00ed, la paciente presenta una limitaci\u00f3n significativa en la extensi\u00f3n y flexi\u00f3n de la rodilla izquierda.\n\nEn cuanto a las barreras psicosociales, la paciente presenta un cierto miedo al movimiento, lo que se traduce en una cierta kinesiofobia, lo que la lleva a evitar actividades que impliquen cambios en la postura o el movimiento. Adem\u00e1s, la fatiga y el aislamiento social tambi\u00e9n pueden ser factores que la limitan en su capacidad para realizar actividades cotidianas. La polifarmacia y el dolor cr\u00f3nico pueden estar contribuyendo a su estado actual de salud, lo que la lleva a sentirse abrumada y sin energ\u00eda para enfrentar los desaf\u00edos diarios.\n\nEn cuanto al nivel de asistencia requerida, la paciente necesita ayuda para realizar actividades b\u00e1sicas como el aseo, vestido y transferencias, ya que su limitaci\u00f3n en la movilidad y el dolor cr\u00f3nico la impiden para realizar estas actividades por s\u00ed sola. Sin embargo, es importante destacar que ella presenta un buen nivel de coordinaci\u00f3n y control de la curvatura de la espalda, lo que sugiere que con un enfoque en la educaci\u00f3n y la motivaci\u00f3n, puede ser capaz de mejorar su capacidad funcional y reducir su dependencia."
+            "content": "La paciente de 95 años presenta una actitud postural caracterizada por una postura encorvada y con una leve inclinación hacia adelante, lo que sugiere una cierta limitación en el control de la curvatura de la espalda y una posible disminución de la capacidad de estabilización del tronco. En cuanto a la marcha, observo que ella presenta un patrón de gait caracterizado por una leve marcha de \"tierra\", con una tendencia a apoyar más peso en el pie izquierdo, lo que puede estar relacionado con la artrosis severa de rodilla bilateral. A pesar de tener una leve dependencia (Índice de Barthel de 60), ella no requiere ayuda técnica para caminar, aunque puede necesitar un apoyo leve en el brazo derecho para mantener el equilibrio.\n\nEn cuanto a las limitaciones de movilidad, la paciente presenta un rango de movimiento (ROM) reducido en ambas rodillas, especialmente en la flexión, lo que se traduce en una capacidad limitada para doblarse o sentarse. El dolor en la rodilla bilateral (EVA de 4/10) también parece influir en su capacidad para realizar movimientos activos, como sentarse o pararse, ya que se nota una cierta hesitación antes de iniciar cualquier movimiento. La movilidad pasiva es mejor en ambos miembros inferiores, pero aún así, la paciente presenta una limitación significativa en la extensión y flexión de la rodilla izquierda.\n\nEn cuanto a las barreras psicosociales, la paciente presenta un cierto miedo al movimiento, lo que se traduce en una cierta kinesiofobia, lo que la lleva a evitar actividades que impliquen cambios en la postura o el movimiento. Además, la fatiga y el aislamiento social también pueden ser factores que la limitan en su capacidad para realizar actividades cotidianas. La polifarmacia y el dolor crónico pueden estar contribuyendo a su estado actual de salud, lo que la lleva a sentirse abrumada y sin energía para enfrentar los desafíos diarios.\n\nEn cuanto al nivel de asistencia requerida, la paciente necesita ayuda para realizar actividades básicas como el aseo, vestido y transferencias, ya que su limitación en la movilidad y el dolor crónico la impiden para realizar estas actividades por sí sola. Sin embargo, es importante destacar que ella presenta un buen nivel de coordinación y control de la curvatura de la espalda, lo que sugiere que con un enfoque en la educación y la motivación, puede ser capaz de mejorar su capacidad funcional y reducir su dependencia."
           },
           "done": true,
           "done_reason": "stop",
@@ -923,7 +1043,7 @@
           "created_at": "2026-03-11T16:16:09.745286023Z",
           "message": {
             "role": "assistant",
-            "content": "En la evaluaci\u00f3n inicial, me encuentro con una paciente de 81 a\u00f1os, con una fractura de cadera reciente post-quir\u00fargica, que presenta un nivel de dolor moderado (4/10). A pesar de su buen estado general, su deterioro cognitivo leve puede afectar su capacidad para colaborar en el proceso terap\u00e9utico. Su actitud postural es tenso-axial, con una tendencia a utilizar su pierna izquierda como apoyo para mantener el equilibrio, lo que sugiere una posible limitaci\u00f3n en el uso de su pierna derecha.\n\nSu patr\u00f3n de marcha presenta una gait anormal, con una tendencia a utilizar su pierna izquierda para impulsarse y una menor participaci\u00f3n de su pierna derecha. Esto puede estar relacionado con la lesi\u00f3n en la cadera, lo que ha llevado a una reorganizaci\u00f3n de su patr\u00f3n de movilidad. Sin embargo, su capacidad para utilizar ayudas t\u00e9cnicas, como un bast\u00f3n o una silla de ruedas, es limitada, ya que presenta una leve kinesiofobia en cuanto al uso de ayudas visuales.\n\nEn cuanto a la movilidad, la paciente presenta limitaciones activas en la rotaci\u00f3n de la cadera y la flexi\u00f3n de la rodilla derecha, lo que puede estar relacionado con el dolor y la lesi\u00f3n en la cadera. Sin embargo, su movilidad pasiva en la cadera y la rodilla izquierda es normal, lo que sugiere que no hay una limitaci\u00f3n estructural significativa en estas articulaciones. Sin embargo, su capacidad para realizar actividades b\u00e1sicas, como aseo y vestido, est\u00e1 limitada por la necesidad de transferencias y la falta de confianza en su capacidad para moverse de manera independiente.\n\nEn cuanto a las barreras psicosociales, la paciente presenta un miedo al movimiento, especialmente en cuanto al uso de ayudas visuales, lo que puede estar relacionado con su deterioro cognitivo. Tambi\u00e9n presenta un aislamiento social, lo que puede estar relacionado con su edad y su condici\u00f3n m\u00e9dica. Su nivel de asistencia requerida para actividades b\u00e1sicas es moderado, ya que necesita ayuda para transferencias y tiene dificultades para realizar actividades de aseo y vestido de manera independiente."
+            "content": "En la evaluación inicial, me encuentro con una paciente de 81 años, con una fractura de cadera reciente post-quirúrgica, que presenta un nivel de dolor moderado (4/10). A pesar de su buen estado general, su deterioro cognitivo leve puede afectar su capacidad para colaborar en el proceso terapéutico. Su actitud postural es tenso-axial, con una tendencia a utilizar su pierna izquierda como apoyo para mantener el equilibrio, lo que sugiere una posible limitación en el uso de su pierna derecha.\n\nSu patrón de marcha presenta una gait anormal, con una tendencia a utilizar su pierna izquierda para impulsarse y una menor participación de su pierna derecha. Esto puede estar relacionado con la lesión en la cadera, lo que ha llevado a una reorganización de su patrón de movilidad. Sin embargo, su capacidad para utilizar ayudas técnicas, como un bastón o una silla de ruedas, es limitada, ya que presenta una leve kinesiofobia en cuanto al uso de ayudas visuales.\n\nEn cuanto a la movilidad, la paciente presenta limitaciones activas en la rotación de la cadera y la flexión de la rodilla derecha, lo que puede estar relacionado con el dolor y la lesión en la cadera. Sin embargo, su movilidad pasiva en la cadera y la rodilla izquierda es normal, lo que sugiere que no hay una limitación estructural significativa en estas articulaciones. Sin embargo, su capacidad para realizar actividades básicas, como aseo y vestido, está limitada por la necesidad de transferencias y la falta de confianza en su capacidad para moverse de manera independiente.\n\nEn cuanto a las barreras psicosociales, la paciente presenta un miedo al movimiento, especialmente en cuanto al uso de ayudas visuales, lo que puede estar relacionado con su deterioro cognitivo. También presenta un aislamiento social, lo que puede estar relacionado con su edad y su condición médica. Su nivel de asistencia requerida para actividades básicas es moderado, ya que necesita ayuda para transferencias y tiene dificultades para realizar actividades de aseo y vestido de manera independiente."
           },
           "done": true,
           "done_reason": "stop",
@@ -972,7 +1092,7 @@
     "con puenteo de formato": [
       {
         "json": {
-          "response": "```json\n{\n  \"id_code_combination\": \"001\",\n  \"icf_codes\": [\"b130\", \"b134\", \"b175\", \"b280\", \"e1101\"],\n  \"icf_name\": [\"b130-Energy and drive functions\", \"b134-Sleep functions\", \"b175-Solving problems\", \"b280-Sensaci\u00f3n de dolor\", \"e1101-Drugs\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"001_1\",\n      \"clinical_text\": \"Paciente de 45 a\u00f1os acude a consulta refiriendo una disminuci\u00f3n significativa de su energ\u00eda y motivaci\u00f3n para realizar actividades cotidianas desde los \u00faltimos 6 meses. Adem\u00e1s, presenta dificultades para conciliar el sue\u00f1o y mantiene un patr\u00f3n de sue\u00f1o irregular. La falta de descanso adecuado ha afectado su capacidad para resolver problemas en el trabajo, lo que ha generado estr\u00e9s adicional. El paciente tambi\u00e9n refiere experimentar dolor cr\u00f3nico generalizado que afecta su calidad de vida. Actualmente, se encuentra bajo tratamiento con medicaci\u00f3n para el dolor y para regular su sue\u00f1o.\"\n    },\n    {\n      \"id_clinical_text\": \"001_2\",\n      \"clinical_text\": \"Nota de evoluci\u00f3n: El paciente presenta una mejora leve en los niveles de energ\u00eda despu\u00e9s de ajustar la dosis de su medicaci\u00f3n para el sue\u00f1o. Sin embargo, persisten las dificultades para resolver problemas complejos, lo que sugiere la necesidad de apoyo cognitivo adicional. El dolor cr\u00f3nico sigue siendo un s\u00edntoma predominante, aunque la intensidad ha disminuido ligeramente con el tratamiento farmacol\u00f3gico actual. Se ha iniciado un programa de terapia cognitiva conductual para abordar las dificultades de sue\u00f1o y los patrones de pensamiento negativos asociados con el dolor cr\u00f3nico.\"\n    },\n    {\n      \"id_clinical_text\": \"001_3\",\n      \"clinical_text\": \"Anamnesis en primera consulta: La paciente, una mujer de 38 a\u00f1os, describe una vida laboral y personal muy activa hasta hace un a\u00f1o, cuando comenz\u00f3 a experimentar una fatiga inexplicable que la llev\u00f3 a reducir significativamente sus actividades. Tambi\u00e9n refiere haber tenido problemas para dormir y ha estado tomando medicaci\u00f3n para ayudar a conciliar el sue\u00f1o. Los problemas para resolver situaciones complejas en el trabajo han aumentado, y siente que su capacidad para tomar decisiones ha disminuido. El dolor generalizado es otro s\u00edntoma que ha afectado su calidad de vida. La paciente busca ayuda para recuperar su nivel de energ\u00eda y bienestar, y para encontrar estrategias efectivas para manejar el dolor y mejorar su sue\u00f1o.\"\n    }\n  ]\n}\n```"
+          "response": "```json\n{\n  \"id_code_combination\": \"001\",\n  \"icf_codes\": [\"b130\", \"b134\", \"b175\", \"b280\", \"e1101\"],\n  \"icf_name\": [\"b130-Energy and drive functions\", \"b134-Sleep functions\", \"b175-Solving problems\", \"b280-Sensación de dolor\", \"e1101-Drugs\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"001_1\",\n      \"clinical_text\": \"Paciente de 45 años acude a consulta refiriendo una disminución significativa de su energía y motivación para realizar actividades cotidianas desde los últimos 6 meses. Además, presenta dificultades para conciliar el sueño y mantiene un patrón de sueño irregular. La falta de descanso adecuado ha afectado su capacidad para resolver problemas en el trabajo, lo que ha generado estrés adicional. El paciente también refiere experimentar dolor crónico generalizado que afecta su calidad de vida. Actualmente, se encuentra bajo tratamiento con medicación para el dolor y para regular su sueño.\"\n    },\n    {\n      \"id_clinical_text\": \"001_2\",\n      \"clinical_text\": \"Nota de evolución: El paciente presenta una mejora leve en los niveles de energía después de ajustar la dosis de su medicación para el sueño. Sin embargo, persisten las dificultades para resolver problemas complejos, lo que sugiere la necesidad de apoyo cognitivo adicional. El dolor crónico sigue siendo un síntoma predominante, aunque la intensidad ha disminuido ligeramente con el tratamiento farmacológico actual. Se ha iniciado un programa de terapia cognitiva conductual para abordar las dificultades de sueño y los patrones de pensamiento negativos asociados con el dolor crónico.\"\n    },\n    {\n      \"id_clinical_text\": \"001_3\",\n      \"clinical_text\": \"Anamnesis en primera consulta: La paciente, una mujer de 38 años, describe una vida laboral y personal muy activa hasta hace un año, cuando comenzó a experimentar una fatiga inexplicable que la llevó a reducir significativamente sus actividades. También refiere haber tenido problemas para dormir y ha estado tomando medicación para ayudar a conciliar el sueño. Los problemas para resolver situaciones complejas en el trabajo han aumentado, y siente que su capacidad para tomar decisiones ha disminuido. El dolor generalizado es otro síntoma que ha afectado su calidad de vida. La paciente busca ayuda para recuperar su nivel de energía y bienestar, y para encontrar estrategias efectivas para manejar el dolor y mejorar su sueño.\"\n    }\n  ]\n}\n```"
         },
         "pairedItem": {
           "item": 0
@@ -980,7 +1100,7 @@
       },
       {
         "json": {
-          "response": "```json\n{\n  \"id_code_combination\": \"002\",\n  \"icf_codes\": [\"b152\", \"b1602\", \"b280\", \"d240\", \"d850\", \"e570\"],\n  \"icf_name\": [\"b152-Emotional functions\", \"b1602-Content of thought\", \"b280-Sensaci\u00f3n de dolor\", \"d240-Handling stress and other psychological demands\", \"d850-Remunerative employment\", \"e570-Social security services, systems and policies\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"002_1\",\n      \"clinical_text\": \"Paciente de 35 a\u00f1os, con antecedentes de estr\u00e9s laboral y dolor cr\u00f3nico, presenta dificultades para manejar situaciones de estr\u00e9s y demandas psicol\u00f3gicas en su lugar de trabajo. Adem\u00e1s, refiere pensamientos intrusivos y rumiaciones que afectan su capacidad para realizar tareas y tomar decisiones. La situaci\u00f3n se ha complicado por la percepci\u00f3n de dolor constante, lo que le ha llevado a buscar ayuda para mejorar su bienestar emocional y capacidad para realizar su trabajo de manera efectiva.\"\n    },\n    {\n      \"id_clinical_text\": \"002_2\",\n      \"clinical_text\": \"En la evaluaci\u00f3n inicial, el paciente expresa sentirse abrumado por el estr\u00e9s diario y la incapacidad para controlar su dolor, lo que ha impactado negativamente en su desempe\u00f1o laboral. Los pensamientos recurrentes de ansiedad y la preocupaci\u00f3n por su situaci\u00f3n laboral han generado un c\u00edrculo vicioso de estr\u00e9s y malestar emocional. Es necesario abordar estos aspectos para mejorar su capacidad para manejar el estr\u00e9s y recuperar su bienestar general.\"\n    },\n    {\n      \"id_clinical_text\": \"002_3\",\n      \"clinical_text\": \"Durante la sesi\u00f3n de seguimiento, el paciente menciona que ha estado experimentando dificultades para conciliar el estr\u00e9s laboral con su salud emocional. El dolor cr\u00f3nico ha seguido siendo un factor limitante en su capacidad para realizar tareas y mantener relaciones saludables en el entorno laboral. Se ha vuelto dependiente de los servicios de seguridad social para ayudar a manejar su situaci\u00f3n, pero se muestra motivado para encontrar estrategias para mejorar su resiliencia y capacidad para manejar el estr\u00e9s, con el objetivo de retomar su vida laboral de manera satisfactoria.\"\n    }\n  ]\n}\n```"
+          "response": "```json\n{\n  \"id_code_combination\": \"002\",\n  \"icf_codes\": [\"b152\", \"b1602\", \"b280\", \"d240\", \"d850\", \"e570\"],\n  \"icf_name\": [\"b152-Emotional functions\", \"b1602-Content of thought\", \"b280-Sensación de dolor\", \"d240-Handling stress and other psychological demands\", \"d850-Remunerative employment\", \"e570-Social security services, systems and policies\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"002_1\",\n      \"clinical_text\": \"Paciente de 35 años, con antecedentes de estrés laboral y dolor crónico, presenta dificultades para manejar situaciones de estrés y demandas psicológicas en su lugar de trabajo. Además, refiere pensamientos intrusivos y rumiaciones que afectan su capacidad para realizar tareas y tomar decisiones. La situación se ha complicado por la percepción de dolor constante, lo que le ha llevado a buscar ayuda para mejorar su bienestar emocional y capacidad para realizar su trabajo de manera efectiva.\"\n    },\n    {\n      \"id_clinical_text\": \"002_2\",\n      \"clinical_text\": \"En la evaluación inicial, el paciente expresa sentirse abrumado por el estrés diario y la incapacidad para controlar su dolor, lo que ha impactado negativamente en su desempeño laboral. Los pensamientos recurrentes de ansiedad y la preocupación por su situación laboral han generado un círculo vicioso de estrés y malestar emocional. Es necesario abordar estos aspectos para mejorar su capacidad para manejar el estrés y recuperar su bienestar general.\"\n    },\n    {\n      \"id_clinical_text\": \"002_3\",\n      \"clinical_text\": \"Durante la sesión de seguimiento, el paciente menciona que ha estado experimentando dificultades para conciliar el estrés laboral con su salud emocional. El dolor crónico ha seguido siendo un factor limitante en su capacidad para realizar tareas y mantener relaciones saludables en el entorno laboral. Se ha vuelto dependiente de los servicios de seguridad social para ayudar a manejar su situación, pero se muestra motivado para encontrar estrategias para mejorar su resiliencia y capacidad para manejar el estrés, con el objetivo de retomar su vida laboral de manera satisfactoria.\"\n    }\n  ]\n}\n```"
         },
         "pairedItem": {
           "item": 1
@@ -988,7 +1108,7 @@
       },
       {
         "json": {
-          "response": "```\n{\n  \"id_code_combination\": \"003\",\n  \"icf_codes\": [\"b134\", \"b152\", \"b280\", \"d240\", \"d640\", \"d760\", \"d920\", \"e310\", \"e410\"],\n  \"icf_name\": [\"b134-Sleep functions\", \"b152-Emotional functions\", \"b280-Sensaci\u00f3n de dolor\", \"d240-Handling stress and other psychological demands\", \"d640-Realizar los quehaceres de la casa\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\", \"e310-Immediate family\", \"e410- Individual attitudes of immediate family members\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"003_1\",\n      \"clinical_text\": \"La paciente de 35 a\u00f1os presenta insomnio cr\u00f3nico y dolor generalizado, lo que le impide realizar las tareas dom\u00e9sticas y afecta su relaci\u00f3n con su familia. Refiere sentirse abrumada por el estr\u00e9s y la ansiedad, y ha notado un deterioro en su capacidad para manejar las demandas psicol\u00f3gicas diarias. Su familia inmediata muestra actitudes de apoyo, pero la paciente siente que no puede disfrutar de actividades de ocio debido a su condici\u00f3n.\"\n    },\n    {\n      \"id_clinical_text\": \"003_2\",\n      \"clinical_text\": \"En la evaluaci\u00f3n inicial, el paciente de 42 a\u00f1os informa que ha estado experimentando dolor cr\u00f3nico y alteraciones del sue\u00f1o, lo que le dificulta realizar las tareas del hogar y mantener una relaci\u00f3n saludable con su familia. Se observa que el paciente tiene dificultades para manejar el estr\u00e9s y otras demandas psicol\u00f3gicas, y su capacidad para disfrutar del tiempo libre y el ocio se ve limitada. La actitud de su familia inmediata es de apoyo, pero el paciente siente que necesita mejorar su capacidad para manejar el estr\u00e9s y la ansiedad.\"\n    },\n    {\n      \"id_clinical_text\": \"003_3\",\n      \"clinical_text\": \"La nota de evoluci\u00f3n del paciente de 28 a\u00f1os indica que ha habido una mejora en su capacidad para dormir y manejar el dolor, lo que le ha permitido retomar algunas de las tareas dom\u00e9sticas y participar en actividades de ocio con su familia. Sin embargo, todav\u00eda se observan dificultades para manejar el estr\u00e9s y la ansiedad, y se requiere un seguimiento para evaluar la efectividad de las estrategias de afrontamiento y el apoyo familiar. La actitud de su familia inmediata sigue siendo de apoyo, y se espera que el paciente contin\u00fae progresando en su capacidad para manejar las demandas psicol\u00f3gicas diarias.\"\n    }\n  ]\n}\n```"
+          "response": "```\n{\n  \"id_code_combination\": \"003\",\n  \"icf_codes\": [\"b134\", \"b152\", \"b280\", \"d240\", \"d640\", \"d760\", \"d920\", \"e310\", \"e410\"],\n  \"icf_name\": [\"b134-Sleep functions\", \"b152-Emotional functions\", \"b280-Sensación de dolor\", \"d240-Handling stress and other psychological demands\", \"d640-Realizar los quehaceres de la casa\", \"d760-Relaciones Familiares\", \"d920-Tiempo libre y ocio\", \"e310-Immediate family\", \"e410- Individual attitudes of immediate family members\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"003_1\",\n      \"clinical_text\": \"La paciente de 35 años presenta insomnio crónico y dolor generalizado, lo que le impide realizar las tareas domésticas y afecta su relación con su familia. Refiere sentirse abrumada por el estrés y la ansiedad, y ha notado un deterioro en su capacidad para manejar las demandas psicológicas diarias. Su familia inmediata muestra actitudes de apoyo, pero la paciente siente que no puede disfrutar de actividades de ocio debido a su condición.\"\n    },\n    {\n      \"id_clinical_text\": \"003_2\",\n      \"clinical_text\": \"En la evaluación inicial, el paciente de 42 años informa que ha estado experimentando dolor crónico y alteraciones del sueño, lo que le dificulta realizar las tareas del hogar y mantener una relación saludable con su familia. Se observa que el paciente tiene dificultades para manejar el estrés y otras demandas psicológicas, y su capacidad para disfrutar del tiempo libre y el ocio se ve limitada. La actitud de su familia inmediata es de apoyo, pero el paciente siente que necesita mejorar su capacidad para manejar el estrés y la ansiedad.\"\n    },\n    {\n      \"id_clinical_text\": \"003_3\",\n      \"clinical_text\": \"La nota de evolución del paciente de 28 años indica que ha habido una mejora en su capacidad para dormir y manejar el dolor, lo que le ha permitido retomar algunas de las tareas domésticas y participar en actividades de ocio con su familia. Sin embargo, todavía se observan dificultades para manejar el estrés y la ansiedad, y se requiere un seguimiento para evaluar la efectividad de las estrategias de afrontamiento y el apoyo familiar. La actitud de su familia inmediata sigue siendo de apoyo, y se espera que el paciente continúe progresando en su capacidad para manejar las demandas psicológicas diarias.\"\n    }\n  ]\n}\n```"
         },
         "pairedItem": {
           "item": 2
@@ -996,7 +1116,7 @@
       },
       {
         "json": {
-          "response": "```\n{\n  \"id_code_combination\": \"004\",\n  \"icf_codes\": [\"b1602\", \"b280\", \"b455\", \"b730\", \"d920\"],\n  \"icf_name\": [\"b1602-Content of thought\", \"b280-Sensaci\u00f3n de dolor\", \"b455-Exercise tolerance functions\", \"b730-Muscle power functions\", \"d920-Tiempo libre y ocio\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"004_1\",\n      \"clinical_text\": \"Paciente de 35 a\u00f1os con antecedentes de lesiones deportivas cr\u00f3nicas, se presenta con dolor persistente en las articulaciones y miedo a realizar actividades f\u00edsicas intensas debido a la posibilidad de empeorar su condici\u00f3n. Refiere dificultad para realizar ejercicios prolongados y nota una disminuci\u00f3n significativa en su resistencia y fuerza muscular, lo que le impide disfrutar de sus hobbies favoritos como el ciclismo y el senderismo.\"\n    },\n    {\n      \"id_clinical_text\": \"004_2\",\n      \"clinical_text\": \"Nota de evoluci\u00f3n: Paciente sigue refiriendo dolor cr\u00f3nico y limitaciones en su capacidad para realizar actividades f\u00edsicas, especialmente aquellas que requieren esfuerzo muscular sostenido. Se ha observado una disminuci\u00f3n en su tolerancia al ejercicio y una notable reducci\u00f3n en su capacidad para realizar movimientos que requieren fuerza, afectando negativamente su calidad de vida y participaci\u00f3n en actividades de ocio como jugar con sus hijos o practicar yoga.\"\n    },\n    {\n      \"id_clinical_text\": \"004_3\",\n      \"clinical_text\": \"Anamnesis: Paciente informa que su capacidad para pensar y concentrarse se ve afectada por el dolor constante y la fatiga muscular. Expresa temor a realizar actividades que puedan agravar su condici\u00f3n, lo que limita su participaci\u00f3n en actividades recreativas y sociales. Se ha notado una disminuci\u00f3n en su capacidad aer\u00f3bica y una mayor sensibilidad al esfuerzo f\u00edsico, afectando su autonom\u00eda y bienestar general, y expresando deseos de retomar actividades como correr y nadar sin experimentar dolor o agotamiento excesivo.\"\n    }\n  ]\n}\n```"
+          "response": "```\n{\n  \"id_code_combination\": \"004\",\n  \"icf_codes\": [\"b1602\", \"b280\", \"b455\", \"b730\", \"d920\"],\n  \"icf_name\": [\"b1602-Content of thought\", \"b280-Sensación de dolor\", \"b455-Exercise tolerance functions\", \"b730-Muscle power functions\", \"d920-Tiempo libre y ocio\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"004_1\",\n      \"clinical_text\": \"Paciente de 35 años con antecedentes de lesiones deportivas crónicas, se presenta con dolor persistente en las articulaciones y miedo a realizar actividades físicas intensas debido a la posibilidad de empeorar su condición. Refiere dificultad para realizar ejercicios prolongados y nota una disminución significativa en su resistencia y fuerza muscular, lo que le impide disfrutar de sus hobbies favoritos como el ciclismo y el senderismo.\"\n    },\n    {\n      \"id_clinical_text\": \"004_2\",\n      \"clinical_text\": \"Nota de evolución: Paciente sigue refiriendo dolor crónico y limitaciones en su capacidad para realizar actividades físicas, especialmente aquellas que requieren esfuerzo muscular sostenido. Se ha observado una disminución en su tolerancia al ejercicio y una notable reducción en su capacidad para realizar movimientos que requieren fuerza, afectando negativamente su calidad de vida y participación en actividades de ocio como jugar con sus hijos o practicar yoga.\"\n    },\n    {\n      \"id_clinical_text\": \"004_3\",\n      \"clinical_text\": \"Anamnesis: Paciente informa que su capacidad para pensar y concentrarse se ve afectada por el dolor constante y la fatiga muscular. Expresa temor a realizar actividades que puedan agravar su condición, lo que limita su participación en actividades recreativas y sociales. Se ha notado una disminución en su capacidad aeróbica y una mayor sensibilidad al esfuerzo físico, afectando su autonomía y bienestar general, y expresando deseos de retomar actividades como correr y nadar sin experimentar dolor o agotamiento excesivo.\"\n    }\n  ]\n}\n```"
         },
         "pairedItem": {
           "item": 3
@@ -1004,7 +1124,7 @@
       },
       {
         "json": {
-          "response": "```json\n{\n  \"id_code_combination\": \"005\",\n  \"icf_codes\": [\"b280\", \"d230\", \"d450\", \"d640\"],\n  \"icf_name\": [\"b280- Sensaci\u00f3n de dolor\", \"d230-Llevar a cabo rutinas diarias\", \"d450-Andar\", \"d640-Realizar los quehaceres de la casa\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"005_1\",\n      \"clinical_text\": \"Paciente de 50 a\u00f1os presenta dolor cr\u00f3nico generalizado que le impide realizar sus quehaceres dom\u00e9sticos con la misma eficiencia que antes. Refiere dificultad para caminar durante largas distancias y necesidad de frecuentes paradas para descansar. La rutina diaria se ha visto afectada, con necesidad de ayuda para tareas como la compra y la limpieza.\"\n    },\n    {\n      \"id_clinical_text\": \"005_2\",\n      \"clinical_text\": \"En la evaluaci\u00f3n de seguimiento, se observa que el paciente ha experimentado una disminuci\u00f3n en su capacidad para realizar actividades como caminar y realizar tareas dom\u00e9sticas debido a un aumento en el dolor generalizado. Se han iniciado ajustes en la rutina diaria para minimizar el esfuerzo f\u00edsico y se est\u00e1 considerando la implementaci\u00f3n de terapias para manejar el dolor y mejorar la movilidad.\"\n    },\n    {\n      \"id_clinical_text\": \"005_3\",\n      \"clinical_text\": \"Anamnesis de paciente que refiere dolor persistente que afecta su capacidad para realizar tareas cotidianas. La dificultad para caminar y realizar quehaceres dom\u00e9sticos ha llevado a una disminuci\u00f3n en su autonom\u00eda y ha requerido el apoyo de familiares y amigos. Se ha programado una evaluaci\u00f3n detallada para determinar el impacto del dolor en su calidad de vida y desarrollar un plan de manejo integral.\"\n    }\n  ]\n}\n```"
+          "response": "```json\n{\n  \"id_code_combination\": \"005\",\n  \"icf_codes\": [\"b280\", \"d230\", \"d450\", \"d640\"],\n  \"icf_name\": [\"b280- Sensación de dolor\", \"d230-Llevar a cabo rutinas diarias\", \"d450-Andar\", \"d640-Realizar los quehaceres de la casa\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"005_1\",\n      \"clinical_text\": \"Paciente de 50 años presenta dolor crónico generalizado que le impide realizar sus quehaceres domésticos con la misma eficiencia que antes. Refiere dificultad para caminar durante largas distancias y necesidad de frecuentes paradas para descansar. La rutina diaria se ha visto afectada, con necesidad de ayuda para tareas como la compra y la limpieza.\"\n    },\n    {\n      \"id_clinical_text\": \"005_2\",\n      \"clinical_text\": \"En la evaluación de seguimiento, se observa que el paciente ha experimentado una disminución en su capacidad para realizar actividades como caminar y realizar tareas domésticas debido a un aumento en el dolor generalizado. Se han iniciado ajustes en la rutina diaria para minimizar el esfuerzo físico y se está considerando la implementación de terapias para manejar el dolor y mejorar la movilidad.\"\n    },\n    {\n      \"id_clinical_text\": \"005_3\",\n      \"clinical_text\": \"Anamnesis de paciente que refiere dolor persistente que afecta su capacidad para realizar tareas cotidianas. La dificultad para caminar y realizar quehaceres domésticos ha llevado a una disminución en su autonomía y ha requerido el apoyo de familiares y amigos. Se ha programado una evaluación detallada para determinar el impacto del dolor en su calidad de vida y desarrollar un plan de manejo integral.\"\n    }\n  ]\n}\n```"
         },
         "pairedItem": {
           "item": 4
@@ -1012,7 +1132,7 @@
       },
       {
         "json": {
-          "response": "```\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d770\", \"d920\"],\n  \"icf_name\": [\"b280- Sensaci\u00f3n de dolor\", \"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d770-Relaciones \u00edntimas\", \"d920-Tiempo libre y ocio\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"006_1\",\n      \"clinical_text\": \"Paciente de 35 a\u00f1os con dolor cr\u00f3nico generalizado que afecta su capacidad para realizar actividades cotidianas como cargar objetos pesados, lo que ha impactado en su relaci\u00f3n con su pareja debido a la falta de intimidad y en su participaci\u00f3n en actividades recreativas con su familia, como ir al cine o practicar deportes.\"\n    },\n    {\n      \"id_clinical_text\": \"006_2\",\n      \"clinical_text\": \"En la evaluaci\u00f3n de seguimiento, se observa que la paciente presenta dificultades para mantener relaciones familiares y sociales debido a su dolor cr\u00f3nico, que le impide participar en eventos sociales y familiares, y tambi\u00e9n afecta su relaci\u00f3n con su pareja, generando tensiones y conflictos en su vida \u00edntima. Adem\u00e1s, refiere que ya no puede disfrutar de sus hobbies favoritos, como tocar el piano o leer, debido a la molestia persistente.\"\n    },\n    {\n      \"id_clinical_text\": \"006_3\",\n      \"clinical_text\": \"Anamnesis de paciente con antecedentes de dolor generalizado cr\u00f3nico que ha afectado significativamente su calidad de vida. Refiere que el dolor le impide realizar tareas dom\u00e9sticas que requieren levantar objetos pesados, lo que ha generado conflictos con sus familiares y ha afectado su relaci\u00f3n con su pareja. La paciente expresa que ya no puede disfrutar de actividades de ocio como ir al teatro o practicar yoga con su pareja, lo que ha aumentado su sentimiento de aislamiento y ha deteriorado su relaci\u00f3n familiar y social.\"\n    }\n  ]\n}\n```"
+          "response": "```\n{\n  \"id_code_combination\": \"006\",\n  \"icf_codes\": [\"b280\", \"d430\", \"d760\", \"d770\", \"d920\"],\n  \"icf_name\": [\"b280- Sensación de dolor\", \"d430-Levantar y llevar objetos\", \"d760-Relaciones Familiares\", \"d770-Relaciones íntimas\", \"d920-Tiempo libre y ocio\"],\n  \"historias_clinicas\": [\n    {\n      \"id_clinical_text\": \"006_1\",\n      \"clinical_text\": \"Paciente de 35 años con dolor crónico generalizado que afecta su capacidad para realizar actividades cotidianas como cargar objetos pesados, lo que ha impactado en su relación con su pareja debido a la falta de intimidad y en su participación en actividades recreativas con su familia, como ir al cine o practicar deportes.\"\n    },\n    {\n      \"id_clinical_text\": \"006_2\",\n      \"clinical_text\": \"En la evaluación de seguimiento, se observa que la paciente presenta dificultades para mantener relaciones familiares y sociales debido a su dolor crónico, que le impide participar en eventos sociales y familiares, y también afecta su relación con su pareja, generando tensiones y conflictos en su vida íntima. Además, refiere que ya no puede disfrutar de sus hobbies favoritos, como tocar el piano o leer, debido a la molestia persistente.\"\n    },\n    {\n      \"id_clinical_text\": \"006_3\",\n      \"clinical_text\": \"Anamnesis de paciente con antecedentes de dolor generalizado crónico que ha afectado significativamente su calidad de vida. Refiere que el dolor le impide realizar tareas domésticas que requieren levantar objetos pesados, lo que ha generado conflictos con sus familiares y ha afectado su relación con su pareja. La paciente expresa que ya no puede disfrutar de actividades de ocio como ir al teatro o practicar yoga con su pareja, lo que ha aumentado su sentimiento de aislamiento y ha deteriorado su relación familiar y social.\"\n    }\n  ]\n}\n```"
         },
         "pairedItem": {
           "item": 5
@@ -1049,56 +1169,6 @@
         }
       }
     ],
-    "con puenteo de formato1": [
-      {
-        "json": {
-          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 30 a\u00f1os acude a consulta refiriendo una disminuci\u00f3n significativa en su energ\u00eda y motivaci\u00f3n para realizar actividades cotidianas, acompa\u00f1ada de una alteraci\u00f3n en su patr\u00f3n de sue\u00f1o que le impide descansar adecuadamente. Adem\u00e1s, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor cr\u00f3nico que experimenta. Est\u00e1 tomando medicaci\u00f3n para ayudar a regular su sue\u00f1o, pero siente que esto no est\u00e1 mejorando su capacidad para afrontar desaf\u00edos diarios de manera efectiva.\"\n    },\n    {\n      \"clinical_text\": \"Una mujer de 50 a\u00f1os se presenta con quejas de falta de energ\u00eda y fatiga persistente, que afecta su capacidad para realizar tareas dom\u00e9sticas y cuidar de su familia. Tambi\u00e9n reporta problemas para conciliar el sue\u00f1o y permanecer dormida durante la noche, lo que empeora su estado de \u00e1nimo y concentraci\u00f3n. El dolor cr\u00f3nico que padece aumenta su frustraci\u00f3n y sentimiento de abrumaci\u00f3n, dificultando su capacidad para resolver problemas cotidianos. La medicaci\u00f3n para el sue\u00f1o le brinda algo de alivio, pero busca ayuda para mejorar su calidad de vida en general.\"\n    },\n    {\n      \"clinical_text\": \"Var\u00f3n de 45 a\u00f1os acude a la consulta debido a una disminuci\u00f3n progresiva en su nivel de energ\u00eda y motivaci\u00f3n, que se ha visto acompa\u00f1ada de un patr\u00f3n de sue\u00f1o irregular y dificultades para resolver problemas y tomar decisiones de manera efectiva. El dolor cr\u00f3nico que experimenta es un factor importante que contribuye a su estado de malestar general. Aunque ha iniciado tratamiento con medicaci\u00f3n para regular su sue\u00f1o, busca apoyo para superar los desaf\u00edos que enfrenta en su vida diaria y mejorar su capacidad para manejar el dolor y otros s\u00edntomas que lo aquejan.\"\n    }\n  ]\n}"
-        },
-        "pairedItem": {
-          "item": 0
-        }
-      },
-      {
-        "json": {
-          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 35 a\u00f1os con antecedentes de depresi\u00f3n, refiere sentir una persistente sensaci\u00f3n de tristeza y dolor cr\u00f3nico generalizado, que le dificulta mantener su empleo como contadora. La paciente menciona que 'su mente est\u00e1 llena de pensamientos negativos', lo que le impide manejar el estr\u00e9s laboral y le causa problemas para dormir. Expresa su deseo de encontrar un trabajo que se adapte a sus necesidades y pueda acceder a servicios de seguridad social que la apoyen en su situaci\u00f3n actual.\"\n    },\n    {\n      \"clinical_text\": \"Var\u00f3n de 42 a\u00f1os, trabajador aut\u00f3nomo, acude a consulta por dolor cr\u00f3nico y problemas para mantener su negocio debido a la dificultad para manejar el estr\u00e9s y la ansiedad. Refiere que 'su mente es un torbellino de ideas negativas' que le impiden tomar decisiones claras y efectivas en su trabajo. Busca encontrar estrategias para manejar su estr\u00e9s y dolor, y as\u00ed poder mantener su empleo remunerado y acceder a los servicios de seguridad social que lo ayuden a superar esta situaci\u00f3n.\"\n    },\n    {\n      \"clinical_text\": \"Mujer de 50 a\u00f1os, empleada en una empresa de servicios, presenta dolor cr\u00f3nico generalizado y problemas emocionales, incluyendo pensamientos recurrentes de ansiedad y depresi\u00f3n. La paciente expresa que 'le cuesta mucho trabajo' manejar las demandas psicol\u00f3gicas de su empleo y que el dolor cr\u00f3nico la limita en su capacidad para realizar tareas laborales y acceder a los servicios de seguridad social que necesita. Su deseo es encontrar un equilibrio entre su salud y su empleo remunerado.\"\n    }\n  ]\n}"
-        },
-        "pairedItem": {
-          "item": 1
-        }
-      },
-      {
-        "json": {
-          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 35 a\u00f1os, madre de dos hijos, acude a consulta refiriendo dificultades para dormir y un estado de \u00e1nimo bajo desde hace varios meses. Manifiesta sentir dolor generalizado en su cuerpo, especialmente en las ma\u00f1anas, lo que le dificulta realizar las tareas dom\u00e9sticas y cuidar a sus hijos. Adem\u00e1s, se siente abrumada por el estr\u00e9s diario y tiene problemas para manejar las demandas psicol\u00f3gicas de su entorno. Le gustar\u00eda encontrar una forma de mejorar su calidad de sue\u00f1o y reducir su dolor para poder disfrutar m\u00e1s tiempo con su familia y retomar sus actividades de ocio, como la pintura, que tanto le aprecia.\"\n    },\n    {\n      \"clinical_text\": \"Var\u00f3n de 42 a\u00f1os, casado, acude a consulta por problemas de dolor cr\u00f3nico que le impiden realizar sus tareas dom\u00e9sticas con la misma eficiencia que antes. Se siente estresado por no poder cumplir con sus responsabilidades familiares y manifiesta dificultades para manejar el estr\u00e9s y las demandas psicol\u00f3gicas de su trabajo y su vida familiar. Adem\u00e1s, refiere problemas para conciliar el sue\u00f1o y se encuentra en un estado de \u00e1nimo bajo la mayor parte del tiempo. Le preocupa c\u00f3mo afectar\u00e1 su situaci\u00f3n a sus relaciones familiares y su capacidad para disfrutar de actividades de ocio con su esposa, como el senderismo, que siempre han disfrutado juntos.\"\n    },\n    {\n      \"clinical_text\": \"Mujer de 50 a\u00f1os, divorciada, acude a consulta refiriendo un estado de \u00e1nimo depresivo y dificultades para dormir desde la muerte de su madre, hace un a\u00f1o. Ha notado un aumento en su dolor generalizado, especialmente en las articulaciones, lo que le dificulta realizar las tareas del hogar y pasar tiempo con sus nietos, lo que m\u00e1s disfruta. Se siente abrumada por el estr\u00e9s de cuidar a sus nietos y manejar su hogar sola, y manifiesta problemas para manejar las demandas psicol\u00f3gicas de su nueva situaci\u00f3n familiar. Le gustar\u00eda encontrar una forma de mejorar su calidad de vida y poder disfrutar m\u00e1s tiempo con sus seres queridos, y retomar sus actividades de ocio, como la jardiner\u00eda, que siempre le ha apasionado.\"\n    }\n  ]\n}"
-        },
-        "pairedItem": {
-          "item": 2
-        }
-      },
-      {
-        "json": {
-          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 35 a\u00f1os, ex deportista de alto nivel, acude a consulta por dolor cr\u00f3nico en las articulaciones que le limita para realizar actividades f\u00edsicas, tiene miedo a empeorar el dolor si vuelve a practicar deporte, presenta pensamientos catastrofistas sobre su capacidad para realizar actividades que requieren esfuerzo f\u00edsico, como subir escaleras o caminar largas distancias. Refiere dificultad para realizar actividades de ocio como ir al cine o salir con amigos debido a la fatiga y el dolor cr\u00f3nico.\"\n    },\n    {\n      \"clinical_text\": \"Mujer de 50 a\u00f1os, con antecedentes de lesiones musculoesquel\u00e9ticas, acude a consulta por dolor persistente en la regi\u00f3n lumbar que le impide realizar actividades que requieren esfuerzo f\u00edsico, como levantar objetos pesados o realizar tareas dom\u00e9sticas, tambi\u00e9n presenta dificultad para realizar actividades de ocio como bailar o practicar yoga, debido a la falta de tolerancia al ejercicio y la disminuci\u00f3n de la fuerza muscular.\"\n    },\n    {\n      \"clinical_text\": \"Var\u00f3n de 28 a\u00f1os, con historial de lesiones deportivas, acude a consulta por dolor cr\u00f3nico en las extremidades que le limita para realizar actividades f\u00edsicas intensas, presenta pensamientos de evitaci\u00f3n hacia el ejercicio f\u00edsico debido al miedo a empeorar el dolor, tambi\u00e9n refiere dificultad para realizar actividades de ocio como jugar con sus hijos o practicar deportes de equipo, debido a la falta de resistencia y la disminuci\u00f3n de la fuerza muscular, lo que le genera sentimientos de frustraci\u00f3n y ansiedad.\"\n    }\n  ]\n}"
-        },
-        "pairedItem": {
-          "item": 3
-        }
-      },
-      {
-        "json": {
-          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 50 a\u00f1os acude a consulta refiriendo dolor cr\u00f3nico generalizado que le impide realizar las tareas dom\u00e9sticas con la misma facilidad que antes, sobre todo debido a la dificultad para caminar durante largos periodos. La paciente menciona que 'le duele mucho' cuando intenta hacer las compras o andar al parque con su familia. Le preocupa no poder mantener su casa limpia y organizada como siempre ha hecho.\"\n    },\n    {\n      \"clinical_text\": \"Var\u00f3n de 35 a\u00f1os, despu\u00e9s de varios a\u00f1os de dolor cr\u00f3nico, se siente limitado en sus actividades diarias, especialmente al realizar quehaceres de la casa y al caminar. Comenta que siente un dolor constante que le hace dif\u00edcil levantar objetos pesados, lo que le impide ayudar en las tareas del hogar como antes. Le gustar\u00eda poder retomar sus actividades cotidianas sin sentir dolor.\"\n    },\n    {\n      \"clinical_text\": \"Mujer de 60 a\u00f1os acude a consulta por dolor cr\u00f3nico que le afecta significativamente su capacidad para realizar las tareas dom\u00e9sticas y caminar sin dificultad. Refiere que 'no puede hacer nada' sin sentir dolor, lo que la ha llevado a depender de su familia para realizar las compras y los quehaceres de la casa. Le preocupa perder su independencia y no poder disfrutar de su tiempo libre como sol\u00eda hacer.\"\n    }\n  ]\n}"
-        },
-        "pairedItem": {
-          "item": 4
-        }
-      },
-      {
-        "json": {
-          "response": "{\n  \"clinical_object\": [\n    {\n      \"clinical_text\": \"Paciente de 35 a\u00f1os con antecedentes de dolor cr\u00f3nico generalizado, presenta dificultades para realizar actividades cotidianas como levantar y llevar objetos debido a la intensidad del dolor. Esto ha afectado su relaci\u00f3n con su pareja, ya que siente que no puede realizar actividades juntos como antes, y tambi\u00e9n ha limitado su participaci\u00f3n en eventos sociales con su familia. Le gustar\u00eda encontrar una manera de manejar su dolor para mejorar su calidad de vida y relaciones interpersonales.\"\n    },\n    {\n      \"clinical_text\": \"Mujer de 50 a\u00f1os que acude a consulta por dolor persistente que afecta su capacidad para realizar tareas dom\u00e9sticas y cuidar de su familia. La dificultad para levantar y llevar objetos la ha obligado a depender m\u00e1s de su pareja y familiares, lo que ha generado tensiones en sus relaciones. Adem\u00e1s, el dolor le ha impedido disfrutar de actividades de ocio como la pintura y la lectura, que eran fundamentales para su bienestar emocional. Busca una soluci\u00f3n para su dolor y recuperar su independencia.\"\n    },\n    {\n      \"clinical_text\": \"Var\u00f3n de 28 a\u00f1os que se queja de dolor cr\u00f3nico generalizado que le impide realizar actividades f\u00edsicas con su pareja y amigos. La dificultad para levantar y llevar objetos le ha limitado su capacidad para participar en deportes y actividades al aire libre, lo que ha afectado su relaci\u00f3n con su pareja y su autoestima. Adem\u00e1s, el dolor ha interferido con su capacidad para disfrutar de su tiempo libre y ocio, lo que ha generado sentimientos de frustraci\u00f3n y aislamiento. Desea encontrar una forma de manejar su dolor y recuperar su calidad de vida.\"\n    }\n  ]\n}"
-        },
-        "pairedItem": {
-          "item": 5
-        }
-      }
-    ],
     "doc_to_json": [
       {
         "json": {
@@ -1114,7 +1184,7 @@
             "b130-Energy and drive functions",
             "b134-Sleep functions",
             "b175-solving problems",
-            "b280-Sensaci\u00f3n de dolor",
+            "b280-Sensación de dolor",
             "e1101-Drugs"
           ],
           "clinical_profile": "low energy, low sleep, cognitive, sleep medication"
@@ -1137,7 +1207,7 @@
           "icf_name": [
             "b152-Emotional functions",
             "b1602-Content of thought",
-            "b280-Sensaci\u00f3n de dolor",
+            "b280-Sensación de dolor",
             "d240-Handling stress and other psychological demands",
             "d850-Remunerative employment",
             "e570-Social security services, systems and policies"
@@ -1165,7 +1235,7 @@
           "icf_name": [
             "b134-Sleep functions",
             "b152-Emotional functions",
-            "b280-Sensaci\u00f3n de dolor",
+            "b280-Sensación de dolor",
             "d240-Handling stress and other psychological demands",
             "d640-Realizar los quehaceres de la casa",
             "d760-Relaciones Familiares",
@@ -1191,7 +1261,7 @@
           ],
           "icf_name": [
             "b1602-Content of thought",
-            "b280-Sensaci\u00f3n de dolor",
+            "b280-Sensación de dolor",
             "b455-Exercise tolerance functions",
             "b730-Muscle power functions",
             "d920-Tiempo libre y ocio"
@@ -1212,7 +1282,7 @@
             "d640"
           ],
           "icf_name": [
-            "b280- Sensaci\u00f3n de dolor",
+            "b280- Sensación de dolor",
             "d230-Llevar a cabo rutinas diarias",
             "d430-Levantar y llevar objetos",
             "d450-Andar",
@@ -1235,7 +1305,7 @@
             "d920"
           ],
           "icf_name": [
-            "b280- Sensaci\u00f3n de dolor",
+            "b280- Sensación de dolor",
             "d430-Levantar y llevar objetos",
             "d760-Relaciones Familiares",
             "d920-Tiempo libre y ocio"
@@ -1244,6 +1314,673 @@
         },
         "pairedItem": {
           "item": 0
+        }
+      }
+    ],
+    "quita el id del json": [
+      {
+        "json": {
+          "icf_codes": [
+            "b130",
+            "b134",
+            "b175",
+            "b280",
+            "e1101"
+          ],
+          "icf_name": [
+            "b130-Energy and drive functions",
+            "b134-Sleep functions",
+            "b175-solving problems",
+            "b280-Sensación de dolor",
+            "e1101-Drugs"
+          ]
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "icf_codes": [
+            "b152",
+            "b1602",
+            "b280",
+            "d240",
+            "d850",
+            "e570"
+          ],
+          "icf_name": [
+            "b152-Emotional functions",
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d850-Remunerative employment",
+            "e570-Social security services, systems and policies"
+          ]
+        },
+        "pairedItem": {
+          "item": 1
+        }
+      },
+      {
+        "json": {
+          "icf_codes": [
+            "b134",
+            "b152",
+            "b280",
+            "d240",
+            "d640",
+            "d760",
+            "d920",
+            "e310",
+            "e410"
+          ],
+          "icf_name": [
+            "b134-Sleep functions",
+            "b152-Emotional functions",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d640-Realizar los quehaceres de la casa",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio",
+            "e310-Immediate family",
+            "e410- Individual attitudes of immediate family members"
+          ]
+        },
+        "pairedItem": {
+          "item": 2
+        }
+      },
+      {
+        "json": {
+          "icf_codes": [
+            "b1602",
+            "b280",
+            "b455",
+            "b730",
+            "d920"
+          ],
+          "icf_name": [
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "b455-Exercise tolerance functions",
+            "b730-Muscle power functions",
+            "d920-Tiempo libre y ocio"
+          ]
+        },
+        "pairedItem": {
+          "item": 3
+        }
+      },
+      {
+        "json": {
+          "icf_codes": [
+            "b280",
+            "d230",
+            "d450",
+            "d640"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d230-Llevar a cabo rutinas diarias",
+            "d430-Levantar y llevar objetos",
+            "d450-Andar",
+            "d640-Realizar los quehaceres de la casa"
+          ]
+        },
+        "pairedItem": {
+          "item": 4
+        }
+      },
+      {
+        "json": {
+          "icf_codes": [
+            "b280",
+            "d430",
+            "d760",
+            "d770",
+            "d920"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d430-Levantar y llevar objetos",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio"
+          ]
+        },
+        "pairedItem": {
+          "item": 5
+        }
+      }
+    ],
+    "On form submission": [
+      {
+        "json": {
+          "documento_a_vectorizar": [
+            {
+              "filename": "input_of_generator_extra_info.json",
+              "mimetype": "application/json",
+              "size": 2401
+            }
+          ],
+          "submittedAt": "2026-07-06T06:27:52.221-04:00",
+          "formMode": "test"
+        }
+      }
+    ],
+    "doc_to_json1": [
+      {
+        "json": {
+          "id_code_combination": "001",
+          "icf_codes": [
+            "b130",
+            "b134",
+            "b175",
+            "b280",
+            "e1101"
+          ],
+          "icf_name": [
+            "b130-Energy and drive functions",
+            "b134-Sleep functions",
+            "b175-solving problems",
+            "b280-Sensación de dolor",
+            "e1101-Drugs"
+          ],
+          "clinical_profile": "low energy, low sleep, cognitive, sleep medication"
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "002",
+          "icf_codes": [
+            "b152",
+            "b1602",
+            "b280",
+            "d240",
+            "d850",
+            "e570"
+          ],
+          "icf_name": [
+            "b152-Emotional functions",
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d850-Remunerative employment",
+            "e570-Social security services, systems and policies"
+          ],
+          "clinical_profile": "emotional, pain, work, stress"
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "003",
+          "icf_codes": [
+            "b134",
+            "b152",
+            "b280",
+            "d240",
+            "d640",
+            "d760",
+            "d920",
+            "e310",
+            "e410"
+          ],
+          "icf_name": [
+            "b134-Sleep functions",
+            "b152-Emotional functions",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d640-Realizar los quehaceres de la casa",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio",
+            "e310-Immediate family",
+            "e410- Individual attitudes of immediate family members"
+          ],
+          "clinical_profile": "family, housework, stress, emotional, sleep"
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "004",
+          "icf_codes": [
+            "b1602",
+            "b280",
+            "b455",
+            "b730",
+            "d920"
+          ],
+          "icf_name": [
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "b455-Exercise tolerance functions",
+            "b730-Muscle power functions",
+            "d920-Tiempo libre y ocio"
+          ],
+          "clinical_profile": "exsport,fear of movement, hardness in endurance or power."
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "005",
+          "icf_codes": [
+            "b280",
+            "d230",
+            "d450",
+            "d640"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d230-Llevar a cabo rutinas diarias",
+            "d430-Levantar y llevar objetos",
+            "d450-Andar",
+            "d640-Realizar los quehaceres de la casa"
+          ],
+          "clinical_profile": "housework, walk, free time"
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "006",
+          "icf_codes": [
+            "b280",
+            "d430",
+            "d760",
+            "d770",
+            "d920"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d430-Levantar y llevar objetos",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio"
+          ],
+          "clinical_profile": "social"
+        }
+      }
+    ],
+    "No Operation, do nothing": [
+      {
+        "json": {
+          "id_code_combination": "002",
+          "icf_codes": [
+            "b152",
+            "b1602",
+            "b280",
+            "d240",
+            "d850",
+            "e570"
+          ],
+          "icf_name": [
+            "b152-Emotional functions",
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d850-Remunerative employment",
+            "e570-Social security services, systems and policies"
+          ],
+          "id_clinical_text": "002_1",
+          "clinical_text": "Mujer de 48 años que acude a la consulta de rehabilitación refiriendo una sensación desagradable y constante de dolor generalizado en todo el cuerpo, describiendo episodios frecuentes de quemazón y pinchazos punzantes en ambas extremidades y en la región dorsal. Comenta que este malestar le dificulta enormemente llevar a cabo las rutinas diarias más básicas, como planificar las tareas del hogar y organizar las compras de la economía doméstica. Durante la exploración física, además de evidenciar una importante debilidad en los músculos pequeños de las manos, se observa una notable disminución en la fuerza generada por la contracción de los grupos musculares de las extremidades inferiores."
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "002",
+          "icf_codes": [
+            "b152",
+            "b1602",
+            "b280",
+            "d240",
+            "d850",
+            "e570"
+          ],
+          "icf_name": [
+            "b152-Emotional functions",
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d850-Remunerative employment",
+            "e570-Social security services, systems and policies"
+          ],
+          "id_clinical_text": "002_2",
+          "clinical_text": "Varón de 55 años, diagnosticado previamente de dolor crónico generalizado, consulta por un empeudoramiento de sus síntomas álgicos. Refiere un dolor sordo y continuo que afecta a múltiples partes de su anatomía, localizado especialmente a lo largo de un dermatoma en el hemicuerpo izquierdo. Explica que esta situación le incapacita para dirigir y completar sus obligaciones cotidianas, afectando directamente su nivel de actividad personal y su capacidad para gestionar el día a día. En la exploración clínica destaca una marcada paresia muscular generalizada y una clara pérdida de fuerza en la musculatura del tronco."
+        },
+        "pairedItem": {
+          "item": 1
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "002",
+          "icf_codes": [
+            "b152",
+            "b1602",
+            "b280",
+            "d240",
+            "d850",
+            "e570"
+          ],
+          "icf_name": [
+            "b152-Emotional functions",
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d850-Remunerative employment",
+            "e570-Social security services, systems and policies"
+          ],
+          "id_clinical_text": "002_3",
+          "clinical_text": "Paciente femenina de 62 años que acude derivada al servicio de rehabilitación por un cuadro prolongado de mialgias difusas y episodios de hiperalgesia al roce superficial. La paciente relata que el dolor generalizado le impide completar con éxito las acciones coordinadas necesarias para mantener sus tareas diarias y la planificación de sus obligaciones domésticas. A la exploración física se objetiva una reducción generalizada de la fuerza muscular por contracción voluntaria, encontrando debilidad bilateral significativa tanto en la musculatura de las extremidades superiores como en las inferiores."
+        },
+        "pairedItem": {
+          "item": 2
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "003",
+          "icf_codes": [
+            "b134",
+            "b152",
+            "b280",
+            "d240",
+            "d640",
+            "d760",
+            "d920",
+            "e310",
+            "e410"
+          ],
+          "icf_name": [
+            "b134-Sleep functions",
+            "b152-Emotional functions",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d640-Realizar los quehaceres de la casa",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio",
+            "e310-Immediate family",
+            "e410- Individual attitudes of immediate family members"
+          ],
+          "id_clinical_text": "003_1",
+          "clinical_text": "Mujer de 48 años que acude a la consulta de rehabilitación refiriendo un cuadro clínico de varios meses de evolución caracterizado por una desagradable sensación de dolor generalizado y quemazón difusa en ambas extremidades y en el tronco. La paciente explica que le cuesta enormemente llevar a cabo sus rutinas diarias, encontrando grandes dificultades para planificar y completar las tareas domésticas más básicas como la gestión de la economía del hogar. Durante la exploración física, destaca además una notable pérdida de fuerza generalizada en la contracción de los grupos musculares de las extremidades superiores e inferiores, evidenciando una marcada debilidad en los músculos pequeños de las manos y dificultad para mantener el nivel de actividad personal."
+        },
+        "pairedItem": {
+          "item": 3
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "003",
+          "icf_codes": [
+            "b134",
+            "b152",
+            "b280",
+            "d240",
+            "d640",
+            "d760",
+            "d920",
+            "e310",
+            "e410"
+          ],
+          "icf_name": [
+            "b134-Sleep functions",
+            "b152-Emotional functions",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d640-Realizar los quehaceres de la casa",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio",
+            "e310-Immediate family",
+            "e410- Individual attitudes of immediate family members"
+          ],
+          "id_clinical_text": "003_2",
+          "clinical_text": "Varón de 55 años, operario de almacén, que acude remitido por su médico de atención primaria debido a un dolor sordo y punzante localizado en la mitad inferior del cuerpo y región lumbar, indicativo de un daño tisular persistente. El paciente relata que debido a esta dolencia su capacidad para llevar a cabo rutinas diarias se ha visto gravemente afectada, siendo incapaz de dirigir de forma autónoma las acciones coordinadas necesarias para cumplir con sus obligaciones cotidianas. Asimismo, en la exploración clínica se objetiva una franca disminución en las funciones relacionadas con la fuerza muscular, manifestándose con paresia muscular en el lado derecho del cuerpo que le impide realizar sus labores habituales de manera independiente."
+        },
+        "pairedItem": {
+          "item": 4
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "003",
+          "icf_codes": [
+            "b134",
+            "b152",
+            "b280",
+            "d240",
+            "d640",
+            "d760",
+            "d920",
+            "e310",
+            "e410"
+          ],
+          "icf_name": [
+            "b134-Sleep functions",
+            "b152-Emotional functions",
+            "b280-Sensación de dolor",
+            "d240-Handling stress and other psychological demands",
+            "d640-Realizar los quehaceres de la casa",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio",
+            "e310-Immediate family",
+            "e410- Individual attitudes of immediate family members"
+          ],
+          "id_clinical_text": "003_3",
+          "clinical_text": "Paciente de 62 años que consulta por episodios recurrentes de dolor en un dermatoma específico y molestias generalizadas que le provocan una continua sensación de malestar corporal. Comenta que organizar y dirigir las actividades a lo largo del día se ha convertido en un desafío insuperable, alterando por completo su capacidad para llevar a cabo rutinas diarias y planificar las tareas del hogar. A la exploración física se constata una alteración severa de las funciones relacionadas con la fuerza muscular, destacando una notable deficiencia en la fuerza generada por los músculos del tronco y de las extremidades inferiores, limitando severamente su nivel de actividad personal."
+        },
+        "pairedItem": {
+          "item": 5
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "004",
+          "icf_codes": [
+            "b1602",
+            "b280",
+            "b455",
+            "b730",
+            "d920"
+          ],
+          "icf_name": [
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "b455-Exercise tolerance functions",
+            "b730-Muscle power functions",
+            "d920-Tiempo libre y ocio"
+          ],
+          "id_clinical_text": "004_1",
+          "clinical_text": "Mujer de 48 años que acude a la consulta de rehabilitación refiriendo una sensación desagradable y constante de dolor generalizado en la región dorsal y lumbar, acompañada de episodios de quemazón y pinchazos punzantes en ambas extremidades inferiores a lo largo de un dermatoma específico. La paciente relata que este daño corporal le genera limitaciones severas al intentar planificar y dirigir sus obligaciones domésticas cotidianas, afectando notablemente su capacidad para coordinar acciones simples como llevar la economía del hogar y completar las tareas del día a día. A la exploración física, presenta además una notable disminución en la fuerza generada por la contracción de los grupos musculares en el tronco y en ambas extremidades inferiores, evidenciando debilidad difusa al intentar realizar contracciones contra resistencia."
+        },
+        "pairedItem": {
+          "item": 6
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "004",
+          "icf_codes": [
+            "b1602",
+            "b280",
+            "b455",
+            "b730",
+            "d920"
+          ],
+          "icf_name": [
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "b455-Exercise tolerance functions",
+            "b730-Muscle power functions",
+            "d920-Tiempo libre y ocio"
+          ],
+          "id_clinical_text": "004_2",
+          "clinical_text": "Varón de 55 años, operario de almacén, acude por un cuadro clínico de dolor sordo y localizado en múltiples partes del cuerpo, con exacerbaciones punzantes que sugieren daño tisular profundo en el tronco y las extremidades. Durante la anamnesis, el paciente manifiesta una incapacidad marcada para llevar a cabo sus rutinas diarias, encontrando grandes dificultades para dirigir y completar las tareas de su jornada y administrar su nivel de actividad personal debido a la fatiga y las molestias físicas. Asimismo, la exploración muscular revela deficiencias importantes relacionadas con la fuerza muscular generada por la contracción de las extremidades superiores e inferiores, destacando una pérdida de fuerza notable en los músculos de las manos y de la mitad inferior del cuerpo."
+        },
+        "pairedItem": {
+          "item": 7
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "004",
+          "icf_codes": [
+            "b1602",
+            "b280",
+            "b455",
+            "b730",
+            "d920"
+          ],
+          "icf_name": [
+            "b1602-Content of thought",
+            "b280-Sensación de dolor",
+            "b455-Exercise tolerance functions",
+            "b730-Muscle power functions",
+            "d920-Tiempo libre y ocio"
+          ],
+          "id_clinical_text": "004_3",
+          "clinical_text": "Paciente de 62 años que consulta por un historial prolongado de dolor generalizado y difuso, caracterizado por una sensación desagradable de quemazón y dolor punzante que abarca la totalidad del cuerpo. Comenta que su condición le impide llevar a cabo sus rutinas diarias con normalidad, viéndose incapaz de planificar y dirigir las acciones coordinadas necesarias para cumplir con los requerimientos de sus obligaciones cotidianas y el manejo de su actividad personal. En la exploración física se objetivan claras deficiencias de fuerza muscular, evidenciadas por una reducción generalizada de la fuerza generada por la contracción de los músculos en ambas extremidades y en el tronco, con signos clínicos de paresia leve en los miembros afectados."
+        },
+        "pairedItem": {
+          "item": 8
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "005",
+          "icf_codes": [
+            "b280",
+            "d230",
+            "d450",
+            "d640"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d230-Llevar a cabo rutinas diarias",
+            "d430-Levantar y llevar objetos",
+            "d450-Andar",
+            "d640-Realizar los quehaceres de la casa"
+          ],
+          "id_clinical_text": "005_1",
+          "clinical_text": "Mujer de 48 años que acude a la consulta de rehabilitación refiriendo un cuadro de dolor generalizado y continuo de varios meses de evolución. Describe una sensación desagradable de quemazón y dolor punzante difuso que abarca múltiples dermatomas en ambas extremidades y en la región dorsal. Comenta que esta situación le genera un gran desgaste físico. A la exploración presenta puntos hiperalgésicos generalizados, sin claros signos inflamatorios articulares, y refiere que el malestar le impide planificar y dirigir sus obligaciones domésticas cotidianas, tales como la gestión de la economía del hogar y la estructuración de las tareas diarias. Durante la valoración funcional se objetiva además una notable debilidad bilateral en los músculos de las extremidades inferiores y superiores, evidenciándose una marcada pérdida de fuerza al intentar realizar contracciones mantenidas contra resistencia, lo que limita de forma severa su autonomía en las acciones más sencillas del día."
+        },
+        "pairedItem": {
+          "item": 9
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "005",
+          "icf_codes": [
+            "b280",
+            "d230",
+            "d450",
+            "d640"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d230-Llevar a cabo rutinas diarias",
+            "d430-Levantar y llevar objetos",
+            "d450-Andar",
+            "d640-Realizar los quehaceres de la casa"
+          ],
+          "id_clinical_text": "005_2",
+          "clinical_text": "Varón de 55 años, operario de almacén, que consulta por un empeoramiento progresivo de su dolencia de características neuropáticas y sordes. El paciente relata una experiencia persistente de dolor localizado y generalizado que le acompaña durante toda la jornada, manifestándose con episodios de mialgia intensa y sensación de pinchazos por todo el cuerpo que indican un daño continuo en sus estructuras corporales. Debido a esta limitación sensitiva, encuentra barreras importantes para llevar a cabo sus rutinas diarias, siendo incapaz de coordinar las acciones simples necesarias para completar los requerimientos de sus obligaciones laborales y personales, así como organizar los horarios de sus actividades cotidianas. Asimismo, en la exploración física destaca una evidente disminución en la fuerza generada por la contracción muscular, presentando una paresia moderada en el tronco y en ambas extremidades que le dificulta enormemente sostener objetos y mantener posturas prolongadas."
+        },
+        "pairedItem": {
+          "item": 10
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "005",
+          "icf_codes": [
+            "b280",
+            "d230",
+            "d450",
+            "d640"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d230-Llevar a cabo rutinas diarias",
+            "d430-Levantar y llevar objetos",
+            "d450-Andar",
+            "d640-Realizar los quehaceres de la casa"
+          ],
+          "id_clinical_text": "005_3",
+          "clinical_text": "Paciente de 62 años que acude remitido por su médico de atención primaria debido a un cuadro de dolor difuso generalizado. Manifiesta sufrir sensaciones desagradables de dolor sordo y punzante que afectan de manera constante a diversas partes de su anatomía, con cuadros recurrentes de hiperalgesia y mialgias generalizadas que le restan calidad de vida. Explica que su mayor frustración radica en la absoluta incapacidad para llevar a cabo sus rutinas diarias habituales; le resulta imposible planificar, dirigir y completar las tareas domésticas más básicas o mantener el nivel de actividad personal al que estaba acostumbrado debido a la fatiga y el malestar. Al realizar la exploración del sistema neuromuscular, se constata una alteración significativa en las funciones relacionadas con la fuerza muscular, registrándose una notable debilidad global en los grupos musculares de las extremidades y del tronco durante las pruebas de contracción isométrica."
+        },
+        "pairedItem": {
+          "item": 11
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "006",
+          "icf_codes": [
+            "b280",
+            "d430",
+            "d760",
+            "d770",
+            "d920"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d430-Levantar y llevar objetos",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio"
+          ],
+          "id_clinical_text": "006_1",
+          "clinical_text": "Mujer de 48 años que acude a la consulta de rehabilitación refiriendo una sensación desagradable y continua de dolor generalizado en todo el cuerpo, con episodios especialmente intensos y punzantes en la región lumbar y un marcado dolor de tipo quemazón en ambas extremidades inferiores. La paciente relata que este sufrimiento le acompaña desde hace años, manifestándose con áreas de hiperalgesia al roce de la ropa y zonas con mialgia difusa. Debido a este cuadro sintomático constante, experimenta serias dificultades para llevar a cabo sus rutinas diarias, incapacitándola para planificar y completar de forma eficiente las obligaciones domésticas básicas, como la gestión de la economía del hogar o la organización de las tareas del día. Durante la exploración física, además de la evidente hipersensibilidad al tacto superficial, se objetiva una notable pérdida de fuerza muscular global, registrando deficiencias severas asociadas con la fuerza generada por la contracción de los grupos musculares tanto en las extremidades superiores como inferiores, lo que limita significativamente su autonomía funcional."
+        },
+        "pairedItem": {
+          "item": 12
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "006",
+          "icf_codes": [
+            "b280",
+            "d430",
+            "d760",
+            "d770",
+            "d920"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d430-Levantar y llevar objetos",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio"
+          ],
+          "id_clinical_text": "006_2",
+          "clinical_text": "Varón de 55 años, operario de almacén, que acude remitido por su médico de atención primaria por un cuadro de dolor musculoesquelético crónico. El paciente describe una sensación de dolor sordo y localizado a lo largo de varios dermatomas en la espalda y el tronco, acompañada de mialgia generalizada y episodios punzantes que sugieren daño real en las estructuras corporales tras años de sobreesfuerzo. Explica que la intensidad de este sufrimiento le desborda, afectando de manera directa a su capacidad para llevar a cabo sus rutinas diarias, viéndose incapaz de coordinar las acciones necesarias para dirigir y completar las tareas más sencillas de su jornada, requiriendo la ayuda de su cónyuge. A la exploración física en el servicio de rehabilitación, destaca una importante debilidad en la musculatura del tronco y de las extremidades inferiores, evidenciando claras deficiencias relacionadas con la fuerza muscular generada por la contracción voluntaria, lo que le impide mantener una bipedestación prolongada o realizar mínimos esfuerzos sin exacerbar su cuadro álgido."
+        },
+        "pairedItem": {
+          "item": 13
+        }
+      },
+      {
+        "json": {
+          "id_code_combination": "006",
+          "icf_codes": [
+            "b280",
+            "d430",
+            "d760",
+            "d770",
+            "d920"
+          ],
+          "icf_name": [
+            "b280- Sensación de dolor",
+            "d430-Levantar y llevar objetos",
+            "d760-Relaciones Familiares",
+            "d920-Tiempo libre y ocio"
+          ],
+          "id_clinical_text": "006_3",
+          "clinical_text": "Paciente de 62 años que acude a valoración médica por un cuadro de dolor crónico generalizado. Refiere una sensación muy desagradable de dolor punzante y quemazón en múltiples partes de la anatomía, destacando un componente incapacitante de mialgia generalizada y áreas con marcada analgesia alternando con hipersensibilidad. Comenta que este estado físico le condiciona profundamente la jornada, alterando su habilidad para llevar a cabo las rutinas diarias más elementales; le resulta imposible planear, dirigir y completar las obligaciones del hogar, viéndose obligado a abandonar la planificación de cualquier actividad básica a lo largo del día. En la exploración clínica y funcional, se detectan de manera objetiva deficiencias notables asociadas con la fuerza muscular, manifestadas en forma de una marcada parálisis parcial y debilidad generalizada en la fuerza generada por la contracción de los grupos musculares de las extremidades y del tronco, mermando drásticamente su capacidad de desplazamiento y su independencia."
+        },
+        "pairedItem": {
+          "item": 14
         }
       }
     ]
@@ -1322,33 +2059,6 @@
           {
             "node": "Loop Over Items",
             "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "On form submission": {
-      "main": [
-        []
-      ]
-    },
-    "Default Data Loader": {
-      "ai_document": [
-        [
-          {
-            "node": "Qdrant Vector Store1",
-            "type": "ai_document",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Embeddings Ollama1": {
-      "ai_embedding": [
-        [
-          {
-            "node": "Qdrant Vector Store1",
-            "type": "ai_embedding",
             "index": 0
           }
         ]
@@ -1448,27 +2158,11 @@
         ]
       ]
     },
-    "parsea respuesta LLM": {
-      "main": [
-        []
-      ]
-    },
-    "Parsear JSON del LLM y a\u00f1ade variables inicio": {
-      "main": [
-        [
-          {
-            "node": "Convert to File1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "con puenteo de formato": {
       "main": [
         [
           {
-            "node": "Parsear JSON del LLM y a\u00f1ade variables inicio",
+            "node": "structure_response_into_json",
             "type": "main",
             "index": 0
           }
@@ -1493,13 +2187,7 @@
     },
     "Embeddings Ollama2": {
       "ai_embedding": [
-        [
-          {
-            "node": "Qdrant Vector Store2",
-            "type": "ai_embedding",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Vector Store Retriever1": {
@@ -1618,6 +2306,189 @@
           }
         ]
       ]
+    },
+    "structure_response_into_json": {
+      "main": [
+        [
+          {
+            "node": "Convert to File1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store2",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vector Store Retriever2": {
+      "ai_retriever": [
+        [
+          {
+            "node": "con puenteo de formato2",
+            "type": "ai_retriever",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Qdrant Vector Store3": {
+      "ai_vectorStore": [
+        [
+          {
+            "node": "Vector Store Retriever2",
+            "type": "ai_vectorStore",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Replace Me3": {
+      "main": [
+        [
+          {
+            "node": "quita el id del json1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "con puenteo de formato2": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "doc_to_json1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "quita el id del json1": {
+      "main": [
+        [
+          {
+            "node": "con puenteo de formato2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "doc_to_json1": {
+      "main": [
+        [
+          {
+            "node": "loop1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "from_llm_to_json1": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "loop1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Replace Me3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Qdrant Vector Store3",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "loop1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "con puenteo de formato2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "No Operation, do nothing1": {
+      "main": [
+        [
+          {
+            "node": "from_llm_to_json1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -1626,7 +2497,7 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "10254611-6616-4231-85a2-9393cd34e4ad",
+  "versionId": "7cf06994-6167-422b-af3b-6d15f3bb1070",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "44fbf0ed6965a74a09769e18b367d9a9eaef6bc57579db2e8bdb7023c84df464"

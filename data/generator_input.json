@@ -135,23 +135,23 @@
     },
     {
         "id_code_combination": "025",
-        "icf_code":[],
-        "icf_name":[]
+        "icf_code":["b147","b280","b730","b760","e410"],
+        "icf_name":["b147-Funciones psicomotoras","b280-Sensación de dolor","b730-Funciones relacionadas con la fuerza muscular","b760-Funciones relacionadas con el control de los movimientos voluntarios","e410-Actitudes individuales de miembros de la familia cercana"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "026",
+        "icf_code":["b280","d240","d760"],
+        "icf_name":["b280-Sensación de dolor","d240-Manejo del estrés y otras demandas psicológicas","d760-Relaciones Familiares"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "027",
+        "icf_code":["b280","b1602","d770","e355","e1101"],
+        "icf_name":["b280-Sensación de dolor","b1602-Contenido del pensamiento","d770-Relaciones íntimas","e355-Profesionales de la salud","e1101-Medicamentos"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "028",
+        "icf_code":["b280","d920","e570"],
+        "icf_name":["b280-Sensación de dolor","d920-Tiempo libre y ocio","e570-Servicios, sistemas y politicas de seguridad social"]
     },
     {
         "id_code_combination": "00",

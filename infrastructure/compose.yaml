@@ -9,7 +9,6 @@ services:
     ports:
       - "5679:5678"
     volumes:
-      volumes:
       - n8n_data:/home/node/.n8n
       - ./results:/home/node/results
       - ./RAG_documents:/home/node/RAG_documents
@@ -26,5 +25,15 @@ services:
       - ./qdrant_data:/qdrant/storage
     restart: unless-stopped
 
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11435:11434"
+    volumes:
+      - ./ollama_data:/home/ollama/.ollama
+    environment:
+      - OLLAMA_NUM_CTX=8192
+    restart: unless-stopped
 volumes:
   n8n_data:
