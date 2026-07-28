@@ -16,3 +16,5 @@ qdrant_data/# pixi environments
 .pixi/*
 !.pixi/config.toml
 venv/
+venv_win/
+scripts/json_manip/

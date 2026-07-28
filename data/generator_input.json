@@ -1,432 +1,206 @@
 [
     {
         "id_code_combination": "001",
-        "icf_code": ["b130","b134","b175","b280","e1101"],
+        "icf_codes": ["b130","b134","b175","b280","e1101"],
         "icf_name":["b130-Funciones relacionadas con la energía y los impulsos","b134-Funciones del sueño","d175-Resolver problemas","b280-Sensación de dolor","e1101-Medicamentos"]
     },
     {
         "id_code_combination": "002",
-        "icf_code": ["b152","b1602","b280","d240","d850","e570"],
+        "icf_codes": ["b152","b1602","b280","d240","d850","e570"],
         "icf_name":["b152-Funciones emocionales","b1602-Contenido del pensamiento",
         "b280-Sensación de dolor", "d240-Manejo del estrés y otras demandas psicológicas",
         "d850-Trabajo remunerado","e570-Servicios, sistemas y politicas de seguridad social"]
     },
     {
         "id_code_combination": "003",
-        "icf_code": ["b134","b152","b280","d240","d640","d760","d920","e310","e410"],
+        "icf_codes": ["b134","b152","b280","d240","d640","d760","d920","e310","e410"],
         "icf_name":["b134-Funciones del sueño","b152-Funciones emocionales","b280-Sensación de dolor",
         "d240-Manejo del estrés y otras demandas psicológicas","d640-Realizar los quehaceres de la casa", "d760-Relaciones Familiares",
     "d920-Tiempo libre y ocio","e310-Familiares cercanos","e410-Actitudes individuales de miembros de la familia cercana"]
     },
     {
         "id_code_combination": "004",
-        "icf_code":["b1602","b280","b455","b730","d920"],
+        "icf_codes":["b1602","b280","b455","b730","d920"],
         "icf_name":["b1602-Contenido del pensamiento","b280-Sensación de dolor","b455-Funciones relacionadas con la tolerancia al ejercicio",
         "b730-Funciones relacionadas con la fuerza muscular","d920-Tiempo libre y ocio"]
 
     },
     {
         "id_code_combination": "005",
-        "icf_code":["b280","d230","d450", "d640"],
+        "icf_codes":["b280","d230","d450", "d640"],
         "icf_name": ["b280-Sensación de dolor", "d230-Llevar a cabo rutinas diarias",
         "d430-Levantar y llevar objetos", "d450-Andar","d640-Realizar los quehaceres de la casa"]
     },
     {
         "id_code_combination": "006",
-        "icf_code":["b280", "d430","d760","d770", "d920"],
+        "icf_codes":["b280", "d430","d760","d770", "d920"],
         "icf_name": ["b280-Sensación de dolor","d430-Levantar y llevar objetos",
         "d760-Relaciones Familiares", "d920-Tiempo libre y ocio"]
     },
     {
         "id_code_combination": "007",
-        "icf_code":["b134","b280","e1101"],
+        "icf_codes":["b134","b280","e1101"],
         "icf_name":["b134-Funciones del sueño","b280-Sensación de dolor","e1101-Medicamentos"]
     },
     {
         "id_code_combination": "008",
-        "icf_code":["b280","b152","d920"],
+        "icf_codes":["b280","b152","d920"],
         "icf_name":["b280-Sensación de dolor","b152-Funciones emocionales","d920-Tiempo libre y ocio"]
     },
     {
         "id_code_combination": "009",
-        "icf_code":["b152","b1602"],
+        "icf_codes":["b152","b1602"],
         "icf_name":["b152-Funciones emocionales","b1602-Contenido del pensamiento"]
     },
     {
         "id_code_combination": "010",
-        "icf_code":["b280","d430"],
+        "icf_codes":["b280","d430"],
         "icf_name":["b280-Sensación de dolor","d430-Levantar y llevar objetos"]
     },
     {
         "id_code_combination": "011",
-        "icf_code":["b280","d430"],
-        "icf_name":["b280-Sensación de dolor","d430-Levantar y llevar objetos"]
+        "icf_codes":["b280","d430","e1101"],
+        "icf_name":["b280-Sensación de dolor","d430-Levantar y llevar objetos","e1101-Medicamentos"]
     },
     {
         "id_code_combination": "012",
-        "icf_code":["b280","e310","e410"],
+        "icf_codes":["b280","e310","e410"],
         "icf_name":["b280-Sensación de dolor","e310-Familiares cercanos","e410-Actitudes individuales de miembros de la familia cercana"]
     },
     {
         "id_code_combination": "013",
-        "icf_code":["b240","b280","d175","d230","d850"],
+        "icf_codes":["b240","b280","d175","d230","d850"],
         "icf_name":["b240-Manejo del estrés y otras demandas psicológicas","b280-Sensación de dolor","d175-Resolver problemas","d230-Llevar a cabo rutinas diarias",
     "d850-Trabajo remunerado"]
     },
     {
         "id_code_combination": "014",
-        "icf_code":["b455","b730","b760","e355"],
+        "icf_codes":["b455","b730","b760","e355"],
         "icf_name":["b455-Funciones relacionadas con la tolerancia al ejercicio","b730-Funciones relacionadas con la fuerza muscular",
     "b760-Funciones relacionadas con el control de los movimientos voluntarios","e355-Profesionales de la salud"]
     },
     {
         "id_code_combination": "015",
-        "icf_code":["b280","d850","e355","e570","e1101"],
+        "icf_codes":["b280","d850","e355","e570","e1101"],
         "icf_name":["b280-Sensación de dolor","d850-Trabajo remunerado","e355-Profesionales de la salud",
     "d850-Trabajo remunerado","e1101-Medicamentos"]
     },
     {
         "id_code_combination": "016",
-        "icf_code":["b280","d450","d770"],
+        "icf_codes":["b280","d450","d770"],
         "icf_name":["b280-Sensación de dolor","d450-Andar","d770-Relaciones íntimas"]
     },
     {
         "id_code_combination": "017",
-        "icf_code":["b147","b280","b130"],
+        "icf_codes":["b147","b280","b130"],
         "icf_name":["b147-Funciones psicomotoras","b280-Sensación de dolor","b130-Funciones relacionadas con la energía y los impulsos"]
     },
     {
         "id_code_combination": "018",
-        "icf_code":["b280","d640","d760","d770"],
+        "icf_codes":["b280","d640","d760","d770"],
         "icf_name":["b280-Sensación de dolor","d640-Realizar los quehaceres de la casa",
     "d760-Relaciones Familiares","d770-Relaciones íntimas"]
     },
     {
         "id_code_combination": "019",
-        "icf_code":["b280","b1602","d175","d230","d240"],
+        "icf_codes":["b280","b1602","d175","d230","d240"],
         "icf_name":["b280-Sensación de dolor","b1602-Contenido del pensamiento","d175-Resolver problemas",
         "d230-Llevar a cabo rutinas diarias","d240-Manejo del estrés y otras demandas psicológicas"]
     },
     {
         "id_code_combination": "020",
-        "icf_code":["b130","d240","d920","e410"],
+        "icf_codes":["b130","d240","d920","e410"],
         "icf_name":["b130-Funciones relacionadas con la energía y los impulsos","d240-Manejo del estrés y otras demandas psicológicas","d920-Tiempo libre y ocio","e410-Actitudes individuales de miembros de la familia cercana"]
     },
     {
         "id_code_combination": "021",
-        "icf_code":["b134","b280","e310","e410","e1101"],
+        "icf_codes":["b134","b280","e310","e410","e1101"],
         "icf_name":["b134-Funciones del sueño","b280-Sensación de dolor","e310-Familiares cercanos","e410-Actitudes individuales de miembros de la familia cercana","e1101-Medicamentos"]
     },
     {
         "id_code_combination": "022",
-        "icf_code":["b280","b455","e355"],
+        "icf_codes":["b280","b455","e355"],
         "icf_name":["b280-Sensación de dolor","b455-Funciones relacionadas con la tolerancia al ejercicio","e355-Profesionales de la salud"]
     },
     {
         "id_code_combination": "023",
-        "icf_code":["b280","b730","b760"],
+        "icf_codes":["b280","b730","b760"],
         "icf_name":["b280-Sensación de dolor","b730-Funciones relacionadas con la fuerza muscular","b760-Funciones relacionadas con el control de los movimientos voluntarios"]
     },
     {
         "id_code_combination": "024",
-        "icf_code":["b152","b280","b1602","d230","d430","d450","d640","e355"],
+        "icf_codes":["b152","b280","b1602","d230","d430","d450","d640","e355"],
         "icf_name":["b152-Funciones emocionales","b280-Sensación de dolor","b1602-Contenido del pensamiento","d230-Llevar a cabo rutinas diarias",
         "d430-Levantar y llevar objetos","d450-Andar","d640-Realizar los quehaceres de la casa","e355-Profesionales de la salud"]
     },
     {
         "id_code_combination": "025",
-        "icf_code":["b147","b280","b730","b760","e410"],
+        "icf_codes":["b147","b280","b730","b760","e410"],
         "icf_name":["b147-Funciones psicomotoras","b280-Sensación de dolor","b730-Funciones relacionadas con la fuerza muscular","b760-Funciones relacionadas con el control de los movimientos voluntarios","e410-Actitudes individuales de miembros de la familia cercana"]
     },
     {
         "id_code_combination": "026",
-        "icf_code":["b280","d240","d760"],
+        "icf_codes":["b280","d240","d760"],
         "icf_name":["b280-Sensación de dolor","d240-Manejo del estrés y otras demandas psicológicas","d760-Relaciones Familiares"]
     },
     {
         "id_code_combination": "027",
-        "icf_code":["b280","b1602","d770","e355","e1101"],
+        "icf_codes":["b280","b1602","d770","e355","e1101"],
         "icf_name":["b280-Sensación de dolor","b1602-Contenido del pensamiento","d770-Relaciones íntimas","e355-Profesionales de la salud","e1101-Medicamentos"]
     },
     {
         "id_code_combination": "028",
-        "icf_code":["b280","d920","e570"],
+        "icf_codes":["b280","d920","e570"],
         "icf_name":["b280-Sensación de dolor","d920-Tiempo libre y ocio","e570-Servicios, sistemas y politicas de seguridad social"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "029",
+        "icf_codes":["b280","b1602","d240"],
+        "icf_name":["b280-Sensación de dolor","b1602-Contenido del pensamiento","d240-Manejo del estrés y otras demandas psicológicas"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "030",
+        "icf_codes":["b280","d175","d290","e410"],
+        "icf_name":["b280-Sensación de dolor","d175-Resolver problemas","d920-Tiempo libre y ocio","e410-Actitudes individuales de miembros de la familia cercana"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "031",
+        "icf_codes":["b280","d760","d770","e310"],
+        "icf_name":["b280-Sensación de dolor","d760-Relaciones Familiares","d770-Relaciones íntimas","e310-Familiares cercanos"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "032",
+        "icf_codes":["b280","d230","d920"],
+        "icf_name":["b280-Sensación de dolor","d230-Llevar a cabo rutinas diarias","d920-Tiempo libre y ocio"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "033",
+        "icf_codes":["b280","d760"],
+        "icf_name":["b280-Sensación de dolor","d760-Relaciones Familiares"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "034",
+        "icf_codes":["b147","b280","d450"],
+        "icf_name":["b147-Funciones psicomotoras","b280-Sensación de dolor","d450-Andar"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "035",
+        "icf_codes":["b280","d450","d850","b730"],
+        "icf_name":["b280-Sensación de dolor","b730-Funciones relacionadas con la fuerza muscular","d450-Andar","d850-Trabajo remunerado"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination": "036",
+        "icf_codes":["b134","b280","d760","d920"],
+        "icf_name":["b134-Funciones del sueño","b280-Sensación de dolor","d760-Relaciones Familiares","d920-Tiempo libre y ocio"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination":"037",
+        "icf_codes":["b130","b280","b455","d450","e355","e1101"],
+        "icf_name":["b130-Funciones relacionadas con la energía y los impulsos","b280-Sensación de dolor","b455-Funciones relacionadas con la tolerancia al ejercicio","d450-Andar","e355-Profesionales de la salud","e1101-Medicamentos"]
     },
     {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
-    },
-    {
-        "id_code_combination": "00",
-        "icf_code":[],
-        "icf_name":[]
+        "id_code_combination":"038",
+        "icf_codes":["b280","d640","e310","e570"],
+        "icf_name":["b280-Sensación de dolor","d640-Realizar los quehaceres de la casa","e310-Familiares cercanos","e570-Servicios, sistemas y politicas de seguridad social"]
     }
-
 ]

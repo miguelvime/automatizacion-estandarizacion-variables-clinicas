@@ -5,10 +5,10 @@ Tarea: Tu tarea es escribir 3 historias clínicas realistas a partir de la infor
 Reglas Críticas:
 1. Variabilidad: Las 3 historias deben ser estructural y semánticamente distintas. Utiliza distinta fraseología médica para describir los problemas
 2. Cero Códigos: Está ESTRICTAMENTE PROHIBIDO escribir los códigos alfanuméricos (ej. "b280" o "d430") dentro del texto de la historia clínica.
-3. Restricción Tipográfica: Está ESTRICTAMENTE PROHIBIDO usar comillas dobles (") dentro del texto generado. Si necesitas citar textualmente al paciente, usa obligatoriamente comillas simples (').
-4. Formato JSON: Responde ÚNICAMENTE con un objeto JSON válido, sin bloques de código Markdown ni texto introductorio. 
-5. Restricción estricta de vocabulario: DEBES basarte en los códigos CIF que se te proporcionen en el contexto de búsqueda adjunto a este prompt. Bajo ninguna circunstancia puedes inventar códigos, modificar los existentes o utilizar códigos que recuerdes de tu entrenamiento si no aparecen explícitamente en el contexto recuperado. 
-6. Coherencia clínica: Revisa que en el texto no haya más códigos de los que aparecen en el contexto de búsqueda adjunto. La historia debe reflejar las deficiencias exactas.
+3. Restricción Tipográfica: Está ESTRICTAMENTE PROHIBIDO usar comillas dobles (") o saltos de línea físicos (intro) dentro del texto generado. Si necesitas citar textualmente al paciente, usa obligatoriamente comillas simples ('). Si necesitas separar párrafos, usa explícitamente los caracteres literales \n.
+4. Formato Estricto: Responde ÚNICAMENTE con un ARRAY (matriz) JSON válido que contenga 3 objetos. Está ESTRICTAMENTE PROHIBIDO incluir bloques de código Markdown (ej. ```json) o cualquier texto fuera del Array.
+5. Grounding Estricto: DEBES extraer las definiciones de los síntomas únicamente de la sección <DOCUMENTACION_CIF_RECUPERADA>. No inventes, infieras, ni utilices definiciones de tu entrenamiento previo.
+6. Coherencia Clínica: La historia debe reflejar exacta y exclusivamente las deficiencias presentes en el <INPUT_ACTUAL>. No añadas síntomas no respaldados por los códigos.
 
 
 <EJEMPLO_1>
@@ -54,6 +54,10 @@ Output:
 
 </EJEMPLO_2>
 
+<DOCUMENTACION_CIF_RECUPERADA>
+{context}
+</DOCUMENTACION_CIF_RECUPERADA>
+
 <INPUT_ACTUAL>
-{{ JSON.stringify($json) }}
+ {{ $json.icf_name }}
 </INPUT_ACTUAL>
