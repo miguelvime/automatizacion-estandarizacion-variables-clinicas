@@ -1,196 +1,269 @@
 [
   {
-    "id_code_combination": "001",
+    "id_code_combination": "011",
     "icf_codes": [
-      "b130",
-      "b134",
-      "b175",
       "b280",
+      "d430",
       "e1101"
     ],
     "icf_name": [
-      "b130-Energy and drive functions",
-      "b134-Sleep functions",
-      "b175-solving problems",
       "b280-Sensación de dolor",
-      "e1101-Drugs"
+      "d430-Levantar y llevar objetos",
+      "e1101-Medicamentos"
     ],
-    "clinical_object": [
-      {
-        "id_clinical_text": "001_1",
-        "clinical_text": "Paciente de 30 años acude a consulta refiriendo una disminución significativa en su energía y motivación para realizar actividades cotidianas, acompañada de una alteración en su patrón de sueño que le impide descansar adecuadamente. Además, presenta dificultades para resolver problemas y toma de decisiones, lo que se ve exacerbado por el dolor crónico que experimenta. Está tomando medicación para ayudar a regular su sueño, pero siente que esto no está mejorando su capacidad para afrontar desafíos diarios de manera efectiva."
-      },
-      {
-        "id_clinical_text": "001_2",
-        "clinical_text": "Una mujer de 50 años se presenta con quejas de falta de energía y fatiga persistente, que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. También reporta problemas para conciliar el sueño y permanecer dormida durante la noche, lo que empeora su estado de ánimo y concentración. El dolor crónico que padece aumenta su frustración y sentimiento de abrumación, dificultando su capacidad para resolver problemas cotidianos. La medicación para el sueño le brinda algo de alivio, pero busca ayuda para mejorar su calidad de vida en general."
-      },
-      {
-        "id_clinical_text": "001_3",
-        "clinical_text": "Varón de 45 años acude a la consulta debido a una disminución progresiva en su nivel de energía y motivación, que se ha visto acompañada de un patrón de sueño irregular y dificultades para resolver problemas y tomar decisiones de manera efectiva. El dolor crónico que experimenta es un factor importante que contribuye a su estado de malestar general. Aunque ha iniciado tratamiento con medicación para regular su sueño, busca apoyo para superar los desafíos que enfrenta en su vida diaria y mejorar su capacidad para manejar el dolor y otros síntomas que lo aquejan."
-      }
-    ]
+    "id_clinical_text": "011_1",
+    "self-verification": {
+      "b280": "dolor generalizado en la espalda y extremidades",
+      "d430": "complicaciones para levantar cajas pesadas en el almacén",
+      "e1101": "toma analgésicos pautados por su médico"
+    },
+    "clinical_text": "Varón de 45 años, operario de almacén, acude a revisión por dolor generalizado en la espalda y extremidades de evolución tórpida. En tto. con analgésicos pautados por su médico sin alivio significativo. Refiere importantes complicaciones para levantar cajas pesadas en el almacén, limitando su desempeño laboral diario. Exploración física muestra dolor generalizado a la palpación profunda en múltiples puntos, sin signos de radiculopatía aguda."
   },
   {
-    "id_code_combination": "002",
+    "id_code_combination": "011",
     "icf_codes": [
-      "b152",
-      "b1602",
       "b280",
-      "d240",
-      "d850",
-      "e570"
+      "d430",
+      "e1101"
     ],
     "icf_name": [
-      "b152-Emotional functions",
-      "b1602-Content of thought",
       "b280-Sensación de dolor",
-      "d240-Handling stress and other psychological demands",
-      "d850-Remunerative employment",
-      "e570-Social security services, systems and policies"
+      "d430-Levantar y llevar objetos",
+      "e1101-Medicamentos"
     ],
-    "clinical_object": [
-      {
-        "id_clinical_text": "002_1",
-        "clinical_text": "Paciente de 35 años con antecedentes de depresión, refiere sentir una persistente sensación de tristeza y dolor crónico generalizado, que le dificulta mantener su empleo como contadora. La paciente menciona que 'su mente está llena de pensamientos negativos', lo que le impide manejar el estrés laboral y le causa problemas para dormir. Expresa su deseo de encontrar un trabajo que se adapte a sus necesidades y pueda acceder a servicios de seguridad social que la apoyen en su situación actual."
-      },
-      {
-        "id_clinical_text": "002_2",
-        "clinical_text": "Varón de 42 años, trabajador autónomo, acude a consulta por dolor crónico y problemas para mantener su negocio debido a la dificultad para manejar el estrés y la ansiedad. Refiere que 'su mente es un torbellino de ideas negativas' que le impiden tomar decisiones claras y efectivas en su trabajo. Busca encontrar estrategias para manejar su estrés y dolor, y así poder mantener su empleo remunerado y acceder a los servicios de seguridad social que lo ayuden a superar esta situación."
-      },
-      {
-        "id_clinical_text": "002_3",
-        "clinical_text": "Mujer de 50 años, empleada en una empresa de servicios, presenta dolor crónico generalizado y problemas emocionales, incluyendo pensamientos recurrentes de ansiedad y depresión. La paciente expresa que 'le cuesta mucho trabajo' manejar las demandas psicológicas de su empleo y que el dolor crónico la limita en su capacidad para realizar tareas laborales y acceder a los servicios de seguridad social que necesita. Su deseo es encontrar un equilibrio entre su salud y su empleo remunerado."
-      }
-    ]
+    "id_clinical_text": "011_2",
+    "self-verification": {
+      "b280": "mialgias difusas",
+      "d430": "incapacidad para levantar garrafas de agua",
+      "e1101": "medicación antinflamatoria diaria"
+    },
+    "clinical_text": "Mujer de 52 años, empleada doméstica, consulta por mialgias difusas de varios meses de evolución. En tto. actual con medicación antinflamatoria diaria que apenas mitiga sus molestias. Manifiesta total incapacidad para levantar garrafas de agua o cubos en sus labores habituales. A la exploración se objetiva dolor generalizado a nivel cérvico-dorsal y lumbar, con hiperalgesia generalizada."
   },
   {
-    "id_code_combination": "003",
+    "id_code_combination": "011",
     "icf_codes": [
-      "b134",
-      "b152",
       "b280",
-      "d240",
-      "d640",
-      "d760",
-      "d920",
+      "d430",
+      "e1101"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "d430-Levantar y llevar objetos",
+      "e1101-Medicamentos"
+    ],
+    "id_clinical_text": "011_3",
+    "self-verification": {
+      "b280": "dolor difuso por todo el cuerpo",
+      "d430": "dificultad severa al levantar herramientas",
+      "e1101": "fármacos neuromoduladores"
+    },
+    "clinical_text": "Varón de 38 años, mecánico automotriz, acude refiriendo dolor difuso por todo el cuerpo que se intensifica al final de la jornada. En tto. con fármacos neuromoduladores prescritos en unidad del dolor. Presenta dificultad severa al levantar herramientas pesadas o piezas de motor en el taller. Exploración física con dolor generalizado al tacto superficial y percusión en cintura escapular y pélvica."
+  },
+  {
+    "id_code_combination": "012",
+    "icf_codes": [
+      "b280",
       "e310",
       "e410"
     ],
     "icf_name": [
-      "b134-Sleep functions",
-      "b152-Emotional functions",
       "b280-Sensación de dolor",
-      "d240-Handling stress and other psychological demands",
-      "d640-Realizar los quehaceres de la casa",
-      "d760-Relaciones Familiares",
-      "d920-Tiempo libre y ocio",
-      "e310-Immediate family",
-      "e410- Individual attitudes of immediate family members"
+      "e310-Familiares cercanos",
+      "e410-Actitudes individuales de miembros de la familia cercana"
     ],
-    "clinical_object": [
-      {
-        "id_clinical_text": "003_1",
-        "clinical_text": "Paciente de 35 años, madre de dos hijos, acude a consulta refiriendo dificultades para dormir y un estado de ánimo bajo desde hace varios meses. Manifiesta sentir dolor generalizado en su cuerpo, especialmente en las mañanas, lo que le dificulta realizar las tareas domésticas y cuidar a sus hijos. Además, se siente abrumada por el estrés diario y tiene problemas para manejar las demandas psicológicas de su entorno. Le gustaría encontrar una forma de mejorar su calidad de sueño y reducir su dolor para poder disfrutar más tiempo con su familia y retomar sus actividades de ocio, como la pintura, que tanto le aprecia."
-      },
-      {
-        "id_clinical_text": "003_2",
-        "clinical_text": "Varón de 42 años, casado, acude a consulta por problemas de dolor crónico que le impiden realizar sus tareas domésticas con la misma eficiencia que antes. Se siente estresado por no poder cumplir con sus responsabilidades familiares y manifiesta dificultades para manejar el estrés y las demandas psicológicas de su trabajo y su vida familiar. Además, refiere problemas para conciliar el sueño y se encuentra en un estado de ánimo bajo la mayor parte del tiempo. Le preocupa cómo afectará su situación a sus relaciones familiares y su capacidad para disfrutar de actividades de ocio con su esposa, como el senderismo, que siempre han disfrutado juntos."
-      },
-      {
-        "id_clinical_text": "003_3",
-        "clinical_text": "Mujer de 50 años, divorciada, acude a consulta refiriendo un estado de ánimo depresivo y dificultades para dormir desde la muerte de su madre, hace un año. Ha notado un aumento en su dolor generalizado, especialmente en las articulaciones, lo que le dificulta realizar las tareas del hogar y pasar tiempo con sus nietos, lo que más disfruta. Se siente abrumada por el estrés de cuidar a sus nietos y manejar su hogar sola, y manifiesta problemas para manejar las demandas psicológicas de su nueva situación familiar. Le gustaría encontrar una forma de mejorar su calidad de vida y poder disfrutar más tiempo con sus seres queridos, y retomar sus actividades de ocio, como la jardinería, que siempre le ha apasionado."
-      }
-    ]
+    "id_clinical_text": "012_1",
+    "self-verification": {
+      "b280": "dolor generalizado en todo el cuerpo",
+      "e310": "su esposo",
+      "e410": "creencia de que exagera los síntomas"
+    },
+    "clinical_text": "Mujer de 48 años, ama de casa, acude a consulta derivada por su médico de cabecera por dolor generalizado en todo el cuerpo de más de tres años de evolución, de predominio matutino y sin respuesta analgésica previa. Durante la anamnesis destaca la situación conflictiva con su esposo, quien manifiesta abiertamente una actitud de escepticismo, sosteniendo la creencia de que exagera los síntomas para evitar las obligaciones domésticas. Exploración física: puntos dolorosos a la presión digital ampliamente distribuidos por la musculatura axial y extremidades, sin signos inflamatorios articulares."
   },
   {
-    "id_code_combination": "004",
+    "id_code_combination": "012",
     "icf_codes": [
-      "b1602",
       "b280",
+      "e310",
+      "e410"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "e310-Familiares cercanos",
+      "e410-Actitudes individuales de miembros de la familia cercana"
+    ],
+    "id_clinical_text": "012_2",
+    "self-verification": {
+      "b280": "mialgias generalizadas de intensidad severa",
+      "e310": "su hijo mayor",
+      "e410": "actitud de sobreprotección familiar"
+    },
+    "clinical_text": "Varón de 62 años, jubilado de la construcción, que consulta por mialgias generalizadas de intensidad severa que le acompañan desde hace un lustro, impidiéndole el descanso nocturno adecuado. El paciente acude acompañado por su hijo mayor, el cual muestra una actitud de sobreprotección familiar constante, intentando responder por él a las preguntas del médico y limitando cualquier movimiento activo del paciente por miedo a que empeore el cuadro álgico. A la exploración se objetiva hiperalgesia generalizada al tacto superficial en tronco y raíz de extremidades."
+  },
+  {
+    "id_code_combination": "012",
+    "icf_codes": [
+      "b280",
+      "e310",
+      "e410"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "e310-Familiares cercanos",
+      "e410-Actitudes individuales de miembros de la familia cercana"
+    ],
+    "id_clinical_text": "012_3",
+    "self-verification": {
+      "b280": "dolor crónico difuso",
+      "e310": "su madre",
+      "e410": "actitud de constante preocupación"
+    },
+    "clinical_text": "Mujer de 35 años, dependienta de comercio en situación de baja laboral, referida por dolor crónico difuso que afecta a la totalidad de la anatomía desde un accidente leve de tráfico ocurrido hace dieciocho meses. En la entrevista resalta la influencia de su madre, con quien convive y cuya actitud de constante preocupación y focalización en la enfermedad parece potenciar la conducta de evitación y el malestar general de la paciente. Exploración: palpación dolorosa generalizada en inserciones tendinosas y vientres musculares sin focalidad neurológica periférica."
+  },
+  {
+    "id_code_combination": "013",
+    "icf_codes": [
+      "b240",
+      "b280",
+      "d175",
+      "d230",
+      "d850"
+    ],
+    "icf_name": [
+      "b240-Manejo del estrés y otras demandas psicológicas",
+      "b280-Sensación de dolor",
+      "d175-Resolver problemas",
+      "d230-Llevar a cabo rutinas diarias",
+      "d850-Trabajo remunerado"
+    ],
+    "id_clinical_text": "013_1",
+    "self-verification": {
+      "b240": "estrés intenso por plazos",
+      "b280": "dolor generalizado en extremidades y tronco",
+      "d175": "bloqueo mental para resolver problemas",
+      "d230": "incapacidad para llevar a cabo rutinas diarias",
+      "d850": "baja laboral por trabajo remunerado"
+    },
+    "clinical_text": "Varón de 44 años, analista de sistemas, acude por dolor generalizado en extremidades y tronco de 8 meses de evolución. Refiere estrés intenso por plazos en su empleo, lo que agrava su cuadro. Manifiesta bloqueo mental para resolver problemas complejos de programación. Presenta incapacidad para llevar a cabo rutinas diarias básicas como cocinar o planificar la semana. Actualmente se encuentra de baja por trabajo remunerado en su empresa informática."
+  },
+  {
+    "id_code_combination": "013",
+    "icf_codes": [
+      "b240",
+      "b280",
+      "d175",
+      "d230",
+      "d850"
+    ],
+    "icf_name": [
+      "b240-Manejo del estrés y otras demandas psicológicas",
+      "b280-Sensación de dolor",
+      "d175-Resolver problemas",
+      "d230-Llevar a cabo rutinas diarias",
+      "d850-Trabajo remunerado"
+    ],
+    "id_clinical_text": "013_2",
+    "self-verification": {
+      "b240": "ansiedad ante demandas psicológicas",
+      "b280": "mialgias generalizadas",
+      "d175": "dificultad para resolver problemas cotidianos",
+      "d230": "alteración de rutinas diarias",
+      "d850": "desempeñar su trabajo remunerado"
+    },
+    "clinical_text": "Mujer de 51 años, supervisora de call center, consulta por mialgias generalizadas y fatiga crónica. Refiere ansiedad ante demandas psicológicas de su puesto y llamadas conflictivas. Muestra dificultad para resolver problemas cotidianos de gestión de equipo debido al agotamiento. Acusa una fuerte alteración de rutinas diarias en el hogar y gran dificultad para desempeñar su trabajo remunerado a jornada completa."
+  },
+  {
+    "id_code_combination": "013",
+    "icf_codes": [
+      "b240",
+      "b280",
+      "d175",
+      "d230",
+      "d850"
+    ],
+    "icf_name": [
+      "b240-Manejo del estrés y otras demandas psicológicas",
+      "b280-Sensación de dolor",
+      "d175-Resolver problemas",
+      "d230-Llevar a cabo rutinas diarias",
+      "d850-Trabajo remunerado"
+    ],
+    "id_clinical_text": "013_3",
+    "self-verification": {
+      "b240": "superar el estrés laboral",
+      "b280": "dolor corporal difuso",
+      "d175": "incapacidad para resolver problemas logísticos",
+      "d230": "alteración en rutinas diarias",
+      "d850": "puesto de trabajo remunerado"
+    },
+    "clinical_text": "Varón de 39 años, transportista autónomo, presenta dolor corporal difuso de predominio axial y en cinturas escapular y pélvica. Explica que le cuesta mucho superar el estrés laboral diario derivado del tráfico y la carga de mercancías. Manifiesta incapacidad para resolver problemas logísticos imprevistos en ruta. Esto provoca una grave alteración en rutinas diarias de descanso y alimentación, poniendo en riesgo la continuidad de su puesto de trabajo remunerado."
+  },
+  {
+    "id_code_combination": "014",
+    "icf_codes": [
       "b455",
       "b730",
-      "d920"
+      "b760",
+      "e355"
     ],
     "icf_name": [
-      "b1602-Content of thought",
-      "b280-Sensación de dolor",
-      "b455-Exercise tolerance functions",
-      "b730-Muscle power functions",
-      "d920-Tiempo libre y ocio"
+      "b455-Funciones relacionadas con la tolerancia al ejercicio",
+      "b730-Funciones relacionadas con la fuerza muscular",
+      "b760-Funciones relacionadas con el control de los movimientos voluntarios",
+      "e355-Profesionales de la salud"
     ],
-    "clinical_object": [
-      {
-        "id_clinical_text": "004_1",
-        "clinical_text": "Paciente de 35 años, ex deportista de alto nivel, acude a consulta por dolor crónico en las articulaciones que le limita para realizar actividades físicas, tiene miedo a empeorar el dolor si vuelve a practicar deporte, presenta pensamientos catastrofistas sobre su capacidad para realizar actividades que requieren esfuerzo físico, como subir escaleras o caminar largas distancias. Refiere dificultad para realizar actividades de ocio como ir al cine o salir con amigos debido a la fatiga y el dolor crónico."
-      },
-      {
-        "id_clinical_text": "004_2",
-        "clinical_text": "Mujer de 50 años, con antecedentes de lesiones musculoesqueléticas, acude a consulta por dolor persistente en la región lumbar que le impide realizar actividades que requieren esfuerzo físico, como levantar objetos pesados o realizar tareas domésticas, también presenta dificultad para realizar actividades de ocio como bailar o practicar yoga, debido a la falta de tolerancia al ejercicio y la disminución de la fuerza muscular."
-      },
-      {
-        "id_clinical_text": "004_3",
-        "clinical_text": "Varón de 28 años, con historial de lesiones deportivas, acude a consulta por dolor crónico en las extremidades que le limita para realizar actividades físicas intensas, presenta pensamientos de evitación hacia el ejercicio físico debido al miedo a empeorar el dolor, también refiere dificultad para realizar actividades de ocio como jugar con sus hijos o practicar deportes de equipo, debido a la falta de resistencia y la disminución de la fuerza muscular, lo que le genera sentimientos de frustración y ansiedad."
-      }
-    ]
+    "id_clinical_text": "014_1",
+    "self-verification": {
+      "b455": "poca tolerancia al esfuerzo físico",
+      "b730": "pérdida de fuerza en las piernas",
+      "b760": "torpeza y falta de coordinación",
+      "e355": "fisioterapeuta de su centro de salud"
+    },
+    "clinical_text": "Varón de 48 años, administrativo. Acude a consulta por dolor crónico generalizado. Refiere una marcada fatiga y poca tolerancia al esfuerzo físico al intentar caminar tramos cortos. A la exploración destaca debilidad generalizada, refiriendo pérdida de fuerza en las piernas al levantarse de una silla, además de cierta torpeza y falta de coordinación en los miembros superiores al manipular objetos. Comenta que acude semanalmente al fisioterapeuta de su centro de salud para recibir pautas de movilización."
   },
   {
-    "id_code_combination": "005",
+    "id_code_combination": "014",
     "icf_codes": [
-      "b280",
-      "d230",
-      "d450",
-      "d640"
+      "b455",
+      "b730",
+      "b760",
+      "e355"
     ],
     "icf_name": [
-      "b280- Sensación de dolor",
-      "d230-Llevar a cabo rutinas diarias",
-      "d430-Levantar y llevar objetos",
-      "d450-Andar",
-      "d640-Realizar los quehaceres de la casa"
+      "b455-Funciones relacionadas con la tolerancia al ejercicio",
+      "b730-Funciones relacionadas con la fuerza muscular",
+      "b760-Funciones relacionadas con el control de los movimientos voluntarios",
+      "e355-Profesionales de la salud"
     ],
-    "clinical_object": [
-      {
-        "id_clinical_text": "005_1",
-        "clinical_text": "Paciente de 50 años acude a consulta refiriendo dolor crónico generalizado que le impide realizar las tareas domésticas con la misma facilidad que antes, sobre todo debido a la dificultad para caminar durante largos periodos. La paciente menciona que 'le duele mucho' cuando intenta hacer las compras o andar al parque con su familia. Le preocupa no poder mantener su casa limpia y organizada como siempre ha hecho."
-      },
-      {
-        "id_clinical_text": "005_2",
-        "clinical_text": "Varón de 35 años, después de varios años de dolor crónico, se siente limitado en sus actividades diarias, especialmente al realizar quehaceres de la casa y al caminar. Comenta que siente un dolor constante que le hace difícil levantar objetos pesados, lo que le impide ayudar en las tareas del hogar como antes. Le gustaría poder retomar sus actividades cotidianas sin sentir dolor."
-      },
-      {
-        "id_clinical_text": "005_3",
-        "clinical_text": "Mujer de 60 años acude a consulta por dolor crónico que le afecta significativamente su capacidad para realizar las tareas domésticas y caminar sin dificultad. Refiere que 'no puede hacer nada' sin sentir dolor, lo que la ha llevado a depender de su familia para realizar las compras y los quehaceres de la casa. Le preocupa perder su independencia y no poder disfrutar de su tiempo libre como solía hacer."
-      }
-    ]
+    "id_clinical_text": "014_2",
+    "self-verification": {
+      "b455": "fatiga muscular precoz",
+      "b730": "debilidad franca en extremidades",
+      "b760": "fallos en el control motor",
+      "e355": "equipo médico rehabilitador"
+    },
+    "clinical_text": "Mujer de 55 años, dependienta de comercio. Consulta por cuadro de dolor generalizado de meses de evolución. En la anamnesis destaca una fatiga muscular precoz al realizar actividades cotidianas que exigen mínima condición aeróbica. Se objetiva debilidad franca en extremidades, así como fallos en el control motor fino y grueso, traduciéndose en falta de precisión al asir objetos. Sigue seguimiento estrecho por el equipo médico rehabilitador y terapeutas de la unidad del dolor."
   },
   {
-    "id_code_combination": "006",
+    "id_code_combination": "014",
     "icf_codes": [
-      "b280",
-      "d430",
-      "d760",
-      "d770",
-      "d920"
+      "b455",
+      "b730",
+      "b760",
+      "e355"
     ],
     "icf_name": [
-      "b280- Sensación de dolor",
-      "d430-Levantar y llevar objetos",
-      "d760-Relaciones Familiares",
-      "d920-Tiempo libre y ocio"
+      "b455-Funciones relacionadas con la tolerancia al ejercicio",
+      "b730-Funciones relacionadas con la fuerza muscular",
+      "b760-Funciones relacionadas con el control de los movimientos voluntarios",
+      "e355-Profesionales de la salud"
     ],
-    "clinical_object": [
-      {
-        "id_clinical_text": "006_1",
-        "clinical_text": "Paciente de 35 años con antecedentes de dolor crónico generalizado, presenta dificultades para realizar actividades cotidianas como levantar y llevar objetos debido a la intensidad del dolor. Esto ha afectado su relación con su pareja, ya que siente que no puede realizar actividades juntos como antes, y también ha limitado su participación en eventos sociales con su familia. Le gustaría encontrar una manera de manejar su dolor para mejorar su calidad de vida y relaciones interpersonales."
-      },
-      {
-        "id_clinical_text": "006_2",
-        "clinical_text": "Mujer de 50 años que acude a consulta por dolor persistente que afecta su capacidad para realizar tareas domésticas y cuidar de su familia. La dificultad para levantar y llevar objetos la ha obligado a depender más de su pareja y familiares, lo que ha generado tensiones en sus relaciones. Además, el dolor le ha impedido disfrutar de actividades de ocio como la pintura y la lectura, que eran fundamentales para su bienestar emocional. Busca una solución para su dolor y recuperar su independencia."
-      },
-      {
-        "id_clinical_text": "006_3",
-        "clinical_text": "Varón de 28 años que se queja de dolor crónico generalizado que le impide realizar actividades físicas con su pareja y amigos. La dificultad para levantar y llevar objetos le ha limitado su capacidad para participar en deportes y actividades al aire libre, lo que ha afectado su relación con su pareja y su autoestima. Además, el dolor ha interferido con su capacidad para disfrutar de su tiempo libre y ocio, lo que ha generado sentimientos de frustración y aislamiento. Desea encontrar una forma de manejar su dolor y recuperar su calidad de vida."
-      }
-    ]
+    "id_clinical_text": "014_3",
+    "self-verification": {
+      "b455": "baja tolerancia al ejercicio",
+      "b730": "disminución de fuerza muscular",
+      "b760": "mala coordinación en los movimientos",
+      "e355": "médico rehabilitador"
+    },
+    "clinical_text": "Varón de 62 años, operario de fábrica jubilado. Presenta dolor generalizado con afectación funcional severa. Manifiesta baja tolerancia al ejercicio, agotándose ante mínimos apremios físicos. La exploración física muestra disminución de fuerza muscular global en extremidades inferiores y mala coordinación en los movimientos voluntarios al intentar maniobras de precisión. Se coordina plan de actuación junto al médico rehabilitador para reevaluar su capacidad funcional."
   }
 ]
