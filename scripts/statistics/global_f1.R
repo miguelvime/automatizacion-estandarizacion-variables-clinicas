@@ -7,14 +7,14 @@ library(tidyverse)
 
 codifier_output<-fromJSON("./data/test_data/test_codifier_output.json",flatten = TRUE)
 codifier_output_no_text<- codifier_output |>
-  select(id_code_combination,icf_codes,id_clinical_text,predicted_icf_codes)
+  select(id_code_combination,icf_codes,id_clinical_text,predicted_icf_codes_consensus)
 
 
 confusion_matrix_per_clinical_text <- codifier_output_no_text |> 
   mutate(
-    true_positive = map2_dbl(icf_codes, predicted_icf_codes, ~ length(intersect(.x, .y))),
-    false_positive = map2_dbl(predicted_icf_codes, icf_codes, ~ length(setdiff(.x, .y))),
-    false_negative = map2_dbl(icf_codes, predicted_icf_codes, ~ length(setdiff(.x, .y))),
+    true_positive = map2_dbl(icf_codes, predicted_icf_codes_consensus, ~ length(intersect(.x, .y))),
+    false_positive = map2_dbl(predicted_icf_codes_consensus, icf_codes, ~ length(setdiff(.x, .y))),
+    false_negative = map2_dbl(icf_codes, predicted_icf_codes_consensus, ~ length(setdiff(.x, .y))),
   )
 confusion_matrix_total<- confusion_matrix_per_clinical_text |> 
   summarise(
@@ -38,9 +38,9 @@ ground_truth_codes <- codifier_output_no_text |>
   mutate(is_real = 1)
 
 predicted_codes <- codifier_output_no_text |>
-  select(id_clinical_text, predicted_icf_codes) |>
-  unnest(cols = c(predicted_icf_codes)) |>
-  rename(codigo = predicted_icf_codes) |>
+  select(id_clinical_text, predicted_icf_codes_consensus) |>
+  unnest(cols = c(predicted_icf_codes_consensus)) |>
+  rename(codigo = predicted_icf_codes_consensus) |>
   mutate(is_predicted = 1)
 
 per_class_df <- full_join(ground_truth_codes, predicted_codes, by = c("id_clinical_text", "codigo")) |>
@@ -129,9 +129,9 @@ calcular_todas_las_metricas <- function(df_datos) {
   
   confusion_matrix_per_clinical_text <- df_datos |> 
     mutate(
-      true_positive = map2_dbl(icf_codes, predicted_icf_codes, ~ length(intersect(.x, .y))),
-      false_positive = map2_dbl(predicted_icf_codes, icf_codes, ~ length(setdiff(.x, .y))),
-      false_negative = map2_dbl(icf_codes, predicted_icf_codes, ~ length(setdiff(.x, .y)))
+      true_positive = map2_dbl(icf_codes, predicted_icf_codes_consensus, ~ length(intersect(.x, .y))),
+      false_positive = map2_dbl(predicted_icf_codes_consensus, icf_codes, ~ length(setdiff(.x, .y))),
+      false_negative = map2_dbl(icf_codes, predicted_icf_codes_consensus, ~ length(setdiff(.x, .y)))
     )
   
   confusion_matrix_total <- confusion_matrix_per_clinical_text |> 
@@ -155,9 +155,9 @@ calcular_todas_las_metricas <- function(df_datos) {
     mutate(is_real = 1)
 
   predicted_codes <- df_datos |>
-    select(id_clinical_text, predicted_icf_codes) |>
-    unnest(cols = c(predicted_icf_codes)) |>
-    rename(codigo = predicted_icf_codes) |>
+    select(id_clinical_text, predicted_icf_codes_consensus) |>
+    unnest(cols = c(predicted_icf_codes_consensus)) |>
+    rename(codigo = predicted_icf_codes_consensus) |>
     mutate(is_predicted = 1)
 
   per_class_df <- full_join(ground_truth_codes, predicted_codes, by = c("id_clinical_text", "codigo")) |>
@@ -206,7 +206,7 @@ calcular_todas_las_metricas <- function(df_datos) {
     rename(f1 = micro_average_f1, precision = micro_precision, recall = micro_recall)
 
   # Devuelve un dataframe de 1 fila con las 3 métricas clave
-  return(data.frame(
+  return(all_metrics=data.frame(
     micro_f1 = micro_average_metrics$f1,
     macro_f1 = macro_average_metrics$f1,
     weighted_f1 = weighted_metrics$f1
@@ -276,3 +276,5 @@ ggplot(resultados_largos, aes(x = f1_score, fill = metrica)) +
     y = "Densidad",
     fill = "Métrica"
   )
+
+print(intervalos_confianza)

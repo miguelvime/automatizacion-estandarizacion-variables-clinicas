@@ -1,5 +1,6 @@
 [
   {
+    "id_code_combination": "011",
     "id_clinical_text": "011_1",
     "clinical_text": "Varón de 45 años, operario de almacén, acude a revisión por dolor generalizado en la espalda y extremidades de evolución tórpida. En tto. con analgésicos pautados por su médico sin alivio significativo. Refiere importantes complicaciones para levantar cajas pesadas en el almacén, limitando su desempeño laboral diario. Exploración física muestra dolor generalizado a la palpación profunda en múltiples puntos, sin signos de radiculopatía aguda.",
     "icf_codes": [
@@ -10,6 +11,7 @@
     "predicted_icf_codes_consensus": [
       "b280",
       "d430",
+      "d850",
       "e1101"
     ],
     "consensus_criteria": "strict 3/3",
@@ -28,10 +30,12 @@
     "predicted_icf_it3": [
       "b280",
       "d430",
+      "d850",
       "e1101"
     ]
   },
   {
+    "id_code_combination": "011",
     "id_clinical_text": "011_2",
     "clinical_text": "Mujer de 52 años, empleada doméstica, consulta por mialgias difusas de varios meses de evolución. En tto. actual con medicación antinflamatoria diaria que apenas mitiga sus molestias. Manifiesta total incapacidad para levantar garrafas de agua o cubos en sus labores habituales. A la exploración se objetiva dolor generalizado a nivel cérvico-dorsal y lumbar, con hiperalgesia generalizada.",
     "icf_codes": [
@@ -62,6 +66,7 @@
     ]
   },
   {
+    "id_code_combination": "011",
     "id_clinical_text": "011_3",
     "clinical_text": "Varón de 38 años, mecánico automotriz, acude refiriendo dolor difuso por todo el cuerpo que se intensifica al final de la jornada. En tto. con fármacos neuromoduladores prescritos en unidad del dolor. Presenta dificultad severa al levantar herramientas pesadas o piezas de motor en el taller. Exploración física con dolor generalizado al tacto superficial y percusión en cintura escapular y pélvica.",
     "icf_codes": [
@@ -92,6 +97,7 @@
     ]
   },
   {
+    "id_code_combination": "012",
     "id_clinical_text": "012_1",
     "clinical_text": "Mujer de 48 años, ama de casa, acude a consulta derivada por su médico de cabecera por dolor generalizado en todo el cuerpo de más de tres años de evolución, de predominio matutino y sin respuesta analgésica previa. Durante la anamnesis destaca la situación conflictiva con su esposo, quien manifiesta abiertamente una actitud de escepticismo, sosteniendo la creencia de que exagera los síntomas para evitar las obligaciones domésticas. Exploración física: puntos dolorosos a la presión digital ampliamente distribuidos por la musculatura axial y extremidades, sin signos inflamatorios articulares.",
     "icf_codes": [
@@ -122,6 +128,7 @@
     ]
   },
   {
+    "id_code_combination": "012",
     "id_clinical_text": "012_2",
     "clinical_text": "Varón de 62 años, jubilado de la construcción, que consulta por mialgias generalizadas de intensidad severa que le acompañan desde hace un lustro, impidiéndole el descanso nocturno adecuado. El paciente acude acompañado por su hijo mayor, el cual muestra una actitud de sobreprotección familiar constante, intentando responder por él a las preguntas del médico y limitando cualquier movimiento activo del paciente por miedo a que empeore el cuadro álgico. A la exploración se objetiva hiperalgesia generalizada al tacto superficial en tronco y raíz de extremidades.",
     "icf_codes": [
@@ -156,6 +163,7 @@
     ]
   },
   {
+    "id_code_combination": "012",
     "id_clinical_text": "012_3",
     "clinical_text": "Mujer de 35 años, dependienta de comercio en situación de baja laboral, referida por dolor crónico difuso que afecta a la totalidad de la anatomía desde un accidente leve de tráfico ocurrido hace dieciocho meses. En la entrevista resalta la influencia de su madre, con quien convive y cuya actitud de constante preocupación y focalización en la enfermedad parece potenciar la conducta de evitación y el malestar general de la paciente. Exploración: palpación dolorosa generalizada en inserciones tendinosas y vientres musculares sin focalidad neurológica periférica.",
     "icf_codes": [
@@ -165,14 +173,12 @@
     ],
     "predicted_icf_codes_consensus": [
       "b280",
-      "d850",
       "e310",
       "e410"
     ],
     "consensus_criteria": "strict 3/3",
     "predicted_icf_it1": [
       "b280",
-      "d850",
       "e310",
       "e410"
     ],
@@ -190,6 +196,7 @@
     ]
   },
   {
+    "id_code_combination": "013",
     "id_clinical_text": "013_1",
     "clinical_text": "Varón de 44 años, analista de sistemas, acude por dolor generalizado en extremidades y tronco de 8 meses de evolución. Refiere estrés intenso por plazos en su empleo, lo que agrava su cuadro. Manifiesta bloqueo mental para resolver problemas complejos de programación. Presenta incapacidad para llevar a cabo rutinas diarias básicas como cocinar o planificar la semana. Actualmente se encuentra de baja por trabajo remunerado en su empresa informática.",
     "icf_codes": [
@@ -214,10 +221,10 @@
       "d850"
     ],
     "predicted_icf_it2": [
-      "b240",
       "b280",
       "d175",
       "d230",
+      "d240",
       "d850"
     ],
     "predicted_icf_it3": [
@@ -228,6 +235,7 @@
     ]
   },
   {
+    "id_code_combination": "013",
     "id_clinical_text": "013_2",
     "clinical_text": "Mujer de 51 años, supervisora de call center, consulta por mialgias generalizadas y fatiga crónica. Refiere ansiedad ante demandas psicológicas de su puesto y llamadas conflictivas. Muestra dificultad para resolver problemas cotidianos de gestión de equipo debido al agotamiento. Acusa una fuerte alteración de rutinas diarias en el hogar y gran dificultad para desempeñar su trabajo remunerado a jornada completa.",
     "icf_codes": [
@@ -240,7 +248,6 @@
     "predicted_icf_codes_consensus": [
       "b152",
       "b280",
-      "b455",
       "d175",
       "d230",
       "d850"
@@ -256,11 +263,12 @@
       "d850"
     ],
     "predicted_icf_it2": [
+      "b130",
       "b152",
       "b280",
-      "b455",
       "d175",
       "d230",
+      "d240",
       "d850"
     ],
     "predicted_icf_it3": [
@@ -269,11 +277,11 @@
       "b455",
       "d175",
       "d230",
-      "d240",
       "d850"
     ]
   },
   {
+    "id_code_combination": "013",
     "id_clinical_text": "013_3",
     "clinical_text": "Varón de 39 años, transportista autónomo, presenta dolor corporal difuso de predominio axial y en cinturas escapular y pélvica. Explica que le cuesta mucho superar el estrés laboral diario derivado del tráfico y la carga de mercancías. Manifiesta incapacidad para resolver problemas logísticos imprevistos en ruta. Esto provoca una grave alteración en rutinas diarias de descanso y alimentación, poniendo en riesgo la continuidad de su puesto de trabajo remunerado.",
     "icf_codes": [
@@ -284,6 +292,7 @@
       "d850"
     ],
     "predicted_icf_codes_consensus": [
+      "b240",
       "b280",
       "d175",
       "d230",
@@ -291,17 +300,17 @@
     ],
     "consensus_criteria": "strict 3/3",
     "predicted_icf_it1": [
+      "b240",
       "b280",
       "d175",
       "d230",
-      "d240",
       "d850"
     ],
     "predicted_icf_it2": [
+      "b240",
       "b280",
       "d175",
       "d230",
-      "d240",
       "d850"
     ],
     "predicted_icf_it3": [
@@ -313,6 +322,7 @@
     ]
   },
   {
+    "id_code_combination": "014",
     "id_clinical_text": "014_1",
     "clinical_text": "Varón de 48 años, administrativo. Acude a consulta por dolor crónico generalizado. Refiere una marcada fatiga y poca tolerancia al esfuerzo físico al intentar caminar tramos cortos. A la exploración destaca debilidad generalizada, refiriendo pérdida de fuerza en las piernas al levantarse de una silla, además de cierta torpeza y falta de coordinación en los miembros superiores al manipular objetos. Comenta que acude semanalmente al fisioterapeuta de su centro de salud para recibir pautas de movilización.",
     "icf_codes": [
@@ -349,6 +359,7 @@
     ]
   },
   {
+    "id_code_combination": "014",
     "id_clinical_text": "014_2",
     "clinical_text": "Mujer de 55 años, dependienta de comercio. Consulta por cuadro de dolor generalizado de meses de evolución. En la anamnesis destaca una fatiga muscular precoz al realizar actividades cotidianas que exigen mínima condición aeróbica. Se objetiva debilidad franca en extremidades, así como fallos en el control motor fino y grueso, traduciéndose en falta de precisión al asir objetos. Sigue seguimiento estrecho por el equipo médico rehabilitador y terapeutas de la unidad del dolor.",
     "icf_codes": [
@@ -365,11 +376,9 @@
     ],
     "consensus_criteria": "strict 3/3",
     "predicted_icf_it1": [
-      "b280",
       "b455",
       "b730",
       "b760",
-      "d850",
       "e355"
     ],
     "predicted_icf_it2": [
@@ -386,6 +395,7 @@
     ]
   },
   {
+    "id_code_combination": "014",
     "id_clinical_text": "014_3",
     "clinical_text": "Varón de 62 años, operario de fábrica jubilado. Presenta dolor generalizado con afectación funcional severa. Manifiesta baja tolerancia al ejercicio, agotándose ante mínimos apremios físicos. La exploración física muestra disminución de fuerza muscular global en extremidades inferiores y mala coordinación en los movimientos voluntarios al intentar maniobras de precisión. Se coordina plan de actuación junto al médico rehabilitador para reevaluar su capacidad funcional.",
     "icf_codes": [
