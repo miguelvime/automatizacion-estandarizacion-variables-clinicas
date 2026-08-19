@@ -1,6 +1,6 @@
 services:
   n8n:
-    image: n8nio/n8n:latest
+    image: n8nio/n8n@sha256:a49bc161141d6c4b9c495b5a6e3c7c1932e61d2ed2fe3fdca01262064b4b23ca
     container_name: n8n-main
     environment:
       - N8N_RUNNERS_MODE=internal
@@ -16,24 +16,5 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
-  qdrant:
-    image: qdrant/qdrant:latest
-    container_name: qdrant
-    ports:
-      - "6334:6333"
-    volumes: 
-      - ./qdrant_data:/qdrant/storage
-    restart: unless-stopped
-
-  ollama:
-    image: ollama/ollama:latest
-    container_name: ollama
-    ports:
-      - "11435:11434"
-    volumes:
-      - ./ollama_data:/home/ollama/.ollama
-    environment:
-      - OLLAMA_NUM_CTX=8192
-    restart: unless-stopped
 volumes:
   n8n_data:

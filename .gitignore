@@ -18,3 +18,10 @@ qdrant_data/# pixi environments
 venv/
 venv_win/
 scripts/json_manip/
+stats_v2/
+.venv/
+./statistics/stats_v*
+./.agents/skills/*
+./.agents/output/*
+.agents/
+agent_output
