@@ -1,0 +1,6 @@
+﻿Modelo,Historia Clínica,Iteración 1,Iteración 2,Iteración 3,Códigos en Consenso (3/3),Código(s) Discrepante(s)
+Gemma-4-31B-it (Local),Historia #45,"b280, d850, e1101, e355, e570","b280, d850, e1101, e355","b280, d850, e1101, e355","b280, d850, e1101, e355",e570
+Gemma-4-31B-it (Local),Historia #62,"b134, b280, e1101, e310, e410","b134, b280, e1101, e310, e410","b134, b280, e1101, e310, e355, e410","b134, b280, e1101, e310, e410",e355
+Gemini Flash 3.5 (Cloud - Línea Base),Historia #19,"b134, b280, e1101","b134, b280, e1101, e355","b134, b280, e1101","b134, b280, e1101",e355
+Gemini Flash 3.5 (Cloud - Línea Base),Historia #62,"b134, b280, e1101, e310, e355, e410","b134, b280, e1101, e310, e410","b134, b280, e1101, e310, e355, e410","b134, b280, e1101, e310, e410",e355
+Gemini Flash 3.6 (Cloud),Todas (114/114),Acuerdo perfecto,Acuerdo perfecto,Acuerdo perfecto,100% Determinista,Ninguno (0 discrepancias)

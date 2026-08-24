@@ -1,0 +1,14 @@
+[
+  {
+    "id_clinical_text": "DEMO-001",
+    "clinical_text": "Paciente mujer de 48 años con diagnóstico de síndrome de dolor crónico generalizado y fibromialgia de 3 años de evolución. Refiere dolor continuo en región cervical, dorsal y extremidades superiores e inferiores (EVA 8/10), acompañado de rigidez matutina acusada, fatiga persistente y sueño no reparador con frecuentes despertares nocturnos. Presenta dificultad severa para permanecer de pie o sentada por periodos prolongados, así como para realizar tareas domésticas pesadas (limpieza, fregar, planchar), requiriendo ayuda de su cónyuge. Sigue tratamiento farmacológico pautado con analgésicos opioides menores, pregabalina y antidepresivos."
+  },
+  {
+    "id_clinical_text": "DEMO-002",
+    "clinical_text": "Varón de 42 años, mecánico de automoción, que acude a consulta de fisioterapia por dolor lumbar y cervical irradiado hacia miembro superior derecho tras sobreesfuerzo laboral hace 8 meses. El dolor aumenta al final de la jornada laboral y tras levantar o manipular piezas pesadas en el taller. Manifiesta frustración por la limitación funcional en su puesto de trabajo y dificultad para conciliar el sueño en decúbito lateral. La exploración física revela puntos gatillo activos miofasciales en trapecios y paravertebrales lumbares, con movilidad articular restringida por dolor. Toma antiinflamatorios no esteroideos y relajantes musculares de forma pautada."
+  },
+  {
+    "id_clinical_text": "DEMO-003",
+    "clinical_text": "Mujer de 56 años con lumbalgia crónica de características mecánicas e irradiación hacia miembro inferior izquierdo hasta la rodilla. Refiere claudicación de la marcha a los 300 metros por dolor y sensación de sobrecarga en zona glútea y lumbar. Incapaz de realizar paseos largos o actividades de ocio activo que antes desempeñaba habitualmente. Vive en una vivienda sin ascensor (segundo piso), lo que supone una barrera adicional para sus desplazamientos cotidianos. Recibe apoyo de su entorno familiar para las compras y traslados. Tratamiento actual: analgesia oral a demanda y sesiones previas de magnetoterapia sin mejoría sostenida."
+  }
+]

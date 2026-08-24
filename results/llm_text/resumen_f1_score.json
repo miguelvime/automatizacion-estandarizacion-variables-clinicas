@@ -1,0 +1,953 @@
+[
+  {
+    "modelo_id": "gemma_31b",
+    "modelo_nombre": "Gemma-4-31B-it",
+    "metricas": {
+      "n_historias": 114,
+      "n_clases": 27,
+      "soporte_total": 465,
+      "exact_matches_n": 94,
+      "emr_pct": 82.45614035087719,
+      "confusion_global": {
+        "tp": 450,
+        "fp": 14,
+        "fn": 15
+      },
+      "micro": {
+        "precision": 0.9698275862068966,
+        "recall": 0.967741935483871,
+        "f1": 0.968783638320775
+      },
+      "macro": {
+        "precision": 0.8571629691512732,
+        "recall": 0.8722222222222222,
+        "f1": 0.8620984548057131
+      },
+      "weighted": {
+        "precision": 0.9554076050340905,
+        "recall": 0.967741935483871,
+        "f1": 0.9596633316397623
+      },
+      "por_clase": {
+        "b130": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones relacionadas con la energía y los impulsos"
+        },
+        "b134": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones del sueño"
+        },
+        "b147": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 9,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones psicomotoras"
+        },
+        "b152": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones emocionales"
+        },
+        "b1602": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 21,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Contenido del pensamiento"
+        },
+        "b175": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "nombre": "Funciones cognitivas superiores (Resolver problemas)"
+        },
+        "b240": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "nombre": "Sensaciones corporales y manejo del estrés"
+        },
+        "b280": {
+          "tp": 105,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 105,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Sensación de dolor"
+        },
+        "b455": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Tolerancia al ejercicio físico"
+        },
+        "b730": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones relacionadas con la fuerza muscular"
+        },
+        "b760": {
+          "tp": 9,
+          "fp": 1,
+          "fn": 0,
+          "soporte": 9,
+          "precision": 0.9,
+          "recall": 1.0,
+          "f1": 0.9473684210526316,
+          "nombre": "Control de los movimientos voluntarios"
+        },
+        "d175": {
+          "tp": 9,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 9,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "nombre": "Resolver problemas"
+        },
+        "d230": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Llevar a cabo rutinas diarias"
+        },
+        "d240": {
+          "tp": 18,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.923076923076923,
+          "nombre": "Manejo del estrés y demandas psicológicas"
+        },
+        "d290": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "nombre": "Tareas y demandas generales (Ocio)"
+        },
+        "d430": {
+          "tp": 12,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888888888888889,
+          "nombre": "Levantar y llevar objetos"
+        },
+        "d450": {
+          "tp": 18,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Andar y desplazarse"
+        },
+        "d640": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Realizar los quehaceres de la casa"
+        },
+        "d760": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 21,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Relaciones familiares"
+        },
+        "d770": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889,
+          "nombre": "Relaciones íntimas y sociales"
+        },
+        "d850": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Trabajo remunerado"
+        },
+        "d920": {
+          "tp": 24,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 24,
+          "precision": 0.8888888888888888,
+          "recall": 1.0,
+          "f1": 0.9411764705882353,
+          "nombre": "Tiempo libre y ocio"
+        },
+        "e1101": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 21,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Medicamentos"
+        },
+        "e310": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Familiares cercanos"
+        },
+        "e355": {
+          "tp": 18,
+          "fp": 1,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 0.9473684210526315,
+          "recall": 1.0,
+          "f1": 0.972972972972973,
+          "nombre": "Profesionales de la salud"
+        },
+        "e410": {
+          "tp": 18,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Actitudes individuales de miembros de la familia cercana"
+        },
+        "e570": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571,
+          "nombre": "Servicios, sistemas y políticas de seguridad social"
+        }
+      }
+    },
+    "ci_95": {
+      "micro_f1": [
+        0.956031567080045,
+        0.98109243697479
+      ],
+      "macro_f1": [
+        0.8477449412835888,
+        0.8720603340708267
+      ],
+      "weighted_f1": [
+        0.942281621746088,
+        0.9764989897628198
+      ]
+    }
+  },
+  {
+    "modelo_id": "gemini_flash_35",
+    "modelo_nombre": "Gemini Flash 3.5",
+    "metricas": {
+      "n_historias": 114,
+      "n_clases": 27,
+      "soporte_total": 465,
+      "exact_matches_n": 97,
+      "emr_pct": 85.08771929824562,
+      "confusion_global": {
+        "tp": 451,
+        "fp": 12,
+        "fn": 14
+      },
+      "micro": {
+        "precision": 0.9740820734341252,
+        "recall": 0.9698924731182795,
+        "f1": 0.9719827586206896
+      },
+      "macro": {
+        "precision": 0.8628159905937685,
+        "recall": 0.8753086419753087,
+        "f1": 0.8669727754695076
+      },
+      "weighted": {
+        "precision": 0.9593804403481822,
+        "recall": 0.9698924731182795,
+        "f1": 0.9630688097481266
+      },
+      "por_clase": {
+        "b130": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones relacionadas con la energía y los impulsos"
+        },
+        "b134": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones del sueño"
+        },
+        "b147": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 9,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones psicomotoras"
+        },
+        "b152": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones emocionales"
+        },
+        "b1602": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 21,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Contenido del pensamiento"
+        },
+        "b175": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "nombre": "Funciones cognitivas superiores (Resolver problemas)"
+        },
+        "b240": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "nombre": "Sensaciones corporales y manejo del estrés"
+        },
+        "b280": {
+          "tp": 105,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 105,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Sensación de dolor"
+        },
+        "b455": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Tolerancia al ejercicio físico"
+        },
+        "b730": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones relacionadas con la fuerza muscular"
+        },
+        "b760": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 9,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Control de los movimientos voluntarios"
+        },
+        "d175": {
+          "tp": 9,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 9,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "nombre": "Resolver problemas"
+        },
+        "d230": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Llevar a cabo rutinas diarias"
+        },
+        "d240": {
+          "tp": 18,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.923076923076923,
+          "nombre": "Manejo del estrés y demandas psicológicas"
+        },
+        "d290": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "nombre": "Tareas y demandas generales (Ocio)"
+        },
+        "d430": {
+          "tp": 12,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888888888888889,
+          "nombre": "Levantar y llevar objetos"
+        },
+        "d450": {
+          "tp": 18,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Andar y desplazarse"
+        },
+        "d640": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Realizar los quehaceres de la casa"
+        },
+        "d760": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 21,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Relaciones familiares"
+        },
+        "d770": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889,
+          "nombre": "Relaciones íntimas y sociales"
+        },
+        "d850": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Trabajo remunerado"
+        },
+        "d920": {
+          "tp": 24,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 24,
+          "precision": 0.8888888888888888,
+          "recall": 1.0,
+          "f1": 0.9411764705882353,
+          "nombre": "Tiempo libre y ocio"
+        },
+        "e1101": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 21,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Medicamentos"
+        },
+        "e310": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Familiares cercanos"
+        },
+        "e355": {
+          "tp": 18,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Profesionales de la salud"
+        },
+        "e410": {
+          "tp": 18,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Actitudes individuales de miembros de la familia cercana"
+        },
+        "e570": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 2,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091,
+          "nombre": "Servicios, sistemas y políticas de seguridad social"
+        }
+      }
+    },
+    "ci_95": {
+      "micro_f1": [
+        0.9590254706533776,
+        0.9839572192513368
+      ],
+      "macro_f1": [
+        0.8546887410827252,
+        0.8758972382160789
+      ],
+      "weighted_f1": [
+        0.9458479895202566,
+        0.9798539189361974
+      ]
+    }
+  },
+  {
+    "modelo_id": "gemini_flash_36",
+    "modelo_nombre": "Gemini Flash 3.6",
+    "metricas": {
+      "n_historias": 114,
+      "n_clases": 27,
+      "soporte_total": 465,
+      "exact_matches_n": 96,
+      "emr_pct": 84.21052631578947,
+      "confusion_global": {
+        "tp": 450,
+        "fp": 12,
+        "fn": 15
+      },
+      "micro": {
+        "precision": 0.974025974025974,
+        "recall": 0.967741935483871,
+        "f1": 0.970873786407767
+      },
+      "macro": {
+        "precision": 0.8628159905937685,
+        "recall": 0.8722222222222222,
+        "f1": 0.8650487735455057
+      },
+      "weighted": {
+        "precision": 0.9593804403481822,
+        "recall": 0.967741935483871,
+        "f1": 0.9617282148591445
+      },
+      "por_clase": {
+        "b130": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones relacionadas con la energía y los impulsos"
+        },
+        "b134": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones del sueño"
+        },
+        "b147": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 9,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones psicomotoras"
+        },
+        "b152": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones emocionales"
+        },
+        "b1602": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 21,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Contenido del pensamiento"
+        },
+        "b175": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "nombre": "Funciones cognitivas superiores (Resolver problemas)"
+        },
+        "b240": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "nombre": "Sensaciones corporales y manejo del estrés"
+        },
+        "b280": {
+          "tp": 105,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 105,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Sensación de dolor"
+        },
+        "b455": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Tolerancia al ejercicio físico"
+        },
+        "b730": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Funciones relacionadas con la fuerza muscular"
+        },
+        "b760": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 9,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Control de los movimientos voluntarios"
+        },
+        "d175": {
+          "tp": 9,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 9,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "nombre": "Resolver problemas"
+        },
+        "d230": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Llevar a cabo rutinas diarias"
+        },
+        "d240": {
+          "tp": 18,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 0.8571428571428571,
+          "recall": 1.0,
+          "f1": 0.923076923076923,
+          "nombre": "Manejo del estrés y demandas psicológicas"
+        },
+        "d290": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "nombre": "Tareas y demandas generales (Ocio)"
+        },
+        "d430": {
+          "tp": 12,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888888888888889,
+          "nombre": "Levantar y llevar objetos"
+        },
+        "d450": {
+          "tp": 18,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Andar y desplazarse"
+        },
+        "d640": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Realizar los quehaceres de la casa"
+        },
+        "d760": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 21,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Relaciones familiares"
+        },
+        "d770": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889,
+          "nombre": "Relaciones íntimas y sociales"
+        },
+        "d850": {
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Trabajo remunerado"
+        },
+        "d920": {
+          "tp": 24,
+          "fp": 3,
+          "fn": 0,
+          "soporte": 24,
+          "precision": 0.8888888888888888,
+          "recall": 1.0,
+          "f1": 0.9411764705882353,
+          "nombre": "Tiempo libre y ocio"
+        },
+        "e1101": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 21,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Medicamentos"
+        },
+        "e310": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 15,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Familiares cercanos"
+        },
+        "e355": {
+          "tp": 18,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Profesionales de la salud"
+        },
+        "e410": {
+          "tp": 18,
+          "fp": 0,
+          "fn": 0,
+          "soporte": 18,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "nombre": "Actitudes individuales de miembros de la familia cercana"
+        },
+        "e570": {
+          "tp": 9,
+          "fp": 0,
+          "fn": 3,
+          "soporte": 12,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571,
+          "nombre": "Servicios, sistemas y políticas de seguridad social"
+        }
+      }
+    },
+    "ci_95": {
+      "micro_f1": [
+        0.958109559613319,
+        0.9828326180257511
+      ],
+      "macro_f1": [
+        0.8523714557047891,
+        0.8743359705102428
+      ],
+      "weighted_f1": [
+        0.944493354757477,
+        0.9782643678160919
+      ]
+    }
+  }
+]

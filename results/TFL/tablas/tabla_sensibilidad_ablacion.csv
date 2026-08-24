@@ -1,0 +1,22 @@
+﻿Dimensión,Métrica / Parámetro,Gemma-4-31B-it (Local),Gemini Flash 3.5 (Cloud),Gemini Flash 3.6 (Cloud)
+Parámetros del Espacio,Número de Categorías CIF evaluadas,27 códigos,27 códigos,27 códigos
+Parámetros del Espacio,Soporte Real Ground Truth (menciones),465,465,465
+Parámetros del Espacio,Prevalencia de b280 en el Corpus,92.1% (105/114),92.1% (105/114),92.1% (105/114)
+Espacio Completo (Con b280),Micro-F1,0.9688,0.9720,0.9709
+Espacio Completo (Con b280),Macro-F1,0.8621,0.8670,0.8650
+Espacio Completo (Con b280),Weighted-F1,0.9597,0.9631,0.9617
+Espacio Completo (Con b280),Exact Match Ratio (EMR %),82.46% (94/114),85.09% (97/114),84.21% (96/114)
+Espacio Completo (Con b280),Matriz de Confusión (TP / FP / FN),450 / 14 / 15,451 / 12 / 14,450 / 12 / 15
+Ablación (Sin dolor b280),Micro-F1,0.9597,0.9638,0.9623
+Ablación (Sin dolor b280),Macro-F1,0.8568,0.8619,0.8599
+Ablación (Sin dolor b280),Weighted-F1,0.9479,0.9523,0.9506
+Ablación (Sin dolor b280),Exact Match Ratio (EMR %),82.46% (94/114),85.09% (97/114),84.21% (96/114)
+Ablación (Sin dolor b280),Matriz de Confusión (TP / FP / FN),345 / 14 / 15,346 / 12 / 14,345 / 12 / 15
+Variación Absoluta (Δ = Sin - Con),Δ Micro-F1,-0.0091,-0.0082,-0.0085
+Variación Absoluta (Δ = Sin - Con),Δ Macro-F1,-0.0053,-0.0051,-0.0052
+Variación Absoluta (Δ = Sin - Con),Δ Weighted-F1,-0.0118,-0.0108,-0.0112
+Variación Absoluta (Δ = Sin - Con),Δ EMR (%),+0.00%,+0.00%,+0.00%
+Tasa de Retención (%),Retención Micro-F1,99.06%,99.16%,99.12%
+Tasa de Retención (%),Retención Macro-F1,99.38%,99.41%,99.40%
+Tasa de Retención (%),Retención Weighted-F1,98.77%,98.88%,98.84%
+Tasa de Retención (%),Retención EMR,100.00%,100.00%,100.00%

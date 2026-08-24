@@ -1,0 +1,143 @@
+{
+  "gemma_31b": {
+    "nombre": "Gemma-4-31B-it (Local)",
+    "completo": {
+      "N_Codigos": 27,
+      "Menciones_GT": 465,
+      "Micro_F1": 0.968783638320775,
+      "Micro_Precision": 0.9698275862068966,
+      "Micro_Recall": 0.967741935483871,
+      "Macro_F1": 0.8620984548057131,
+      "Weighted_F1": 0.9596633316397623,
+      "EMR": 0.8245614035087719,
+      "EMR_Aciertos": 94,
+      "TP": 450,
+      "FP": 14,
+      "FN": 15
+    },
+    "ablado": {
+      "N_Codigos": 26,
+      "Menciones_GT": 360,
+      "Micro_F1": 0.9596662030598053,
+      "Micro_Precision": 0.9610027855153204,
+      "Micro_Recall": 0.9583333333333334,
+      "Macro_F1": 0.8567945492213175,
+      "Weighted_F1": 0.947898470034693,
+      "EMR": 0.8245614035087719,
+      "EMR_Aciertos": 94,
+      "TP": 345,
+      "FP": 14,
+      "FN": 15
+    },
+    "delta": {
+      "Micro_F1": -0.009117435260969642,
+      "Micro_Precision": -0.008824800691576207,
+      "Micro_Recall": -0.009408602150537626,
+      "Macro_F1": -0.005303905584395641,
+      "Weighted_F1": -0.011764861605069288,
+      "EMR": 0.0
+    },
+    "retencion": {
+      "Micro_F1": 99.05887807139547,
+      "Micro_Precision": 99.09006499535748,
+      "Micro_Recall": 99.02777777777779,
+      "Macro_F1": 99.38476799780473,
+      "Weighted_F1": 98.77406365157593,
+      "EMR": 100.0
+    }
+  },
+  "gemini_flash_35": {
+    "nombre": "Gemini Flash 3.5 (Cloud)",
+    "completo": {
+      "N_Codigos": 27,
+      "Menciones_GT": 465,
+      "Micro_F1": 0.9719827586206896,
+      "Micro_Precision": 0.9740820734341252,
+      "Micro_Recall": 0.9698924731182795,
+      "Macro_F1": 0.8669727754695076,
+      "Weighted_F1": 0.9630688097481266,
+      "EMR": 0.8508771929824561,
+      "EMR_Aciertos": 97,
+      "TP": 451,
+      "FP": 12,
+      "FN": 14
+    },
+    "ablado": {
+      "N_Codigos": 26,
+      "Menciones_GT": 360,
+      "Micro_F1": 0.9637883008356547,
+      "Micro_Precision": 0.9664804469273743,
+      "Micro_Recall": 0.9611111111111111,
+      "Macro_F1": 0.8618563437567963,
+      "Weighted_F1": 0.9522972125913302,
+      "EMR": 0.8508771929824561,
+      "EMR_Aciertos": 97,
+      "TP": 346,
+      "FP": 12,
+      "FN": 14
+    },
+    "delta": {
+      "Micro_F1": -0.008194457785034914,
+      "Micro_Precision": -0.0076016265067508915,
+      "Micro_Recall": -0.008781362007168392,
+      "Macro_F1": -0.005116431712711256,
+      "Weighted_F1": -0.01077159715679643,
+      "EMR": 0.0
+    },
+    "retencion": {
+      "Micro_F1": 99.15693383320261,
+      "Micro_Precision": 99.21961129210074,
+      "Micro_Recall": 99.09460458240946,
+      "Macro_F1": 99.4098509367909,
+      "Weighted_F1": 98.88153400382538,
+      "EMR": 100.0
+    }
+  },
+  "gemini_flash_36": {
+    "nombre": "Gemini Flash 3.6 (Cloud)",
+    "completo": {
+      "N_Codigos": 27,
+      "Menciones_GT": 465,
+      "Micro_F1": 0.970873786407767,
+      "Micro_Precision": 0.974025974025974,
+      "Micro_Recall": 0.967741935483871,
+      "Macro_F1": 0.8650487735455057,
+      "Weighted_F1": 0.9617282148591446,
+      "EMR": 0.8421052631578947,
+      "EMR_Aciertos": 96,
+      "TP": 450,
+      "FP": 12,
+      "FN": 15
+    },
+    "ablado": {
+      "N_Codigos": 26,
+      "Menciones_GT": 360,
+      "Micro_F1": 0.9623430962343097,
+      "Micro_Precision": 0.9663865546218487,
+      "Micro_Recall": 0.9583333333333334,
+      "Macro_F1": 0.8598583417587944,
+      "Weighted_F1": 0.9505656108597285,
+      "EMR": 0.8421052631578947,
+      "EMR_Aciertos": 96,
+      "TP": 345,
+      "FP": 12,
+      "FN": 15
+    },
+    "delta": {
+      "Micro_F1": -0.008530690173457312,
+      "Micro_Precision": -0.007639419404125269,
+      "Micro_Recall": -0.009408602150537626,
+      "Macro_F1": -0.0051904317867113026,
+      "Weighted_F1": -0.011162603999416154,
+      "EMR": 0.0
+    },
+    "retencion": {
+      "Micro_F1": 99.1213389121339,
+      "Micro_Precision": 99.2156862745098,
+      "Micro_Recall": 99.02777777777779,
+      "Macro_F1": 99.39998391472913,
+      "Weighted_F1": 98.83931823700826,
+      "EMR": 100.0
+    }
+  }
+}

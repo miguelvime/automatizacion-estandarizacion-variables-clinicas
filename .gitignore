@@ -1,27 +1,50 @@
-app/node_modules
-.vscode
-entregas
-# Ignorar bases de datos locales
-qdrant_data/
-n8n_data/
-ollama_data/
-results/
-consulta/
-# Ignorar archivos del sistema operativo
-.DS_Store
-Thumbs.db
-AGENTS.md
-generador_hc_desde_CIF*
-qdrant_data/# pixi environments
-.pixi/*
-!.pixi/config.toml
+# ==============================================================================
+# Python / Entornos virtuales y paquetes
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+.venv/
 venv/
 venv_win/
-scripts/json_manip/
-stats_v2/
-.venv/
-./statistics/stats_v*
-./.agents/skills/*
-./.agents/output/*
+.env
+
+# ==============================================================================
+# Infraestructura / Bases de datos locales y volúmenes Docker
+# ==============================================================================
+infrastructure/qdrant_data/
+infrastructure/ollama_data/
+infrastructure/n8n_data/
+infrastructure/RAG_documents/
+qdrant_data/
+ollama_data/
+n8n_data/
+
+# ==============================================================================
+# Documentación privada y entregas del máster
+# ==============================================================================
+entregas/
+consulta/
+agent_output/
 .agents/
-agent_output
+AGENTS.md
+
+# ==============================================================================
+# IDEs y Editores de código
+# ==============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+app/node_modules/
+
+# ==============================================================================
+# Archivos temporales de Office y Sistema Operativo
+# ==============================================================================
+~\$*.docx
+~\$*.xlsx
+~\$*.pptx
+.DS_Store
+Thumbs.db
