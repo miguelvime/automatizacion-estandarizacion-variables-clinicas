@@ -6,7 +6,7 @@
 [![Docker Compose](https://img.shields.io/badge/docker-compose-2496ED.svg)](https://docs.docker.com/compose/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Pipeline automatizado para la **extracción y codificación de texto clínico no estructurado a la Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud (CIF)** de la OMS mediante Modelos de Lenguaje Grande (LLMs) y estrategias de consenso multi-iteración (*Self-Consistency*, $K=3$).
+Pipeline automatizado para la **extracción y codificación de texto clínico no estructurado a la Clasificación Internacional del Funcionamiento, de la Discapacidad y de la Salud (CIF)** de la OMS mediante LLMs.
 
 Validado sobre el **Core Set Abreviado de Dolor Crónico Generalizado** (27 códigos CIF).
 
