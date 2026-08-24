@@ -1,0 +1,39 @@
+# ==============================================================================
+# Dockerfile para la Suite de Análisis Estadístico y Generación de TFL (TFM)
+# Combina Python 3.12 y R 4.4 con soporte para exportación editorial APA a Word
+# ==============================================================================
+FROM python:3.12-slim-bookworm
+
+# Evitar prompts interactivos durante la instalación
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONUNBUFFERED=1
+
+# 1. Instalar dependencias del sistema y entorno R
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    r-base \
+    r-base-dev \
+    libxml2-dev \
+    libcairo2-dev \
+    libfontconfig1-dev \
+    libfreetype6-dev \
+    libpng-dev \
+    libtiff5-dev \
+    libjpeg-dev \
+    pandoc \
+    gcc \
+    g++ \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# 2. Establecer directorio de trabajo
+WORKDIR /workspace
+
+# 3. Copiar e instalar dependencias de Python
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# 4. Instalar paquetes de R para renderizado de tablas APA en Word
+RUN Rscript -e "install.packages(c('flextable', 'officer', 'dplyr', 'jsonlite', 'readr', 'magrittr', 'tibble'), repos='https://cloud.r-project.org')"
+
+# 5. Comando de ejecución por defecto (ejecuta toda la suite estadística)
+CMD ["python3", "scripts/analysis/ejecutar_todo.py"]

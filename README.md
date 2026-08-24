@@ -14,17 +14,24 @@ El sistema está validado sobre el **Core Set Abreviado de la CIF para Dolor Cr�
 
 ## ⚡ Inicio Rápido en 1 Minuto
 
-Si acabas de clonar el repositorio, puedes probar todo el proyecto en 3 sencillos pasos:
+Puedes ejecutar todo el proyecto mediante **Docker (sin instalar Python ni R en tu máquina)** o mediante el entorno local:
 
+### Opción A: Mediante Docker (Recomendada - Cero Instalación)
 ```bash
-# 1. Instalar dependencias de Python
+# 1. Clonar el repositorio
+git clone https://github.com/tu-usuario/2026-03-11_TFM.git && cd 2026-03-11_TFM/infrastructure
+
+# 2. Levantar n8n (orquestador web de historias clínicas en http://localhost:5679)
+docker compose up -d n8n
+
+# 3. Ejecutar TODOS los análisis estadísticos, generar tablas APA en Word y figuras 300 DPI
+docker compose run --rm analysis
+```
+
+### Opción B: Mediante Entorno Local (Python / R)
+```bash
 pip install -r requirements.txt
-
-# 2. Ejecutar toda la batería de análisis y generar tablas APA/figuras en 20 segundos
 python scripts/analysis/ejecutar_todo.py
-
-# 3. Probar el flujo de codificación en n8n con el dataset de prueba incluido:
-# Carga 'n8n_workflows/2026-08-16_generic_LLM_codifier.json' y usa 'data/ejemplo_historias_clinicas.json'
 ```
 
 ---
@@ -34,7 +41,7 @@ python scripts/analysis/ejecutar_todo.py
 - [2. Estructura del Repositorio](#-2-estructura-del-repositorio)
 - [3. Instalación y Configuración](#-3-instalación-y-configuración)
 - [4. Guía de Uso: Cómo Analizar tus Propias Historias Clínicas](#-4-guía-de-uso-cómo-analizar-tus-propias-historias-clínicas)
-- [5. Reproducción de Resultados (TFM)](#-5-reproducción-de-resultados-tfm)
+- [5. Reproducción de Resultados del Estudio (TFM)](#-5-reproducción-de-resultados-del-estudio-tfm)
 - [6. Suite de Scripts de Análisis Estadístico](#-6-suite-de-scripts-de-análisis-estadístico)
 - [7. Licencia y Cita](#-7-licencia-y-cita)
 
@@ -52,6 +59,7 @@ python scripts/analysis/ejecutar_todo.py
    - **Corpus Sintético *In-Silico*** ($N = 101$ historias clínicas / 114 ejecuciones): Exact Match 98.25%–100%, Micro-$F_1$ 0.969–0.972, Gwet $AC_1$ 0.9994–1.0000.
    - **Corpus Clínico Real Ecológico** ($N = 21$ historias clínicas): Evaluación frente al *Gold Standard* consensuado por **4 fisioterapeutas clínicos independientes** (Micro-$F_1$ 0.822, Precisión 82%–92.5%).
 5. **Generación Automática de Tablas y Figuras (TFL)**: Exportación directa de tablas en Word (.docx) con formato editorial **APA / Booktabs** (R `flextable`/`officer`) y figuras a 300 DPI (PNG, SVG, PDF).
+6. **Totalmente Contenedorizado**: Imagen Docker con Python 3.12 y R 4.4 preconfigurados para reproducibilidad llave en mano.
 
 ---
 
@@ -59,7 +67,9 @@ python scripts/analysis/ejecutar_todo.py
 
 ```
 2026-03-11_TFM/
-├── infrastructure/               # Infraestructura Docker (compose.yaml)
+├── infrastructure/               # Infraestructura Docker y orquestación
+│   ├── compose.yaml              # Servicios Docker (n8n + analysis)
+│   └── Dockerfile.analysis       # Imagen con Python 3.12 + R 4.4 + librerías APA
 ├── data/                         # Datasets de entrada y referencias
 │   ├── ejemplo_historias_clinicas.json # Dataset de prueba listo para usar en n8n
 │   ├── generator_input.json      # Combinaciones de códigos CIF generadoras
@@ -92,24 +102,28 @@ python scripts/analysis/ejecutar_todo.py
 
 ## ⚙️ 3. Instalación y Configuración
 
-### 3.1. Entorno Python
+### 3.1. Mediante Docker (Recomendada)
+No requiere instalar dependencias adicionales en el sistema anfitrión.
+```bash
+cd infrastructure
+
+# Levantar n8n
+docker compose up -d n8n
+
+# Ejecutar el contenedor de análisis estadístico
+docker compose run --rm analysis
+```
+
+### 3.2. Mediante Entorno Local
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate  # En Linux/WSL (o .venv\Scripts\activate en Windows)
 pip install -r requirements.txt
 ```
-
-### 3.2. Paquetes de R (Opcional - para tablas APA en Word)
+*(Opcional para renderizado de tablas APA en local)*:
 ```R
 install.packages(c("flextable", "officer", "dplyr", "jsonlite", "readr", "magrittr", "tibble"))
 ```
-
-### 3.3. Despliegue de n8n con Docker
-```bash
-cd infrastructure
-docker compose up -d
-```
-Acceso a n8n: `http://localhost:5679`
 
 ---
 
@@ -149,16 +163,21 @@ El flujo genera un JSON enriquecido con las 3 pasadas y el consenso unánime:
 
 ---
 
-## 📊 5. Reproducción de Resultados (TFM)
+## 📊 5. Reproducción de Resultados del Estudio (TFM)
 
 Para reproducir **todos** los análisis estadísticos, matrices de confusión, análisis de sensibilidad por ablación, figuras a 300 DPI y tablas APA en Word del TFM:
 
-### Opción Rápida (1 Comando):
+### Opción A (1 Comando con Docker):
+```bash
+cd infrastructure && docker compose run --rm analysis
+```
+
+### Opción B (1 Comando en Local):
 ```bash
 python scripts/analysis/ejecutar_todo.py
 ```
 
-### Opción Modular (Paso a Paso):
+### Opción Modular (Paso a Paso en Local):
 - **Corpus Sintético ($N=101$)**:
   - Fiabilidad azar: `python scripts/analysis/01_calculo_confiabilidad_azar.py`
   - Exact Match: `python scripts/analysis/02_calculo_acuerdo_exacto.py`
@@ -199,17 +218,7 @@ python scripts/analysis/ejecutar_todo.py
 
 ---
 
-## 📄 7. Licencia y Cita
+## 📄 7. Licencia
 
-Este proyecto está bajo la Licencia MIT. Para citar este trabajo:
+Este proyecto está bajo la Licencia MIT.
 
-```bibtex
-@mastersthesis{vime2026tfm,
-  author       = {Miguel Vime},
-  title        = {Codificación automatizada de historias clínicas a la Clasificación Internacional del Funcionamiento (CIF) mediante Modelos de Lenguaje Grande (LLMs) y flujos orquestados},
-  school       = {Universidad / Programa de Máster en Salud Digital e IA Clínica},
-  year         = {2026},
-  month        = {Agosto},
-  type         = {Trabajo de Fin de Máster (TFM)}
-}
-```
