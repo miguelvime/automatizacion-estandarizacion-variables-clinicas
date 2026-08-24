@@ -6,7 +6,7 @@ TRABAJO DE FIN DE MÁSTER (TFM) - CIF & LLMS
 ===============================================================================
 Este script ejecuta la batería completa de análisis estadístico, validación
 diagnóstica, análisis de sensibilidad por ablación, generación de figuras 300 DPI,
-tablas en Word (formato APA) e informes ejecutivos.
+tablas en Word (formato APA), informes ejecutivos y el dashboard HTML interactivo.
 
 Uso:
     python scripts/analysis/ejecutar_todo.py
@@ -36,7 +36,8 @@ PYTHON_SCRIPTS = [
     ("13_analisis_human_annotated.py", "Métricas diagnósticas en corpus humano (N=21)"),
     ("14_plot_human_annotated.py", "Figuras de validación humana (300 DPI)"),
     ("16_generar_informe_word_completo.py", "Informe clínico integrado en Word"),
-    ("17_workflow_diagram.py", "Diagramas metodológicos del flujo (PNG/SVG/PDF)")
+    ("17_workflow_diagram.py", "Diagramas metodológicos del flujo (PNG/SVG/PDF)"),
+    ("18_generar_dashboard_html.py", "Dashboard interactivo HTML e informe ejecutivo")
 ]
 
 R_SCRIPTS = [
@@ -53,9 +54,12 @@ def main():
     print("=" * 80)
     start_time = time.time()
 
+    # Detectar Python virtualenv si existe
+    venv_python = BASE_DIR / ".venv" / "bin" / "python"
+    python_bin = str(venv_python) if venv_python.exists() else sys.executable
+
     # 1. Ejecutar scripts de Python
-    print("\n📦 [1/2] Ejecutando módulos estadísticos y generadores de figuras en Python...")
-    python_bin = sys.executable
+    print("\n📦 [1/2] Ejecutando módulos estadísticos, figuras y dashboard en Python...")
 
     for script_name, desc in PYTHON_SCRIPTS:
         script_path = SCRIPTS_DIR / script_name
@@ -109,10 +113,11 @@ def main():
     print("    • Gemini Flash 3.6 (Cloud): Micro-F1 = 0.822 | Precisión = 82.1% | Recall = 82.1%")
     print("-" * 80)
     print(" 📁 ARTEFACTOS GENERADOS DISPONIBLES EN results/TFL/:")
+    print(f"    • Dashboard Interactivo HTML: {TFL_DIR / 'dashboard_resumen.html'}  (¡Doble clic para abrir!)")
+    print(f"    • Informes ejecutivos: {TFL_DIR / 'informes'}")
     print(f"    • Tablas APA (Word / Excel / CSV): {TFL_DIR / 'tablas'}")
     print(f"    • Figuras en 300 DPI (PNG / SVG / PDF): {TFL_DIR / 'figuras'}")
     print(f"    • Listados clínicos y discrepancias: {TFL_DIR / 'listados'}")
-    print(f"    • Informes ejecutivos completos: {TFL_DIR / 'informes'}")
     print("=" * 80 + "\n")
 
 if __name__ == "__main__":
