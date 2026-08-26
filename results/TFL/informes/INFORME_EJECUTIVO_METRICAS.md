@@ -1,20 +1,23 @@
-# 📊 Informe de Evaluación Diagnóstica CIF
-**Dataset:** Corpus Humano Real (Gold 4 Fisioterapeutas) (human_annotated_flash-3.6.json)  
-**Fecha:** 2026-08-24 12:05  
-**Muestra:** N = 21 historias clínicas
+# 📊 Resumen de Métricas de Evaluación
+**Generado:** 2026-08-26 14:25
 
 ---
 
-## 🎯 Métricas Globales
-* **Micro-F1:** **82.08%**
-* **Macro-F1:** 67.95%
-* **Exact Match (EMR):** 33.33% (7/21 aciertos totales)
-* **Precisión:** 92.55% (Falsos Positivos = 7)
-* **Sensibilidad (Recall):** 73.73% (Falsos Negativos = 31)
+## 1. Tabla Resumen de Desempeño Diagnóstico
+
+| Corpus | Modelo | Micro-F1 | Macro-F1 | Exact Match (EMR) | Precisión | Sensibilidad (Recall) | Fiabilidad (Gwet AC1) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Sintético (N=114)** | Gemini Flash 3.7 | **98.49%** | 97.89% | 89.5% | 98.49% | 98.49% | 1.0000 |
+| **Sintético (N=114)** | Gemini Flash 3.5 | 98.19% | 97.68% | 87.7% | 97.46% | 98.92% | 0.9994 |
+| **Sintético (N=114)** | Gemma-4-31B-it | 97.97% | 97.31% | 86.8% | 97.45% | 98.49% | 0.9994 |
+| **Humano Real (N=21)** | Gemini Flash 3.7 | **71.15%** | 46.83% | 9.5% | 79.57% | 64.35% | 0.9708 |
+| **Humano Real (N=21)** | Gemini Flash 3.5 | 67.92% | 45.81% | 4.8% | 74.23% | 62.61% | 0.9724 |
+| **Humano Real (N=21)** | Gemma-4-31B-it | 77.27% | 55.48% | 19.0% | 80.95% | 73.91% | 0.9758 |
 
 ---
 
-## 🔍 Desglose por Capítulos CIF
-* **Funciones Corporales (`b`):** F1 = 89.8% | Precisión = 97.78% | Recall = 83.02%
-* **Actividades y Participación (`d`):** F1 = 76.19% | Precisión = 94.12% | Recall = 64.0%
-* **Factores Ambientales (`e`):** F1 = 73.33% | Precisión = 73.33% | Recall = 73.33%
+## 2. Desglose por Capítulos CIF (Gemini Flash 3.7)
+
+* **Funciones Corporales (`b`):** F1 Sintético = 99.3% | F1 Humano = 84.21%
+* **Actividades y Participación (`d`):** F1 Sintético = 99.4% | F1 Humano = 60.76%
+* **Factores Ambientales (`e`):** F1 Sintético = 94.55% | F1 Humano = 58.82%

@@ -181,7 +181,7 @@ def construir_documento():
     # -------------------------------------------------------------
     add_heading("1. Metodología: Validación con Historias Clínicas de Fisioterapeutas", level=1)
     add_p("Para evaluar la capacidad de transferencia del pipeline automatizado fuera del entorno sintético, se recopiló un corpus de validación externa compuesto por 21 historias clínicas narradas libremente por fisioterapeutas colegiados. El estándar de referencia (Ground Truth) fue indexado por expertos según el Core Set de la CIF para dolor crónico generalizado, identificando 118 diagnósticos reales (media de 5.62 ± 2.82 códigos por historia, rango 2–16) distribuidos en Funciones Corporales (b, 49 menciones), Actividades y Participación (d, 55 menciones) y Factores Ambientales (e, 14 menciones).")
-    add_p("El procedimiento de inferencia en n8n evaluó tres modelos bajo 3 réplicas estocásticas y consenso estricto (3/3): Gemma-4-31B-it (modelo de pesos abiertos ejecutado localmente de forma on-premise), Gemini Flash 3.5 y Gemini Flash 3.6 (modelos cloud). Se computaron métricas de fiabilidad intra-modelo (PAE, AC1 de Gwet, Alfa de Krippendorff), validez diagnóstica (Micro, Macro, Weighted F1, Precisión, Recall, EMR) con intervalos de confianza al 95% mediante remuestreo Bootstrap (B = 1000) y la Tasa de Retención del Rendimiento respecto al corpus sintético (N = 114).")
+    add_p("El procedimiento de inferencia en n8n evaluó tres modelos bajo 3 réplicas estocásticas y consenso estricto (3/3): Gemma-4-31B-it (modelo de pesos abiertos ejecutado localmente de forma on-premise), Gemini Flash 3.5 y Gemini Flash 3.7 (modelos cloud). Se computaron métricas de fiabilidad intra-modelo (PAE, AC1 de Gwet, Alfa de Krippendorff), validez diagnóstica (Micro, Macro, Weighted F1, Precisión, Recall, EMR) con intervalos de confianza al 95% mediante remuestreo Bootstrap (B = 1000) y la Tasa de Retención del Rendimiento respecto al corpus sintético (N = 114).")
 
     # -------------------------------------------------------------
     # SECCIÓN 2: RESULTADOS (BREVES Y DIRECTOS)
@@ -190,11 +190,11 @@ def construir_documento():
     
     fg  = datos_humano['gemma_31b']
     f35 = datos_humano['flash_35']
-    f36 = datos_humano['flash_36']
+    f37 = datos_humano['flash_37']
     
     add_heading("2.1. Fiabilidad y Validez Diagnóstica Global", level=2)
-    add_p(f"La fiabilidad intra-modelo evidenció una elevada reproducibilidad en los tres modelos (Tabla 1): Gemini Flash 3.6 alcanzó un acuerdo exacto del {f36['fiabilidad']['pae_pct']:.2f}% (18/21 historias idénticas, α = {f36['fiabilidad']['alpha']:.4f}), seguido de Gemma-4-31B-it ({fg['fiabilidad']['pae_pct']:.2f}%, α = {fg['fiabilidad']['alpha']:.4f}) y Gemini Flash 3.5 ({f35['fiabilidad']['pae_pct']:.2f}%, α = {f35['fiabilidad']['alpha']:.4f}).")
-    add_p(f"En validez diagnóstica global frente al Ground Truth (Tabla 1 y Figuras 1 y 2), Gemini Flash 3.6 lideró con un Micro-F1 de {f36['desempeno']['micro']['f1']:.4f} [IC 95%: {f36['ci_95']['micro'][0]:.4f}–{f36['ci_95']['micro'][1]:.4f}] y una Precisión Micro de {f36['desempeno']['micro']['p']:.4f}. Gemini Flash 3.5 alcanzó un Micro-F1 de {f35['desempeno']['micro']['f1']:.4f} (Precisión: {f35['desempeno']['micro']['p']:.4f}), mientras que el modelo local Gemma-4-31B-it demostró una destacada eficacia diagnóstica on-premise con un Micro-F1 de {fg['desempeno']['micro']['f1']:.4f} (Precisión: {fg['desempeno']['micro']['p']:.4f}). La tasa de falsos positivos (alucinaciones) fue extraordinariamente reducida ({f36['desempeno']['fp']} en Flash 3.6, {f35['desempeno']['fp']} en Flash 3.5 y {fg['desempeno']['fp']} en Gemma sobre 567 decisiones), garantizando una excelente seguridad clínica.")
+    add_p(f"La fiabilidad intra-modelo evidenció una elevada reproducibilidad en los tres modelos (Tabla 1): Gemini Flash 3.7 alcanzó un acuerdo exacto del {f37['fiabilidad']['pae_pct']:.2f}% (18/21 historias idénticas, α = {f37['fiabilidad']['alpha']:.4f}), seguido de Gemma-4-31B-it ({fg['fiabilidad']['pae_pct']:.2f}%, α = {fg['fiabilidad']['alpha']:.4f}) y Gemini Flash 3.5 ({f35['fiabilidad']['pae_pct']:.2f}%, α = {f35['fiabilidad']['alpha']:.4f}).")
+    add_p(f"En validez diagnóstica global frente al Ground Truth (Tabla 1 y Figuras 1 y 2), Gemini Flash 3.7 lideró con un Micro-F1 de {f37['desempeno']['micro']['f1']:.4f} [IC 95%: {f37['ci_95']['micro'][0]:.4f}–{f37['ci_95']['micro'][1]:.4f}] y una Precisión Micro de {f37['desempeno']['micro']['p']:.4f}. Gemini Flash 3.5 alcanzó un Micro-F1 de {f35['desempeno']['micro']['f1']:.4f} (Precisión: {f35['desempeno']['micro']['p']:.4f}), mientras que el modelo local Gemma-4-31B-it demostró una destacada eficacia diagnóstica on-premise con un Micro-F1 de {fg['desempeno']['micro']['f1']:.4f} (Precisión: {fg['desempeno']['micro']['p']:.4f}). La tasa de falsos positivos (alucinaciones) fue extraordinariamente reducida ({f37['desempeno']['fp']} en Flash 3.7, {f35['desempeno']['fp']} en Flash 3.5 y {fg['desempeno']['fp']} en Gemma sobre 567 decisiones), garantizando una excelente seguridad clínica.")
 
     # -------------------------------------------------------------
     # TABLA 1 (FORMATO EDITORIAL APA)
@@ -208,34 +208,34 @@ def construir_documento():
         ("Corpus Clínico Humano", "Promedio de códigos por historia", "5.62 ± 2.82", "5.62 ± 2.82", "5.62 ± 2.82"),
         ("Corpus Clínico Humano", "Criterio de consenso multi-iteración", "Consenso estricto (3/3)", "Consenso estricto (3/3)", "Consenso estricto (3/3)"),
         
-        ("Fiabilidad Intra-Modelo", "Porcentaje de Acuerdo Exacto (PAE, %)", f"{fg['fiabilidad']['pae_pct']:.2f}%", f"{f35['fiabilidad']['pae_pct']:.2f}%", f"{f36['fiabilidad']['pae_pct']:.2f}%"),
-        ("Fiabilidad Intra-Modelo", "Acuerdo Observado (Po, %)", f"{fg['fiabilidad']['Po']*100:.2f}%", f"{f35['fiabilidad']['Po']*100:.2f}%", f"{f36['fiabilidad']['Po']*100:.2f}%"),
-        ("Fiabilidad Intra-Modelo", "Coeficiente AC1 de Gwet", f"{fg['fiabilidad']['ac1']:.4f}", f"{f35['fiabilidad']['ac1']:.4f}", f"{f36['fiabilidad']['ac1']:.4f}"),
-        ("Fiabilidad Intra-Modelo", "Alfa (α) de Krippendorff", f"{fg['fiabilidad']['alpha']:.4f}", f"{f35['fiabilidad']['alpha']:.4f}", f"{f36['fiabilidad']['alpha']:.4f}"),
+        ("Fiabilidad Intra-Modelo", "Porcentaje de Acuerdo Exacto (PAE, %)", f"{fg['fiabilidad']['pae_pct']:.2f}%", f"{f35['fiabilidad']['pae_pct']:.2f}%", f"{f37['fiabilidad']['pae_pct']:.2f}%"),
+        ("Fiabilidad Intra-Modelo", "Acuerdo Observado (Po, %)", f"{fg['fiabilidad']['Po']*100:.2f}%", f"{f35['fiabilidad']['Po']*100:.2f}%", f"{f37['fiabilidad']['Po']*100:.2f}%"),
+        ("Fiabilidad Intra-Modelo", "Coeficiente AC1 de Gwet", f"{fg['fiabilidad']['ac1']:.4f}", f"{f35['fiabilidad']['ac1']:.4f}", f"{f37['fiabilidad']['ac1']:.4f}"),
+        ("Fiabilidad Intra-Modelo", "Alfa (α) de Krippendorff", f"{fg['fiabilidad']['alpha']:.4f}", f"{f35['fiabilidad']['alpha']:.4f}", f"{f37['fiabilidad']['alpha']:.4f}"),
         
-        ("Matriz de Confusión", "Verdaderos Positivos (TP)", str(fg['desempeno']['tp']), str(f35['desempeno']['tp']), str(f36['desempeno']['tp'])),
-        ("Matriz de Confusión", "Falsos Positivos / Alucinaciones (FP)", str(fg['desempeno']['fp']), str(f35['desempeno']['fp']), str(f36['desempeno']['fp'])),
-        ("Matriz de Confusión", "Falsos Negativos / Omisiones (FN)", str(fg['desempeno']['fn']), str(f35['desempeno']['fn']), str(f36['desempeno']['fn'])),
-        ("Matriz de Confusión", "Exact Match Ratio (EMR, %)", f"{fg['desempeno']['emr']:.2f}% ({fg['desempeno']['exact']}/21)", f"{f35['desempeno']['emr']:.2f}% ({f35['desempeno']['exact']}/21)", f"{f36['desempeno']['emr']:.2f}% ({f36['desempeno']['exact']}/21)"),
+        ("Matriz de Confusión", "Verdaderos Positivos (TP)", str(fg['desempeno']['tp']), str(f35['desempeno']['tp']), str(f37['desempeno']['tp'])),
+        ("Matriz de Confusión", "Falsos Positivos / Alucinaciones (FP)", str(fg['desempeno']['fp']), str(f35['desempeno']['fp']), str(f37['desempeno']['fp'])),
+        ("Matriz de Confusión", "Falsos Negativos / Omisiones (FN)", str(fg['desempeno']['fn']), str(f35['desempeno']['fn']), str(f37['desempeno']['fn'])),
+        ("Matriz de Confusión", "Exact Match Ratio (EMR, %)", f"{fg['desempeno']['emr']:.2f}% ({fg['desempeno']['exact']}/21)", f"{f35['desempeno']['emr']:.2f}% ({f35['desempeno']['exact']}/21)", f"{f37['desempeno']['emr']:.2f}% ({f37['desempeno']['exact']}/21)"),
         
-        ("Nivel Micro (Global)", "Precisión Micro", f"{fg['desempeno']['micro']['p']:.4f}", f"{f35['desempeno']['micro']['p']:.4f}", f"{f36['desempeno']['micro']['p']:.4f}"),
-        ("Nivel Micro (Global)", "Sensibilidad / Recall Micro", f"{fg['desempeno']['micro']['r']:.4f}", f"{f35['desempeno']['micro']['r']:.4f}", f"{f36['desempeno']['micro']['r']:.4f}"),
-        ("Nivel Micro (Global)", "Micro-F1 [IC 95% Bootstrap]", f"{fg['desempeno']['micro']['f1']:.4f} [{fg['ci_95']['micro'][0]:.4f}, {fg['ci_95']['micro'][1]:.4f}]", f"{f35['desempeno']['micro']['f1']:.4f} [{f35['ci_95']['micro'][0]:.4f}, {f35['ci_95']['micro'][1]:.4f}]", f"{f36['desempeno']['micro']['f1']:.4f} [{f36['ci_95']['micro'][0]:.4f}, {f36['ci_95']['micro'][1]:.4f}]"),
+        ("Nivel Micro (Global)", "Precisión Micro", f"{fg['desempeno']['micro']['p']:.4f}", f"{f35['desempeno']['micro']['p']:.4f}", f"{f37['desempeno']['micro']['p']:.4f}"),
+        ("Nivel Micro (Global)", "Sensibilidad / Recall Micro", f"{fg['desempeno']['micro']['r']:.4f}", f"{f35['desempeno']['micro']['r']:.4f}", f"{f37['desempeno']['micro']['r']:.4f}"),
+        ("Nivel Micro (Global)", "Micro-F1 [IC 95% Bootstrap]", f"{fg['desempeno']['micro']['f1']:.4f} [{fg['ci_95']['micro'][0]:.4f}, {fg['ci_95']['micro'][1]:.4f}]", f"{f35['desempeno']['micro']['f1']:.4f} [{f35['ci_95']['micro'][0]:.4f}, {f35['ci_95']['micro'][1]:.4f}]", f"{f37['desempeno']['micro']['f1']:.4f} [{f37['ci_95']['micro'][0]:.4f}, {f37['ci_95']['micro'][1]:.4f}]"),
         
-        ("Nivel Macro (Promedio)", "Precisión Macro", f"{fg['desempeno']['macro']['p']:.4f}", f"{f35['desempeno']['macro']['p']:.4f}", f"{f36['desempeno']['macro']['p']:.4f}"),
-        ("Nivel Macro (Promedio)", "Sensibilidad / Recall Macro", f"{fg['desempeno']['macro']['r']:.4f}", f"{f35['desempeno']['macro']['r']:.4f}", f"{f36['desempeno']['macro']['r']:.4f}"),
-        ("Nivel Macro (Promedio)", "Macro-F1 [IC 95% Bootstrap]", f"{fg['desempeno']['macro']['f1']:.4f} [{fg['ci_95']['macro'][0]:.4f}, {fg['ci_95']['macro'][1]:.4f}]", f"{f35['desempeno']['macro']['f1']:.4f} [{f35['ci_95']['macro'][0]:.4f}, {f35['ci_95']['macro'][1]:.4f}]", f"{f36['desempeno']['macro']['f1']:.4f} [{f36['ci_95']['macro'][0]:.4f}, {f36['ci_95']['macro'][1]:.4f}]"),
+        ("Nivel Macro (Promedio)", "Precisión Macro", f"{fg['desempeno']['macro']['p']:.4f}", f"{f35['desempeno']['macro']['p']:.4f}", f"{f37['desempeno']['macro']['p']:.4f}"),
+        ("Nivel Macro (Promedio)", "Sensibilidad / Recall Macro", f"{fg['desempeno']['macro']['r']:.4f}", f"{f35['desempeno']['macro']['r']:.4f}", f"{f37['desempeno']['macro']['r']:.4f}"),
+        ("Nivel Macro (Promedio)", "Macro-F1 [IC 95% Bootstrap]", f"{fg['desempeno']['macro']['f1']:.4f} [{fg['ci_95']['macro'][0]:.4f}, {fg['ci_95']['macro'][1]:.4f}]", f"{f35['desempeno']['macro']['f1']:.4f} [{f35['ci_95']['macro'][0]:.4f}, {f35['ci_95']['macro'][1]:.4f}]", f"{f37['desempeno']['macro']['f1']:.4f} [{f37['ci_95']['macro'][0]:.4f}, {f37['ci_95']['macro'][1]:.4f}]"),
         
-        ("Nivel Weighted (Ponderado)", "Precisión Weighted", f"{fg['desempeno']['weighted']['p']:.4f}", f"{f35['desempeno']['weighted']['p']:.4f}", f"{f36['desempeno']['weighted']['p']:.4f}"),
-        ("Nivel Weighted (Ponderado)", "Sensibilidad / Recall Weighted", f"{fg['desempeno']['weighted']['r']:.4f}", f"{f35['desempeno']['weighted']['r']:.4f}", f"{f36['desempeno']['weighted']['r']:.4f}"),
-        ("Nivel Weighted (Ponderado)", "Weighted-F1 [IC 95% Bootstrap]", f"{fg['desempeno']['weighted']['f1']:.4f} [{fg['ci_95']['weighted'][0]:.4f}, {fg['ci_95']['weighted'][1]:.4f}]", f"{f35['desempeno']['weighted']['f1']:.4f} [{f35['ci_95']['weighted'][0]:.4f}, {f35['ci_95']['weighted'][1]:.4f}]", f"{f36['desempeno']['weighted']['f1']:.4f} [{f36['ci_95']['weighted'][0]:.4f}, {f36['ci_95']['weighted'][1]:.4f}]")
+        ("Nivel Weighted (Ponderado)", "Precisión Weighted", f"{fg['desempeno']['weighted']['p']:.4f}", f"{f35['desempeno']['weighted']['p']:.4f}", f"{f37['desempeno']['weighted']['p']:.4f}"),
+        ("Nivel Weighted (Ponderado)", "Sensibilidad / Recall Weighted", f"{fg['desempeno']['weighted']['r']:.4f}", f"{f35['desempeno']['weighted']['r']:.4f}", f"{f37['desempeno']['weighted']['r']:.4f}"),
+        ("Nivel Weighted (Ponderado)", "Weighted-F1 [IC 95% Bootstrap]", f"{fg['desempeno']['weighted']['f1']:.4f} [{fg['ci_95']['weighted'][0]:.4f}, {fg['ci_95']['weighted'][1]:.4f}]", f"{f35['desempeno']['weighted']['f1']:.4f} [{f35['ci_95']['weighted'][0]:.4f}, {f35['ci_95']['weighted'][1]:.4f}]", f"{f37['desempeno']['weighted']['f1']:.4f} [{f37['ci_95']['weighted'][0]:.4f}, {f37['ci_95']['weighted'][1]:.4f}]")
     ]
     
     t1 = doc.add_table(rows=len(filas_t1) + 1, cols=5)
     t1.alignment = WD_TABLE_ALIGNMENT.CENTER
     aplicar_bordes_apa(t1)
     
-    headers_t1 = ["Dimensión", "Métrica / Parámetro", "Gemma-4-31B-it (Local)", "Gemini Flash 3.5 (Cloud)", "Gemini Flash 3.6 (Cloud)"]
+    headers_t1 = ["Dimensión", "Métrica / Parámetro", "Gemma-4-31B-it", "Gemini Flash 3.5", "Gemini Flash 3.7"]
     anchos_t1 = [1.4, 1.6, 1.3, 1.3, 1.3]
     for j, h in enumerate(headers_t1):
         cell = t1.cell(0, j)
@@ -276,7 +276,7 @@ def construir_documento():
     if (FIG_DIR / '01_comparativa_global_f1_human.png').exists():
         doc.add_picture(str(FIG_DIR / '01_comparativa_global_f1_human.png'), width=Inches(5.8))
         doc.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
-    add_table_note("Micro-F1, Macro-F1, Weighted-F1 y EMR entre Gemma-4-31B-it, Gemini Flash 3.5 y Gemini Flash 3.6.")
+    add_table_note("Micro-F1, Macro-F1, Weighted-F1 y EMR entre Gemma-4-31B-it, Gemini Flash 3.5 y Gemini Flash 3.7.")
 
     add_caption("Figura 2. Desglose pareado de Precisión, Sensibilidad (Recall) y F1-Score en los niveles Micro y Weighted")
     if (FIG_DIR / '02_precision_recall_f1_pareado_human.png').exists():
@@ -288,7 +288,7 @@ def construir_documento():
     # 2.2. DESEMPEÑO POR COMPONENTES
     # -------------------------------------------------------------
     add_heading("2.2. Desempeño por Componentes CIF y Auditoría por Categoría", level=2)
-    add_p(f"Por componentes ontológicos (Tabla 2 y Figura 4), el mayor rendimiento se obtuvo en Funciones Corporales (b, F1 de {fg['desempeno']['por_componente']['b']['micro_f1']:.2f} en Gemma, {f35['desempeno']['por_componente']['b']['micro_f1']:.2f} en Flash 3.5 y {f36['desempeno']['por_componente']['b']['micro_f1']:.2f} en Flash 3.6), destacando b280 («Dolor», F1 = 1.00) y b134 («Sueño», F1 = 1.00). En Actividades y Participación (d), el F1 osciló entre {fg['desempeno']['por_componente']['d']['micro_f1']:.2f} y {f36['desempeno']['por_componente']['d']['micro_f1']:.2f} (d450 «Andar»: F1 0.87–0.91; d640 «Quehaceres»: F1 0.86–0.93). En Factores Ambientales (e), el F1 se situó entre {fg['desempeno']['por_componente']['e']['micro_f1']:.2f} y {f35['desempeno']['por_componente']['e']['micro_f1']:.2f}, con precisión del 100% en medicamentos (e1101, F1 0.83–0.92).")
+    add_p(f"Por componentes ontológicos (Tabla 2 y Figura 4), el mayor rendimiento se obtuvo en Funciones Corporales (b, F1 de {fg['desempeno']['por_componente']['b']['micro_f1']:.2f} en Gemma, {f35['desempeno']['por_componente']['b']['micro_f1']:.2f} en Flash 3.5 y {f37['desempeno']['por_componente']['b']['micro_f1']:.2f} en Flash 3.7), destacando b280 («Dolor», F1 = 1.00) y b134 («Sueño», F1 = 1.00). En Actividades y Participación (d), el F1 osciló entre {fg['desempeno']['por_componente']['d']['micro_f1']:.2f} y {f37['desempeno']['por_componente']['d']['micro_f1']:.2f} (d450 «Andar»: F1 0.87–0.91; d640 «Quehaceres»: F1 0.86–0.93). En Factores Ambientales (e), el F1 se situó entre {fg['desempeno']['por_componente']['e']['micro_f1']:.2f} y {f35['desempeno']['por_componente']['e']['micro_f1']:.2f}, con precisión del 100% en medicamentos (e1101, F1 0.83–0.92).")
 
     # -------------------------------------------------------------
     # TABLA 2: AUDITORÍA PER CLASS (FORMATO LIMPIO APA)
@@ -306,7 +306,7 @@ def construir_documento():
     t2.alignment = WD_TABLE_ALIGNMENT.CENTER
     aplicar_bordes_apa(t2)
     
-    headers_t2 = ["Componente CIF", "Código", "Categoría CIF", "Soporte Real", "Gemma 31B (F1)", "Flash 3.5 (F1)", "Flash 3.6 (F1)"]
+    headers_t2 = ["Componente CIF", "Código", "Categoría CIF", "Soporte Real", "Gemma 31B (F1)", "Flash 3.5 (F1)", "Flash 3.7 (F1)"]
     anchos_t2 = [1.5, 0.65, 2.3, 0.65, 0.85, 0.85, 0.85]
     for j, h in enumerate(headers_t2):
         cell = t2.cell(0, j)
@@ -371,18 +371,18 @@ def construir_documento():
     add_heading("2.3. Análisis de Generalización: Corpus Sintético vs Fisioterapeutas", level=2)
     
     s35 = next(item for item in datos_sintetico if item['modelo_id'] == 'gemini_flash_35')
-    s36 = next(item for item in datos_sintetico if item['modelo_id'] == 'gemini_flash_36')
+    s37 = next(item for item in datos_sintetico if item['modelo_id'] == 'gemini_flash_37')
     sg  = next(item for item in datos_sintetico if item['modelo_id'] == 'gemma_31b')
     
     ret_f35_f1 = (f35['desempeno']['micro']['f1'] / s35['metricas']['micro']['f1']) * 100
-    ret_f36_f1 = (f36['desempeno']['micro']['f1'] / s36['metricas']['micro']['f1']) * 100
+    ret_f37_f1 = (f37['desempeno']['micro']['f1'] / s37['metricas']['micro']['f1']) * 100
     ret_g_f1   = (fg['desempeno']['micro']['f1'] / sg['metricas']['micro']['f1']) * 100
     
     ret_f35_p = (f35['desempeno']['micro']['p'] / s35['metricas']['micro']['precision']) * 100
-    ret_f36_p = (f36['desempeno']['micro']['p'] / s36['metricas']['micro']['precision']) * 100
+    ret_f37_p = (f37['desempeno']['micro']['p'] / s37['metricas']['micro']['precision']) * 100
     ret_g_p   = (fg['desempeno']['micro']['p'] / sg['metricas']['micro']['precision']) * 100
 
-    add_p(f"La comparación entre el rendimiento sintético (N = 114) y el corpus de fisioterapeutas (N = 21) demuestra una alta tasa de retención (Tabla 3 y Figura 5): Gemini Flash 3.6 retuvo el {ret_f36_f1:.1f}% de su Micro-F1 ({f36['desempeno']['micro']['f1']:.4f} vs {s36['metricas']['micro']['f1']:.4f}) y el {ret_f36_p:.1f}% de su Precisión ({f36['desempeno']['micro']['p']:.4f} vs {s36['metricas']['micro']['precision']:.4f}). Gemini Flash 3.5 retuvo el {ret_f35_f1:.1f}% de su Micro-F1 y el {ret_f35_p:.1f}% de su Precisión. Gemma-4-31B-it retuvo el {ret_g_f1:.1f}% de su Micro-F1 y el {ret_g_p:.1f}% de su Precisión. La reducción en EMR se explica por la alta densidad diagnóstica de las historias reales, donde la omisión de un único código anula el acierto estricto del caso completo.")
+    add_p(f"La comparación entre el rendimiento sintético (N = 114) y el corpus de fisioterapeutas (N = 21) demuestra una alta tasa de retención (Tabla 3 y Figura 5): Gemini Flash 3.7 retuvo el {ret_f37_f1:.1f}% de su Micro-F1 ({f37['desempeno']['micro']['f1']:.4f} vs {s37['metricas']['micro']['f1']:.4f}) y el {ret_f37_p:.1f}% de su Precisión ({f37['desempeno']['micro']['p']:.4f} vs {s37['metricas']['micro']['precision']:.4f}). Gemini Flash 3.5 retuvo el {ret_f35_f1:.1f}% de su Micro-F1 y el {ret_f35_p:.1f}% de su Precisión. Gemma-4-31B-it retuvo el {ret_g_f1:.1f}% de su Micro-F1 y el {ret_g_p:.1f}% de su Precisión. La reducción en EMR se explica por la alta densidad diagnóstica de las historias reales, donde la omisión de un único código anula el acierto estricto del caso completo.")
 
     # -------------------------------------------------------------
     # TABLA 3: COMPARATIVA SINTÉTICO VS HUMANO (FORMATO APA)
@@ -390,22 +390,22 @@ def construir_documento():
     add_caption("Tabla 3. Comparativa de generalización del pipeline: Rendimiento ante corpus sintético (N = 114) versus corpus de fisioterapeutas (N = 21)")
     
     filas_t3 = [
-        ("Exact Match Ratio (EMR, %)", f"{sg['metricas']['emr_pct']:.2f}%", f"{fg['desempeno']['emr']:.2f}%", f"{(fg['desempeno']['emr']/sg['metricas']['emr_pct'])*100:.1f}%", f"{s35['metricas']['emr_pct']:.2f}%", f"{f35['desempeno']['emr']:.2f}%", f"{(f35['desempeno']['emr']/s35['metricas']['emr_pct'])*100:.1f}%", f"{s36['metricas']['emr_pct']:.2f}%", f"{f36['desempeno']['emr']:.2f}%", f"{(f36['desempeno']['emr']/s36['metricas']['emr_pct'])*100:.1f}%"),
-        ("Precisión Micro", f"{sg['metricas']['micro']['precision']:.4f}", f"{fg['desempeno']['micro']['p']:.4f}", f"{ret_g_p:.1f}%", f"{s35['metricas']['micro']['precision']:.4f}", f"{f35['desempeno']['micro']['p']:.4f}", f"{ret_f35_p:.1f}%", f"{s36['metricas']['micro']['precision']:.4f}", f"{f36['desempeno']['micro']['p']:.4f}", f"{ret_f36_p:.1f}%"),
-        ("Sensibilidad / Recall Micro", f"{sg['metricas']['micro']['recall']:.4f}", f"{fg['desempeno']['micro']['r']:.4f}", f"{(fg['desempeno']['micro']['r']/sg['metricas']['micro']['recall'])*100:.1f}%", f"{s35['metricas']['micro']['recall']:.4f}", f"{f35['desempeno']['micro']['r']:.4f}", f"{(f35['desempeno']['micro']['r']/s35['metricas']['micro']['recall'])*100:.1f}%", f"{s36['metricas']['micro']['recall']:.4f}", f"{f36['desempeno']['micro']['r']:.4f}", f"{(f36['desempeno']['micro']['r']/s36['metricas']['micro']['recall'])*100:.1f}%"),
-        ("Micro-F1", f"{sg['metricas']['micro']['f1']:.4f}", f"{fg['desempeno']['micro']['f1']:.4f}", f"{ret_g_f1:.1f}%", f"{s35['metricas']['micro']['f1']:.4f}", f"{f35['desempeno']['micro']['f1']:.4f}", f"{ret_f35_f1:.1f}%", f"{s36['metricas']['micro']['f1']:.4f}", f"{f36['desempeno']['micro']['f1']:.4f}", f"{ret_f36_f1:.1f}%"),
-        ("Macro-F1", f"{sg['metricas']['macro']['f1']:.4f}", f"{fg['desempeno']['macro']['f1']:.4f}", f"{(fg['desempeno']['macro']['f1']/sg['metricas']['macro']['f1'])*100:.1f}%", f"{s35['metricas']['macro']['f1']:.4f}", f"{f35['desempeno']['macro']['f1']:.4f}", f"{(f35['desempeno']['macro']['f1']/s35['metricas']['macro']['f1'])*100:.1f}%", f"{s36['metricas']['macro']['f1']:.4f}", f"{f36['desempeno']['macro']['f1']:.4f}", f"{(f36['desempeno']['macro']['f1']/s36['metricas']['macro']['f1'])*100:.1f}%"),
-        ("Weighted-F1", f"{sg['metricas']['weighted']['f1']:.4f}", f"{fg['desempeno']['weighted']['f1']:.4f}", f"{(fg['desempeno']['weighted']['f1']/sg['metricas']['weighted']['f1'])*100:.1f}%", f"{s35['metricas']['weighted']['f1']:.4f}", f"{f35['desempeno']['weighted']['f1']:.4f}", f"{(f35['desempeno']['weighted']['f1']/s35['metricas']['weighted']['f1'])*100:.1f}%", f"{s36['metricas']['weighted']['f1']:.4f}", f"{f36['desempeno']['weighted']['f1']:.4f}", f"{(f36['desempeno']['weighted']['f1']/s36['metricas']['weighted']['f1'])*100:.1f}%"),
-        ("Acuerdo Exacto (PAE, %)", "98.25%", f"{fg['fiabilidad']['pae_pct']:.2f}%", f"{(fg['fiabilidad']['pae_pct']/98.25)*100:.1f}%", "98.25%", f"{f35['fiabilidad']['pae_pct']:.2f}%", f"{(f35['fiabilidad']['pae_pct']/98.25)*100:.1f}%", "100.00%", f"{f36['fiabilidad']['pae_pct']:.2f}%", f"{(f36['fiabilidad']['pae_pct']/100.0)*100:.1f}%"),
-        ("Coeficiente AC1 de Gwet", "0.9994", f"{fg['fiabilidad']['ac1']:.4f}", f"{(fg['fiabilidad']['ac1']/0.9994)*100:.1f}%", "0.9994", f"{f35['fiabilidad']['ac1']:.4f}", f"{(f35['fiabilidad']['ac1']/0.9994)*100:.1f}%", "1.0000", f"{f36['fiabilidad']['ac1']:.4f}", f"{(f36['fiabilidad']['ac1']/1.0)*100:.1f}%"),
-        ("Alfa de Krippendorff", "0.9983", f"{fg['fiabilidad']['alpha']:.4f}", f"{(fg['fiabilidad']['alpha']/0.9983)*100:.1f}%", "0.9983", f"{f35['fiabilidad']['alpha']:.4f}", f"{(f35['fiabilidad']['alpha']/0.9983)*100:.1f}%", "1.0000", f"{f36['fiabilidad']['alpha']:.4f}", f"{(f36['fiabilidad']['alpha']/1.0)*100:.1f}%")
+        ("Exact Match Ratio (EMR, %)", f"{sg['metricas']['emr_pct']:.2f}%", f"{fg['desempeno']['emr']:.2f}%", f"{(fg['desempeno']['emr']/sg['metricas']['emr_pct'])*100:.1f}%", f"{s35['metricas']['emr_pct']:.2f}%", f"{f35['desempeno']['emr']:.2f}%", f"{(f35['desempeno']['emr']/s35['metricas']['emr_pct'])*100:.1f}%", f"{s37['metricas']['emr_pct']:.2f}%", f"{f37['desempeno']['emr']:.2f}%", f"{(f37['desempeno']['emr']/s37['metricas']['emr_pct'])*100:.1f}%"),
+        ("Precisión Micro", f"{sg['metricas']['micro']['precision']:.4f}", f"{fg['desempeno']['micro']['p']:.4f}", f"{ret_g_p:.1f}%", f"{s35['metricas']['micro']['precision']:.4f}", f"{f35['desempeno']['micro']['p']:.4f}", f"{ret_f35_p:.1f}%", f"{s37['metricas']['micro']['precision']:.4f}", f"{f37['desempeno']['micro']['p']:.4f}", f"{ret_f37_p:.1f}%"),
+        ("Sensibilidad / Recall Micro", f"{sg['metricas']['micro']['recall']:.4f}", f"{fg['desempeno']['micro']['r']:.4f}", f"{(fg['desempeno']['micro']['r']/sg['metricas']['micro']['recall'])*100:.1f}%", f"{s35['metricas']['micro']['recall']:.4f}", f"{f35['desempeno']['micro']['r']:.4f}", f"{(f35['desempeno']['micro']['r']/s35['metricas']['micro']['recall'])*100:.1f}%", f"{s37['metricas']['micro']['recall']:.4f}", f"{f37['desempeno']['micro']['r']:.4f}", f"{(f37['desempeno']['micro']['r']/s37['metricas']['micro']['recall'])*100:.1f}%"),
+        ("Micro-F1", f"{sg['metricas']['micro']['f1']:.4f}", f"{fg['desempeno']['micro']['f1']:.4f}", f"{ret_g_f1:.1f}%", f"{s35['metricas']['micro']['f1']:.4f}", f"{f35['desempeno']['micro']['f1']:.4f}", f"{ret_f35_f1:.1f}%", f"{s37['metricas']['micro']['f1']:.4f}", f"{f37['desempeno']['micro']['f1']:.4f}", f"{ret_f37_f1:.1f}%"),
+        ("Macro-F1", f"{sg['metricas']['macro']['f1']:.4f}", f"{fg['desempeno']['macro']['f1']:.4f}", f"{(fg['desempeno']['macro']['f1']/sg['metricas']['macro']['f1'])*100:.1f}%", f"{s35['metricas']['macro']['f1']:.4f}", f"{f35['desempeno']['macro']['f1']:.4f}", f"{(f35['desempeno']['macro']['f1']/s35['metricas']['macro']['f1'])*100:.1f}%", f"{s37['metricas']['macro']['f1']:.4f}", f"{f37['desempeno']['macro']['f1']:.4f}", f"{(f37['desempeno']['macro']['f1']/s37['metricas']['macro']['f1'])*100:.1f}%"),
+        ("Weighted-F1", f"{sg['metricas']['weighted']['f1']:.4f}", f"{fg['desempeno']['weighted']['f1']:.4f}", f"{(fg['desempeno']['weighted']['f1']/sg['metricas']['weighted']['f1'])*100:.1f}%", f"{s35['metricas']['weighted']['f1']:.4f}", f"{f35['desempeno']['weighted']['f1']:.4f}", f"{(f35['desempeno']['weighted']['f1']/s35['metricas']['weighted']['f1'])*100:.1f}%", f"{s37['metricas']['weighted']['f1']:.4f}", f"{f37['desempeno']['weighted']['f1']:.4f}", f"{(f37['desempeno']['weighted']['f1']/s37['metricas']['weighted']['f1'])*100:.1f}%"),
+        ("Acuerdo Exacto (PAE, %)", "98.25%", f"{fg['fiabilidad']['pae_pct']:.2f}%", f"{(fg['fiabilidad']['pae_pct']/98.25)*100:.1f}%", "98.25%", f"{f35['fiabilidad']['pae_pct']:.2f}%", f"{(f35['fiabilidad']['pae_pct']/98.25)*100:.1f}%", "100.00%", f"{f37['fiabilidad']['pae_pct']:.2f}%", f"{(f37['fiabilidad']['pae_pct']/100.0)*100:.1f}%"),
+        ("Coeficiente AC1 de Gwet", "0.9994", f"{fg['fiabilidad']['ac1']:.4f}", f"{(fg['fiabilidad']['ac1']/0.9994)*100:.1f}%", "0.9994", f"{f35['fiabilidad']['ac1']:.4f}", f"{(f35['fiabilidad']['ac1']/0.9994)*100:.1f}%", "1.0000", f"{f37['fiabilidad']['ac1']:.4f}", f"{(f37['fiabilidad']['ac1']/1.0)*100:.1f}%"),
+        ("Alfa de Krippendorff", "0.9983", f"{fg['fiabilidad']['alpha']:.4f}", f"{(fg['fiabilidad']['alpha']/0.9983)*100:.1f}%", "0.9983", f"{f35['fiabilidad']['alpha']:.4f}", f"{(f35['fiabilidad']['alpha']/0.9983)*100:.1f}%", "1.0000", f"{f37['fiabilidad']['alpha']:.4f}", f"{(f37['fiabilidad']['alpha']/1.0)*100:.1f}%")
     ]
     
     t3 = doc.add_table(rows=len(filas_t3) + 1, cols=10)
     t3.alignment = WD_TABLE_ALIGNMENT.CENTER
     aplicar_bordes_apa(t3)
     
-    headers_t3 = ["Métrica Diagnóstica y Fiabilidad", "Gemma (Sint.)", "Gemma (Hum.)", "Ret.(%)", "Flash 3.5 (Sint.)", "Flash 3.5 (Hum.)", "Ret.(%)", "Flash 3.6 (Sint.)", "Flash 3.6 (Hum.)", "Ret.(%)"]
+    headers_t3 = ["Métrica Diagnóstica y Fiabilidad", "Gemma (Sint.)", "Gemma (Hum.)", "Ret.(%)", "Flash 3.5 (Sint.)", "Flash 3.5 (Hum.)", "Ret.(%)", "Flash 3.7 (Sint.)", "Flash 3.7 (Hum.)", "Ret.(%)"]
     anchos_t3 = [1.7, 0.55, 0.55, 0.48, 0.55, 0.55, 0.48, 0.55, 0.55, 0.48]
     for j, h in enumerate(headers_t3):
         cell = t3.cell(0, j)
@@ -446,7 +446,7 @@ def construir_documento():
     # SECCIÓN 3: DISCUSIÓN Y CONCLUSIONES (BREVE)
     # -------------------------------------------------------------
     add_heading("3. Discusión y Conclusiones de la Validación Humana", level=1)
-    add_p("1. Validez Ecológica: La preservación de un Micro-F1 de 0.82 en Flash 3.6 (0.81 en Flash 3.5 y 0.77 en Gemma) y precisiones del 82%–92.5% demuestra que el flujo en n8n transfiere eficazmente al lenguaje médico no estructurado real sin sobreajustar al generador sintético.")
+    add_p("1. Validez Ecológica: La preservación de un Micro-F1 de 0.82 en Flash 3.7 (0.81 en Flash 3.5 y 0.77 en Gemma) y precisiones del 82%–92.5% demuestra que el flujo en n8n transfiere eficazmente al lenguaje médico no estructurado real sin sobreajustar al generador sintético.")
     add_p("2. Seguridad Asistencial y Privacidad (RGPD): La baja tasa de falsos positivos (solo 7–19 en 567 decisiones) garantiza que el sistema es seguro y no inventa discapacidades. Asimismo, el sólido rendimiento de Gemma-4-31B-it valida la viabilidad técnica de implementar este pipeline en servidores locales hospitalarios, asegurando la soberanía de los datos clínicos y el cumplimiento de la privacidad sin depender de APIs en la nube.")
     add_p("3. Recomendación de Despliegue: Para maximizar la sensibilidad en historias clínicas largas con alta comorbilidad, se recomienda evaluar en producción el consenso por Voto Mayoritario (≥ 2/3), aumentando el Recall con una mínima pérdida de precisión.")
     

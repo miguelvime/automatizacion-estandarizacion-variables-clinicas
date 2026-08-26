@@ -39,21 +39,21 @@ for d in [TFL_DIR, DIR_TABLAS, DIR_FIGURAS, DIR_LISTADOS]:
 MODELOS = [
     {
         "id": "gemma_local",
-        "nombre": "Gemma-4-31B-it (Local)",
+        "nombre": "Gemma-4-31B-it",
         "tipo": "Local (On-Premise)",
-        "archivo": LLM_DIR / "2026-08-11_gemma-4-31b-it-codified.json"
+        "archivo": LLM_DIR / "2026-08-25_gemma_codified.json"
     },
     {
         "id": "gemini_35_cloud",
         "nombre": "Gemini Flash 3.5 (Cloud - Línea Base)",
         "tipo": "Cloud (API)",
-        "archivo": LLM_DIR / "2026-08-18_gemini-flash-3.5_codified.json"
+        "archivo": LLM_DIR / "2026-08-25-flash-3.5-codified.json"
     },
     {
         "id": "gemini_36_cloud",
-        "nombre": "Gemini Flash 3.6 (Cloud)",
+        "nombre": "Gemini Flash 3.7",
         "tipo": "Cloud (API)",
-        "archivo": LLM_DIR / "2026-08-18_gemini-flash-3.6_codified.json"
+        "archivo": LLM_DIR / "2026-08-25-3.7-flash-codified.json"
     }
 ]
 
@@ -249,7 +249,7 @@ def generar_figuras(resultados):
     # -------------------------------------------------------------
     fig, ax = plt.subplots(figsize=(8.5, 4.8), dpi=300)
     
-    nombres_cortos = ["Gemma-4-31B (Local)", "Gemini Flash 3.5 (Cloud)", "Gemini Flash 3.6 (Cloud)"]
+    nombres_cortos = ["Gemma-4-31B-it", "Gemini Flash 3.5", "Gemini Flash 3.7"]
     x = np.arange(len(nombres_cortos))
     width = 0.20
 
@@ -277,7 +277,7 @@ def generar_figuras(resultados):
     def autolabel(rects, is_alpha=False):
         for rect in rects:
             height = rect.get_height()
-            txt = f"{height:.2f}%" if not is_alpha else f"{height/100:.4f}"
+            txt = f"{height:.2f}%" if not is_alpha else f"{height/100:.2f}"
             ax.annotate(f"{height:.2f}",
                         xy=(rect.get_x() + rect.get_width() / 2, height),
                         xytext=(0, 3),  
@@ -295,7 +295,7 @@ def generar_figuras(resultados):
     plt.close(fig)
 
     # -------------------------------------------------------------
-    # FIGURA 2: Desglose del Espacio de Decisiones Binarias (3.078 U.)
+    # FIGURA 2: Desglose del Espacio de Decisiones Binarias (2.736 U.)
     # -------------------------------------------------------------
     fig, ax = plt.subplots(figsize=(8.0, 4.2), dpi=300)
     
@@ -314,7 +314,7 @@ def generar_figuras(resultados):
     ax.set_yticks(y_pos)
     ax.set_yticklabels(nombres_cortos, fontweight='bold')
     ax.set_xlabel('Distribución Porcentual en Matriz Ontológica Completa (%)', fontweight='bold')
-#     ax.set_title('Composición del Espacio de Decisiones Binarias (114 historias × 27 códigos CIF = 3.078)', fontsize=11, fontweight='bold', pad=12)
+#     ax.set_title('Composición del Espacio de Decisiones Binarias (114 historias × 24 códigos CIF = 2.736)', fontsize=11, fontweight='bold', pad=12)
     ax.set_xlim(0, 100.5)
     ax.legend(loc='lower center', bbox_to_anchor=(0.5, -0.28), ncol=3, frameon=True, fontsize=8.5)
 
@@ -438,7 +438,7 @@ def generar_tablas_y_documentos(resultados, codigos_cif):
     p_desc = doc.add_paragraph()
     p_desc.add_run(
         "A continuación se presentan las tablas estadísticas con formato estándar para publicación académica / inclusión directa en Microsoft Word. "
-        "Las tablas han sido calculadas sobre el corpus de 114 historias clínicas y el espacio ontológico de 27 códigos CIF del Core Set de Dolor Crónico Generalizado (3.078 decisiones binarias por modelo, K = 3 iteraciones independientes)."
+        "Las tablas han sido calculadas sobre el corpus de 114 historias clínicas y el espacio ontológico de 24 códigos CIF del Core Set de Dolor Crónico Generalizado (2.736 decisiones binarias por modelo, K = 3 iteraciones independientes)."
     )
     p_desc.paragraph_format.space_after = Pt(14)
 
@@ -462,7 +462,7 @@ def generar_tablas_y_documentos(resultados, codigos_cif):
     p_t1_note = doc.add_paragraph()
     p_t1_note.paragraph_format.space_before = Pt(4)
     p_t1_note.paragraph_format.space_after = Pt(16)
-    r_note1 = p_t1_note.add_run("Nota: EMR = Exact Match Ratio a nivel paciente (conjunto idéntico de códigos en las 3 iteraciones); Po = Porcentaje de acuerdo observado sobre 3.078 decisiones binarias; Gwet's AC1 = Coeficiente de concordancia inter-evaluador corregido por azar y robusto al desbalanceo; Krippendorff α = Coeficiente nominal de reproducibilidad multievaluador.")
+    r_note1 = p_t1_note.add_run("Nota: EMR = Exact Match Ratio a nivel paciente (conjunto idéntico de códigos en las 3 iteraciones); Po = Porcentaje de acuerdo observado sobre 2.736 decisiones binarias; Gwet's AC1 = Coeficiente de concordancia inter-evaluador corregido por azar y robusto al desbalanceo; Krippendorff α = Coeficiente nominal de reproducibilidad multievaluador.")
     r_note1.font.size = Pt(8)
     r_note1.font.italic = True
     r_note1.font.color.rgb = RGBColor(100, 116, 139)
@@ -471,7 +471,7 @@ def generar_tablas_y_documentos(resultados, codigos_cif):
     p_t2_title = doc.add_paragraph()
     r_t2_tag = p_t2_title.add_run("Tabla 2. ")
     r_t2_tag.bold = True
-    r_t2_title = p_t2_title.add_run("Desglose del espacio de decisiones binarias ontológicas (114 historias × 27 códigos = 3.078 unidades).")
+    r_t2_title = p_t2_title.add_run("Desglose del espacio de decisiones binarias ontológicas (114 historias × 24 códigos = 2.736 unidades).")
     p_t2_title.paragraph_format.space_after = Pt(6)
 
     t2_word = doc.add_table(rows=len(datos_t2)+1, cols=len(df_t2.columns))
@@ -548,7 +548,7 @@ def main():
             f.write(f"| **{r['nombre']}** | {r['tipo']} | {r['historias']} | {r['emr_acuerdos']}/{r['historias']} ({r['emr_pct']:.2f}%) | {r['Po_pct']:.4f}% | {r['Gwet_AC1']:.4f} | {r['Krippendorff_Alpha']:.4f} |\n")
         f.write("\n> **Interpretación metodológica:** Un valor de $\\alpha > 0.80$ y $AC1 > 0.80$ denota acuerdo casi perfecto (Landis & Koch / Krippendorff). Tanto el despliegue local (Gemma) como en la nube (Gemini Flash) demuestran determinismo operativo virtualmente perfecto ($>0.998$).\n\n")
 
-        f.write("## 2. Tabla 2: Desglose del Espacio de Decisiones Binarias (3.078 Unidades Ontológicas)\n\n")
+        f.write("## 2. Tabla 2: Desglose del Espacio de Decisiones Binarias (2.736 Unidades Ontológicas)\n\n")
         f.write("| Modelo LLM | Unidades Totales | Asignación Unánime SÍ [1,1,1] | Abstención Unánime NO [0,0,0] | Discrepancias (<3/3) | Determinismo Paciente |\n")
         f.write("| :--- | :---: | :---: | :---: | :---: | :---: |\n")
         for r in resultados:

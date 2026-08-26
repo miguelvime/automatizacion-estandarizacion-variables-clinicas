@@ -13,32 +13,29 @@ EXACTAMENTE el mismo conjunto de códigos CIF.
 Criterio estricto:
 - Acuerdo (1): Las 3 iteraciones tienen los mismos códigos, sin faltar ni sobrar ninguno.
 - No acuerdo (0): Si en alguna iteración falta un código, sobra un código o cambia uno.
-
-Archivos analizados:
-- Gemma-4-31B-it: 2026-08-11_gemma-4-31b-it-codified.json
-- Gemini Flash 3.5: 2026-08-18_gemini-flash-3.5_codified.json
-- Gemini Flash 3.6: 2026-08-18_gemini-flash-3.6_codified.json
 """
 
 import json
 from pathlib import Path
 
-# 1. Rutas a los 3 archivos
 BASE_DIR = Path(__file__).resolve().parents[2]
 LLM_DIR = BASE_DIR / "results" / "llm_text"
 
 MODELOS = [
     {
+        "id": "gemma_31b",
         "nombre": "Gemma-4-31B-it",
-        "archivo": LLM_DIR / "2026-08-11_gemma-4-31b-it-codified.json"
+        "archivo": LLM_DIR / "2026-08-25_gemma_codified.json"
     },
     {
+        "id": "gemini_flash_35",
         "nombre": "Gemini Flash 3.5",
-        "archivo": LLM_DIR / "2026-08-18_gemini-flash-3.5_codified.json"
+        "archivo": LLM_DIR / "2026-08-25-flash-3.5-codified.json"
     },
     {
-        "nombre": "Gemini Flash 3.6",
-        "archivo": LLM_DIR / "2026-08-18_gemini-flash-3.6_codified.json"
+        "id": "gemini_flash_37",
+        "nombre": "Gemini Flash 3.7",
+        "archivo": LLM_DIR / "2026-08-25-3.7-flash-codified.json"
     }
 ]
 
@@ -53,12 +50,10 @@ def calcular_acuerdo_modelo(ruta_archivo: Path, nombre_modelo: str):
     discrepancias = []
 
     for i, historia in enumerate(historias, start=1):
-        # Convertimos a sets para comparar los códigos sin importar el orden
         codigos_it1 = set(historia.get("predicted_icf_it1", []))
         codigos_it2 = set(historia.get("predicted_icf_it2", []))
         codigos_it3 = set(historia.get("predicted_icf_it3", []))
 
-        # Criterio estricto: ¿los 3 conjuntos son 100% idénticos?
         if codigos_it1 == codigos_it2 == codigos_it3:
             acuerdos_exactos += 1
         else:
@@ -100,20 +95,6 @@ def main():
         print(f" {res['nombre']:<38} | {res['acuerdos']:>4}/{res['total']:<4} | {res['total']:<6} | {res['porcentaje']:>6.2f}%")
 
     print("=" * 80)
-    print("\n🔍 DETALLE DE DISCREPANCIAS ENCONTRADAS:\n")
-
-    for res in todos_los_resultados:
-        print(f"▶ {res['nombre']}:")
-        if not res["discrepancias"]:
-            print("   ✅ ¡Acuerdo 100% perfecto en todas las historias! (0 discrepancias)")
-        else:
-            print(f"   ⚠️ Se encontraron {len(res['discrepancias'])} historias con alguna diferencia:")
-            for d in res["discrepancias"]:
-                print(f"      - Historia #{d['historia_num']}:")
-                print(f"          * Iteración 1: {d['it1']}")
-                print(f"          * Iteración 2: {d['it2']}")
-                print(f"          * Iteración 3: {d['it3']}")
-        print()
 
 
 if __name__ == "__main__":

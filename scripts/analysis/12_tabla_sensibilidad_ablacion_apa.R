@@ -47,9 +47,9 @@ ft <- flextable(df_datos) %>%
   set_header_labels(
     `Dimensión` = "Dimensión",
     `Métrica / Parámetro` = "Métrica / Parámetro",
-    `Gemma-4-31B-it (Local)` = "Gemma-4-31B-it (Local)",
-    `Gemini Flash 3.5 (Cloud)` = "Gemini Flash 3.5 (Cloud)",
-    `Gemini Flash 3.6 (Cloud)` = "Gemini Flash 3.6 (Cloud)"
+    `Gemma-4-31B-it` = "Gemma-4-31B-it",
+    `Gemini Flash 3.5` = "Gemini Flash 3.5",
+    `Gemini Flash 3.7` = "Gemini Flash 3.7"
   ) %>%
   # 1. Fusión vertical de la primera columna (Dimensión)
   merge_v(j = 1) %>%

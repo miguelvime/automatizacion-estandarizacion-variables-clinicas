@@ -9,13 +9,13 @@ Este script genera las figuras visuales comparativas de validez diagnóstica y
 rendimiento F1-score entre los 3 modelos LLM evaluados:
 1. Gemma-4-31B-it
 2. Gemini Flash 3.5
-3. Gemini Flash 3.6
+3. Gemini Flash 3.7
 
 Figuras generadas en `results/stats_v4/figuras/`:
 -------------------------------------------------
 1. `01_comparativa_global_f1_modelos.png`: Comparativa de F1 (Micro, Macro, Weighted) y Exact Match con IC 95%.
 2. `02_precision_recall_f1_pareado.png`: Desglose pareado de Precisión, Recall y F1 por modelo.
-3. `03_auditoria_per_class_27_codigos.png`: Barras horizontales de F1 por código CIF (27 categorías del Core Set).
+3. `03_auditoria_per_class_24_codigos.png`: Barras horizontales de F1 por código CIF (24 categorías del Core Set).
 4. `04_desempeno_por_capitulo_cif.png`: Rendimiento comparativo por componentes CIF (b: Cuerpo, d: Actividades, e: Ambiente).
 5. `05_matriz_confusion_tp_fp_fn.png`: Desglose global de Verdaderos Positivos, Falsos Positivos y Falsos Negativos.
 """
@@ -47,7 +47,7 @@ plt.rcParams['figure.dpi'] = 300
 COLORES_MODELOS = {
     "gemma_31b": "#1F4E79",       # Azul oscuro elegante
     "gemini_flash_35": "#4B77BE",  # Azul medio
-    "gemini_flash_36": "#27AE60"   # Verde esmeralda
+    "gemini_flash_37": "#27AE60"   # Verde esmeralda
 }
 
 
@@ -101,7 +101,7 @@ def figura_01_comparativa_global(datos):
         for bar, val in zip(barras, vals):
             y_pos = bar.get_height()
             ax.text(bar.get_x() + bar.get_width() / 2., y_pos + 0.02,
-                    f"{val:.3f}" if val < 1.0 else f"{val:.1f}",
+                    f"{val:.2f}" if val < 1.0 else f"{val:.1f}",
                     ha='center', va='bottom', fontsize=8.5, fontweight='bold')
 
     ax.set_ylabel("Puntuación / Proporción (0 a 1)", fontweight='bold')
@@ -109,7 +109,6 @@ def figura_01_comparativa_global(datos):
     ax.set_xticks(x)
     ax.set_xticklabels(metricas, fontweight='bold')
     ax.set_ylim(0.70, 1.05)
-    ax.axhline(0.80, color="#E74C3C", linestyle="--", linewidth=1.0, alpha=0.7, label="Umbral de Excelencia (≥ 0.80)")
     ax.grid(axis='y', linestyle=':', alpha=0.6)
     ax.legend(frameon=True, facecolor='#F8F9F9', edgecolor='#BDC3C7', loc="lower right")
     
@@ -160,7 +159,7 @@ def figura_02_precision_recall_f1(datos):
 def figura_03_auditoria_per_class(datos):
     gemma = next(r for r in datos if r["modelo_id"] == "gemma_31b")
     g35 = next(r for r in datos if r["modelo_id"] == "gemini_flash_35")
-    g36 = next(r for r in datos if r["modelo_id"] == "gemini_flash_36")
+    g36 = next(r for r in datos if r["modelo_id"] == "gemini_flash_37")
     
     gemma_clases = gemma["metricas"]["por_clase"]
     g35_clases = g35["metricas"]["por_clase"]
@@ -189,19 +188,18 @@ def figura_03_auditoria_per_class(datos):
     
     ax.barh(y + ancho, f1_gemma, height=ancho, label="Gemma-4-31B-it", color=COLORES_MODELOS["gemma_31b"], alpha=0.88, edgecolor="black", linewidth=0.5)
     ax.barh(y, f1_g35, height=ancho, label="Gemini Flash 3.5", color=COLORES_MODELOS["gemini_flash_35"], alpha=0.88, edgecolor="black", linewidth=0.5)
-    ax.barh(y - ancho, f1_g36, height=ancho, label="Gemini Flash 3.6", color=COLORES_MODELOS["gemini_flash_36"], alpha=0.88, edgecolor="black", linewidth=0.5)
+    ax.barh(y - ancho, f1_g36, height=ancho, label="Gemini Flash 3.7", color=COLORES_MODELOS["gemini_flash_37"], alpha=0.88, edgecolor="black", linewidth=0.5)
     
     ax.set_xlabel("F1-Score por Categoría CIF", fontweight='bold')
-#     ax.set_title("Auditoría Individualizada Per Class (27 Categorías CIF del Core Set de Dolor Crónico)", fontweight='bold', pad=15)
+#     ax.set_title("Auditoría Individualizada Per Class (24 Categorías CIF del Core Set de Dolor Crónico)", fontweight='bold', pad=15)
     ax.set_yticks(y)
     ax.set_yticklabels(etiquetas, fontsize=8.5)
     ax.set_xlim(0, 1.08)
-    ax.axvline(0.80, color="#E74C3C", linestyle="--", linewidth=1.0, alpha=0.7, label="Umbral Aceptable (≥ 0.80)")
     ax.grid(axis='x', linestyle=':', alpha=0.6)
     ax.legend(frameon=True, facecolor='#F8F9F9', edgecolor='#BDC3C7', loc="lower right")
     
     plt.tight_layout()
-    ruta_salida = CARPETA_FIGURAS / "03_auditoria_per_class_27_codigos.png"
+    ruta_salida = CARPETA_FIGURAS / "03_auditoria_per_class_24_codigos.png"
     plt.savefig(ruta_salida, dpi=300)
     plt.close()
     print(f" [OK] Figura 3 guardada: {ruta_salida}")
@@ -240,7 +238,7 @@ def figura_04_desempeno_por_capitulo(datos):
         for bar, val in zip(barras, f1_capitulos):
             y_pos = bar.get_height()
             ax.text(bar.get_x() + bar.get_width() / 2., y_pos + 0.01,
-                    f"{val:.3f}", ha='center', va='bottom', fontsize=8.5, fontweight='bold')
+                    f"{val:.2f}", ha='center', va='bottom', fontsize=8.5, fontweight='bold')
 
     ax.set_ylabel("F1-Score Ponderado por Componente", fontweight='bold')
 #     ax.set_title("Desempeño Diagnóstico por Componentes de la Clasificación CIF (OMS)", fontweight='bold', pad=15)

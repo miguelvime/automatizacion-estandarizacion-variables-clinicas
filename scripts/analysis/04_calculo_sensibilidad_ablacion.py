@@ -2,7 +2,7 @@
 """
 ===============================================================================
 CÁLCULO DE SENSIBILIDAD Y ABLACIÓN DE LA CLASE DOMINANTE (stats_v4)
-EVALUACIÓN COMPARATIVA MULTIMODELO (GEMMA 31B, FLASH 3.5, FLASH 3.6)
+EVALUACIÓN COMPARATIVA MULTIMODELO (GEMMA 31B, FLASH 3.5, FLASH 3.7)
 ===============================================================================
 
 ¿Qué calcula este script?
@@ -12,8 +12,8 @@ dominante (b280 - Sensación de dolor, presente en el 92.1% de historias clínic
 en los 3 modelos LLM evaluados.
 
 Calcula para cada modelo:
-1. Dataset Completo (27 códigos, 465 menciones reales)
-2. Ablación sin b280 (26 códigos, 360 menciones reales)
+1. Dataset Completo (24 códigos, 465 menciones reales)
+2. Ablación sin b280 (23 códigos, 360 menciones reales)
 3. Variación Absoluta (Δ = Sin - Con)
 4. Tasa de Retención del Rendimiento ([Sin b280 / Con b280] * 100)
 
@@ -37,18 +37,18 @@ TABLAS_DIR = TFL_DIR / "tablas"
 MODELOS = [
     {
         "id": "gemma_31b",
-        "nombre": "Gemma-4-31B-it (Local)",
-        "archivo": LLM_DIR / "2026-08-11_gemma-4-31b-it-codified.json"
+        "nombre": "Gemma-4-31B-it",
+        "archivo": LLM_DIR / "2026-08-25_gemma_codified.json"
     },
     {
         "id": "gemini_flash_35",
-        "nombre": "Gemini Flash 3.5 (Cloud)",
-        "archivo": LLM_DIR / "2026-08-18_gemini-flash-3.5_codified.json"
+        "nombre": "Gemini Flash 3.5",
+        "archivo": LLM_DIR / "2026-08-25-flash-3.5-codified.json"
     },
     {
-        "id": "gemini_flash_36",
-        "nombre": "Gemini Flash 3.6 (Cloud)",
-        "archivo": LLM_DIR / "2026-08-18_gemini-flash-3.6_codified.json"
+        "id": "gemini_flash_37",
+        "nombre": "Gemini Flash 3.7",
+        "archivo": LLM_DIR / "2026-08-25-3.7-flash-codified.json"
     }
 ]
 
@@ -185,43 +185,43 @@ def ejecutar_analisis_ablacion():
     # Construir DataFrame en Formato APA / Transpuesto (Modelos en Columnas)
     filas_tabla = [
         # BLOQUE 1: CORPUS Y ESPACIO
-        ("Parámetros del Espacio", "Número de Categorías CIF evaluadas", "27 códigos", "27 códigos", "27 códigos"),
+        ("Parámetros del Espacio", "Número de Categorías CIF evaluadas", "24 códigos", "24 códigos", "24 códigos"),
         ("Parámetros del Espacio", "Soporte Real Ground Truth (menciones)", "465", "465", "465"),
         ("Parámetros del Espacio", "Prevalencia de b280 en el Corpus", "92.1% (105/114)", "92.1% (105/114)", "92.1% (105/114)"),
 
         # BLOQUE 2: DATASET COMPLETO (CON b280)
-        ("Espacio Completo (Con b280)", "Micro-F1", f"{resultados['gemma_31b']['completo']['Micro_F1']:.4f}", f"{resultados['gemini_flash_35']['completo']['Micro_F1']:.4f}", f"{resultados['gemini_flash_36']['completo']['Micro_F1']:.4f}"),
-        ("Espacio Completo (Con b280)", "Macro-F1", f"{resultados['gemma_31b']['completo']['Macro_F1']:.4f}", f"{resultados['gemini_flash_35']['completo']['Macro_F1']:.4f}", f"{resultados['gemini_flash_36']['completo']['Macro_F1']:.4f}"),
-        ("Espacio Completo (Con b280)", "Weighted-F1", f"{resultados['gemma_31b']['completo']['Weighted_F1']:.4f}", f"{resultados['gemini_flash_35']['completo']['Weighted_F1']:.4f}", f"{resultados['gemini_flash_36']['completo']['Weighted_F1']:.4f}"),
-        ("Espacio Completo (Con b280)", "Exact Match Ratio (EMR %)", f"{resultados['gemma_31b']['completo']['EMR']*100:.2f}% ({resultados['gemma_31b']['completo']['EMR_Aciertos']}/114)", f"{resultados['gemini_flash_35']['completo']['EMR']*100:.2f}% ({resultados['gemini_flash_35']['completo']['EMR_Aciertos']}/114)", f"{resultados['gemini_flash_36']['completo']['EMR']*100:.2f}% ({resultados['gemini_flash_36']['completo']['EMR_Aciertos']}/114)"),
-        ("Espacio Completo (Con b280)", "Matriz de Confusión (TP / FP / FN)", f"{resultados['gemma_31b']['completo']['TP']} / {resultados['gemma_31b']['completo']['FP']} / {resultados['gemma_31b']['completo']['FN']}", f"{resultados['gemini_flash_35']['completo']['TP']} / {resultados['gemini_flash_35']['completo']['FP']} / {resultados['gemini_flash_35']['completo']['FN']}", f"{resultados['gemini_flash_36']['completo']['TP']} / {resultados['gemini_flash_36']['completo']['FP']} / {resultados['gemini_flash_36']['completo']['FN']}"),
+        ("Espacio Completo (Con b280)", "Micro-F1", f"{resultados['gemma_31b']['completo']['Micro_F1']:.4f}", f"{resultados['gemini_flash_35']['completo']['Micro_F1']:.4f}", f"{resultados['gemini_flash_37']['completo']['Micro_F1']:.4f}"),
+        ("Espacio Completo (Con b280)", "Macro-F1", f"{resultados['gemma_31b']['completo']['Macro_F1']:.4f}", f"{resultados['gemini_flash_35']['completo']['Macro_F1']:.4f}", f"{resultados['gemini_flash_37']['completo']['Macro_F1']:.4f}"),
+        ("Espacio Completo (Con b280)", "Weighted-F1", f"{resultados['gemma_31b']['completo']['Weighted_F1']:.4f}", f"{resultados['gemini_flash_35']['completo']['Weighted_F1']:.4f}", f"{resultados['gemini_flash_37']['completo']['Weighted_F1']:.4f}"),
+        ("Espacio Completo (Con b280)", "Exact Match Ratio (EMR %)", f"{resultados['gemma_31b']['completo']['EMR']*100:.2f}% ({resultados['gemma_31b']['completo']['EMR_Aciertos']}/114)", f"{resultados['gemini_flash_35']['completo']['EMR']*100:.2f}% ({resultados['gemini_flash_35']['completo']['EMR_Aciertos']}/114)", f"{resultados['gemini_flash_37']['completo']['EMR']*100:.2f}% ({resultados['gemini_flash_37']['completo']['EMR_Aciertos']}/114)"),
+        ("Espacio Completo (Con b280)", "Matriz de Confusión (TP / FP / FN)", f"{resultados['gemma_31b']['completo']['TP']} / {resultados['gemma_31b']['completo']['FP']} / {resultados['gemma_31b']['completo']['FN']}", f"{resultados['gemini_flash_35']['completo']['TP']} / {resultados['gemini_flash_35']['completo']['FP']} / {resultados['gemini_flash_35']['completo']['FN']}", f"{resultados['gemini_flash_37']['completo']['TP']} / {resultados['gemini_flash_37']['completo']['FP']} / {resultados['gemini_flash_37']['completo']['FN']}"),
 
         # BLOQUE 3: ABLACIÓN (SIN b280)
-        ("Ablación (Sin dolor b280)", "Micro-F1", f"{resultados['gemma_31b']['ablado']['Micro_F1']:.4f}", f"{resultados['gemini_flash_35']['ablado']['Micro_F1']:.4f}", f"{resultados['gemini_flash_36']['ablado']['Micro_F1']:.4f}"),
-        ("Ablación (Sin dolor b280)", "Macro-F1", f"{resultados['gemma_31b']['ablado']['Macro_F1']:.4f}", f"{resultados['gemini_flash_35']['ablado']['Macro_F1']:.4f}", f"{resultados['gemini_flash_36']['ablado']['Macro_F1']:.4f}"),
-        ("Ablación (Sin dolor b280)", "Weighted-F1", f"{resultados['gemma_31b']['ablado']['Weighted_F1']:.4f}", f"{resultados['gemini_flash_35']['ablado']['Weighted_F1']:.4f}", f"{resultados['gemini_flash_36']['ablado']['Weighted_F1']:.4f}"),
-        ("Ablación (Sin dolor b280)", "Exact Match Ratio (EMR %)", f"{resultados['gemma_31b']['ablado']['EMR']*100:.2f}% ({resultados['gemma_31b']['ablado']['EMR_Aciertos']}/114)", f"{resultados['gemini_flash_35']['ablado']['EMR']*100:.2f}% ({resultados['gemini_flash_35']['ablado']['EMR_Aciertos']}/114)", f"{resultados['gemini_flash_36']['ablado']['EMR']*100:.2f}% ({resultados['gemini_flash_36']['ablado']['EMR_Aciertos']}/114)"),
-        ("Ablación (Sin dolor b280)", "Matriz de Confusión (TP / FP / FN)", f"{resultados['gemma_31b']['ablado']['TP']} / {resultados['gemma_31b']['ablado']['FP']} / {resultados['gemma_31b']['ablado']['FN']}", f"{resultados['gemini_flash_35']['ablado']['TP']} / {resultados['gemini_flash_35']['ablado']['FP']} / {resultados['gemini_flash_35']['ablado']['FN']}", f"{resultados['gemini_flash_36']['ablado']['TP']} / {resultados['gemini_flash_36']['ablado']['FP']} / {resultados['gemini_flash_36']['ablado']['FN']}"),
+        ("Ablación (Sin dolor b280)", "Micro-F1", f"{resultados['gemma_31b']['ablado']['Micro_F1']:.4f}", f"{resultados['gemini_flash_35']['ablado']['Micro_F1']:.4f}", f"{resultados['gemini_flash_37']['ablado']['Micro_F1']:.4f}"),
+        ("Ablación (Sin dolor b280)", "Macro-F1", f"{resultados['gemma_31b']['ablado']['Macro_F1']:.4f}", f"{resultados['gemini_flash_35']['ablado']['Macro_F1']:.4f}", f"{resultados['gemini_flash_37']['ablado']['Macro_F1']:.4f}"),
+        ("Ablación (Sin dolor b280)", "Weighted-F1", f"{resultados['gemma_31b']['ablado']['Weighted_F1']:.4f}", f"{resultados['gemini_flash_35']['ablado']['Weighted_F1']:.4f}", f"{resultados['gemini_flash_37']['ablado']['Weighted_F1']:.4f}"),
+        ("Ablación (Sin dolor b280)", "Exact Match Ratio (EMR %)", f"{resultados['gemma_31b']['ablado']['EMR']*100:.2f}% ({resultados['gemma_31b']['ablado']['EMR_Aciertos']}/114)", f"{resultados['gemini_flash_35']['ablado']['EMR']*100:.2f}% ({resultados['gemini_flash_35']['ablado']['EMR_Aciertos']}/114)", f"{resultados['gemini_flash_37']['ablado']['EMR']*100:.2f}% ({resultados['gemini_flash_37']['ablado']['EMR_Aciertos']}/114)"),
+        ("Ablación (Sin dolor b280)", "Matriz de Confusión (TP / FP / FN)", f"{resultados['gemma_31b']['ablado']['TP']} / {resultados['gemma_31b']['ablado']['FP']} / {resultados['gemma_31b']['ablado']['FN']}", f"{resultados['gemini_flash_35']['ablado']['TP']} / {resultados['gemini_flash_35']['ablado']['FP']} / {resultados['gemini_flash_35']['ablado']['FN']}", f"{resultados['gemini_flash_37']['ablado']['TP']} / {resultados['gemini_flash_37']['ablado']['FP']} / {resultados['gemini_flash_37']['ablado']['FN']}"),
 
         # BLOQUE 4: DIFERENCIA ABSOLUTA (Δ = SIN - CON)
-        ("Variación Absoluta (Δ = Sin - Con)", "Δ Micro-F1", f"{resultados['gemma_31b']['delta']['Micro_F1']:+.4f}", f"{resultados['gemini_flash_35']['delta']['Micro_F1']:+.4f}", f"{resultados['gemini_flash_36']['delta']['Micro_F1']:+.4f}"),
-        ("Variación Absoluta (Δ = Sin - Con)", "Δ Macro-F1", f"{resultados['gemma_31b']['delta']['Macro_F1']:+.4f}", f"{resultados['gemini_flash_35']['delta']['Macro_F1']:+.4f}", f"{resultados['gemini_flash_36']['delta']['Macro_F1']:+.4f}"),
-        ("Variación Absoluta (Δ = Sin - Con)", "Δ Weighted-F1", f"{resultados['gemma_31b']['delta']['Weighted_F1']:+.4f}", f"{resultados['gemini_flash_35']['delta']['Weighted_F1']:+.4f}", f"{resultados['gemini_flash_36']['delta']['Weighted_F1']:+.4f}"),
-        ("Variación Absoluta (Δ = Sin - Con)", "Δ EMR (%)", f"{resultados['gemma_31b']['delta']['EMR']*100:+.2f}%", f"{resultados['gemini_flash_35']['delta']['EMR']*100:+.2f}%", f"{resultados['gemini_flash_36']['delta']['EMR']*100:+.2f}%"),
+        ("Variación Absoluta (Δ = Sin - Con)", "Δ Micro-F1", f"{resultados['gemma_31b']['delta']['Micro_F1']:+.4f}", f"{resultados['gemini_flash_35']['delta']['Micro_F1']:+.4f}", f"{resultados['gemini_flash_37']['delta']['Micro_F1']:+.4f}"),
+        ("Variación Absoluta (Δ = Sin - Con)", "Δ Macro-F1", f"{resultados['gemma_31b']['delta']['Macro_F1']:+.4f}", f"{resultados['gemini_flash_35']['delta']['Macro_F1']:+.4f}", f"{resultados['gemini_flash_37']['delta']['Macro_F1']:+.4f}"),
+        ("Variación Absoluta (Δ = Sin - Con)", "Δ Weighted-F1", f"{resultados['gemma_31b']['delta']['Weighted_F1']:+.4f}", f"{resultados['gemini_flash_35']['delta']['Weighted_F1']:+.4f}", f"{resultados['gemini_flash_37']['delta']['Weighted_F1']:+.4f}"),
+        ("Variación Absoluta (Δ = Sin - Con)", "Δ EMR (%)", f"{resultados['gemma_31b']['delta']['EMR']*100:+.2f}%", f"{resultados['gemini_flash_35']['delta']['EMR']*100:+.2f}%", f"{resultados['gemini_flash_37']['delta']['EMR']*100:+.2f}%"),
 
         # BLOQUE 5: TASA DE RETENCIÓN DEL RENDIMIENTO (%)
-        ("Tasa de Retención (%)", "Retención Micro-F1", f"{resultados['gemma_31b']['retencion']['Micro_F1']:.2f}%", f"{resultados['gemini_flash_35']['retencion']['Micro_F1']:.2f}%", f"{resultados['gemini_flash_36']['retencion']['Micro_F1']:.2f}%"),
-        ("Tasa de Retención (%)", "Retención Macro-F1", f"{resultados['gemma_31b']['retencion']['Macro_F1']:.2f}%", f"{resultados['gemini_flash_35']['retencion']['Macro_F1']:.2f}%", f"{resultados['gemini_flash_36']['retencion']['Macro_F1']:.2f}%"),
-        ("Tasa de Retención (%)", "Retención Weighted-F1", f"{resultados['gemma_31b']['retencion']['Weighted_F1']:.2f}%", f"{resultados['gemini_flash_35']['retencion']['Weighted_F1']:.2f}%", f"{resultados['gemini_flash_36']['retencion']['Weighted_F1']:.2f}%"),
-        ("Tasa de Retención (%)", "Retención EMR", f"{resultados['gemma_31b']['retencion']['EMR']:.2f}%", f"{resultados['gemini_flash_35']['retencion']['EMR']:.2f}%", f"{resultados['gemini_flash_36']['retencion']['EMR']:.2f}%")
+        ("Tasa de Retención (%)", "Retención Micro-F1", f"{resultados['gemma_31b']['retencion']['Micro_F1']:.2f}%", f"{resultados['gemini_flash_35']['retencion']['Micro_F1']:.2f}%", f"{resultados['gemini_flash_37']['retencion']['Micro_F1']:.2f}%"),
+        ("Tasa de Retención (%)", "Retención Macro-F1", f"{resultados['gemma_31b']['retencion']['Macro_F1']:.2f}%", f"{resultados['gemini_flash_35']['retencion']['Macro_F1']:.2f}%", f"{resultados['gemini_flash_37']['retencion']['Macro_F1']:.2f}%"),
+        ("Tasa de Retención (%)", "Retención Weighted-F1", f"{resultados['gemma_31b']['retencion']['Weighted_F1']:.2f}%", f"{resultados['gemini_flash_35']['retencion']['Weighted_F1']:.2f}%", f"{resultados['gemini_flash_37']['retencion']['Weighted_F1']:.2f}%"),
+        ("Tasa de Retención (%)", "Retención EMR", f"{resultados['gemma_31b']['retencion']['EMR']:.2f}%", f"{resultados['gemini_flash_35']['retencion']['EMR']:.2f}%", f"{resultados['gemini_flash_37']['retencion']['EMR']:.2f}%")
     ]
 
     df_tabla = pd.DataFrame(filas_tabla, columns=[
         "Dimensión",
         "Métrica / Parámetro",
-        "Gemma-4-31B-it (Local)",
-        "Gemini Flash 3.5 (Cloud)",
-        "Gemini Flash 3.6 (Cloud)"
+        "Gemma-4-31B-it",
+        "Gemini Flash 3.5",
+        "Gemini Flash 3.7"
     ])
 
     ruta_csv = TABLAS_DIR / "tabla_sensibilidad_ablacion.csv"

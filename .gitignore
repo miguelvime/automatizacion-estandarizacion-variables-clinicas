@@ -48,3 +48,4 @@ app/node_modules/
 ~\$*.pptx
 .DS_Store
 Thumbs.db
+bug_fix/

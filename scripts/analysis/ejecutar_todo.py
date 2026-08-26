@@ -14,6 +14,7 @@ Uso:
 """
 
 import sys
+import json
 import subprocess
 import shutil
 import time
@@ -25,12 +26,13 @@ RESULTS_DIR = BASE_DIR / "results"
 TFL_DIR = RESULTS_DIR / "TFL"
 
 PYTHON_SCRIPTS = [
+    ("20_plot_caracteristicas_dataset.py", "Figuras de prevalencia y frecuencia relativa del dataset (300 DPI)"),
     ("01_calculo_confiabilidad_azar.py", "Confiabilidad inter-iteraciones (Krippendorff α, Gwet AC1)"),
     ("02_calculo_acuerdo_exacto.py", "Acuerdo exacto por paciente y discrepancias"),
     ("03_calculo_f1_score.py", "Validez diagnóstica F1 (Micro/Macro), IC 95% Bootstrap"),
     ("04_calculo_sensibilidad_ablacion.py", "Análisis de sensibilidad por ablación de b280"),
     ("05_generar_tfl_fiabilidad.py", "Exportación de TFL de fiabilidad"),
-    ("06_plot_desempeno.py", "Generación de figuras 1 a 5 de desempeño (300 DPI)"),
+    ("06_plot_desempeno.py", "Generación de figuras de desempeño (300 DPI)"),
     ("07_plot_eficiencia_f1.py", "Figura de coste computacional vs ganancia F1"),
     ("08_plot_sensibilidad_ablacion.py", "Figura de sensibilidad por ablación de b280"),
     ("13_analisis_human_annotated.py", "Métricas diagnósticas en corpus humano (N=21)"),
@@ -41,6 +43,7 @@ PYTHON_SCRIPTS = [
 ]
 
 R_SCRIPTS = [
+    ("19_generar_tabla_caracteristicas_dataset_apa.R", "Tabla Word APA de características métricas del dataset"),
     ("09_generar_tablas_apa.R", "Tablas Word APA de desempeño diagnóstico"),
     ("10_generar_tabla_fiabilidad_apa.R", "Tabla Word APA de fiabilidad"),
     ("11_generar_tabla_consenso_apa.R", "Tabla Word APA de estrategias de consenso"),
@@ -101,16 +104,41 @@ def main():
     print("=" * 80)
 
     # 3. Resumen Ejecutivo en Pantalla
-    print("\n📊 RESUMEN EJECUTIVO DE RESULTADOS:")
+    print("\n📊 RESUMEN EJECUTIVO DE RESULTADOS ACTUALIZADOS (24 CATEGORÍAS CIF):")
     print("-" * 80)
-    print(" 1. CORPUS SINTÉTICO IN-SILICO (N = 101 historias / 114 ejecuciones):")
-    print("    • Gemma-4-31B-it (Local)  : Micro-F1 = 0.9688 | Exact Match = 98.25% | Gwet AC1 = 0.9994")
-    print("    • Gemini Flash 3.5 (Cloud): Micro-F1 = 0.9720 | Exact Match = 98.25% | Gwet AC1 = 0.9994")
-    print("    • Gemini Flash 3.6 (Cloud): Micro-F1 = 0.9709 | Exact Match = 100.0% | Gwet AC1 = 1.0000")
-    print("\n 2. CORPUS REAL HUMANO (N = 21 historias, Gold Standard: 4 Fisioterapeutas):")
-    print("    • Gemma-4-31B-it (Local)  : Micro-F1 = 0.772 | Precisión = 92.5% | Recall = 66.3%")
-    print("    • Gemini Flash 3.5 (Cloud): Micro-F1 = 0.812 | Precisión = 86.1% | Recall = 76.8%")
-    print("    • Gemini Flash 3.6 (Cloud): Micro-F1 = 0.822 | Precisión = 82.1% | Recall = 82.1%")
+    
+    # Cargar datos sintéticos
+    try:
+        with open(RESULTS_DIR / "llm_text" / "resumen_f1_score.json", encoding="utf-8") as f:
+            syn_data = json.load(f)
+        print(" 1. CORPUS SINTÉTICO IN-SILICO (N = 114 historias clínicas):")
+        for m in syn_data:
+            nombre = m.get("modelo_nombre", "Modelo")
+            met = m.get("metricas", {})
+            micro = met.get("micro", {})
+            emr_pct = met.get("emr_pct", 0.0)
+            exact_n = met.get("exact_matches_n", 0)
+            total_n = met.get("n_historias", 114)
+            print(f"    • {nombre:<26}: Micro-F1 = {micro.get('f1', 0):.4f} | Precisión = {micro.get('precision', 0)*100:.2f}% | Recall = {micro.get('recall', 0)*100:.2f}% | EMR = {emr_pct:.2f}% ({exact_n}/{total_n})")
+    except Exception as e:
+        print(f"    Error cargando resumen sintético: {e}")
+
+    # Cargar datos humanos
+    try:
+        with open(RESULTS_DIR / "human_text" / "resumen_human_annotated.json", encoding="utf-8") as f:
+            hum_data = json.load(f)
+        print("\n 2. CORPUS REAL HUMANO (N = 21 historias, Fisioterapeutas Colegiados):")
+        for k, nombre in [("gemma_31b", "Gemma-4-31B-it"), ("flash_35", "Gemini Flash 3.5"), ("flash_37", "Gemini Flash 3.7")]:
+            m = hum_data.get(k, {})
+            dp = m.get("desempeno", {})
+            micro = dp.get("micro", {})
+            emr = dp.get("emr", 0.0)
+            exact = dp.get("exact", 0)
+            n_cases = dp.get("n", 21)
+            print(f"    • {nombre:<26}: Micro-F1 = {micro.get('f1', 0):.4f} | Precisión = {micro.get('p', 0)*100:.2f}% | Recall = {micro.get('r', 0)*100:.2f}% | EMR = {emr:.2f}% ({exact}/{n_cases})")
+    except Exception as e:
+        print(f"    Error cargando resumen humano: {e}")
+
     print("-" * 80)
     print(" 📁 ARTEFACTOS GENERADOS DISPONIBLES EN results/TFL/:")
     print(f"    • Dashboard Interactivo HTML: {TFL_DIR / 'dashboard_resumen.html'}  (¡Doble clic para abrir!)")

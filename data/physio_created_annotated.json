@@ -1,445 +1,442 @@
 [
-    {
-        "id_code_combination": "001",
-        "icf_codes": [
-            "b130",
-            "b134",
-            "d175",
-            "b280",
-            "e1101"
-        ],
-        "icf_name": [
-            "b130-Funciones relacionadas con la energía y los impulsos",
-            "b134-Funciones del sueño",
-            "d175-Resolver problemas",
-            "b280-Sensación de dolor",
-            "e1101-Medicamentos"
-        ],
-        "id_clinical_text": "001_1",
-        "clinical_text": "Consulta por dolor lumbar, dorsal y cervical, también lateral de cadera. Nos cuenta que siempre ha sido muy activa pero ahora siente que “no merece la pena”. Dice no tener motivación para ninguna actividad. Sin embargo, por las noches está muy activa y le cuesta dormir a pesar de que toma pastillas para el sueño. Siente que las pastillas afectan a su capacidad para hacer el día a día “como si estuviera atontada y no le ayudan a dormir. Tiene como objetivos conseguir dar al menos un paseo y poder dormir al menos 2 hroas.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "001",
-        "icf_codes": [
-            "b130",
-            "b134",
-            "d175",
-            "b280",
-            "e1101"
-        ],
-        "icf_name": [
-            "b130-Funciones relacionadas con la energía y los impulsos",
-            "b134-Funciones del sueño",
-            "d175-Resolver problemas",
-            "b280-Sensación de dolor",
-            "e1101-Medicamentos"
-        ],
-        "id_clinical_text": "001_2",
-        "clinical_text": "Dolor cervical, también lumbar, de hombros, de muñecas, ambos bilaterales. Dificultades para hacer ejercicio porque “se encuentra cansada”. Dice que lo intenta pero nunca consigu emantenerlo por agotamiento. Ha intentado correr, yoga y pilates. El entrenamiento d efuerza le iba mejor pero notaba que luego dormía peor. Además después, por el cansancio, tenía dificultades para hacer el día a día, tiene sensación de que es incapaz de resolver conflictos del día a día, a veces se tira pensando varios minutos antes de poder iniciar una actividad o tomar una decisión como usar una sarten de hierro o una antiadherente. Toma opioides, lo ha intentado dejar porque ha leído que puedne también influir en el dolor.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "001",
-        "icf_codes": [
-            "b130",
-            "b134",
-            "d175",
-            "b280",
-            "e1101"
-        ],
-        "icf_name": [
-            "b130-Funciones relacionadas con la energía y los impulsos",
-            "b134-Funciones del sueño",
-            "d175-Resolver problemas",
-            "b280-Sensación de dolor",
-            "e1101-Medicamentos"
-        ],
-        "id_clinical_text": "001_3",
-        "clinical_text": "Dolor d emiembros inferiores desde hace 20 años, sensación de fatiga y cansancio general e insomnio de mantenimiento. El dolor comenzó hace 20 años sin motivo aparente, siempre notaba que sus amigos podían hacer más que ella y que si hacía mucho le dolía más el cuerpo en general. Después de seo comenzó con sensación de que estaba siempre ansada. Siente que ahora va un paso más y no solo le cuesta por cansancio, si no que nota que “la cabeza no le da”. Toma estatinas desde hace más de 5 años, medicación para la hipertensión y antiinflamatorios cuando “no aguanta más”, aunque no nota alivio especialmente",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "002",
-        "icf_codes": [
-            "b152",
-            "b1602",
-            "b280",
-            "d240",
-            "d850",
-            "e570"
-        ],
-        "icf_name": [
-            "b152-Funciones emocionales",
-            "b1602-Contenido del pensamiento",
-            "b280-Sensación de dolor",
-            "d240-Manejo del estrés y otras demandas psicológicas",
-            "d850-Trabajo remunerado",
-            "e570-Servicios, sistemas y politicas de seguridad social"
-        ],
-        "id_clinical_text": "002_1",
-        "clinical_text": "Varón de 50 años que acude a consulta por dolor lumbar de 2 semanas de evolución.\nRefiere que se hizo daño trabajando (construcción), posiblemente en alguna acción cargando peso, aunque no recuerda bien. Acudió al médico de su mutua y le aconsejó reposo y analgésicos, pero no lo mantiene y sigue trabajando a pesar del dolor.\n\nSíntomas / signos:\nEs un dolor localizado en la región central de la espalda y zona glútea que asocia principalmente al movimiento (flexión lumbar y pasar a bipedestación desde sedestación). El dolor le va aumentando durante el día, sobre todo en el trabajo, llegando a tener dolor durante la noche y afectando su descanso. Los fines de semana le duele menos, ya que tiene menos actividad.\nEscala numérica de intensidad de dolor: 7/10 en los peores momentos.\n\nAspectos psicosociales: Durante la entrevista explica que está intentando evitar esos movimientos en el trabajo, centrándose en tareas que no le duelen. Pero no quiere dejar de trabajar porque la empresa tiene mucho trabajo ahora, siente que tiene que ayudar o si no podrían echarle (ha habido despidos antes). Su situación económica le genera ansiedad y no puede dejar el trabajo.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "002",
-        "icf_codes": [
-            "b152",
-            "b1602",
-            "b280",
-            "d240",
-            "d850",
-            "e570"
-        ],
-        "icf_name": [
-            "b152-Funciones emocionales",
-            "b1602-Contenido del pensamiento",
-            "b280-Sensación de dolor",
-            "d240-Manejo del estrés y otras demandas psicológicas",
-            "d850-Trabajo remunerado",
-            "e570-Servicios, sistemas y politicas de seguridad social"
-        ],
-        "id_clinical_text": "002_2",
-        "clinical_text": "Mujer, 36 años. Acude a consulta por dolor cervical crónico (años de evolución).\nRefiere que lleva muchos años así, desde el instituto. Describe su dolor como un dolor que siempre está presente pero de intensidad variable. No sabe localizar un punto concreto de dolor, pero se señala desde la base del craneo hacia la cabeza. Comenta que es \"dolor tensional por el estrés\".\nEscala numerica de intensidad del dolor: oscila entre un 2/10 y un 5/10. Asocia el aumento del dolor al estrés y a épocas en las que tiene más carga de trabajo.\n\nCuando le pregunto por si ha visto qué es lo que le mejora el dolor, me dice que la\nmedicación le alivia parcialmente y que en vacaciones, cuando tiene más tiempo para retomar el deporte (salir a caminar, pádel) siente que le duele menos.\n\nAspectos psicosociales: Al iniciar la anamnesis, la paciente muestra \"poca confianza\" en el tratamiento, refiriendo que ha pasado por muchos fisios y que está aquí porque lo ha pedido su médico, pero sabe que su dolor no va a mejorar nunca."
-    },
-    {
-        "id_code_combination": "002",
-        "icf_codes": [
-            "b152",
-            "b1602",
-            "b280",
-            "d240",
-            "d850",
-            "e570"
-        ],
-        "icf_name": [
-            "b152-Funciones emocionales",
-            "b1602-Contenido del pensamiento",
-            "b280-Sensación de dolor",
-            "d240-Manejo del estrés y otras demandas psicológicas",
-            "d850-Trabajo remunerado",
-            "e570-Servicios, sistemas y politicas de seguridad social"
-        ],
-        "id_clinical_text": "002_3",
-        "clinical_text": "Mujer de 58 años que acude a consulta por dolor generalizado.\nRefiere que cree que tiene fibromialgia aunque no tiene diagnóstico médico confirmado todavía. Se encuentra de baja desde hace 10 meses porque se siente incapaz de hacer su trabajo (enfermera) y lleva desde entonces con pruebas médicas para confirmar el diagnóstico.\n\nSíntomas / signos:\nExplica que \"le duele todo el cuerpo siempre\". Las zonas que más dolor presentan son ambos hombros y la espalda (tanto zona torácica como zona lumbar). No se aprecia inflamación y pérdida de movilidad en ninguna de las articulaciones, aunque el rango de movimiento no está libre de dolor. La intensidad del dolor de hombros es de un 6/10 (escala\nnumérica), en zona torácica es 5/10 y en zona lumbar 5/10. El comportamiento de los síntomas varía:\n- Hombros parece que hay un factor mecánico, ya que hay movimientos como la ABD que incrementan más su dolor que otros.\n- Dolor torácico parece ser un dolor continuo y no varía por factores mecánicos\n- Dolor lumbar empeora con la flexión\n\nTanto el dolor de hombros como el dolor lumbar empeoran con el movimiento y con la carga. Dice que desde hace unos meses ya no puede coger en brazos a su nieto, ahora que pasa más tiempo con él (se encarga de él todo el día mientras sus padres trabajan). Para ella, esto (no poder coger en brazos a su nieto) tiene un impacto emocional importante.\n\nComenta que no tiene prisa por volver a trabajar. Ahora su objetivo es poder ayudar a su hija cuidando de su nieto.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "004",
-        "icf_codes": [
-            "b1602",
-            "b280",
-            "b455",
-            "b730",
-            "d920"
-        ],
-        "icf_name": [
-            "b1602-Contenido del pensamiento",
-            "b280-Sensación de dolor",
-            "b455-Funciones relacionadas con la tolerancia al ejercicio",
-            "b730-Funciones relacionadas con la fuerza muscular",
-            "d920-Tiempo libre y ocio"
-        ],
-        "id_clinical_text": "004_1",
-        "clinical_text": "Varón, 43 años, conductor de metro jornada completa. Colesterol. Fumador. Sedentario. HTA.\n\n\nAcude por dolor en zona anterior del hombro derecho desde hace algo más de 5 años (EVA 3/10). Dolor difuso que a veces irradia hacia el resto del MSD y a la zona cervical con posiciones mantenidas. Dolor más intenso (EVA 6/10) endeterminados movimientos. \nLe recomendaron fortalecer el hombro, pero piensa que los síntomas empeorarían. Cree que no saben lo que le pasa porque sino no le habrían recomendado movilizar, dice que lo que tendrían que hacer es operarle para quitarle lo que tenga mal y así poder recuperarse. \nA veces sale a andar (15-30min) pero suele acabar fatigado y con más dolor en la zona, cada vez sale menos. Solo sale al cine una vez al mes con su familia, el resto del tiempo en casa viendo TV o móvil.\n\n\nEXPLORACIÓN\nFlex y abd limitación por dolor a 90º. ++ contra R. 4/5 \nRE limitación por dolor 30º. +++ contra R. 3/5 \nRI conservada sin dolor. 5/5 \nExt conservada con dolor ligero al final de ROM. 5/5 ",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "004",
-        "icf_codes": [
-            "b1602",
-            "b280",
-            "b455",
-            "b730",
-            "d920"
-        ],
-        "icf_name": [
-            "b1602-Contenido del pensamiento",
-            "b280-Sensación de dolor",
-            "b455-Funciones relacionadas con la tolerancia al ejercicio",
-            "b730-Funciones relacionadas con la fuerza muscular",
-            "d920-Tiempo libre y ocio"
-        ],
-        "id_clinical_text": "004_2",
-        "clinical_text": "Mujer 22 años, estudiante de farmacia (5º). No tiene antecedentes relevantes. Bailarina de ballet (3º conservatorio)\n\n\nComenzó con dolor en zona cervical hace alrededor de 3 años. El dolor comenzó como una sensación de “tensión” en la zona posterior del cuello, pero ha ido generalizándose hacia zona trapecios, interescapular, paravertebral dorsal e incluso hombros. Dolor no constante, aparece de manera intermitente (3-4 días/sem) pero no lo relaciona con nada, no entiende por qué aparece. Cefaleas frecuentes durante los cuadros álgicos, pero no mareos ni parestesias en MMSS.\nSigue con práctica de baile habitual, (15h/sem), no considera quetenga que reducir actividad, “no quiere ni puede permitírselo, no cree que tenga nada que ver con su dolor”. Durante los meses de verano (2 meses de vacaciones) suele estar mejor, pero lo relaciona al calor, que le gusta y siempre le ha venido bien. \nPoco tiempo libre, solo queda con una amiga del conservatorio de vez en cuando. En vacaciones se va al pueblo con su familia, allí tiene un grupo de amigos de toda la vida.\n\n\nEXPLORACIÓN\nMusculatura con mucha tensión y dolor intenso(EVA 8-9/10) a la palpación.\nEn el momento de la exploración viene con dolor. Dolor (EVA 4/10) en todos los movimientos, pero ROM conservado. Fuerza conservada. No síntomas neurológicos.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "004",
-        "icf_codes": [
-            "b1602",
-            "b280",
-            "b455",
-            "b730",
-            "d920"
-        ],
-        "icf_name": [
-            "b1602-Contenido del pensamiento",
-            "b280-Sensación de dolor",
-            "b455-Funciones relacionadas con la tolerancia al ejercicio",
-            "b730-Funciones relacionadas con la fuerza muscular",
-            "d920-Tiempo libre y ocio"
-        ],
-        "id_clinical_text": "004_3",
-        "clinical_text": "Mujer 34 años. Administrativa. 1 hijo de 6 meses. Hacía crossfit antes del embarazo y durante. \n\n\nAcude por dolor lumbar desde hace más de 1 año. Comenzó durante el 3er mes de embarazo y desde entonces no ha desaparecido. Ha ido variando la intensidad (EVA 3/10 a 8/10) a lo largo del año, a veces sube y otras baja. Dolordifuso en zona lumbar y sacra, aumenta a la extensión. No síntomas ciáticos. Ha dejado de hacer ejercicios por el dolor intenso cuando va a crossfit.\nDurante el embarazo hacía crossfit sin adaptaciones, su entrenadora le adaptaba ejercicios e intentaba que activase el SP y el TrA junto con respiraciones pero se le daba malasí que pasó de ello. Ella piensa que eran “chorradas”, que ahora estaba de moda el ejercicio en el embarazo y por eso querían meter “tonterías” en los entrenamientos para hacerlos más “interesantes”, pero eso no iba con ella.\nPasa mucho tiempo con su hijo y su marido. También ve a su familia. No tiene mucho tiempo libre, pero le gustaría volver a entrenar, es su principal objetivo. Sale mucho a caminar, no suele empeorar síntomas a no ser que se pase (más de 2h seguidas caminando).\n\n\nEXPLORACIÓN\nLasegue -. \nPruebas ASI +++\nExtensión ++, flexión ok. \nMolestias a rot, inclinación ok.\nDebilidad glúteo medio. 4/5 \n\n\nDiástasis de rectos abdominales infraumbilical (2 cm con mal tono de la LA), supra no separación pero mal tono LA. Siempre ha realizado ejercicios en apnea. No activa TrA de manera automática, ni sabe activar el SP. Hiperactivación musculatura superficial (rectos y OE). IUE frecuente 2 veces/día. \n\n\nDurante la evaluación se muestra incómoda y desconfiada por centrar la valoración en el CALP, incide en varias ocasiones en que su dolor es lumbar y que no tiene nada que ver con el abdomen o con sus pérdidas de orina. No entiende la valoración. Explico importancia de CALP en el dolor lumbar.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "005",
-        "icf_codes": [
-            "b280",
-            "d230",
-            "d430",
-            "d450",
-            "d640"
-        ],
-        "icf_name": [
-            "b280-Sensación de dolor",
-            "d230-Llevar a cabo rutinas diarias",
-            "d430-Levantar y llevar objetos",
-            "d450-Andar",
-            "d640-Realizar los quehaceres de la casa"
-        ],
-        "id_clinical_text": "005_1",
-        "clinical_text": "Paciente varón de 28 años, de ocupación conductor (Uber) y estilo de vida sedentario, consulta por lumbalgia asociada a sedestación prolongada. Describe los síntomas como una sensación de pellizco y quemazón lumbar que se incrementa hacia el final de la jornada laboral. El dolor disminuye temporalmente al interrumpir la marcha del vehículo y realizar estiramientos, pero persiste el malestar al reanudar la postura de conducción. La sintomatología no se reproduce con el movimiento general.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "005",
-        "icf_codes": [
-            "b280",
-            "d230",
-            "d430",
-            "d450",
-            "d640"
-        ],
-        "icf_name": [
-            "b280-Sensación de dolor",
-            "d230-Llevar a cabo rutinas diarias",
-            "d430-Levantar y llevar objetos",
-            "d450-Andar",
-            "d640-Realizar los quehaceres de la casa"
-        ],
-        "id_clinical_text": "005_2",
-        "clinical_text": "Paciente de 68 años, jubilada, acude a consulta refiriendo una gran pesadez en las piernas que casi le impide subir las escaleras de su casa. Llama la atención el marcado carácter \"estacional\" de su malestar: los dolores se han vuelto insoportables durante los meses de calor, mientras que en invierno sube los escalones casi sin enterarse. Aunque ha probado la clásica receta casera de tumbarse en el sofá con las piernas en alto sobre un cojín, el alivio es solo un leve respiro y las molestias persisten. Todo apunta a que las altas temperaturas le están pasando factura a su circulación.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "005",
-        "icf_codes": [
-            "b280",
-            "d230",
-            "d430",
-            "d450",
-            "d640"
-        ],
-        "icf_name": [
-            "b280-Sensación de dolor",
-            "d230-Llevar a cabo rutinas diarias",
-            "d430-Levantar y llevar objetos",
-            "d450-Andar",
-            "d640-Realizar los quehaceres de la casa"
-        ],
-        "id_clinical_text": "005_3",
-        "clinical_text": "Paciente varón de 56 años, fontanero de profesión, acude a consulta por un dolor punzante e incesante en el codo derecho. La molestia se ha vuelto tan incapacitante que le ha obligado a coger la baja laboral, con el consecuente perjuicio económico que ello le supone. Describe un dolor rebelde que no da tregua y que, en ocasiones, se irradia hacia los dedos acompañado de una molesta pérdida de sensibilidad en el antebrazo. La pérdida de fuerza en la mano derecha es severa: no puede cargar peso en su trabajo ni gestionar tareas cotidianas tan simples como sacar los platos del lavavajillas para colocarlos en la alacena. Ninguna postura ni remedio le aporta alivio hasta el momento.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "006",
-        "icf_codes": [
-            "b280",
-            "d430",
-            "d760",
-            "d770",
-            "d920"
-        ],
-        "icf_name": [
-            "b280-Sensación de dolor",
-            "d430-Levantar y llevar objetos",
-            "d760-Relaciones Familiares",
-            "d920-Tiempo libre y ocio"
-        ],
-        "id_clinical_text": "006_1",
-        "clinical_text": "Adolescente de 12 años acude a consulta por dolor de cadera tras notar un pinchazo desde hace más de un año tras un partido de hockey, no acudió al médico en ese momento, actualmente las radiografías no muestran lesión, no realizada RMN. Actualmente refiere dificultad para llevar la mochila del colegio, y para jugar con su padre al hockey, que es su principal hobby. Le gustaría volver a poder jugar.\n\nComenta que el dolor comenzó en la cadera pero que actualmente llega hasta el pie.\n\nExploración física: movilidad pasiva indolora salvo en extensión de cadera en prono, isométrico en flexión doloroso, FADDIR +,FABDRE +, desrot test -, SLR + con diferenciación de tobillo. Dolor a extensión lumbar activa de pie, no dolor al levantarse de la camilla ni en la sentadilla.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "006",
-        "icf_codes": [
-            "b280",
-            "d430",
-            "d760",
-            "d770",
-            "d920"
-        ],
-        "icf_name": [
-            "b280-Sensación de dolor",
-            "d430-Levantar y llevar objetos",
-            "d760-Relaciones Familiares",
-            "d920-Tiempo libre y ocio"
-        ],
-        "id_clinical_text": "006_2",
-        "clinical_text": "Varón de 40 años, acude a consulta por dolor de espalda recurrente que comenzó hace 5 años. Aproximadamente un episodio al mes. Trabaja de conductor de taxi, refiere no tener problemas para trabajar pero le cuesta meter maletas en el maletero del taxi. Además dice tener dificultades para viajar, los episodios le impiden planificar viajes pues si le dan apenas puede moverse. Esto le limita a la hora de buscar espacios comunes con su pareja. Le gustaría poder reducir la frecuencia de episodios o saber qué puede hacer cuándo aparecen.\n\nExploración física: dolor a movimientos activos lumbares, principalmente flexión, dolor central en extensión, SLR reproduce dolor a nivel lumbar, Bragard +, slump +. EIL reducee dolor a la movilidad activa, slump y SLR. \n\n RM:12/24 \n\n Rx: Enseño ejercicios repetidos lumbares EIL 3-5/día x10 y enseño posibles respuestas y señales de stop",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "006",
-        "icf_codes": [
-            "b280",
-            "d430",
-            "d760",
-            "d770",
-            "d920"
-        ],
-        "icf_name": [
-            "b280-Sensación de dolor",
-            "d430-Levantar y llevar objetos",
-            "d760-Relaciones Familiares",
-            "d920-Tiempo libre y ocio"
-        ],
-        "id_clinical_text": "006_3",
-        "clinical_text": "Mujer 70 años, acude a consulta por dolor de MSD que apareció sin motivo aparente, dice que lo tiene 'de toda la vida'. Es activa, realiza actividades en el centro cultural del barrio como yoga y cerámica con su hermana. Se siente limitada a la hora de realizar yoga, sigue realizando la actividad para ver a su hermana.\n\nEn exploracion no dolor a movimientos pasivos de hombro, dolor a isométricos en RE, F, ABD y push, no observo limitación de movimiento a movimiento activo aunque refiere dolor. Dificultad para levantar mancuerna de 1kg con ese MS con respecto a contralateral. \n\n QuickDash:25% \n\n Tto: Enseño ejercicios isométricos de hombro, explico historia natural y gestión de la carga según respuesta sintomática, cito en una semana para progresar ejercicios.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "007",
-        "icf_codes": [
-            "b280",
-            "d450",
-            "e1101"
-        ],
-        "icf_name": [
-            "b280-Sensación de dolor",
-            "d450-Andar",
-            "e1101-Medicamentos"
-        ],
-        "id_clinical_text": "007_1",
-        "clinical_text": "Manuel 45 años\nDolor lumbar con irraciacion a miembro inferior derecho de 4 meses de evolución, origen no traumático, ligera limitación funcional, no limitación de sus actividades del día a día, en paro, no practica una actividad física regular. No refiere mejoría desde el inicio de los síntomas.\nDolor que aparece con la actividad física moderada y la marcha, no dolor en reposo ni nocturno, no dolor al slump test, no se aprecia pérdida de sensibilidad, motricidad o reflejos en miembro inferior, no dolor a la palpación, amplitud articular completa en activo y pasivo.\nNo antecedentes médicos relevantes, actualmente con AINES prescritos por su médico, no refiere mejoría con ellos aunque los sigue tomando.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "008",
-        "icf_codes": [
-            "b134",
-            "b280",
-            "d230",
-            "d850",
-            "e1101"
-        ],
-        "icf_name": [
-            "b134-Funciones del sueño",
-            "b280-Sensación de dolor",
-            "d230-Llevar a cabo rutinas diarias",
-            "d850-Trabajo remunerado",
-            "e1101-Medicamentos"
-        ],
-        "id_clinical_text": "008_1",
-        "clinical_text": "Antecedente de fractura proximal de humero dcho sin desplazamiento hace 3 años, de origen traumatico. Actualmente dolor en todo el miembro superior derecho e izquierdo. Limitación funcional del miembro superior derecho severa, limitación de sus actividades de la vida diaria, actualmente en baja laboral. Refiere ligera mejoría desde el inicio de los sintomas \nDolor con cualquier movimiento del hombro, dolor nocturno que le despierta por las noches de manera frecuente, dice que no encuentra la posición. Dolor a la palpación en cualquier punto de la región del hombro, no síntomas cervicales. No síntomas de tipo nervioso.\n\nNo antecedentes médicos relevantes, actualmente con Aines prescrito por su medico, refiere mejoría.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "009",
-        "icf_codes": [
-            "b280",
-            "b730"
-        ],
-        "icf_name": [
-            "b280-Sensación de dolor",
-            "b730-Funciones relacionadas con la fuerza muscular"
-        ],
-        "id_clinical_text": "009_1",
-        "clinical_text": "Dolor de hombro dcho asociado a tendinopatia del manguito rotador de 10 meses de evolución, origen no traumatico refiere mejoría significativa trasa haber empezado una rutina de ejercicios que ha empezado ella misma, ligera limitación funcional, pérdida de los últimos grados de elevación y rotación interna, no limitación de sus actividades de la vida diaria, sigue realizándolas aunque tenga un poco de dolor, no trabaja.\nA la exploración dolor al movimiento contra resistencia, dolor a la elevación y a la rotación interna, no rom activo completo si completo en pasivo. Refiere ligera pérdida de fuerza generalizada del miembro superior, no síntomas de tipo nervioso, ni síntomas en la región cervical \nAntecedentes, diabetes e hipertensión, medicación para la hipertensión",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "010",
-        "icf_codes": [
-            "b130",
-            "b134",
-            "b152",
-            "b280",
-            "b455",
-            "b730",
-            "b730",
-            "b760",
-            "d230",
-            "d430",
-            "d640",
-            "d850",
-            "d920",
-            "e1101",
-            "e410",
-            "e570"
-        ],
-        "icf_name": [
-            "b130-Funciones relacionadas con la energía y los impulsos",
-            "b134-Funciones del sueño",
-            "b152-Funciones emocionales",
-            "b280-Sensación de dolor",
-            "b455-Funciones relacionadas con la tolerancia al ejercicio",
-            "b730-Funciones relacionadas con la fuerza muscular",
-            "b760-Funciones relacionadas con el control de los movimientos voluntarios",
-            "d230-Llevar a cabo rutinas diarias",
-            "d430-Levantar y llevar objetos",
-            "d640-Realizar los quehaceres de la casa",
-            "d850-Trabajo remunerado",
-            "d920-Tiempo libre y ocio",
-            "e1101-Medicamentos",
-            "e410-Actitudes individuales de miembros de la familia cercana",
-            "e570-Servicios, sistemas y politicas de seguridad social"
-        ],
-        "id_clinical_text": "010_1",
-        "clinical_text": "1. Motivo de consulta\n\nLa paciente SKI acude a consulta tras sufrir un accidente de tráfico por alcance posterior, comenzando desde ese momento un cuadro de dolor localizado principalmente en la región cervical, acompañado de dolor lumbar, cefaleas frecuentes, mareos, acúfenos y molestias en la articulación temporomandibular. Refiere una sensación constante de rigidez cervical, con importante limitación para realizar movimientos del cuello y aumento del dolor al permanecer sentada durante periodos prolongados, conducir o realizar actividades que requieran movimientos repetitivos de la cabeza.\n\nAdemás del dolor musculoesquelético, manifiesta episodios de inestabilidad, cefaleas de predominio occipital y molestias mandibulares durante la masticación, síntomas que han condicionado una importante disminución de su calidad de vida. Explica que la evolución se vio afectada por la interrupción prematura del tratamiento rehabilitador, lo que favoreció la persistencia de la sintomatología y dificultó su recuperación funcional. En el momento de la valoración refiere una intensidad del dolor de 8/10 en la región cervical y de 6/10 en la región lumbar, con limitación para desarrollar sus actividades habituales.\n\n2. Screening médico general\n\nDurante la entrevista clínica la paciente refiere haber sido valorada médicamente tras el accidente,realizándose pruebas radiológicas que descartaron lesiones óseas o estructurales de gravedad. No presenta antecedentes de fracturas, intervenciones quirúrgicas ni enfermedades reumatológicas o neurológicas relevantes. Como consecuencia del accidente inició tratamiento farmacológico analgésico, llegando a desarrollar una dependencia al consumo de opioides debido a la persistencia del dolor.\n\nAsimismo, refiere encontrarse en seguimiento psicológico por un cuadro de ansiedad relacionado con el accidente y permanecer en situación de incapacidad temporal durante parte del proceso de recuperación. No presenta alergias medicamentosas conocidas ni se objetivan signos de alarma neurológicos durante la valoración fisioterapéutica.\n\n3. Perfil del paciente\n\nAntes del accidente la paciente desarrollaba su actividad laboral con normalidad y mantenía un estilo de vida activo, realizando actividad física de intensidad moderada y siendo completamente independiente para todas las actividades de la vida diaria. Tras el accidente ha reducido considerablemente su nivel de actividad debido al dolor persistente, los mareos y la inseguridad que le generan determinados movimientos cervicales.\n\nLas molestias han condicionado dificultades para conducir, permanecer sentada durante largos periodos, realizar tareas domésticas y mantener una jornada laboral normal. La persistencia del dolor y la aparición de ansiedad han tenido también repercusión sobre su estado emocional y su descanso nocturno. Su principal objetivo es recuperar la movilidad cervical, disminuir el dolor y reincorporarse progresivamente a su vida personal y laboral con la mayor normalidad posible.\n\n4. Examen físico\n\nDurante la exploración se observa una actitud antiálgica con rectificación de la lordosis cervical y una importante hipertonía de la musculatura paravertebral cervical, trapecios superiores, musculatura suboccipital y región cervicodorsal. La palpación reproduce el dolor habitual de la paciente y pone de manifiesto una elevada sensibilidad muscular tanto en la región cervical como lumbar. También se objetiva dolor a la palpación de la musculatura masticatoria y limitación funcional de la articulación temporomandibular.\n\nLa movilidad activa cervical se encuentra limitada en todos los planos por dolor y rigidez, mientras que la movilidad lumbar presenta una ligera limitación en flexión y extensión. Durante determinados movimientos cervicales la paciente refiere sensación de mareo e inestabilidad, aunque la exploración neurológica resulta normal, con fuerza, sensibilidad y reflejos conservados. Los hallazgos clínicos son compatibles con un síndrome postraumático secundario a latigazo cervical, asociado a disfunción temporomandibular y dolor mecánico cervicolumbar.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "011",
-        "icf_codes": [
-            "b280",
-            "b455",
-            "b730",
-            "d230",
-            "d430",
-            "d850",
-            "d920",
-            "e355",
-            "e570"
-        ],
-        "icf_name": [
-            "b280-Sensación de dolor",
-            "b455-Funciones relacionadas con la tolerancia al ejercicio",
-            "b730-Funciones relacionadas con la fuerza muscular",
-            "d230-Llevar a cabo rutinas diarias",
-            "d430-Levantar y llevar objetos",
-            "d850-Trabajo remunerado",
-            "d920-Tiempo libre y ocio",
-            "e355-Profesionales de la salud",
-            "e570-Servicios, sistemas y politicas de seguridad social"
-        ],
-        "id_clinical_text": "011_1",
-        "clinical_text": "1. Motivo de consulta\n\nEl paciente PLS acude a consulta por presentar un cuadro de dolor cervical de varios meses de evolución, de inicio insidioso y sin un mecanismo traumático claramente identificado. Refiere dolor localizado en la región cervical baja, de forma bilateral, acompañado de sensación de rigidez y quemazón en la transición cervicodorsal. Además, presenta dolor en la región dorsal media que aparece de forma intermitente y aumenta conforme avanza la jornada laboral o tras mantener posturas estáticas durante largos periodos.\n\nDescribe el dolor como continuo, con episodios de mayor intensidad en los que aparecen pinchazos localizados en la región de C7-T1. La sintomatología se incrementa con los movimientos repetitivos del cuello, la permanencia prolongada frente al ordenador y la conducción, mientras que mejora parcialmente con el reposo y la aplicación de calor local. El paciente refiere que las molestias han ido aumentando progresivamente, limitando tanto su rendimiento laboral como la práctica de actividad física habitual.\n\n2. Screening médico general\n\nDurante la anamnesis el paciente no refiere antecedentes traumáticos de relevancia ni intervenciones quirúrgicas relacionadas con la columna vertebral. Niega fracturas, enfermedades neurológicas, reumatológicas o procesos sistémicos que puedan justificar la sintomatología actual. Tampoco presenta alergias medicamentosas conocidas ni tratamiento farmacológico habitual, salvo el uso ocasional de analgésicos y antiinflamatorios cuando el dolor aumenta de intensidad.\n\nNo se identifican signos de alarma como pérdida de fuerza, alteraciones de la marcha, trastornos esfinterianos, pérdida de peso inexplicada o síntomas compatibles con patología grave. La evolución clínica y las características del dolor orientan hacia un proceso de origen mecánico, aunque por la persistencia de la sintomatología y la localización del dolor se considera necesario descartar una posible afectación discal mediante pruebas de imagen complementarias.\n\n3. Perfil del paciente\n\nEl paciente desarrolla una actividad laboral que requieremantener posturas mantenidas y movimientos repetitivos de la columna cervical durante gran parte de la jornada. Refiere que el dolor aumenta especialmente al final del día y durante periodos prolongados de trabajo frente al ordenador. Antes del inicio del cuadro mantenía un estilo de vida activo, practicando ejercicio físico de forma ocasional, aunque en los últimos meses ha reducido considerablemente su actividad debido al incremento del dolor y la rigidez cervical.\n\nMantieneautonomía para todas las actividades de la vida diaria, aunque refiere dificultad para conducir durante trayectos largos, permanecer sentado durante mucho tiempoy realizar determinadas tareas domésticas o deportivas. Su principal objetivo es disminuir el dolor, recuperar la movilidad cervical y volver a realizar sus actividades habituales sin limitaciones.\n\n4. Examen físico\n\nEn la exploración se aprecia una ligera anteriorización de la cabeza y aumento del tono de la musculaturacervicodorsal, especialmente en trapecios superiores, elevador de la escápula y musculatura paravertebral cervical. La palpación reproduce el dolor habitual del paciente, observándose una marcada sensibilidad en la transición cervicodorsal y sobre la musculatura paravertebral baja cervical. La movilidad activa cervical se encuentra limitada principalmente en los movimientos de flexión y extensión, que reproducen el dolor descrito por el paciente. La rotación cervical también provoca molestias, aunque con menor intensidad. La exploración neurológica muestra fuerza, sensibilidad y reflejos conservados, sin evidenciar déficits neurológicos objetivos. Los hallazgos clínicos son compatibles con una cervicalgia mecánica acompañada de sobrecarga muscular cervicodorsal, sin poder descartar completamente una afectación discal debido a la persistencia de los síntomas.",
-        "text_made_by": "Fisioterapeuta"
-    },
-    {
-        "id_code_combination": "012",
-        "icf_codes": [
-            "b134",
-            "b280",
-            "d230",
-            "d850",
-            "e355",
-            "e1101"
-        ],
-        "icf_name": [
-            "b134-Funciones del sueño",
-            "b280-Sensación de dolor",
-            "d230-Llevar a cabo rutinas diarias",
-            "d850-Trabajo remunerado",
-            "e355-Profesionales de la salud",
-            "e1101-Medicamentos"
-        ],
-        "id_clinical_text": "012_1",
-        "clinical_text": "1. Motivo de consulta\n\nLa paciente RMG acude a consulta tras haber sufrido un accidente de tráfico por alcance posterior, presentando desde entonces un cuadro persistente de dolor cervical que no ha remitido pese al tratamiento fisioterapéutico previo realizado en otro centro. Refiere dolor localizado en la región cervical posterior con irradiación hacia el hombro y miembro superior izquierdo, acompañado de sensación de rigidez, contractura muscular y episodios de parestesias en la extremidad superior izquierda. La sintomatología aumenta con los movimientos del cuello, especialmente durante la rotación y la flexión lateral, así como tras permanecer largos periodos sentada, conducir o realizar tareas domésticas.\n\nLa paciente cuantifica el dolor con una intensidad aproximada de 7/10 según la escala EVA, describiéndolo como un dolor continuo, de características mecánicas, que limita sus actividades habituales y afecta a su descanso nocturno debido a la dificultad para encontrar una postura cómoda. Manifiesta preocupación por la persistencia de los síntomas tras haber recibido tratamiento previo, motivo por el que solicita una nueva valoración fisioterapéutica.\n\n2. Screening médico general\n\nDurante la entrevista clínica la paciente refiere haber sido diagnosticada médicamente de un esguince cervical tras el accidente de tráfico, descartándose lesiones óseas mediante las pruebas complementarias realizadas. Niega antecedentes de fracturas, cirugías cervicales o enfermedades reumatológicas y neurológicas de interés. Tampoco presenta antecedentes de traumatismos cervicales previos de relevancia.\n\nNo refiere alergias medicamentosas conocidas ni enfermedades sistémicas que contraindiquen el tratamiento fisioterapéutico. Durante los primeros días posteriores al accidente siguió tratamiento farmacológico con analgésicos y antiinflamatorios, consiguiendo una mejoría parcial de la sintomatología. En la valoración no se identifican signos de alarma ni datos compatibles con afectación neurológica grave, aunque la paciente refiere parestesias ocasionales en el miembro superior izquierdo que deberán ser monitorizadas durante la evolución clínica.\n\n3. Perfil del paciente\n\nLa paciente desarrolla una actividad laboral que requiere mantener posturas mantenidas durante gran parte de la jornada, circunstancia que incrementa las molestias cervicales conforme transcurren las horas. Antes del accidente realizaba sus actividades personales, laborales y domésticas sin limitaciones, manteniendo además una actividad física moderada de forma habitual. Desde la aparición de la lesión ha reducido considerablemente dichas actividades debido al dolor y a la pérdida de movilidad cervical.\n\nEn su vida diaria refiere dificultad para conducir, trabajar frente al ordenador durante periodos prolongados, realizar tareas domésticas y mantener posiciones mantenidas. Su principal objetivo es recuperar la movilidad completa del cuello, eliminar el dolor y reincorporarse a su ritmo habitual de vida sin limitaciones funcionales.\n\n4. Examen físico\n\nEn la exploración se observa una actitud antiálgica con ligera rectificación de la lordosis cervical y aumento del tono muscular en ambos trapecios, elevador de la escápula, musculatura suboccipital, esternocleidomastoideos y escalenos, siendo más evidente la afectación en el lado izquierdo. La palpación reproduce el dolor habitual de la paciente, apreciándose múltiples puntos de hipersensibilidad y contractura muscular.\n\nLa movilidad activa cervical se encuentra limitada en todos los planos por dolor, especialmente durante la rotación y la flexión lateral izquierda. La exploración neurológica muestra fuerza y sensibilidad conservadas, sin déficits motores objetivos. Las maniobras de Jackson y Spurling resultan negativas, descartando una afectación radicular significativa durante la valoración. Tampoco se objetivan alteraciones vestibulares ni signos de compromiso neurológico central. Los hallazgos clínicos son compatibles con un esguince cervical postraumático en evolución, acompañado de una importante sobrecarga muscular cervicoescapular.",
-        "text_made_by": "Fisioterapeuta"
-    }
+  {
+    "id_code_combination": "001",
+    "icf_codes": [
+      "b130",
+      "b134",
+      "d175",
+      "b280",
+      "e1101"
+    ],
+    "icf_name": [
+      "b130-Funciones relacionadas con la energía y los impulsos",
+      "b134-Funciones del sueño",
+      "d175-Resolver problemas",
+      "b280-Sensación de dolor",
+      "e1101-Medicamentos"
+    ],
+    "id_clinical_text": "001_1",
+    "clinical_text": "Consulta por dolor lumbar, dorsal y cervical, también lateral de cadera. Nos cuenta que siempre ha sido muy activa pero ahora siente que “no merece la pena”. Dice no tener motivación para ninguna actividad. Sin embargo, por las noches está muy activa y le cuesta dormir a pesar de que toma pastillas para el sueño. Siente que las pastillas afectan a su capacidad para hacer el día a día “como si estuviera atontada y no le ayudan a dormir. Tiene como objetivos conseguir dar al menos un paseo y poder dormir al menos 2 hroas.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "001",
+    "icf_codes": [
+      "b130",
+      "b134",
+      "d175",
+      "b280",
+      "e1101"
+    ],
+    "icf_name": [
+      "b130-Funciones relacionadas con la energía y los impulsos",
+      "b134-Funciones del sueño",
+      "d175-Resolver problemas",
+      "b280-Sensación de dolor",
+      "e1101-Medicamentos"
+    ],
+    "id_clinical_text": "001_2",
+    "clinical_text": "Dolor cervical, también lumbar, de hombros, de muñecas, ambos bilaterales. Dificultades para hacer ejercicio porque “se encuentra cansada”. Dice que lo intenta pero nunca consigu emantenerlo por agotamiento. Ha intentado correr, yoga y pilates. El entrenamiento d efuerza le iba mejor pero notaba que luego dormía peor. Además después, por el cansancio, tenía dificultades para hacer el día a día, tiene sensación de que es incapaz de resolver conflictos del día a día, a veces se tira pensando varios minutos antes de poder iniciar una actividad o tomar una decisión como usar una sarten de hierro o una antiadherente. Toma opioides, lo ha intentado dejar porque ha leído que puedne también influir en el dolor.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "001",
+    "icf_codes": [
+      "b130",
+      "b134",
+      "d175",
+      "b280",
+      "e1101"
+    ],
+    "icf_name": [
+      "b130-Funciones relacionadas con la energía y los impulsos",
+      "b134-Funciones del sueño",
+      "d175-Resolver problemas",
+      "b280-Sensación de dolor",
+      "e1101-Medicamentos"
+    ],
+    "id_clinical_text": "001_3",
+    "clinical_text": "Dolor d emiembros inferiores desde hace 20 años, sensación de fatiga y cansancio general e insomnio de mantenimiento. El dolor comenzó hace 20 años sin motivo aparente, siempre notaba que sus amigos podían hacer más que ella y que si hacía mucho le dolía más el cuerpo en general. Después de seo comenzó con sensación de que estaba siempre ansada. Siente que ahora va un paso más y no solo le cuesta por cansancio, si no que nota que “la cabeza no le da”. Toma estatinas desde hace más de 5 años, medicación para la hipertensión y antiinflamatorios cuando “no aguanta más”, aunque no nota alivio especialmente",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "002",
+    "icf_codes": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "icf_name": [
+      "b152-Funciones emocionales",
+      "b1602-Contenido del pensamiento",
+      "b280-Sensación de dolor",
+      "d240-Manejo del estrés y otras demandas psicológicas",
+      "d850-Trabajo remunerado",
+      "e570-Servicios, sistemas y politicas de seguridad social"
+    ],
+    "id_clinical_text": "002_1",
+    "clinical_text": "Varón de 50 años que acude a consulta por dolor lumbar de 2 semanas de evolución.\nRefiere que se hizo daño trabajando (construcción), posiblemente en alguna acción cargando peso, aunque no recuerda bien. Acudió al médico de su mutua y le aconsejó reposo y analgésicos, pero no lo mantiene y sigue trabajando a pesar del dolor.\n\nSíntomas / signos:\nEs un dolor localizado en la región central de la espalda y zona glútea que asocia principalmente al movimiento (flexión lumbar y pasar a bipedestación desde sedestación). El dolor le va aumentando durante el día, sobre todo en el trabajo, llegando a tener dolor durante la noche y afectando su descanso. Los fines de semana le duele menos, ya que tiene menos actividad.\nEscala numérica de intensidad de dolor: 7/10 en los peores momentos.\n\nAspectos psicosociales: Durante la entrevista explica que está intentando evitar esos movimientos en el trabajo, centrándose en tareas que no le duelen. Pero no quiere dejar de trabajar porque la empresa tiene mucho trabajo ahora, siente que tiene que ayudar o si no podrían echarle (ha habido despidos antes). Su situación económica le genera ansiedad y no puede dejar el trabajo.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "002",
+    "icf_codes": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "icf_name": [
+      "b152-Funciones emocionales",
+      "b1602-Contenido del pensamiento",
+      "b280-Sensación de dolor",
+      "d240-Manejo del estrés y otras demandas psicológicas",
+      "d850-Trabajo remunerado",
+      "e570-Servicios, sistemas y politicas de seguridad social"
+    ],
+    "id_clinical_text": "002_2",
+    "clinical_text": "Mujer, 36 años. Acude a consulta por dolor cervical crónico (años de evolución).\nRefiere que lleva muchos años así, desde el instituto. Describe su dolor como un dolor que siempre está presente pero de intensidad variable. No sabe localizar un punto concreto de dolor, pero se señala desde la base del craneo hacia la cabeza. Comenta que es \"dolor tensional por el estrés\".\nEscala numerica de intensidad del dolor: oscila entre un 2/10 y un 5/10. Asocia el aumento del dolor al estrés y a épocas en las que tiene más carga de trabajo.\n\nCuando le pregunto por si ha visto qué es lo que le mejora el dolor, me dice que la\nmedicación le alivia parcialmente y que en vacaciones, cuando tiene más tiempo para retomar el deporte (salir a caminar, pádel) siente que le duele menos.\n\nAspectos psicosociales: Al iniciar la anamnesis, la paciente muestra \"poca confianza\" en el tratamiento, refiriendo que ha pasado por muchos fisios y que está aquí porque lo ha pedido su médico, pero sabe que su dolor no va a mejorar nunca.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "002",
+    "icf_codes": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "icf_name": [
+      "b152-Funciones emocionales",
+      "b1602-Contenido del pensamiento",
+      "b280-Sensación de dolor",
+      "d240-Manejo del estrés y otras demandas psicológicas",
+      "d850-Trabajo remunerado",
+      "e570-Servicios, sistemas y politicas de seguridad social"
+    ],
+    "id_clinical_text": "002_3",
+    "clinical_text": "Mujer de 58 años que acude a consulta por dolor generalizado.\nRefiere que cree que tiene fibromialgia aunque no tiene diagnóstico médico confirmado todavía. Se encuentra de baja desde hace 10 meses porque se siente incapaz de hacer su trabajo (enfermera) y lleva desde entonces con pruebas médicas para confirmar el diagnóstico.\n\nSíntomas / signos:\nExplica que \"le duele todo el cuerpo siempre\". Las zonas que más dolor presentan son ambos hombros y la espalda (tanto zona torácica como zona lumbar). No se aprecia inflamación y pérdida de movilidad en ninguna de las articulaciones, aunque el rango de movimiento no está libre de dolor. La intensidad del dolor de hombros es de un 6/10 (escala\nnumérica), en zona torácica es 5/10 y en zona lumbar 5/10. El comportamiento de los síntomas varía:\n- Hombros parece que hay un factor mecánico, ya que hay movimientos como la ABD que incrementan más su dolor que otros.\n- Dolor torácico parece ser un dolor continuo y no varía por factores mecánicos\n- Dolor lumbar empeora con la flexión\n\nTanto el dolor de hombros como el dolor lumbar empeoran con el movimiento y con la carga. Dice que desde hace unos meses ya no puede coger en brazos a su nieto, ahora que pasa más tiempo con él (se encarga de él todo el día mientras sus padres trabajan). Para ella, esto (no poder coger en brazos a su nieto) tiene un impacto emocional importante.\n\nComenta que no tiene prisa por volver a trabajar. Ahora su objetivo es poder ayudar a su hija cuidando de su nieto.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "004",
+    "icf_codes": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "icf_name": [
+      "b1602-Contenido del pensamiento",
+      "b280-Sensación de dolor",
+      "b455-Funciones relacionadas con la tolerancia al ejercicio",
+      "b730-Funciones relacionadas con la fuerza muscular",
+      "d920-Tiempo libre y ocio"
+    ],
+    "id_clinical_text": "004_1",
+    "clinical_text": "Varón, 43 años, conductor de metro jornada completa. Colesterol. Fumador. Sedentario. HTA.\n\n\nAcude por dolor en zona anterior del hombro derecho desde hace algo más de 5 años (EVA 3/10). Dolor difuso que a veces irradia hacia el resto del MSD y a la zona cervical con posiciones mantenidas. Dolor más intenso (EVA 6/10) endeterminados movimientos. \nLe recomendaron fortalecer el hombro, pero piensa que los síntomas empeorarían. Cree que no saben lo que le pasa porque sino no le habrían recomendado movilizar, dice que lo que tendrían que hacer es operarle para quitarle lo que tenga mal y así poder recuperarse. \nA veces sale a andar (15-30min) pero suele acabar fatigado y con más dolor en la zona, cada vez sale menos. Solo sale al cine una vez al mes con su familia, el resto del tiempo en casa viendo TV o móvil.\n\n\nEXPLORACIÓN\nFlex y abd limitación por dolor a 90º. ++ contra R. 4/5 \nRE limitación por dolor 30º. +++ contra R. 3/5 \nRI conservada sin dolor. 5/5 \nExt conservada con dolor ligero al final de ROM. 5/5 ",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "004",
+    "icf_codes": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "icf_name": [
+      "b1602-Contenido del pensamiento",
+      "b280-Sensación de dolor",
+      "b455-Funciones relacionadas con la tolerancia al ejercicio",
+      "b730-Funciones relacionadas con la fuerza muscular",
+      "d920-Tiempo libre y ocio"
+    ],
+    "id_clinical_text": "004_2",
+    "clinical_text": "Mujer 22 años, estudiante de farmacia (5º). No tiene antecedentes relevantes. Bailarina de ballet (3º conservatorio)\n\n\nComenzó con dolor en zona cervical hace alrededor de 3 años. El dolor comenzó como una sensación de “tensión” en la zona posterior del cuello, pero ha ido generalizándose hacia zona trapecios, interescapular, paravertebral dorsal e incluso hombros. Dolor no constante, aparece de manera intermitente (3-4 días/sem) pero no lo relaciona con nada, no entiende por qué aparece. Cefaleas frecuentes durante los cuadros álgicos, pero no mareos ni parestesias en MMSS.\nSigue con práctica de baile habitual, (15h/sem), no considera quetenga que reducir actividad, “no quiere ni puede permitírselo, no cree que tenga nada que ver con su dolor”. Durante los meses de verano (2 meses de vacaciones) suele estar mejor, pero lo relaciona al calor, que le gusta y siempre le ha venido bien. \nPoco tiempo libre, solo queda con una amiga del conservatorio de vez en cuando. En vacaciones se va al pueblo con su familia, allí tiene un grupo de amigos de toda la vida.\n\n\nEXPLORACIÓN\nMusculatura con mucha tensión y dolor intenso(EVA 8-9/10) a la palpación.\nEn el momento de la exploración viene con dolor. Dolor (EVA 4/10) en todos los movimientos, pero ROM conservado. Fuerza conservada. No síntomas neurológicos.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "004",
+    "icf_codes": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "icf_name": [
+      "b1602-Contenido del pensamiento",
+      "b280-Sensación de dolor",
+      "b455-Funciones relacionadas con la tolerancia al ejercicio",
+      "b730-Funciones relacionadas con la fuerza muscular",
+      "d920-Tiempo libre y ocio"
+    ],
+    "id_clinical_text": "004_3",
+    "clinical_text": "Mujer 34 años. Administrativa. 1 hijo de 6 meses. Hacía crossfit antes del embarazo y durante. \n\n\nAcude por dolor lumbar desde hace más de 1 año. Comenzó durante el 3er mes de embarazo y desde entonces no ha desaparecido. Ha ido variando la intensidad (EVA 3/10 a 8/10) a lo largo del año, a veces sube y otras baja. Dolordifuso en zona lumbar y sacra, aumenta a la extensión. No síntomas ciáticos. Ha dejado de hacer ejercicios por el dolor intenso cuando va a crossfit.\nDurante el embarazo hacía crossfit sin adaptaciones, su entrenadora le adaptaba ejercicios e intentaba que activase el SP y el TrA junto con respiraciones pero se le daba malasí que pasó de ello. Ella piensa que eran “chorradas”, que ahora estaba de moda el ejercicio en el embarazo y por eso querían meter “tonterías” en los entrenamientos para hacerlos más “interesantes”, pero eso no iba con ella.\nPasa mucho tiempo con su hijo y su marido. También ve a su familia. No tiene mucho tiempo libre, pero le gustaría volver a entrenar, es su principal objetivo. Sale mucho a caminar, no suele empeorar síntomas a no ser que se pase (más de 2h seguidas caminando).\n\n\nEXPLORACIÓN\nLasegue -. \nPruebas ASI +++\nExtensión ++, flexión ok. \nMolestias a rot, inclinación ok.\nDebilidad glúteo medio. 4/5 \n\n\nDiástasis de rectos abdominales infraumbilical (2 cm con mal tono de la LA), supra no separación pero mal tono LA. Siempre ha realizado ejercicios en apnea. No activa TrA de manera automática, ni sabe activar el SP. Hiperactivación musculatura superficial (rectos y OE). IUE frecuente 2 veces/día. \n\n\nDurante la evaluación se muestra incómoda y desconfiada por centrar la valoración en el CALP, incide en varias ocasiones en que su dolor es lumbar y que no tiene nada que ver con el abdomen o con sus pérdidas de orina. No entiende la valoración. Explico importancia de CALP en el dolor lumbar.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "005",
+    "icf_codes": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "d230-Llevar a cabo rutinas diarias",
+      "d430-Levantar y llevar objetos",
+      "d450-Andar",
+      "d640-Realizar los quehaceres de la casa"
+    ],
+    "id_clinical_text": "005_1",
+    "clinical_text": "Paciente varón de 28 años, de ocupación conductor (Uber) y estilo de vida sedentario, consulta por lumbalgia asociada a sedestación prolongada. Describe los síntomas como una sensación de pellizco y quemazón lumbar que se incrementa hacia el final de la jornada laboral. El dolor disminuye temporalmente al interrumpir la marcha del vehículo y realizar estiramientos, pero persiste el malestar al reanudar la postura de conducción. La sintomatología no se reproduce con el movimiento general.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "005",
+    "icf_codes": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "d230-Llevar a cabo rutinas diarias",
+      "d430-Levantar y llevar objetos",
+      "d450-Andar",
+      "d640-Realizar los quehaceres de la casa"
+    ],
+    "id_clinical_text": "005_2",
+    "clinical_text": "Paciente de 68 años, jubilada, acude a consulta refiriendo una gran pesadez en las piernas que casi le impide subir las escaleras de su casa. Llama la atención el marcado carácter \"estacional\" de su malestar: los dolores se han vuelto insoportables durante los meses de calor, mientras que en invierno sube los escalones casi sin enterarse. Aunque ha probado la clásica receta casera de tumbarse en el sofá con las piernas en alto sobre un cojín, el alivio es solo un leve respiro y las molestias persisten. Todo apunta a que las altas temperaturas le están pasando factura a su circulación.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "005",
+    "icf_codes": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "d230-Llevar a cabo rutinas diarias",
+      "d430-Levantar y llevar objetos",
+      "d450-Andar",
+      "d640-Realizar los quehaceres de la casa"
+    ],
+    "id_clinical_text": "005_3",
+    "clinical_text": "Paciente varón de 56 años, fontanero de profesión, acude a consulta por un dolor punzante e incesante en el codo derecho. La molestia se ha vuelto tan incapacitante que le ha obligado a coger la baja laboral, con el consecuente perjuicio económico que ello le supone. Describe un dolor rebelde que no da tregua y que, en ocasiones, se irradia hacia los dedos acompañado de una molesta pérdida de sensibilidad en el antebrazo. La pérdida de fuerza en la mano derecha es severa: no puede cargar peso en su trabajo ni gestionar tareas cotidianas tan simples como sacar los platos del lavavajillas para colocarlos en la alacena. Ninguna postura ni remedio le aporta alivio hasta el momento.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "006",
+    "icf_codes": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "d430-Levantar y llevar objetos",
+      "d760-Relaciones Familiares",
+      "d920-Tiempo libre y ocio"
+    ],
+    "id_clinical_text": "006_1",
+    "clinical_text": "Adolescente de 12 años acude a consulta por dolor de cadera tras notar un pinchazo desde hace más de un año tras un partido de hockey, no acudió al médico en ese momento, actualmente las radiografías no muestran lesión, no realizada RMN. Actualmente refiere dificultad para llevar la mochila del colegio, y para jugar con su padre al hockey, que es su principal hobby. Le gustaría volver a poder jugar.\n\nComenta que el dolor comenzó en la cadera pero que actualmente llega hasta el pie.\n\nExploración física: movilidad pasiva indolora salvo en extensión de cadera en prono, isométrico en flexión doloroso, FADDIR +,FABDRE +, desrot test -, SLR + con diferenciación de tobillo. Dolor a extensión lumbar activa de pie, no dolor al levantarse de la camilla ni en la sentadilla.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "006",
+    "icf_codes": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "d430-Levantar y llevar objetos",
+      "d760-Relaciones Familiares",
+      "d920-Tiempo libre y ocio"
+    ],
+    "id_clinical_text": "006_2",
+    "clinical_text": "Varón de 40 años, acude a consulta por dolor de espalda recurrente que comenzó hace 5 años. Aproximadamente un episodio al mes. Trabaja de conductor de taxi, refiere no tener problemas para trabajar pero le cuesta meter maletas en el maletero del taxi. Además dice tener dificultades para viajar, los episodios le impiden planificar viajes pues si le dan apenas puede moverse. Esto le limita a la hora de buscar espacios comunes con su pareja. Le gustaría poder reducir la frecuencia de episodios o saber qué puede hacer cuándo aparecen.\n\nExploración física: dolor a movimientos activos lumbares, principalmente flexión, dolor central en extensión, SLR reproduce dolor a nivel lumbar, Bragard +, slump +. EIL reducee dolor a la movilidad activa, slump y SLR. \n\n RM:12/24 \n\n Rx: Enseño ejercicios repetidos lumbares EIL 3-5/día x10 y enseño posibles respuestas y señales de stop",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "006",
+    "icf_codes": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "d430-Levantar y llevar objetos",
+      "d760-Relaciones Familiares",
+      "d920-Tiempo libre y ocio"
+    ],
+    "id_clinical_text": "006_3",
+    "clinical_text": "Mujer 70 años, acude a consulta por dolor de MSD que apareció sin motivo aparente, dice que lo tiene 'de toda la vida'. Es activa, realiza actividades en el centro cultural del barrio como yoga y cerámica con su hermana. Se siente limitada a la hora de realizar yoga, sigue realizando la actividad para ver a su hermana.\n\nEn exploracion no dolor a movimientos pasivos de hombro, dolor a isométricos en RE, F, ABD y push, no observo limitación de movimiento a movimiento activo aunque refiere dolor. Dificultad para levantar mancuerna de 1kg con ese MS con respecto a contralateral. \n\n QuickDash:25% \n\n Tto: Enseño ejercicios isométricos de hombro, explico historia natural y gestión de la carga según respuesta sintomática, cito en una semana para progresar ejercicios.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "007",
+    "icf_codes": [
+      "b280",
+      "d450",
+      "e1101"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "d450-Andar",
+      "e1101-Medicamentos"
+    ],
+    "id_clinical_text": "007_1",
+    "clinical_text": "Manuel 45 años\nDolor lumbar con irraciacion a miembro inferior derecho de 4 meses de evolución, origen no traumático, ligera limitación funcional, no limitación de sus actividades del día a día, en paro, no practica una actividad física regular. No refiere mejoría desde el inicio de los síntomas.\nDolor que aparece con la actividad física moderada y la marcha, no dolor en reposo ni nocturno, no dolor al slump test, no se aprecia pérdida de sensibilidad, motricidad o reflejos en miembro inferior, no dolor a la palpación, amplitud articular completa en activo y pasivo.\nNo antecedentes médicos relevantes, actualmente con AINES prescritos por su médico, no refiere mejoría con ellos aunque los sigue tomando.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "008",
+    "icf_codes": [
+      "b134",
+      "b280",
+      "d230",
+      "d850",
+      "e1101"
+    ],
+    "icf_name": [
+      "b134-Funciones del sueño",
+      "b280-Sensación de dolor",
+      "d230-Llevar a cabo rutinas diarias",
+      "d850-Trabajo remunerado",
+      "e1101-Medicamentos"
+    ],
+    "id_clinical_text": "008_1",
+    "clinical_text": "Antecedente de fractura proximal de humero dcho sin desplazamiento hace 3 años, de origen traumatico. Actualmente dolor en todo el miembro superior derecho e izquierdo. Limitación funcional del miembro superior derecho severa, limitación de sus actividades de la vida diaria, actualmente en baja laboral. Refiere ligera mejoría desde el inicio de los sintomas \nDolor con cualquier movimiento del hombro, dolor nocturno que le despierta por las noches de manera frecuente, dice que no encuentra la posición. Dolor a la palpación en cualquier punto de la región del hombro, no síntomas cervicales. No síntomas de tipo nervioso.\n\nNo antecedentes médicos relevantes, actualmente con Aines prescrito por su medico, refiere mejoría.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "009",
+    "icf_codes": [
+      "b280",
+      "b730"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "b730-Funciones relacionadas con la fuerza muscular"
+    ],
+    "id_clinical_text": "009_1",
+    "clinical_text": "Dolor de hombro dcho asociado a tendinopatia del manguito rotador de 10 meses de evolución, origen no traumatico refiere mejoría significativa trasa haber empezado una rutina de ejercicios que ha empezado ella misma, ligera limitación funcional, pérdida de los últimos grados de elevación y rotación interna, no limitación de sus actividades de la vida diaria, sigue realizándolas aunque tenga un poco de dolor, no trabaja.\nA la exploración dolor al movimiento contra resistencia, dolor a la elevación y a la rotación interna, no rom activo completo si completo en pasivo. Refiere ligera pérdida de fuerza generalizada del miembro superior, no síntomas de tipo nervioso, ni síntomas en la región cervical \nAntecedentes, diabetes e hipertensión, medicación para la hipertensión",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "010",
+    "icf_codes": [
+      "b130",
+      "b134",
+      "b152",
+      "b280",
+      "b455",
+      "b730",
+      "b760",
+      "d230",
+      "d430",
+      "d640",
+      "d850",
+      "d920",
+      "e1101",
+      "e410",
+      "e570"
+    ],
+    "icf_name": [
+      "b130-Funciones relacionadas con la energía y los impulsos",
+      "b134-Funciones del sueño",
+      "b152-Funciones emocionales",
+      "b280-Sensación de dolor",
+      "b455-Funciones relacionadas con la tolerancia al ejercicio",
+      "b730-Funciones relacionadas con la fuerza muscular",
+      "b760-Funciones relacionadas con el control de los movimientos voluntarios",
+      "d230-Llevar a cabo rutinas diarias",
+      "d430-Levantar y llevar objetos",
+      "d640-Realizar los quehaceres de la casa",
+      "d850-Trabajo remunerado",
+      "d920-Tiempo libre y ocio",
+      "e1101-Medicamentos",
+      "e410-Actitudes individuales de miembros de la familia cercana",
+      "e570-Servicios, sistemas y politicas de seguridad social"
+    ],
+    "id_clinical_text": "010_1",
+    "clinical_text": "1. Motivo de consulta\n\nLa paciente SKI acude a consulta tras sufrir un accidente de tráfico por alcance posterior, comenzando desde ese momento un cuadro de dolor localizado principalmente en la región cervical, acompañado de dolor lumbar, cefaleas frecuentes, mareos, acúfenos y molestias en la articulación temporomandibular. Refiere una sensación constante de rigidez cervical, con importante limitación para realizar movimientos del cuello y aumento del dolor al permanecer sentada durante periodos prolongados, conducir o realizar actividades que requieran movimientos repetitivos de la cabeza.\n\nAdemás del dolor musculoesquelético, manifiesta episodios de inestabilidad, cefaleas de predominio occipital y molestias mandibulares durante la masticación, síntomas que han condicionado una importante disminución de su calidad de vida. Explica que la evolución se vio afectada por la interrupción prematura del tratamiento rehabilitador, lo que favoreció la persistencia de la sintomatología y dificultó su recuperación funcional. En el momento de la valoración refiere una intensidad del dolor de 8/10 en la región cervical y de 6/10 en la región lumbar, con limitación para desarrollar sus actividades habituales.\n\n2. Screening médico general\n\nDurante la entrevista clínica la paciente refiere haber sido valorada médicamente tras el accidente,realizándose pruebas radiológicas que descartaron lesiones óseas o estructurales de gravedad. No presenta antecedentes de fracturas, intervenciones quirúrgicas ni enfermedades reumatológicas o neurológicas relevantes. Como consecuencia del accidente inició tratamiento farmacológico analgésico, llegando a desarrollar una dependencia al consumo de opioides debido a la persistencia del dolor.\n\nAsimismo, refiere encontrarse en seguimiento psicológico por un cuadro de ansiedad relacionado con el accidente y permanecer en situación de incapacidad temporal durante parte del proceso de recuperación. No presenta alergias medicamentosas conocidas ni se objetivan signos de alarma neurológicos durante la valoración fisioterapéutica.\n\n3. Perfil del paciente\n\nAntes del accidente la paciente desarrollaba su actividad laboral con normalidad y mantenía un estilo de vida activo, realizando actividad física de intensidad moderada y siendo completamente independiente para todas las actividades de la vida diaria. Tras el accidente ha reducido considerablemente su nivel de actividad debido al dolor persistente, los mareos y la inseguridad que le generan determinados movimientos cervicales.\n\nLas molestias han condicionado dificultades para conducir, permanecer sentada durante largos periodos, realizar tareas domésticas y mantener una jornada laboral normal. La persistencia del dolor y la aparición de ansiedad han tenido también repercusión sobre su estado emocional y su descanso nocturno. Su principal objetivo es recuperar la movilidad cervical, disminuir el dolor y reincorporarse progresivamente a su vida personal y laboral con la mayor normalidad posible.\n\n4. Examen físico\n\nDurante la exploración se observa una actitud antiálgica con rectificación de la lordosis cervical y una importante hipertonía de la musculatura paravertebral cervical, trapecios superiores, musculatura suboccipital y región cervicodorsal. La palpación reproduce el dolor habitual de la paciente y pone de manifiesto una elevada sensibilidad muscular tanto en la región cervical como lumbar. También se objetiva dolor a la palpación de la musculatura masticatoria y limitación funcional de la articulación temporomandibular.\n\nLa movilidad activa cervical se encuentra limitada en todos los planos por dolor y rigidez, mientras que la movilidad lumbar presenta una ligera limitación en flexión y extensión. Durante determinados movimientos cervicales la paciente refiere sensación de mareo e inestabilidad, aunque la exploración neurológica resulta normal, con fuerza, sensibilidad y reflejos conservados. Los hallazgos clínicos son compatibles con un síndrome postraumático secundario a latigazo cervical, asociado a disfunción temporomandibular y dolor mecánico cervicolumbar.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "011",
+    "icf_codes": [
+      "b280",
+      "b455",
+      "b730",
+      "d230",
+      "d430",
+      "d850",
+      "d920",
+      "e355",
+      "e570"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "b455-Funciones relacionadas con la tolerancia al ejercicio",
+      "b730-Funciones relacionadas con la fuerza muscular",
+      "d230-Llevar a cabo rutinas diarias",
+      "d430-Levantar y llevar objetos",
+      "d850-Trabajo remunerado",
+      "d920-Tiempo libre y ocio",
+      "e355-Profesionales de la salud",
+      "e570-Servicios, sistemas y politicas de seguridad social"
+    ],
+    "id_clinical_text": "011_1",
+    "clinical_text": "1. Motivo de consulta\n\nEl paciente PLS acude a consulta por presentar un cuadro de dolor cervical de varios meses de evolución, de inicio insidioso y sin un mecanismo traumático claramente identificado. Refiere dolor localizado en la región cervical baja, de forma bilateral, acompañado de sensación de rigidez y quemazón en la transición cervicodorsal. Además, presenta dolor en la región dorsal media que aparece de forma intermitente y aumenta conforme avanza la jornada laboral o tras mantener posturas estáticas durante largos periodos.\n\nDescribe el dolor como continuo, con episodios de mayor intensidad en los que aparecen pinchazos localizados en la región de C7-T1. La sintomatología se incrementa con los movimientos repetitivos del cuello, la permanencia prolongada frente al ordenador y la conducción, mientras que mejora parcialmente con el reposo y la aplicación de calor local. El paciente refiere que las molestias han ido aumentando progresivamente, limitando tanto su rendimiento laboral como la práctica de actividad física habitual.\n\n2. Screening médico general\n\nDurante la anamnesis el paciente no refiere antecedentes traumáticos de relevancia ni intervenciones quirúrgicas relacionadas con la columna vertebral. Niega fracturas, enfermedades neurológicas, reumatológicas o procesos sistémicos que puedan justificar la sintomatología actual. Tampoco presenta alergias medicamentosas conocidas ni tratamiento farmacológico habitual, salvo el uso ocasional de analgésicos y antiinflamatorios cuando el dolor aumenta de intensidad.\n\nNo se identifican signos de alarma como pérdida de fuerza, alteraciones de la marcha, trastornos esfinterianos, pérdida de peso inexplicada o síntomas compatibles con patología grave. La evolución clínica y las características del dolor orientan hacia un proceso de origen mecánico, aunque por la persistencia de la sintomatología y la localización del dolor se considera necesario descartar una posible afectación discal mediante pruebas de imagen complementarias.\n\n3. Perfil del paciente\n\nEl paciente desarrolla una actividad laboral que requieremantener posturas mantenidas y movimientos repetitivos de la columna cervical durante gran parte de la jornada. Refiere que el dolor aumenta especialmente al final del día y durante periodos prolongados de trabajo frente al ordenador. Antes del inicio del cuadro mantenía un estilo de vida activo, practicando ejercicio físico de forma ocasional, aunque en los últimos meses ha reducido considerablemente su actividad debido al incremento del dolor y la rigidez cervical.\n\nMantieneautonomía para todas las actividades de la vida diaria, aunque refiere dificultad para conducir durante trayectos largos, permanecer sentado durante mucho tiempoy realizar determinadas tareas domésticas o deportivas. Su principal objetivo es disminuir el dolor, recuperar la movilidad cervical y volver a realizar sus actividades habituales sin limitaciones.\n\n4. Examen físico\n\nEn la exploración se aprecia una ligera anteriorización de la cabeza y aumento del tono de la musculaturacervicodorsal, especialmente en trapecios superiores, elevador de la escápula y musculatura paravertebral cervical. La palpación reproduce el dolor habitual del paciente, observándose una marcada sensibilidad en la transición cervicodorsal y sobre la musculatura paravertebral baja cervical. La movilidad activa cervical se encuentra limitada principalmente en los movimientos de flexión y extensión, que reproducen el dolor descrito por el paciente. La rotación cervical también provoca molestias, aunque con menor intensidad. La exploración neurológica muestra fuerza, sensibilidad y reflejos conservados, sin evidenciar déficits neurológicos objetivos. Los hallazgos clínicos son compatibles con una cervicalgia mecánica acompañada de sobrecarga muscular cervicodorsal, sin poder descartar completamente una afectación discal debido a la persistencia de los síntomas.",
+    "text_made_by": "Fisioterapeuta"
+  },
+  {
+    "id_code_combination": "012",
+    "icf_codes": [
+      "b134",
+      "b280",
+      "d230",
+      "d850",
+      "e355",
+      "e1101"
+    ],
+    "icf_name": [
+      "b134-Funciones del sueño",
+      "b280-Sensación de dolor",
+      "d230-Llevar a cabo rutinas diarias",
+      "d850-Trabajo remunerado",
+      "e355-Profesionales de la salud",
+      "e1101-Medicamentos"
+    ],
+    "id_clinical_text": "012_1",
+    "clinical_text": "1. Motivo de consulta\n\nLa paciente RMG acude a consulta tras haber sufrido un accidente de tráfico por alcance posterior, presentando desde entonces un cuadro persistente de dolor cervical que no ha remitido pese al tratamiento fisioterapéutico previo realizado en otro centro. Refiere dolor localizado en la región cervical posterior con irradiación hacia el hombro y miembro superior izquierdo, acompañado de sensación de rigidez, contractura muscular y episodios de parestesias en la extremidad superior izquierda. La sintomatología aumenta con los movimientos del cuello, especialmente durante la rotación y la flexión lateral, así como tras permanecer largos periodos sentada, conducir o realizar tareas domésticas.\n\nLa paciente cuantifica el dolor con una intensidad aproximada de 7/10 según la escala EVA, describiéndolo como un dolor continuo, de características mecánicas, que limita sus actividades habituales y afecta a su descanso nocturno debido a la dificultad para encontrar una postura cómoda. Manifiesta preocupación por la persistencia de los síntomas tras haber recibido tratamiento previo, motivo por el que solicita una nueva valoración fisioterapéutica.\n\n2. Screening médico general\n\nDurante la entrevista clínica la paciente refiere haber sido diagnosticada médicamente de un esguince cervical tras el accidente de tráfico, descartándose lesiones óseas mediante las pruebas complementarias realizadas. Niega antecedentes de fracturas, cirugías cervicales o enfermedades reumatológicas y neurológicas de interés. Tampoco presenta antecedentes de traumatismos cervicales previos de relevancia.\n\nNo refiere alergias medicamentosas conocidas ni enfermedades sistémicas que contraindiquen el tratamiento fisioterapéutico. Durante los primeros días posteriores al accidente siguió tratamiento farmacológico con analgésicos y antiinflamatorios, consiguiendo una mejoría parcial de la sintomatología. En la valoración no se identifican signos de alarma ni datos compatibles con afectación neurológica grave, aunque la paciente refiere parestesias ocasionales en el miembro superior izquierdo que deberán ser monitorizadas durante la evolución clínica.\n\n3. Perfil del paciente\n\nLa paciente desarrolla una actividad laboral que requiere mantener posturas mantenidas durante gran parte de la jornada, circunstancia que incrementa las molestias cervicales conforme transcurren las horas. Antes del accidente realizaba sus actividades personales, laborales y domésticas sin limitaciones, manteniendo además una actividad física moderada de forma habitual. Desde la aparición de la lesión ha reducido considerablemente dichas actividades debido al dolor y a la pérdida de movilidad cervical.\n\nEn su vida diaria refiere dificultad para conducir, trabajar frente al ordenador durante periodos prolongados, realizar tareas domésticas y mantener posiciones mantenidas. Su principal objetivo es recuperar la movilidad completa del cuello, eliminar el dolor y reincorporarse a su ritmo habitual de vida sin limitaciones funcionales.\n\n4. Examen físico\n\nEn la exploración se observa una actitud antiálgica con ligera rectificación de la lordosis cervical y aumento del tono muscular en ambos trapecios, elevador de la escápula, musculatura suboccipital, esternocleidomastoideos y escalenos, siendo más evidente la afectación en el lado izquierdo. La palpación reproduce el dolor habitual de la paciente, apreciándose múltiples puntos de hipersensibilidad y contractura muscular.\n\nLa movilidad activa cervical se encuentra limitada en todos los planos por dolor, especialmente durante la rotación y la flexión lateral izquierda. La exploración neurológica muestra fuerza y sensibilidad conservadas, sin déficits motores objetivos. Las maniobras de Jackson y Spurling resultan negativas, descartando una afectación radicular significativa durante la valoración. Tampoco se objetivan alteraciones vestibulares ni signos de compromiso neurológico central. Los hallazgos clínicos son compatibles con un esguince cervical postraumático en evolución, acompañado de una importante sobrecarga muscular cervicoescapular.",
+    "text_made_by": "Fisioterapeuta"
+  }
 ]

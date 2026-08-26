@@ -34,7 +34,7 @@ figuras_dir <- file.path(tfl_dir, "figuras")
 informes_dir <- file.path(tfl_dir, "informes")
 
 ruta_json <- file.path(llm_dir, "resumen_f1_score.json")
-ruta_salida_docx <- file.path(tablas_dir, "tablas_desempeno.docx")
+ruta_salida_docx <- file.path(tablas_dir, "tabla_desempeno_apa.docx")
 
 if (!file.exists(ruta_json)) {
   stop(paste("No se encontró el archivo JSON en:", ruta_json))
@@ -53,9 +53,9 @@ border_sub  <- fp_border(color = "#444444", width = 0.8)
 # TABLA 1: DESEMPEÑO GLOBAL Y MÉTRICAS MULTIETIQUETA (ESTILO BOOKTABS)
 # =============================================================================
 df_global <- tibble::tribble(
-  ~Dimension, ~Metrica, ~Gemma_31B, ~Flash_35, ~Flash_36,
+  ~Dimension, ~Metrica, ~Gemma_31B, ~Flash_35, ~Flash_37,
   "Corpus Clínico", "Historias evaluadas (N)", "114", "114", "114",
-  "Corpus Clínico", "Espacio ontológico (114 × 27)", "3.078", "3.078", "3.078",
+  "Corpus Clínico", "Espacio ontológico (114 × 24)", "2.736", "2.736", "2.736",
   "Corpus Clínico", "Instancias CIF reales (Soporte)", "465", "465", "465",
   "Corpus Clínico", "Consenso inter-iteraciones", "Estricto (3/3)", "Estricto (3/3)", "Estricto (3/3)",
   
@@ -84,13 +84,13 @@ ft1 <- flextable(df_global) %>%
     Metrica = "Métrica / Parámetro",
     Gemma_31B = "Gemma-4-31B-it",
     Flash_35 = "Gemini Flash 3.5",
-    Flash_36 = "Gemini Flash 3.6"
+    Flash_37 = "Gemini Flash 3.7"
   ) %>%
   merge_v(j = "Dimension") %>%
   valign(j = "Dimension", valign = "top") %>%
   italic(j = "Dimension") %>%
   bold(part = "header") %>%
-  bold(i = c(9, 12, 15, 18), j = c("Metrica", "Gemma_31B", "Flash_35", "Flash_36")) %>%
+  bold(i = c(9, 12, 15, 18), j = c("Metrica", "Gemma_31B", "Flash_35", "Flash_37")) %>%
   align(j = 1:2, align = "left", part = "all") %>%
   align(j = 3:5, align = "center", part = "all") %>%
   border_remove() %>%
@@ -139,7 +139,7 @@ for (c in codigos) {
     Soporte = as.integer(sup),
     Gemma_F1 = f1_gem,
     Flash_35_F1 = f1_35,
-    Flash_36_F1 = f1_36
+    Flash_37_F1 = f1_36
   )
 }
 
@@ -156,7 +156,7 @@ ft2 <- flextable(df_class) %>%
     Soporte = "Soporte (GT)",
     Gemma_F1 = "Gemma-4-31B-it (F1)",
     Flash_35_F1 = "Gemini Flash 3.5 (F1)",
-    Flash_36_F1 = "Gemini Flash 3.6 (F1)"
+    Flash_37_F1 = "Gemini Flash 3.7 (F1)"
   ) %>%
   merge_v(j = "Componente") %>%
   valign(j = "Componente", valign = "top") %>%
@@ -179,12 +179,12 @@ ft2 <- flextable(df_class) %>%
   width(j = 3, width = 2.4) %>%
   width(j = 4, width = 0.7) %>%
   width(j = 5:7, width = 0.95) %>%
-  set_caption(caption = "Tabla 2. Auditoría detallada del F1-Score en las 27 categorías CIF del Core Set de Dolor Crónico.")
+  set_caption(caption = "Tabla 2. Auditoría detallada del F1-Score en las 24 categorías CIF del Core Set de Dolor Crónico.")
 
 # Exportar a documento Word
 doc <- read_docx() %>%
   body_add_par("Desempeño Diagnóstico en la Codificación CIF Automatizada", style = "heading 1") %>%
-  body_add_par("Evaluación comparativa de modelos LLM bajo consenso estricto (3/3) frente al Ground Truth (114 historias clínicas, Core Set CIF de dolor crónico con 27 categorías).", style = "Normal") %>%
+  body_add_par("Evaluación comparativa de modelos LLM bajo consenso estricto (3/3) frente al Ground Truth (114 historias clínicas, Core Set CIF de dolor crónico con 24 categorías).", style = "Normal") %>%
   body_add_par("", style = "Normal") %>%
   body_add_flextable(ft1) %>%
   body_add_par("", style = "Normal") %>%

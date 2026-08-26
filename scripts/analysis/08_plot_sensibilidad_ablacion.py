@@ -37,7 +37,7 @@ COLORES_MODELOS = {
         "con": "#1F4E79",      # Azul marino profundo
         "sin": "#5DADE2"       # Azul suave
     },
-    "gemini_flash_36": {
+    "gemini_flash_37": {
         "con": "#27AE60",      # Verde esmeralda
         "sin": "#82E0AA"       # Verde menta
     },
@@ -53,7 +53,7 @@ def generar_figura_ablacion_multimodelo():
 
     modelos_orden = [
         ("gemma_31b", "Gemma-4-31B-it"),
-        ("gemini_flash_36", "Gemini Flash 3.6"),
+        ("gemini_flash_37", "Gemini Flash 3.7"),
         ("gemini_flash_35", "Gemini Flash 3.5")
     ]
 

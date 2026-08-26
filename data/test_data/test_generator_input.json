@@ -1,23 +1,60 @@
 [
-    {
-        "id_code_combination": "011",
-        "icf_codes":["b280","d430","e1101"],
-        "icf_name":["b280-Sensación de dolor","d430-Levantar y llevar objetos","e1101-Medicamentos"]
-    },
-    {
-        "id_code_combination": "012",
-        "icf_codes":["b280","e310","e410"],
-        "icf_name":["b280-Sensación de dolor","e310-Familiares cercanos","e410-Actitudes individuales de miembros de la familia cercana"]
-    },
-    {
-        "id_code_combination": "013",
-        "icf_codes":["b240","b280","d175","d230","d850"],
-        "icf_name":["b240-Manejo del estrés y otras demandas psicológicas","b280-Sensación de dolor","d175-Resolver problemas","d230-Llevar a cabo rutinas diarias",
-    "d850-Trabajo remunerado"]
-    },
-    {
-        "id_code_combination": "014",
-        "icf_codes":["b455","b730","b760","e355"],
-        "icf_name":["b455-Funciones relacionadas con la tolerancia al ejercicio","b730-Funciones relacionadas con la fuerza muscular",
-    "b760-Funciones relacionadas con el control de los movimientos voluntarios","e355-Profesionales de la salud"]
-    }]
+  {
+    "id_code_combination": "011",
+    "icf_codes": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "d430-Levantar y llevar objetos",
+      "e1101-Medicamentos"
+    ]
+  },
+  {
+    "id_code_combination": "012",
+    "icf_codes": [
+      "b280",
+      "e310",
+      "e410"
+    ],
+    "icf_name": [
+      "b280-Sensación de dolor",
+      "e310-Familiares cercanos",
+      "e410-Actitudes individuales de miembros de la familia cercana"
+    ]
+  },
+  {
+    "id_code_combination": "013",
+    "icf_codes": [
+      "d240",
+      "b280",
+      "d175",
+      "d230",
+      "d850"
+    ],
+    "icf_name": [
+      "d240-Manejo del estrés y otras demandas psicológicas",
+      "b280-Sensación de dolor",
+      "d175-Resolver problemas",
+      "d230-Llevar a cabo rutinas diarias",
+      "d850-Trabajo remunerado"
+    ]
+  },
+  {
+    "id_code_combination": "014",
+    "icf_codes": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "icf_name": [
+      "b455-Funciones relacionadas con la tolerancia al ejercicio",
+      "b730-Funciones relacionadas con la fuerza muscular",
+      "b760-Funciones relacionadas con el control de los movimientos voluntarios",
+      "e355-Profesionales de la salud"
+    ]
+  }
+]

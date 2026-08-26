@@ -2,19 +2,19 @@
 """
 ===============================================================================
 CÁLCULO DE DESEMPEÑO DIAGNÓSTICO: F1-SCORE (MICRO, MACRO, WEIGHTED Y PER CLASS)
-EVALUACIÓN COMPARATIVA FRENTE AL GROUND TRUTH (CORE SET CIF - 27 CATEGORÍAS)
+EVALUACIÓN COMPARATIVA FRENTE AL GROUND TRUTH (CORE SET CIF - 24 CATEGORÍAS)
 ===============================================================================
 
 ¿Qué calcula este script?
 -------------------------
 Evalúa la validez diagnóstica de los modelos LLM (Gemma-4-31B-it, Gemini Flash 3.5,
-Gemini Flash 3.6) comparando las predicciones consolidadas bajo consenso estricto (3/3)
+Gemini Flash 3.7) comparando las predicciones consolidadas bajo consenso estricto (3/3)
 frente al Ground Truth (códigos generadores `icf_codes`) en las 114 historias clínicas.
 
 Estructura de Presentación Científica (Estilo Publicación Médica):
 - Tabla Principal Transpuesta: Modelos en Columnas y Variables/Métricas en Filas
   (Parámetros de Corpus, Matriz de Confusión, Exact Match, Micro, Macro y Weighted F1 con IC 95%).
-- Tabla de Auditoría Detallada: Las 27 Categorías CIF del Core Set de Dolor Crónico.
+- Tabla de Auditoría Detallada: Las 24 Categorías CIF del Core Set de Dolor Crónico.
 
 Salidas generadas en `results/stats_v4/`:
 - Documento Word (.docx): `tablas_desempeno.docx` con tablas nativas editables y diseño APA.
@@ -48,21 +48,21 @@ MODELOS = [
     {
         "id": "gemma_31b",
         "nombre": "Gemma-4-31B-it",
-        "archivo": LLM_DIR / "2026-08-11_gemma-4-31b-it-codified.json"
+        "archivo": LLM_DIR / "2026-08-25_gemma_codified.json"
     },
     {
         "id": "gemini_flash_35",
         "nombre": "Gemini Flash 3.5",
-        "archivo": LLM_DIR / "2026-08-18_gemini-flash-3.5_codified.json"
+        "archivo": LLM_DIR / "2026-08-25-flash-3.5-codified.json"
     },
     {
-        "id": "gemini_flash_36",
-        "nombre": "Gemini Flash 3.6",
-        "archivo": LLM_DIR / "2026-08-18_gemini-flash-3.6_codified.json"
+        "id": "gemini_flash_37",
+        "nombre": "Gemini Flash 3.7",
+        "archivo": LLM_DIR / "2026-08-25-3.7-flash-codified.json"
     }
 ]
 
-# Diccionario oficial de las 27 categorías CIF del Core Set de Dolor Crónico Generalizado
+# Diccionario oficial de las 24 categorías CIF del Core Set de Dolor Crónico Generalizado
 DICCIONARIO_CIF = {
     # Funciones Corporales (b)
     "b130": "Funciones relacionadas con la energía y los impulsos",
@@ -70,8 +70,6 @@ DICCIONARIO_CIF = {
     "b147": "Funciones psicomotoras",
     "b152": "Funciones emocionales",
     "b1602": "Contenido del pensamiento",
-    "b175": "Funciones cognitivas superiores (Resolver problemas)",
-    "b240": "Sensaciones corporales y manejo del estrés",
     "b280": "Sensación de dolor",
     "b455": "Tolerancia al ejercicio físico",
     "b730": "Funciones relacionadas con la fuerza muscular",
@@ -80,7 +78,6 @@ DICCIONARIO_CIF = {
     "d175": "Resolver problemas",
     "d230": "Llevar a cabo rutinas diarias",
     "d240": "Manejo del estrés y demandas psicológicas",
-    "d290": "Tareas y demandas generales (Ocio)",
     "d430": "Levantar y llevar objetos",
     "d450": "Andar y desplazarse",
     "d640": "Realizar los quehaceres de la casa",
@@ -98,7 +95,7 @@ DICCIONARIO_CIF = {
 
 
 def obtener_todos_los_codigos(modelos: List[Dict[str, Any]]) -> List[str]:
-    """Obtiene la lista única ordenada de las 27 categorías CIF del Core Set."""
+    """Obtiene la lista única ordenada de las 24 categorías CIF del Core Set."""
     codigos = set(DICCIONARIO_CIF.keys())
     for m in modelos:
         if m["archivo"].exists():
@@ -264,12 +261,12 @@ def calcular_bootstrap_ci(historias: List[Dict[str, Any]], codigos_cif: List[str
 def construir_filas_tabla_transpuesta(resultados: List[Dict[str, Any]]) -> List[Tuple[str, str, str, str, bool]]:
     gemma = next(r for r in resultados if r["meta"]["id"] == "gemma_31b")
     g35 = next(r for r in resultados if r["meta"]["id"] == "gemini_flash_35")
-    g36 = next(r for r in resultados if r["meta"]["id"] == "gemini_flash_36")
+    g36 = next(r for r in resultados if r["meta"]["id"] == "gemini_flash_37")
 
     filas = [
         ("PARÁMETROS DEL CORPUS CLÍNICO", "", "", "", True),
         ("Historias clínicas evaluadas (N)", "114", "114", "114", False),
-        ("Espacio de decisiones ontológicas (114 × 27)", "3.078", "3.078", "3.078", False),
+        ("Espacio de decisiones ontológicas (114 × 24)", "2.736", "2.736", "2.736", False),
         ("Instancias CIF totales en Ground Truth (Soporte)", "465", "465", "465", False),
         ("Criterio de consenso inter-iteraciones", "Estricto (3/3)", "Estricto (3/3)", "Estricto (3/3)", False),
         
@@ -355,7 +352,7 @@ def exportar_documento_docx(resultados: List[Dict[str, Any]], ruta_salida: Path)
 
     sub_p = doc.add_paragraph()
     sub_p.paragraph_format.space_after = Pt(14)
-    run_sub = sub_p.add_run("Evaluación comparativa de modelos LLM bajo criterio de consenso estricto (3/3) frente al Ground Truth (114 historias clínicas, Core Set CIF de dolor crónico con 27 categorías).")
+    run_sub = sub_p.add_run("Evaluación comparativa de modelos LLM bajo criterio de consenso estricto (3/3) frente al Ground Truth (114 historias clínicas, Core Set CIF de dolor crónico con 24 categorías).")
     run_sub.italic = True
     run_sub.font.size = Pt(10)
     run_sub.font.color.rgb = RGBColor(0x55, 0x55, 0x55)
@@ -369,7 +366,7 @@ def exportar_documento_docx(resultados: List[Dict[str, Any]], ruta_salida: Path)
 
     filas_transpuestas = construir_filas_tabla_transpuesta(resultados)
     
-    cols1 = ["Variable / Métrica Clínica", "Gemma-4-31B-it", "Gemini Flash 3.5", "Gemini Flash 3.6"]
+    cols1 = ["Variable / Métrica Clínica", "Gemma-4-31B-it", "Gemini Flash 3.5", "Gemini Flash 3.7"]
     widths1 = [Inches(2.6), Inches(1.45), Inches(1.45), Inches(1.45)]
 
     table1 = doc.add_table(rows=len(filas_transpuestas) + 1, cols=4)
@@ -430,15 +427,15 @@ def exportar_documento_docx(resultados: List[Dict[str, Any]], ruta_salida: Path)
     h2 = doc.add_paragraph()
     h2.paragraph_format.space_before = Pt(12)
     h2.paragraph_format.space_after = Pt(6)
-    r_h2 = h2.add_run("Tabla 2. Auditoría detallada per class en las 27 categorías CIF del Core Set de Dolor Crónico")
+    r_h2 = h2.add_run("Tabla 2. Auditoría detallada per class en las 24 categorías CIF del Core Set de Dolor Crónico")
     r_h2.bold = True
     r_h2.font.size = Pt(11.5)
 
     gemma_m = next(r["metricas"]["por_clase"] for r in resultados if r["meta"]["id"] == "gemma_31b")
-    g36_m = next(r["metricas"]["por_clase"] for r in resultados if r["meta"]["id"] == "gemini_flash_36")
+    g36_m = next(r["metricas"]["por_clase"] for r in resultados if r["meta"]["id"] == "gemini_flash_37")
     g35_m = next(r["metricas"]["por_clase"] for r in resultados if r["meta"]["id"] == "gemini_flash_35")
 
-    cols2 = ["Código CIF", "Categoría CIF (Core Set)", "Soporte (GT)", "Gemma Prec.", "Gemma Rec.", "Gemma F1", "Flash 3.6 Prec.", "Flash 3.6 Rec.", "Flash 3.6 F1", "Flash 3.5 F1"]
+    cols2 = ["Código CIF", "Categoría CIF (Core Set)", "Soporte (GT)", "Gemma Prec.", "Gemma Rec.", "Gemma F1", "Flash 3.7 Prec.", "Flash 3.7 Rec.", "Flash 3.7 F1", "Flash 3.5 F1"]
     widths2 = [Inches(0.55), Inches(2.15), Inches(0.45), Inches(0.55), Inches(0.55), Inches(0.55), Inches(0.55), Inches(0.55), Inches(0.55), Inches(0.55)]
 
     table2 = doc.add_table(rows=len(gemma_m) + 1, cols=len(cols2))
@@ -493,7 +490,7 @@ def exportar_documento_docx(resultados: List[Dict[str, Any]], ruta_salida: Path)
 def main():
     print("=" * 115)
     print(" 🔬 EVALUACIÓN METODOLÓGICA DE DESEMPEÑO EN CODIFICACIÓN CIF (MICRO, MACRO, WEIGHTED, PER CLASS)")
-    print("    Criterio: Consenso Estricto (3/3) frente al Ground Truth (114 Historias | 27 Categorías CIF)")
+    print("    Criterio: Consenso Estricto (3/3) frente al Ground Truth (114 Historias | 24 Categorías CIF)")
     print("=" * 115)
 
     codigos_cif = obtener_todos_los_codigos(MODELOS)
@@ -517,7 +514,7 @@ def main():
         })
 
     filas = construir_filas_tabla_transpuesta(resultados)
-    print(f"\n {'Métrica / Variable Clínica':<46} | {'Gemma-4-31B-it':<20} | {'Gemini Flash 3.5':<20} | {'Gemini Flash 3.6':<20}")
+    print(f"\n {'Métrica / Variable Clínica':<46} | {'Gemma-4-31B-it':<20} | {'Gemini Flash 3.5':<20} | {'Gemini Flash 3.7':<20}")
     print("-" * 115)
 
     for met, v1, v2, v3, es_sec in filas:

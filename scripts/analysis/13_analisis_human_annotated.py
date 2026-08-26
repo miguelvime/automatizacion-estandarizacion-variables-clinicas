@@ -2,7 +2,7 @@
 """
 ===============================================================================
 ANÁLISIS ESTADÍSTICO DE DESEMPEÑO Y FIABILIDAD: HISTORIAS CLÍNICAS REALES (N=21)
-EVALUACIÓN COMPARATIVA TRI-MODELO: GEMINI FLASH 3.5, GEMINI FLASH 3.6 Y GEMMA-4-31B-IT
+EVALUACIÓN COMPARATIVA TRI-MODELO: GEMINI FLASH 3.5, GEMINI FLASH 3.7 Y GEMMA-4-31B-IT
 ===============================================================================
 """
 
@@ -14,9 +14,9 @@ import numpy as np
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 GT_PATH = BASE_DIR / 'data' / 'physio_created_annotated.json'
-F35_PATH = BASE_DIR / 'results' / 'human_text' / 'human_annotated_flash-3.5.json'
-F36_PATH = BASE_DIR / 'results' / 'human_text' / 'human_annotated_flash-3.6.json'
-GEMMA_PATH = BASE_DIR / 'results' / 'human_text' / 'human_annotated_gemma.json'
+F35_PATH = BASE_DIR / 'results' / 'human_text' / '2026-08-25-flash-3.5-human-annotated.json'
+F37_PATH = BASE_DIR / 'results' / 'human_text' / '2026-08-25-flash-3.7-human-annotated.json'
+GEMMA_PATH = BASE_DIR / 'results' / 'human_text' / '2026-08-26-gemma_human_annotated.json'
 
 DICCIONARIO_CIF = {
     'b130': 'Funciones relacionadas con la energía y los impulsos',
@@ -24,8 +24,6 @@ DICCIONARIO_CIF = {
     'b147': 'Funciones psicomotoras',
     'b152': 'Funciones emocionales',
     'b1602': 'Contenido del pensamiento',
-    'b175': 'Funciones cognitivas superiores (Resolver problemas)',
-    'b240': 'Sensaciones corporales y manejo del estrés',
     'b280': 'Sensación de dolor',
     'b455': 'Tolerancia al ejercicio físico',
     'b730': 'Funciones relacionadas con la fuerza muscular',
@@ -33,7 +31,6 @@ DICCIONARIO_CIF = {
     'd175': 'Resolver problemas',
     'd230': 'Llevar a cabo rutinas diarias',
     'd240': 'Manejo del estrés y demandas psicológicas',
-    'd290': 'Tareas y demandas generales (Ocio)',
     'd430': 'Levantar y llevar objetos',
     'd450': 'Andar y desplazarse',
     'd640': 'Realizar los quehaceres de la casa',
@@ -60,8 +57,8 @@ with open(GT_PATH, 'r', encoding='utf-8') as f:
     gt_data = json.load(f)
 with open(F35_PATH, 'r', encoding='utf-8') as f:
     f35_data = json.load(f)
-with open(F36_PATH, 'r', encoding='utf-8') as f:
-    f36_data = json.load(f)
+with open(F37_PATH, 'r', encoding='utf-8') as f:
+    f37_data = json.load(f)
 with open(GEMMA_PATH, 'r', encoding='utf-8') as f:
     gemma_data = json.load(f)
 
@@ -239,9 +236,9 @@ if __name__ == '__main__':
     des35 = evaluar_desempeno(f35_data)
     ci35 = bootstrap_ci(f35_data)
 
-    fiab36 = calcular_fiabilidad_iteraciones(f36_data)
-    des36 = evaluar_desempeno(f36_data)
-    ci36 = bootstrap_ci(f36_data)
+    fiab36 = calcular_fiabilidad_iteraciones(f37_data)
+    des36 = evaluar_desempeno(f37_data)
+    ci36 = bootstrap_ci(f37_data)
 
     fiab_gemma = calcular_fiabilidad_iteraciones(gemma_data)
     des_gemma = evaluar_desempeno(gemma_data)
@@ -249,6 +246,7 @@ if __name__ == '__main__':
 
     resumen = {
         'flash_35': {'fiabilidad': fiab35, 'desempeno': des35, 'ci_95': ci35},
+        'flash_37': {'fiabilidad': fiab36, 'desempeno': des36, 'ci_95': ci36},
         'flash_36': {'fiabilidad': fiab36, 'desempeno': des36, 'ci_95': ci36},
         'gemma_31b': {'fiabilidad': fiab_gemma, 'desempeno': des_gemma, 'ci_95': ci_gemma}
     }
@@ -267,7 +265,7 @@ if __name__ == '__main__':
         writer.writerow([
             'componente_id', 'componente_nombre', 'codigo', 'nombre_categoria', 'soporte_real',
             'f35_tp', 'f35_fp', 'f35_fn', 'f35_prec', 'f35_rec', 'f35_f1',
-            'f36_tp', 'f36_fp', 'f36_fn', 'f36_prec', 'f36_rec', 'f36_f1',
+            'f37_tp', 'f37_fp', 'f37_fn', 'f37_prec', 'f37_rec', 'f37_f1',
             'gemma_tp', 'gemma_fp', 'gemma_fn', 'gemma_prec', 'gemma_rec', 'gemma_f1'
         ])
         for c in codigos_cif:

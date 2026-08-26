@@ -1,0 +1,4294 @@
+[
+  {
+    "id_code_combination": "001",
+    "id_clinical_text": "001_1",
+    "clinical_text": "Varón de 42 años, electricista. Consulta por dolor generalizado en extremidades de 8 meses de evolución. Refiere falta de energía constante que le impide mantenerse activo durante la jornada, asociado a insomnio de mantenimiento con múltiples despertares nocturnos.\n\nComenta gran dificultad para resolver contratiempos cotidianos en su ámbito laboral que antes solucionaba con facilidad. En tratamiento actual con varios medicamentos analgésicos pautados por su médico de cabecera sin mejoría sintomática clara.",
+    "icf_codes": [
+      "b130",
+      "b134",
+      "d175",
+      "b280",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "001",
+    "id_clinical_text": "001_2",
+    "clinical_text": "Mujer de 55 años, administrativa. Presenta dolor sordo en zona lumbar y cuello de más de un año de evolución. Asocia acusada apatía y pérdida de motivación para emprender tareas habituales. Describe dificultad para conciliar el sueño, tardando más de dos horas en dormirse cada noche.\n\nEn la entrevista refiere problemas para analizar y encontrar soluciones a imprevistos en su trabajo. Refiere automedicación con antiinflamatorios de forma continuada.",
+    "icf_codes": [
+      "b130",
+      "b134",
+      "d175",
+      "b280",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101"
+    ]
+  },
+  {
+    "id_code_combination": "001",
+    "id_clinical_text": "001_3",
+    "clinical_text": "Paciente mujer de 29 años, diseñadora gráfica. Valorada por dolor punzante articular de distribución difusa de 6 meses de duración. Describe importante baja vitalidad desde el inicio del cuadro y mala calidad del sueño reparador, levantándose con sensación de cansancio persistente.\n\nManifiesta incapacidad para evaluar opciones y resolver disputas o dilemas sencillos en sus proyectos de equipo. Aporta informe con toma diaria de fármacos prescritos sin alivio significativo.",
+    "icf_codes": [
+      "b130",
+      "b134",
+      "d175",
+      "b280",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "b134",
+      "b280",
+      "d175",
+      "e1101"
+    ]
+  },
+  {
+    "id_code_combination": "002",
+    "id_clinical_text": "002_1",
+    "clinical_text": "Varón de 42 años, administrativo, acude por dolor lumbar persistente. Presenta una elevada ansiedad ante la evolución de la sintomatología. Expresa la idea fija de que su columna está rota por dentro a pesar de las explicaciones médicas. Refiere ser incapaz de gestionar el estrés laboral diario, lo que conlleva un rendimiento muy reducido en su empleo. Actualmente se encuentra tramitando el expediente de incapacidad con la seguridad social.",
+    "icf_codes": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ]
+  },
+  {
+    "id_code_combination": "002",
+    "id_clinical_text": "002_2",
+    "clinical_text": "Mujer de 53 años, operaria de fábrica, consulta por dolor difuso en extremidades superiores. Relata episodios de gran frustración vinculados al malestar corporal. Desarrolla pensamientos de somatización continua proyectando empeoramiento constante. Presenta baja capacidad de afrontamiento ante situaciones de crisis e impulsos. Se halla incapacitada para cumplir sus funciones en el trabajo remunerado y actualmente está percibiendo prestación de la seguridad social.",
+    "icf_codes": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ]
+  },
+  {
+    "id_code_combination": "002",
+    "id_clinical_text": "002_3",
+    "clinical_text": "Paciente varón de 29 años, vendedor en tienda de ropa, acude por dolor de espalda y cuello de varios meses. Muestra un sentimiento de tristeza recurrente por la persistencia del síntoma. Manifiesta ideas sobrevaloradas de invalidez total sin hallazgos estructurales. Presenta notables dificultades para el manejo del estrés ante la exigencia diaria. El cuadro genera ausencias reiteradas en su puesto de trabajo. Ha recibido citación para evaluación por el tribunal de la seguridad social.",
+    "icf_codes": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b152",
+      "b1602",
+      "b280",
+      "d240",
+      "d850",
+      "e570"
+    ]
+  },
+  {
+    "id_code_combination": "003",
+    "id_clinical_text": "003_1",
+    "clinical_text": "Mujer de 44 años que acude por dolor lumbar y cervical sordo constante de varios meses de evolución. En la anamnesis refiere insomnio de mantenimiento que empeora su cansancio diario. Manifiesta sentirse sobrepasada por las exigencias emocionales y el estrés diario, presentando un cuadro de tristeza constante. En el ámbito doméstico presenta dificultad para barrer y limpiar la cocina. La paciente convive con su hijo adolescente, refiriendo fricciones en la convivencia; indica que su hijo minimiza sus molestias achacándolas a exageración, lo cual tensiona el hogar. Asimismo, ha dejado de lado su afición por la pintura debido al malestar.",
+    "icf_codes": [
+      "b134",
+      "b152",
+      "b280",
+      "d240",
+      "d640",
+      "d760",
+      "d920",
+      "e310",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b134",
+      "b152",
+      "b280",
+      "d640",
+      "d760",
+      "d920",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b134",
+      "b152",
+      "b280",
+      "d640",
+      "d760",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b152",
+      "b280",
+      "d640",
+      "d760",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b134",
+      "b152",
+      "b280",
+      "d640",
+      "d760",
+      "d920",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "003",
+    "id_clinical_text": "003_2",
+    "clinical_text": "Varón de 62 años que acude por dolor articular generalizado. Refiere despertares nocturnos frecuentes que impiden un descanso reparador. Asocia esta situación a sentimientos de ansiedad y a una incapacidad para gestionar momentos de crisis cuando el síntoma se intensifica. En las tareas del hogar reporta problemas para fregar los platos y doblar la ropa. Su principal familiar cercano es su hermana mayor, constatando un deterioro del vínculo relacional dado que su hermana se muestra hiperprotectora y condescendiente con su situación. En la esfera recreativa destaca el abandono del senderismo.",
+    "icf_codes": [
+      "b134",
+      "b152",
+      "b280",
+      "d240",
+      "d640",
+      "d760",
+      "d920",
+      "e310",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b134",
+      "b152",
+      "b280",
+      "d240",
+      "d640",
+      "d760",
+      "d920",
+      "e310",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b134",
+      "b152",
+      "b280",
+      "d240",
+      "d640",
+      "d760",
+      "d920",
+      "e310",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b152",
+      "b280",
+      "d240",
+      "d640",
+      "d760",
+      "d920",
+      "e310",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b134",
+      "b152",
+      "b280",
+      "d240",
+      "d640",
+      "d760",
+      "d920",
+      "e310",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "003",
+    "id_clinical_text": "003_3",
+    "clinical_text": "Paciente mujer de 29 años examinada por dolor de características quemantes en miembros inferiores de evolución prolongada. Presenta dificultades para conciliar el sueño y marcada labilidad emocional. Asocia la exacerbación del cuadro a un mal manejo del estrés en situaciones de alta presión. Reporta imposibilidad de pasar la aspiradora al encargarse de los quehaceres domésticos. En el ámbito familiar se aprecia un distanciamiento con sus padres, quienes constituyen su núcleo de allegados; señala que sus padres expresan incomprensión y escepticismo sobre su dolencia. Ha sufrido también una restricción para acudir al teatro como actividad de ocio.",
+    "icf_codes": [
+      "b134",
+      "b152",
+      "b280",
+      "d240",
+      "d640",
+      "d760",
+      "d920",
+      "e310",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b134",
+      "b152",
+      "b280",
+      "d240",
+      "d640",
+      "d760",
+      "d920",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b134",
+      "b152",
+      "b280",
+      "d240",
+      "d640",
+      "d760",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b152",
+      "b280",
+      "d240",
+      "d640",
+      "d760",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b134",
+      "b152",
+      "b280",
+      "d240",
+      "d640",
+      "d760",
+      "d920",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "004",
+    "id_clinical_text": "004_1",
+    "clinical_text": "Varón de 34 años que acude por dolor muscular difuso en ambas piernas de 8 meses de evolución. Presenta una idea fija de que su musculatura sufre una degradación física interna no evidenciada en estudios previos. Refiere fatigabilidad pronta y falta de resistencia al esfuerzo durante la práctica física.\n\nExploración física: debilidad muscular en miembros inferiores a la valoración activa. Muestra escasa tolerancia al ejercicio en prueba de carga ligera. Incapaz de retomar su actividad recreativa de ciclismo de montaña.",
+    "icf_codes": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "004",
+    "id_clinical_text": "004_2",
+    "clinical_text": "Mujer de 52 años. Valoración por dolor sordo generalizado de perfil crónico. Destaca en la entrevista una creencia firmemente asentada de tener un daño corporal grave sin respaldo clínico en las pruebas de imagen. Refiere baja capacidad aeróbica y cansancio precoz con requerimientos físicos mínimos.\n\nA la exploración: fuerza reducida en cintura escapular y musculatura proximal de brazos. Impotencia funcional para sostener actividad física de ligera intensidad. Menciona que ha tenido que suspender su afición por la jardinería.",
+    "icf_codes": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "004",
+    "id_clinical_text": "004_3",
+    "clinical_text": "Varón de 67 años con dolor corporal molesto e intermitente de larga evolución. Presenta ideas sobrevaloradas de somatización persistente, manifestando una conceptualización centrada en un fallo corporal orgánico no filiado. Refiere falta de vigor y baja tolerancia a la resistencia física durante cualquier actividad continuada.\n\nEn la valoración: pérdida de fuerza global en tronco e isométricos débiles. Esta limitación funcional condiciona el abandono de sus actividades de ocio como asistir a talleres de pintura.",
+    "icf_codes": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b1602",
+      "b280",
+      "b455",
+      "b730",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "005",
+    "id_clinical_text": "005_1",
+    "clinical_text": "Varón de 45 años refiere dolor lumbar difuso de varios meses de evolución. Explica que la molestia le altera la capacidad para organizar sus tareas del día a día de forma estructurada. En la vida cotidiana presenta molestia al coger garrafas de agua y le resulta costoso caminar más de diez minutos seguidos. Asimismo, indica limitación funcional al pasar la fregona en el domicilio.\n\nExploración física: dolor provocado a la palpación muscular paravertebral y a la flexión lumbar activa. Marcha a paso lento.",
+    "icf_codes": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ]
+  },
+  {
+    "id_code_combination": "005",
+    "id_clinical_text": "005_2",
+    "clinical_text": "Mujer de 52 años acude por dolor articular generalizado de evolución continua. Manifiesta que le cuesta completar la rutina diaria habitual debido al malestar. Refiere dificultades para desplazar bolsas pesadas de la compra y afirma que deambular por el vecindario le provoca molestias continuadas. En el hogar nota clara interferencia al limpiar las encimeras y ordenar cajones.\n\nExploración física: dolor a la presión en relieves óseos y partes blandas. Patrón de marcha conservado pero ralentizado.",
+    "icf_codes": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "predicted_icf_it3": [
+      "b147",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ]
+  },
+  {
+    "id_code_combination": "005",
+    "id_clinical_text": "005_3",
+    "clinical_text": "Varón de 61 años presenta mialgias continuas en extremidades de 8 meses de evolución. Describe que la persistencia del síntoma le impide cumplir sus esquemas de actividades diarias con normalidad. Presenta impedimentos al levantar cajas de cartón y refiere molestias tras andar distancias cortas. En las labores domésticas refiere gran incomodidad al barrer la vivienda.\n\nExploración física: arcos de movimiento articular completos, dolor referido en musculatura periférica durante la movilización activa.",
+    "icf_codes": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640"
+    ]
+  },
+  {
+    "id_code_combination": "006",
+    "id_clinical_text": "006_1",
+    "clinical_text": "Varón de 28 años que consulta por dolor punzante en el hombro derecho de 4 meses de evolución. Refiere molestia al levantar la caja de herramientas o trasladar bultos en el domicilio. Explica dificultad para jugar con sus sobrinos durante los encuentros familiares. Asimismo, manifiesta incapacidad para tocar la guitarra en su tiempo libre, actividad que constituía su principal pasatiempo.",
+    "icf_codes": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "006",
+    "id_clinical_text": "006_2",
+    "clinical_text": "Mujer de 54 años que acude por dolor sordo y continuo en zona lumbar desde hace seis meses. Manifiesta dificultad para cargar garrafas de agua y mover paquetes de un lugar a otro. Refiere que esta situación afecta la interacción habitual con sus nietos durante las visitas en el hogar. Además, la sintomatología interrumpe sus excursiones de fin de semana y paseos de recreo.",
+    "icf_codes": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "006",
+    "id_clinical_text": "006_3",
+    "clinical_text": "Varón de 67 años que refiere dolor miálgico en ambos codos de un año de evolución. Describe incapacidad para llevar recipientes pesados o cubos entre distintas estancias. Se constata alteración del tiempo compartido con su hermano en la rutina doméstica. Igualmente, manifiesta abandono del taller de jardinería comunitaria que realizaba como actividad de ocio.",
+    "icf_codes": [
+      "b280",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d430",
+      "d760",
+      "d230",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d430",
+      "d760",
+      "d230",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d230",
+      "d430",
+      "d760",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d430",
+      "d760",
+      "d230",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "007",
+    "id_clinical_text": "007_1",
+    "clinical_text": "Varón de 52 años que acude a revisión por dolor sordo generalizado de 8 meses de evolución. Refiere que la intensidad aumenta durante la noche, lo que le provoca despertares nocturnos continuos por el malestar. En el momento actual se encuentra bajo toma diaria de paracetamol y tramadol prescritos por su médico.",
+    "icf_codes": [
+      "b134",
+      "b280",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b134",
+      "e1101",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b134",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b280",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b134",
+      "b280",
+      "e1101",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "007",
+    "id_clinical_text": "007_2",
+    "clinical_text": "Mujer de 29 años que consulta por sensación de quemazón y dolor punzante en miembros inferiores de carácter crónico. Manifiesta un cuadro de insomnio de conciliación tardando horas en dormirse debido a las molestias físicas. Sigue una pauta farmacológica con pregabalina y metamizol, con alivio parcial del síntoma.",
+    "icf_codes": [
+      "b134",
+      "b280",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b134",
+      "e1101"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b134",
+      "e1101"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b280",
+      "e1101"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b134",
+      "e1101"
+    ]
+  },
+  {
+    "id_code_combination": "007",
+    "id_clinical_text": "007_3",
+    "clinical_text": "Paciente varón de 68 años derivado por mialgia difusa con hiperalgesia a la palpación en múltiples puntos corporales. Describe tener un sueño fragmentado y no reparador, interrumpiéndose el ciclo de descanso varias veces por noche. Mantiene tratamiento con analgésicos de rescate y AINEs de forma continuada.",
+    "icf_codes": [
+      "b134",
+      "b280",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b134",
+      "b280",
+      "e1101"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b134",
+      "b280",
+      "e1101"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b280",
+      "e1101"
+    ],
+    "predicted_icf_it3": [
+      "b134",
+      "b280",
+      "e1101"
+    ]
+  },
+  {
+    "id_code_combination": "008",
+    "id_clinical_text": "008_1",
+    "clinical_text": "Mujer de 34 años que acude a consulta por dolor de tipo quemazón en trapecios y región dorsal de 8 meses de evolución. Refiere que la persistencia de las molestias le produce una elevada frustración y episodios de llanto. Debido al malestar, refiere que ha abandonado por completo la pintura en acuarela y sus clases de baile los fines de semana.",
+    "icf_codes": [
+      "b280",
+      "b152",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b280",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b280",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b152",
+      "b280",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b152",
+      "b280",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "008",
+    "id_clinical_text": "008_2",
+    "clinical_text": "Varón de 62 años que refiere molestia sorda e ininterrumpida en articulaciones del hombro y zona lumbar desde hace un año. El paciente verbaliza un gran estado de ansiedad por no percibir mejoría. Expresa especial pesar por la imposibilidad para disfrutar del senderismo con su grupo de montaña, actividad recreativa que realizaba habitualmente.",
+    "icf_codes": [
+      "b280",
+      "b152",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b280",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b280",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b152",
+      "b280",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b152",
+      "b280",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "008",
+    "id_clinical_text": "008_3",
+    "clinical_text": "Varón de 25 años. Consulta por cuadro de 5 meses caracterizado por hiperalgesia y mialgias difusas que afectan a miembros superiores e inferiores. Manifiesta sentimientos de labilidad emocional y tristeza asociados a la persistencia del síntoma. Nota importante dificultad para mantener sus aficiones cotidianas como ir al cine o tocar la guitarra en su tiempo libre.",
+    "icf_codes": [
+      "b280",
+      "b152",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b280",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b280",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b152",
+      "b280",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b152",
+      "b280",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "009",
+    "id_clinical_text": "009_1",
+    "clinical_text": "Varón de 29 años consultado en la unidad de rehabilitación por alteración de la esfera emocional.\n\nPresenta una creencia persistente e idea sobrevalorada de padecer una enfermedad orgánica grave a nivel torácico, centrando el foco de sus cogniciones en supuestas anomalías internas. Durante la entrevista expresa labilidad emocional acentuada con episodios de angustia frente a sus propias interpretaciones de la salud corporal.",
+    "icf_codes": [
+      "b152",
+      "b1602"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b1602",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b1602",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b152",
+      "b1602",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b152",
+      "b1602",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "009",
+    "id_clinical_text": "009_2",
+    "clinical_text": "Mujer de 45 años remitida para valoración.\n\nRefiere ideas fijas de somatización sobre sensaciones corporales anómalas, las cuales interpreta como un deterioro interno no objetivable. Acompaña la clínica con sentimientos recurrentes de tristeza e irritabilidad, con marcada dificultad para la regulación del afecto.",
+    "icf_codes": [
+      "b152",
+      "b1602"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b1602",
+      "b152"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b1602",
+      "b152"
+    ],
+    "predicted_icf_it2": [
+      "b1602",
+      "b152"
+    ],
+    "predicted_icf_it3": [
+      "b1602",
+      "b152"
+    ]
+  },
+  {
+    "id_code_combination": "009",
+    "id_clinical_text": "009_3",
+    "clinical_text": "Varón de 62 años que acude a consulta de seguimiento.\n\nEvoluciona con pensamientos obsesivos y sobrevalorados referentes a fallos orgánicos irrecuperables. En la esfera afectiva, manifiesta elevada ansiedad y miedo constante, refiriendo 'sentir una preocupación desmedida' ante la convicción interna de una disfunción fisiológica.",
+    "icf_codes": [
+      "b152",
+      "b1602"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b1602"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b1602"
+    ],
+    "predicted_icf_it2": [
+      "b1602",
+      "b152"
+    ],
+    "predicted_icf_it3": [
+      "b1602",
+      "b152"
+    ]
+  },
+  {
+    "id_code_combination": "010",
+    "id_clinical_text": "010_1",
+    "clinical_text": "Varón de 34 años que acude a consulta por dolor en la zona lumbar de semanas de evolución. Refiere que la molestia aparece de forma punzante al intentar mover peso. Presenta especial dificultad al levantar las bolsas del supermercado y trasladarlas a la mesa.\n\nExploración física: dolor a la palpación en musculatura paravertebral lumbar. Movilidad activa lumbar dolorosa en flexión. Maniobra de elevación de pierna recta negativa.",
+    "icf_codes": [
+      "b280",
+      "d430"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d430"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d430"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d430"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d430"
+    ]
+  },
+  {
+    "id_code_combination": "010",
+    "id_clinical_text": "010_2",
+    "clinical_text": "Mujer de 62 años. Consulta por molestias dolorosas en el hombro derecho de curso continuo y carácter sordo. Manifiesta imposibilidad de llevar garrafas de agua desde el coche o sostener paquetes pesados en brazos debido al aumento de la sensación dolorosa.\n\nExploración física: arcos de movilidad pasiva completos aunque con dolor a la elevación activa por encima de 90 grados. Balotaje articular negativo.",
+    "icf_codes": [
+      "b280",
+      "d430"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d430"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d430"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d430"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d430"
+    ]
+  },
+  {
+    "id_code_combination": "010",
+    "id_clinical_text": "010_3",
+    "clinical_text": "Varón de 45 años. Acude por mialgia punzante en la región dorsal alta de meses de duración. Refiere incapacidad para levantar cajas del suelo y moverlas de lugar, notando un agudizamiento inmediato del síntoma al hacer la fuerza de agarre y elevación.\n\nExploración física: puntos gatillo miofasciales dolorosos a la presión en trapecio medio e inferior. Movilización articular dorsal indolora.",
+    "icf_codes": [
+      "b280",
+      "d430"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d430"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d430"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d430"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d430"
+    ]
+  },
+  {
+    "id_code_combination": "011",
+    "id_clinical_text": "011_1",
+    "clinical_text": "Mujer de 34 años que acude a consulta refiriendo molestia punzante en zona lumbar de varios meses de evolución. Explica que el dolor se agrava de forma inmediata al intentar manipular cargas. Manifiesta imposibilidad de cargar la bolsa de la compra pesada desde el coche. Actualmente toma paracetamol de 1g pautado sin conseguir un alivio completo de los síntomas.\n\nExploración física: palpación dolorosa en musculatura paravertebral lumbar baja. Movilidad lumbar libre pero dolorosa al final del rango. No déficits neurológicos focales.",
+    "icf_codes": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d430",
+      "e1101"
+    ]
+  },
+  {
+    "id_code_combination": "011",
+    "id_clinical_text": "011_2",
+    "clinical_text": "Varón de 62 años consulta por dolor sordo en el hombro derecho de curso crónico. El cuadro doloroso se desencadena con movimientos de elevación. Refiere gran dificultad para levantar garrafas de agua y colocar paquetes en estantes elevados. Ha precisado prescripción de ibuprofeno 600 mg cada 8 horas para mitigar la molestia durante los días con mayor dolor.\n\nExploración física: arco doloroso a la abducción activa de hombro derecho a partir de 90 grados. Maniobras de compresión subacromial positivas. Movilidad pasiva conservada.",
+    "icf_codes": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d430",
+      "e1101"
+    ]
+  },
+  {
+    "id_code_combination": "011",
+    "id_clinical_text": "011_3",
+    "clinical_text": "Mujer de 45 años atendida por sensación de quemazón en región cervicodorsal persistente. El síntoma principal es un dolor continuo en la zona interescapular. Describe incapacidad para llevar el bolso pesado colgado del hombro o trasladar cajas de cierto volumen. En tratamiento farmacológico con metamizol de forma puntual con respuesta parcial.\n\nExploración física: puntos gatillo miofasciales activos en trapecio superior bilateral. Sin alteraciones en el examen reflejo ni sensitivo en miembros superiores.",
+    "icf_codes": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d430",
+      "e1101"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d430",
+      "e1101"
+    ]
+  },
+  {
+    "id_code_combination": "012",
+    "id_clinical_text": "012_1",
+    "clinical_text": "Varón de 34 años que consulta por dolor sordo y continuo en la zona lumbar baja de varios meses de evolución. En el ámbito personal se relaciona a diario con su esposa. Refiere que la actitud de su cónyuge es de evidente escepticismo, manifestando dudas e incredulidad respecto a la intensidad del malestar expresado por el paciente.",
+    "icf_codes": [
+      "b280",
+      "e310",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "e310",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "012",
+    "id_clinical_text": "012_2",
+    "clinical_text": "Mujer de 62 años que acude a la consulta refiriendo dolor de tipo quemazón y molestia difusa en ambas piernas. Convive en el hogar con su hijo. Explica que la opinión de su hijo respecto al problema es marcadamente sobreprotectora, sosteniendo la firme creencia de que cualquier sensación dolorosa requiere reposo total e inmovilidad.",
+    "icf_codes": [
+      "b280",
+      "e310",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "e310",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "e310",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "e310",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "e310",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "012",
+    "id_clinical_text": "012_3",
+    "clinical_text": "Varón de 75 años que acude por un cuadro de dolor punzante persistente en la columna dorsal. En su entorno cotidiano cuenta con el contacto directo de sus hermanos. Destaca que la actitud individual de sus familiares cercanos es sumamente comprensiva y de constante aceptación de sus síntomas, mostrando respaldo hacia sus percepciones de dolor.",
+    "icf_codes": [
+      "b280",
+      "e310",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "e310",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "e310",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "e310",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "e310",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "013",
+    "id_clinical_text": "013_1",
+    "clinical_text": "Varón de 45 años, auditor financiero. Consulta por dolor lumbar difuso de carácter sordo de varios meses de evolución. Mantiene sus jornadas de auditoría a tiempo completo, aunque nota menor rendimiento. Refiere importante dificultad para analizar y resolver problemas complejos en su trabajo debido a la interferencia del síntoma. Asimismo, le cuesta organizar sus rutinas diarias del hogar al finalizar el día. Refiere incapacidad para manejar el estrés laboral durante los cierres contables, lo que agrava la sintomatología.\n\nExploración física: palpación dolorosa en musculatura paravertebral lumbar, movilidad vertebral completa pero con molestia al final del rango en flexión.",
+    "icf_codes": [
+      "d240",
+      "b280",
+      "d175",
+      "d230",
+      "d850"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d175",
+      "d230",
+      "d240",
+      "d850"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d175",
+      "d230",
+      "d240",
+      "d850"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d850",
+      "d175",
+      "d230",
+      "d240"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d850",
+      "d175",
+      "d230",
+      "d240"
+    ]
+  },
+  {
+    "id_code_combination": "013",
+    "id_clinical_text": "013_2",
+    "clinical_text": "Mujer de 32 años, desarrolladora de software. Presenta molestia quemante en región cervicotorácica persistente. Manifiesta que le resulta complicado cumplir con las obligaciones de su trabajo como programadora. Refiere bloqueo al intentar encontrar soluciones a problemas informáticos de la empresa. Describe imposibilidad para dirigir el nivel de actividad de sus rutinas diarias habituales. Reconoce gran dificultad para sobrellevar situaciones de estrés intenso asociadas a las entregas de proyectos.\n\nExploración: dolor a la presión en trapecios superiores bilateralmente, balance articular cervical conservado.",
+    "icf_codes": [
+      "d240",
+      "b280",
+      "d175",
+      "d230",
+      "d850"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d175",
+      "d230",
+      "d240",
+      "d850"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d175",
+      "d230",
+      "d240",
+      "d850"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d175",
+      "d230",
+      "d240",
+      "d850"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d175",
+      "d230",
+      "d240",
+      "d850"
+    ]
+  },
+  {
+    "id_code_combination": "013",
+    "id_clinical_text": "013_3",
+    "clinical_text": "Varón de 58 años, administrativo. Acude por dolor articular generalizado de instauración progresiva. Intenta mantener su jornada laboral como administrativo, pero le exige un gran esfuerzo. Refiere dificultad en su capacidad para resolver problemas imprevistos en la oficina. Expresa que le cuesta completar las rutinas diarias fuera del entorno laboral. Admite no saber cómo gestionar la presión psicológica en momentos de máxima exigencia.\n\nExploración física: puntos dolorosos generalizados a la palpación articular y periarticular, sin signos de inflamación aguda ni déficit neurológico.",
+    "icf_codes": [
+      "d240",
+      "b280",
+      "d175",
+      "d230",
+      "d850"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d175",
+      "d230",
+      "d240",
+      "d850"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d175",
+      "d230",
+      "d240",
+      "d850"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d175",
+      "d230",
+      "d240",
+      "d850"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d175",
+      "d230",
+      "d240",
+      "d850"
+    ]
+  },
+  {
+    "id_code_combination": "014",
+    "id_clinical_text": "014_1",
+    "clinical_text": "Varón de 28 años que acude derivado por su fisioterapeuta de atención primaria para valoración funcional. Presenta marcada baja resistencia aeróbica y fatiga precoz a los pocos minutos de esfuerzo moderado.\n\nA la exploración física se aprecia debilidad en musculatura de cuádriceps (balance muscular 3/5) y clara falta de coordinación e imprecisión en el control motor de la extremidad inferior derecha durante pruebas dinámicas.",
+    "icf_codes": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "014",
+    "id_clinical_text": "014_2",
+    "clinical_text": "Mujer de 62 años en seguimiento por el equipo de neurología del hospital. Se observa escasa capacidad aeróbica y rápida fatigabilidad ante actividades de mínima demanda física.\n\nEn la evaluación motora destaca pérdida de fuerza muscular global en miembros superiores (balance 4-/5 bilateral), junto a torpeza motora fina y alteración en la coordinación ojo-mano.",
+    "icf_codes": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "014",
+    "id_clinical_text": "014_3",
+    "clinical_text": "Varón de 45 años remitido a consulta para pauta supervisada por el médico rehabilitador. Refiere severa falta de vigor físico e intolerancia al ejercicio de intensidad leve.\n\nEn la valoración se evidencia paresia leve del deltoides izquierdo con déficit de fuerza a la contracción isométrica. Muestra además dificultad para controlar movimientos voluntarios complejos del brazo e incoordinación en la maniobra dedo-nariz.",
+    "icf_codes": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b455",
+      "b730",
+      "b760",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "015",
+    "id_clinical_text": "015_1",
+    "clinical_text": "Varón de 45 años, administrativo en empresa de logística a tiempo completo, acude derivado por su médico de atención primaria por dolor lumbar persistente de 8 meses de evolución. En tratamiento farmacológico actual con analgésicos pautados sin alivio completo. Se encuentra actualmente tramitando la prestación por incapacidad temporal ante la Seguridad Social debido a la imposibilidad de mantener su jornada laboral.",
+    "icf_codes": [
+      "b280",
+      "d850",
+      "e355",
+      "e570",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d850",
+      "e1101",
+      "e355",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d850",
+      "e1101",
+      "e355",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d850",
+      "e1101",
+      "e355",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d850",
+      "e1101",
+      "e355",
+      "e570"
+    ]
+  },
+  {
+    "id_code_combination": "015",
+    "id_clinical_text": "015_2",
+    "clinical_text": "Mujer de 52 años, empleada de comercio, acude a revisión tras ser atendida por el servicio de traumatología. Presenta dolor difuso en miembros inferiores que dificulta el cumplimiento de sus funciones laborales habituales. Refiere consumo diario de antiinflamatorios prescritos. Pendiente de resolución administrativa sobre subsidio por contingencia común a través del sistema de Seguridad Social.",
+    "icf_codes": [
+      "b280",
+      "d850",
+      "e355",
+      "e570",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d850",
+      "e1101",
+      "e355",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d850",
+      "e1101",
+      "e355",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d850",
+      "e1101",
+      "e355",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d850",
+      "e1101",
+      "e355",
+      "e570"
+    ]
+  },
+  {
+    "id_code_combination": "015",
+    "id_clinical_text": "015_3",
+    "clinical_text": "Varón de 38 años, trabajador autónomo en hostelería, acude para evaluación. Refiere dolor persistente en hombro que interfiere directamente con el desarrollo de su trabajo remunerado. En seguimiento activo por el equipo de fisioterapia del centro de salud y en tratamiento farmacológico con analgésicos. Percibe actualmente una prestación económica de la Seguridad Social adaptada a su situación de baja médica.",
+    "icf_codes": [
+      "b280",
+      "d850",
+      "e355",
+      "e570",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d850",
+      "e355",
+      "e1101",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d850",
+      "e355",
+      "e1101",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d850",
+      "e355",
+      "e1101",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d850",
+      "e355",
+      "e1101",
+      "e570"
+    ]
+  },
+  {
+    "id_code_combination": "016",
+    "id_clinical_text": "016_1",
+    "clinical_text": "Varón de 42 años que acude a valoración rehabilitadora refiriendo dolor punzante en la zona lumbar de carácter crónico. Refiere que la sintomatología le genera dificultad para andar tramos de más de 200 metros, teniendo que detener la marcha. Asimismo, refiere una limitación importante en sus relaciones íntimas con su pareja debido al aumento del síntoma con determinados movimientos.\n\nExploración física: Dolor a la palpación de musculatura paravertebral lumbar. Rango articular de cadera conservado.",
+    "icf_codes": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d450",
+      "d770"
+    ]
+  },
+  {
+    "id_code_combination": "016",
+    "id_clinical_text": "016_2",
+    "clinical_text": "Mujer de 35 años consultante por molestia sorda en la región pélvica de 8 meses de evolución. En el plano funcional describe molestias al caminar sobre superficies irregulares, restringiendo sus paseos habituales. Adicionalmente, señala afectación en el ámbito de las relaciones sexuales por la persistencia del cuadro doloroso.\n\nExploración clínica: Maniobras de provocación pélvica reproducen la molestia habitual. Balances articulares sin hallazgos relevantes.",
+    "icf_codes": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d450",
+      "d770"
+    ]
+  },
+  {
+    "id_code_combination": "016",
+    "id_clinical_text": "016_3",
+    "clinical_text": "Paciente varón de 59 años acude por dolor de tipo quemazón en ambos miembros inferiores de carácter continuado. Refiere imposibilidad para deambular distancias largas, requiriendo pausas frecuentes durante los trayectos. Durante la anamnesis menciona presentar dificultades mantenidas en el mantenimiento de relaciones sentimentales y conyugales producto del impacto del síntoma al contacto físico.\n\nExploración: Sensibilidad conservada. Dolor referido durante la movilización activa de ambas caderas.",
+    "icf_codes": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d450",
+      "d770"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d450",
+      "d770"
+    ]
+  },
+  {
+    "id_code_combination": "017",
+    "id_clinical_text": "017_1",
+    "clinical_text": "Paciente varón de 45 años que acude a evaluación relatando dolor sordo generalizado de meses de evolución que afecta a varios cuadrantes corporales. En la entrevista destaca una marcada falta de energía e impulso para iniciar cualquier actividad, refiriendo astenia profunda y falta de motivación. A la exploración clínica, se aprecia una evidente lentitud y retraso psicomotor en las respuestas corporales y al adoptar posturas, con empobrecimiento de la mímica facial y gestual motora durante la interacción.",
+    "icf_codes": [
+      "b147",
+      "b280",
+      "b130"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "b147",
+      "b280"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "b147",
+      "b280"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "b147",
+      "b280"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "b147",
+      "b280"
+    ]
+  },
+  {
+    "id_code_combination": "017",
+    "id_clinical_text": "017_2",
+    "clinical_text": "Mujer de 32 años atendida en consulta por mialgias continuas en cuello y espalda de curso crónico. Refiere pérdida severa de motivación y falta de impulso vital que le impide ponerse en marcha a lo largo del día. Durante el examen se observa adopción de postura rígida y bradicinesia psicomotora, con vacilación e inhibición de la actividad motora espontánea sin déficits neurológicos focales.",
+    "icf_codes": [
+      "b147",
+      "b280",
+      "b130"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "b147",
+      "b280"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "b147",
+      "b280"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "b147",
+      "b280"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "b147",
+      "b280"
+    ]
+  },
+  {
+    "id_code_combination": "017",
+    "id_clinical_text": "017_3",
+    "clinical_text": "Varón de 61 años que acude por dolor de tipo quemazón de localización difusa en miembros y tronco. Refiere un acusado déficit en el nivel de energía corporal que condiciona una constante sensación de agotamiento y falta de dinamismo. En la valoración clínica contrasta la presencia de una notable agitación psicomotora e inquietud motora constante, manifestada por la imposibilidad de mantener el control corporal en reposo e incapacidad para relajar la postura.",
+    "icf_codes": [
+      "b147",
+      "b280",
+      "b130"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "b147",
+      "b280"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "b147",
+      "b280"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "b147",
+      "b280"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "b147",
+      "b280"
+    ]
+  },
+  {
+    "id_code_combination": "018",
+    "id_clinical_text": "018_1",
+    "clinical_text": "Varón de 34 años que acude a consulta por dolor lumbosacro continuo de 8 meses de evolución. Refiere que la molestia empeora notablemente al realizar las labores domésticas, manifestando dificultades para fregar los platos y pasar la aspiradora. En el ámbito personal, describe un creciente distanciamiento con sus hermanos por no poder ayudar en la casa familiar durante los fines de semana. Asimismo, indica afectación en las relaciones sexuales con su pareja debido a la exacerbación del dolor con ciertas posturas.\n\nExploración física: dolor a la palpación de musculatura paravertebral lumbar baja, flexión activa de tronco dolorosa al final del rango. Lasègue negativo bilateral.",
+    "icf_codes": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ]
+  },
+  {
+    "id_code_combination": "018",
+    "id_clinical_text": "018_2",
+    "clinical_text": "Mujer de 52 años que consulta por mialgias difusas en ambos miembros inferiores de más de un año de evolución. Explica que la sintomatología le genera una clara imposibilidad para limpiar los cristales o doblar la ropa de forma continuada. Reporta un paulatino deterioro del contacto con sus hijos, con quienes interactúa menos al evitar desplazarse a sus domicilios. Comenta además una progresiva pérdida de intimidad con su cónyuge, refiriendo dolor durante las relaciones afectivo-sexuales.\n\nExploración física: molestias difusas a la presión en cuadriceps y gemelos bilaterales, balance articular de caderas y rodillas completo y libre.",
+    "icf_codes": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ]
+  },
+  {
+    "id_code_combination": "018",
+    "id_clinical_text": "018_3",
+    "clinical_text": "Paciente mujer de 67 años, acude por dolor de características punzantes en región cervical y trapecios. Manifiesta notable limitación al barrer y fregar el suelo de su vivienda, teniendo que interrumpir la tarea constantemente. En la esfera relacional, menciona fricciones frecuentes con sus primos y sobrinos al no poder involucrarse en los encuentros familiares habituales. Refiere también una reducción drástica de los contactos íntimos con su pareja, 'evito el contacto físico estrecho por miedo a que reaparezca el latigazo doloroso'.\n\nExploración física: dolor a la rotación extrema cervical izquierda y flexión lateral derecha. Movilidad pasiva conservada sin focalidad neurológica.",
+    "icf_codes": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d640",
+      "d760",
+      "d770"
+    ]
+  },
+  {
+    "id_code_combination": "019",
+    "id_clinical_text": "019_1",
+    "clinical_text": "Varón de 42 años que acude a valoración refiriendo dolor lumbar sordo continuo de varios meses de evolución. Presenta una somatización constante de que existe una lesión ósea grave no detectada, manifestando pensamientos fijos sobre su deterioro corporal. Esta preocupación condiciona una desorganización al estructurar sus tareas diarias habituales, retrasando sus actividades cotidianas. Muestra además incapacidad para analizar opciones y resolver contratiempos simples que surgen en su jornada, refiriendo un bloqueo importante ante situaciones de estrés psicológico elevado.",
+    "icf_codes": [
+      "b280",
+      "b1602",
+      "d175",
+      "d230",
+      "d240"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ]
+  },
+  {
+    "id_code_combination": "019",
+    "id_clinical_text": "019_2",
+    "clinical_text": "Mujer de 67 años con historia de molestia punzante generalizada en miembros superiores. Asocia ideas sobrevaloradas de invalidez inminente, fijándose en la idea de un fallo corporal irrecuperable. Refiere alteración para completar su rutina diaria de manera sistemática, requiriendo más tiempo para dirigir el orden de sus actos. Muestra dificultad para evaluar soluciones a imprevistos cotidianos y presenta una pobre tolerancia ante momentos de alta exigencia psicológica, reaccionando con colapso conductual.",
+    "icf_codes": [
+      "b280",
+      "b1602",
+      "d175",
+      "d230",
+      "d240"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ]
+  },
+  {
+    "id_code_combination": "019",
+    "id_clinical_text": "019_3",
+    "clinical_text": "Paciente de 29 años que acude por mialgia difusa y sensación de quemazón dorsal. Destaca una tendencia a la somatización centrada en pensamientos de daño estructural irreflexivo ante cualquier variación del síntoma. Se observa incapacidad para coordinar y ejecutar la secuencia de sus actividades diarias, perdiendo el hilo de sus hábitos. En la evaluación cognitiva-conductual destaca dificultad para estructurar pasos lógicos al resolver problemas prácticos y un claro desbordamiento conductual al afrontar escenarios de estrés elevado o sobrecarga de responsabilidades.",
+    "icf_codes": [
+      "b280",
+      "b1602",
+      "d175",
+      "d230",
+      "d240"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b1602",
+      "d230",
+      "d175",
+      "d240"
+    ]
+  },
+  {
+    "id_code_combination": "020",
+    "id_clinical_text": "020_1",
+    "clinical_text": "Varón de 34 años, programador informático, acude por cuadro de varios meses de evolución caracterizado por una falta alarmante de energía y desmotivación generalizada que le impide iniciar tareas habituales. Refiere sentirse totalmente desbordado ante situaciones de estrés laboral leve, mostrando incapacidad para gestionar las demandas psicológicas de su puesto. Esta falta de impulso ha ocasionado que haya abandonado la práctica del ciclismo los fines de semana, su principal actividad de ocio. Comenta que su pareja minimiza lo que le ocurre considerando que es solo vagancia, lo que dificulta su situación en el hogar.",
+    "icf_codes": [
+      "b130",
+      "d240",
+      "d920",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "d230",
+      "d240",
+      "d850",
+      "d920",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "d230",
+      "d240",
+      "d850",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "d230",
+      "d240",
+      "d850",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "d230",
+      "d240",
+      "d850",
+      "d920",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "020",
+    "id_clinical_text": "020_2",
+    "clinical_text": "Mujer de 52 años, administrativa. Acude referida por presentar una astenia acusada y marcada disminución de la motivación para mantener su nivel de actividad previo. Expresa gran dificultad para manejar momentos de crisis o tensión en la oficina, sintiéndose sobrepasada por las responsabilidades del trabajo cotidiano. Se observa un impacto directo en el tiempo libre, con imposibilidad de disfrutar de la jardinería y la lectura, aficiones que ha dejado de lado. Refiere además que sus hijos muestran una actitud crítica y poco empática hacia su estado, recriminándole que 'no pone de su parte'.",
+    "icf_codes": [
+      "b130",
+      "d240",
+      "d920",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "d240",
+      "d920",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "d240",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "b152",
+      "d240",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "d240",
+      "d920",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "020",
+    "id_clinical_text": "020_3",
+    "clinical_text": "Varón de 61 años, carpintero autónomo. Consulta por un déficit severo en el nivel de energía y del impulso vital que persiste desde hace meses. Manifiesta ser incapaz de afrontar el estrés derivado de los plazos de entrega, sufriendo bloqueo psicológico ante sobrecargas de trabajo. En el plano recreativo, ha dejado de acudir a las reuniones de petanca con amigos, perdiendo interés por la socialización y el entretenimiento informal. Destaca la interferencia del entorno familiar, dado que su esposa se muestra escéptica sobre la autenticidad de su cansancio, interpretándolo como desinterés personal.",
+    "icf_codes": [
+      "b130",
+      "d240",
+      "d920",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "d240",
+      "d920",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "d240",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "d240",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "d240",
+      "d920",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "021",
+    "id_clinical_text": "021_1",
+    "clinical_text": "Varón de 48 años que acude a evaluación por dolor sordo difuso en región lumbar y dorsal de meses de evolución.\n\nEl paciente refiere un insomnio de mantenimiento con múltiples despertares nocturnos que impiden el descanso continuo. En la anamnesis destaca la convivencia con su esposa; el paciente señala que ella minimiza la sintomatología pensando que exagera sus dolencias.\n\nActualmente toma paracetamol y tramadol sin alivio completo de los síntomas.",
+    "icf_codes": [
+      "b134",
+      "b280",
+      "e310",
+      "e410",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b134",
+      "b280",
+      "e1101",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b134",
+      "b280",
+      "e1101",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b280",
+      "e1101",
+      "e310",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b134",
+      "b280",
+      "e1101",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "021",
+    "id_clinical_text": "021_2",
+    "clinical_text": "Mujer de 62 años remitida por molestia física generalizada, manifestando sensación de quemazón e hiperalgesia difusa en ambos miembros superiores.\n\nAsocia un insomnio inicial importante, tardando varias horas en conciliar el sueño cada noche. Convive junto a su hijo, quien mantiene una actitud sobreprotectora que invalida su autonomía respecto al manejo del síntoma. Se encuentra en tratamiento con pregabalina y AINEs pautados por su médico.",
+    "icf_codes": [
+      "b134",
+      "b280",
+      "e310",
+      "e410",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b134",
+      "b280",
+      "e1101",
+      "e310",
+      "e355",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b134",
+      "b280",
+      "e1101",
+      "e310",
+      "e355",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b280",
+      "e1101",
+      "e310",
+      "e355",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b134",
+      "b280",
+      "e1101",
+      "e310",
+      "e355",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "021",
+    "id_clinical_text": "021_3",
+    "clinical_text": "Paciente de 29 años que acude por mialgia punzante en zona cervical y trapecios constante.\n\nDescribe un patrón de sueño de muy mala calidad y no reparador. Refiere tensiones en el entorno doméstico con su hermana, debido a la incredulidad y actitud crítica de su hermana sobre la veracidad de su malestar físico. En la revisión del tratamiento refiere consumo de analgésicos de venta libre y relajantes musculares sin esquema pautado fijo.",
+    "icf_codes": [
+      "b134",
+      "b280",
+      "e310",
+      "e410",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b134",
+      "b280",
+      "d760",
+      "e1101",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b134",
+      "b280",
+      "d760",
+      "e1101",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b280",
+      "d760",
+      "e1101",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b134",
+      "b280",
+      "d760",
+      "e1101",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "022",
+    "id_clinical_text": "022_1",
+    "clinical_text": "Varón de 45 años que acude a revisión rehabilitadora tras ser derivado por su médico de familia y valorado previamente por fisioterapia. Refiere dolor difuso en musculatura paravertebral y miembros inferiores de 6 meses de evolución, calificado como agudo al realizar mínimos sobreesfuerzos.\n\nEl paciente manifiesta una pérdida acusada de la tolerancia al esfuerzo y fatiga precoz que le impide mantener actividades aeróbicas continuadas.\n\nExploración física: palpación dolorosa generalizada en musculatura lumbar sin focalidad neurológica. Mala resistencia cardiovascular durante la prueba de esfuerzo asistida.",
+    "icf_codes": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b455",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "022",
+    "id_clinical_text": "022_2",
+    "clinical_text": "Mujer de 62 años, atendida por el equipo de especialistas de la unidad del dolor para seguimiento funcional. Refiere dolor sordo y continuo generalizado de más de un año de evolución, tipo mialgia difusa.\n\nPresenta baja capacidad aeróbica con marcada fatigabilidad que aparece tras apenas unos minutos de actividad física de baja intensidad, agotando su vigor físico rápidamente.\n\nEF: dolor a la presión generalizado. Prueba de tolerancia aeróbica limitada por falta de resistencia física global.",
+    "icf_codes": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b455",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "022",
+    "id_clinical_text": "022_3",
+    "clinical_text": "Paciente de 29 años, actualmente supervisada por su médico rehabilitador en consultas externas. Consulta por sensación de dolor de tipo quemazón en extremidades de varios meses de duración.\n\nEn la valoración funcional destaca una disminución notable del vigor y de la resistencia física, manifestando incapacidad para sostener el ejercicio cardiovascular habitual sin sensación de exhaustión inmediata.\n\nExploración: dolor a la palpación en puntos miotendinosos. Mala respuesta de frecuencia cardiaca y tolerancia durante la prueba de esfuerzo progresivo.",
+    "icf_codes": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b455",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b455",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "023",
+    "id_clinical_text": "023_1",
+    "clinical_text": "Varón de 28 años que acude a valoración por dolor punzante en cara anterior de muslo derecho de 3 semanas de evolución. Refiere que la molestia aparece tanto en reposo como con la actividad física.\n\nEn la exploración física se aprecia debilidad muscular a la extensión de la rodilla derecha respecto al lado contralateral (balance 4/5). Durante las pruebas de movilidad activa presenta falta de control fino al coordinar el movimiento voluntario de la extremidad, mostrando cierta torpeza e imprecisión en los ajustes de la trayectoria motor.",
+    "icf_codes": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b730",
+      "b760"
+    ]
+  },
+  {
+    "id_code_combination": "023",
+    "id_clinical_text": "023_2",
+    "clinical_text": "Mujer de 62 años consulta por mialgia continua en zona escapular izquierda de un mes de evolución. Describe una sensación desagradable de dolor sordo que aumenta a la palpación de la musculatura periescapular.\n\nA la evaluación clínica presenta una disminución evidente de la fuerza de agarre en la mano homolateral y de los separadores del hombro. Asimismo, destaca una clara dificultad para coordinar movimientos alternos rápidos y fallos en el control motor voluntario al intentar realizar gestos precisos con dicho miembro.",
+    "icf_codes": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b730",
+      "b760"
+    ]
+  },
+  {
+    "id_code_combination": "023",
+    "id_clinical_text": "023_3",
+    "clinical_text": "Varón de 45 años evaluado por dolor sordo generalizado en región lumbar de inicio insidioso. El paciente refiere molestia persistente profunda en la zona baja de la espalda.\n\nA la exploración destaca una pérdida de fuerza muscular en psoas e ilíaco izquierdo frente a resistencia. En las pruebas de función motora, se evidencia un fallo de coordinación en el control voluntario del pie e incapacidad para graduar la precisión del movimiento guiado de la extremidad inferior.",
+    "icf_codes": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b730",
+      "b760"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b730",
+      "b760"
+    ]
+  },
+  {
+    "id_code_combination": "024",
+    "id_clinical_text": "024_1",
+    "clinical_text": "Mujer de 48 años que acude a revisión con el médico rehabilitador y su fisioterapeuta habitual. Presenta dolor difuso en ambas extremidades inferiores y región lumbar de meses de evolución. Durante la entrevista expresa sentimientos de marcada ansiedad y labilidad emocional. Manifiesta ideas fijas de somatización, convencida de que su molestia se debe a una patología grave no detectada. Esta situación interrumpe su capacidad para organizar y cumplir con sus rutinas diarias. Refiere gran dificultad para andar más de diez minutos seguidos, así como imposibilidad para levantar la cesta de la colada o realizar otros quehaceres de la casa como pasar la aspiradora.\n\nExploración física: dolor generalizado a la palpación muscular en musculatura paravertebral y miembros inferiores. Movilidad articular conservada pero realizada con aprehensión.",
+    "icf_codes": [
+      "b152",
+      "b280",
+      "b1602",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "024",
+    "id_clinical_text": "024_2",
+    "clinical_text": "Varón de 62 años remitido por la enfermera de atención primaria para valoración médica. Refiere dolor continuo en toda la columna vertebral y ambas caderas. Muestra tendencia a la somatización, interpretando cualquier sensación corporal como signo de empeoramiento. Refiere un cuadro de tristeza y frustración intensa vinculado a sus limitaciones físicas. Explica que la molestia le impide planificar y llevar a cabo sus rutinas diarias de forma ordenada. Presenta problemas para andar trayectos breves en el exterior y manifiesta severa dificultad para levantar objetos pesados como las bolsas de la compra. Asimismo, encuentra enormes trabas para realizar los quehaceres de la casa, especialmente al barrer o fregar el suelo.\n\nExploración: balance articular completo en caderas y columna, con dolor manifestado a la deambulación y maniobras de carga.",
+    "icf_codes": [
+      "b152",
+      "b280",
+      "b1602",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "024",
+    "id_clinical_text": "024_3",
+    "clinical_text": "Paciente mujer de 35 años que acude a consulta tras ser derivada por su médico de familia. Describe dolor sordo generalizado que afecta a la musculatura del tronco y extremidades superiores. Presenta una preocupación constante centrada en la somatización de cada molestia física. Refiere una importante tensión clínica y abatimiento respecto a su estado. Manifiesta gran dificultad para gestionar sus rutinas diarias y organizar sus actividades cotidianas. Afirma que siente dolor al andar apenas un par de manzanas. Refiere no poder levantar o cargar paquetes ligeros en su domicilio, así como ser incapaz de ejecutar los quehaceres de la casa, en particular la limpieza de encimeras y el orden de armarios.\n\nExploración física: palpación dolorosa generalizada, sin déficit neurológico focal.",
+    "icf_codes": [
+      "b152",
+      "b280",
+      "b1602",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b152",
+      "b1602",
+      "b280",
+      "d230",
+      "d430",
+      "d450",
+      "d640",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "025",
+    "id_clinical_text": "025_1",
+    "clinical_text": "Varón de 64 años evaluado por dolor difuso y mialgia persistente en tronco y extremidades de más de un año de evolución. Durante la exploración se evidencia un enlentecimiento psicomotor severo, con lentitud marcada en la adopción de posturas e inclinaciones corporales.\n\nA la valoración analítica, presenta debilidad muscular en ambos cuádriceps y disminución manifiesta de la fuerza de prensión manual. Muestra clara falta de control en movimientos voluntarios finos y problemas de coordinación ojo-mano durante las pruebas funcionales.\n\nEl paciente refiere que la convivencia se ve dificultada porque su pareja se muestra escéptica y considera que no intenta esforzarse, cuestionando constantemente la veracidad de su síntoma.",
+    "icf_codes": [
+      "b147",
+      "b280",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b147",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b147",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b147",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b147",
+      "b730",
+      "b760",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "025",
+    "id_clinical_text": "025_2",
+    "clinical_text": "Mujer de 28 años que consulta por cuadro de dolor punzante y quemazón generalizada de varios meses de duración. En la consulta muestra una agitación psicomotora evidente, cambiando de posición en la silla de forma incesante e incapaz de mantener una postura estable.\n\nEn la exploración física destaca una debilidad muscular en la musculatura proximal de miembros superiores e inferiores. Presenta torpeza en la coordinación motora derecha-izquierda y alteraciones significativas en el control del movimiento voluntario durante la realización de tareas motoras complejas.\n\nRefiere que sus padres expresan una actitud de rechazo hacia su cuadro, afirmando abiertamente que 'se lo inventa para llamar la atención' y presionándola para que ignore la sintomatología.",
+    "icf_codes": [
+      "b147",
+      "b280",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b147",
+      "b280",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b147",
+      "b280",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b147",
+      "b280",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b147",
+      "b280",
+      "b730",
+      "b760",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "025",
+    "id_clinical_text": "025_3",
+    "clinical_text": "Paciente varón de 43 años que acude por dolor sordo generalizado de distribución axial y apendicular. En la observación clínica destaca un retraso psicomotor al ejecutar órdenes motoras sencillas y gran lentitud de respuesta corporal.\n\nA la exploración física presenta pérdida de fuerza en músculos del tronco y faja abdominal. Al evaluar el control motor voluntario, evidencia disdiadococinesia y dificultades en el control funcional y coordinación de apoyos con extremidades inferiores.\n\nSeñala un clima de tensión en el hogar debido a que su hermano mantiene una postura de continua desconfianza frente a sus molestias, tachándolo de voluble y desinteresado.",
+    "icf_codes": [
+      "b147",
+      "b280",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b147",
+      "b280",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b147",
+      "b280",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b147",
+      "b280",
+      "b730",
+      "b760",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b147",
+      "b280",
+      "b730",
+      "b760",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "026",
+    "id_clinical_text": "026_1",
+    "clinical_text": "Varón de 45 años que acude a consulta por presentar dolor agudo y punzante en la zona lumbar de tres meses de evolución. Durante la anamnesis refiere una clara dificultad para gestionar situaciones de elevado estrés cotidiano, lo que parece exacerbar su percepción de la molestia. Asimismo, manifiesta que este malestar influye negativamente en la convivencia cotidiana, desencadenando frecuentes discusiones con su hijo adolescente.",
+    "icf_codes": [
+      "b280",
+      "d240",
+      "d760"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d240",
+      "d760"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d240",
+      "d760"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d240",
+      "d760"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d240",
+      "d760"
+    ]
+  },
+  {
+    "id_code_combination": "026",
+    "id_clinical_text": "026_2",
+    "clinical_text": "Mujer de 62 años que refiere dolor sordo y continuo en la región cervical y ambos hombros desde hace medio año. Explica que se siente desbordada ante demandas psicológicas intensas y momentos de crisis personal. Comenta además que la falta de recursos para afrontar estas exigencias ha repercutido en el ámbito familiar, provocando un paulatino distanciamiento y roces con su hermana.",
+    "icf_codes": [
+      "b280",
+      "d240",
+      "d760"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d240",
+      "d760"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d240",
+      "d760"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d240",
+      "d760"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d240",
+      "d760"
+    ]
+  },
+  {
+    "id_code_combination": "026",
+    "id_clinical_text": "026_3",
+    "clinical_text": "Paciente varón de 29 años que solicita valoración por un dolor molesto e intermitente en la zona dorsal de aparición paulatina. Expresa una notable incapacidad para lidiar con el estrés diario y las situaciones de tensión psicológica. Señala que la sobrecarga de estas exigencias emocionales genera tensiones constantes con su cónyuge en el hogar.",
+    "icf_codes": [
+      "b280",
+      "d240",
+      "d760"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d240",
+      "d770"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d240",
+      "d770"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d240",
+      "d770"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d240",
+      "d770"
+    ]
+  },
+  {
+    "id_code_combination": "027",
+    "id_clinical_text": "027_1",
+    "clinical_text": "Varón de 34 años que acude a evaluación sintomática. Presenta dolor pelvoperineal continuo de 8 meses de evolución. En la valoración destaca una convicción persistente de padecer una infección interna no diagnosticada, reatribuyendo sus molestias físicas a dicho proceso orgánico a pesar de las pruebas complementarias negativas.\n\nRefiere que esta situación ha provocado la evitación de la actividad sexual con su pareja, afectando la esfera afectivo-íntima. A nivel asistencial, ha consultado a múltiples especialistas médicos sin obtener respuestas satisfactorias a sus demandas. Actualmente mantiene tratamiento con analgésicos opióides y neuromoduladores pautados.",
+    "icf_codes": [
+      "b280",
+      "b1602",
+      "d770",
+      "e355",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b1602",
+      "d770",
+      "e355",
+      "e1101"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b1602",
+      "d770",
+      "e355",
+      "e1101"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b1602",
+      "d770",
+      "e355",
+      "e1101"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b1602",
+      "d770",
+      "e355",
+      "e1101"
+    ]
+  },
+  {
+    "id_code_combination": "027",
+    "id_clinical_text": "027_2",
+    "clinical_text": "Paciente mujer de 48 años remitida a consulta. Refiere dolor sordo en región lumbo-pélvica de dos años de evolución. Durante la entrevista expresa la idea fija de que su columna está 'destruida internamente', manifestando un patrón de somatización constante respecto a sus dolencias.\n\nSeñala una grave afectación de la relación íntima con su cónyuge, interrumpiendo el contacto físico estrecho. Es derivada por su médico de familia tras revisiones con el reumatólogo para reevaluación. En el plan farmacológico consta la ingesta diaria de AINEs y relajantes musculares con escaso control sintomático.",
+    "icf_codes": [
+      "b280",
+      "b1602",
+      "d770",
+      "e355",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b1602",
+      "d770",
+      "e355",
+      "e1101"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b1602",
+      "d770",
+      "e355",
+      "e1101"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b1602",
+      "d770",
+      "e355",
+      "e1101"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b1602",
+      "d770",
+      "e355",
+      "e1101"
+    ]
+  },
+  {
+    "id_code_combination": "027",
+    "id_clinical_text": "027_3",
+    "clinical_text": "Hombre de 62 años que acude para valoración especializada por dolor torácico neuropático. Presenta un pensamiento recurrente de sufrir un proceso tumoral no detectado, asociando cualquier fluctuación del dolor a la progresión de una lesión no identificada.\n\nManifiesta un deterioro de la vida de pareja e intimidad por temor a desencadenar mayores molestias durante el contacto afectivo. Se encuentra en seguimiento por la unidad del dolor y otros facultativos de forma continuada. Recibe tto. con uso continuo de parches cutáneos y anticonvulsivos.",
+    "icf_codes": [
+      "b280",
+      "b1602",
+      "d770",
+      "e355",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b152",
+      "b1602",
+      "b280",
+      "d770",
+      "e1101",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b152",
+      "b1602",
+      "b280",
+      "d770",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b152",
+      "b1602",
+      "b280",
+      "d770",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b152",
+      "b1602",
+      "b280",
+      "d770",
+      "e1101",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "028",
+    "id_clinical_text": "028_1",
+    "clinical_text": "Varón de 48 años que acude a consulta refiriendo dolor sordo generalizado en zona lumbar y muslos de más de un año de evolución.\n\nComenta que las molestias le impiden disfrutar de sus actividades de ocio habituales, habiendo tenido que abandonar por completo la jardinería y salir a pescar el fin de semana.\n\nActualmente es beneficiario de una prestación de la seguridad social por incapacidad, estando a la espera de la revisión periódica por parte del tribunal de evaluación.",
+    "icf_codes": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d920",
+      "e570"
+    ]
+  },
+  {
+    "id_code_combination": "028",
+    "id_clinical_text": "028_2",
+    "clinical_text": "Mujer de 62 años acude a valoración por dolor urente y difuso en región interescapular de carácter continuo.\n\nRefiere que el malestar constante le imposibilita acudir a su taller de cerámica y asistir al teatro municipal, actividades que constituían su principal entretenimiento recreativo.\n\nEn la actualidad se encuentra tramitando la solicitud de subsidio público de la seguridad social derivado de su condición de salud crónica.",
+    "icf_codes": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d920",
+      "e570"
+    ]
+  },
+  {
+    "id_code_combination": "028",
+    "id_clinical_text": "028_3",
+    "clinical_text": "Paciente varón de 35 años consulta por presentar dolor punzante e intermitente en ambas rodillas desde hace varios meses.\n\nEl síntoma le ha obligado a suspender las rutas de ciclismo recreativo que realizaba durante su tiempo libre.\n\nDepende económicamente de una pensión no contributiva del sistema de seguridad social reconocida debido a su situación de discapacidad permanente.",
+    "icf_codes": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d920",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d920",
+      "e570"
+    ]
+  },
+  {
+    "id_code_combination": "029",
+    "id_clinical_text": "029_1",
+    "clinical_text": "Varón de 45 años acude por dolor sordo generalizado en espalda de meses de evolución. Refiere que la molestia física es constante.\n\nEn la entrevista destaca una convicción persistente de sufrir un daño tisular grave, interpretando cada síntoma como signo de degeneración física irreparable. Manifiesta además incapacidad para afrontar situaciones de alto estrés o momentos de tensión psicológica, notando que su capacidad de contención ante la presión es mínima.\n\nExploración física: palpación dolorosa difusa a nivel axial, sin hallazgos de focalidad neurológica. Balance articular conservado.",
+    "icf_codes": [
+      "b280",
+      "b1602",
+      "d240"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b1602",
+      "b280",
+      "d240"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b1602",
+      "b280",
+      "d240"
+    ],
+    "predicted_icf_it2": [
+      "b1602",
+      "b280",
+      "d240"
+    ],
+    "predicted_icf_it3": [
+      "b1602",
+      "b280",
+      "d240"
+    ]
+  },
+  {
+    "id_code_combination": "029",
+    "id_clinical_text": "029_2",
+    "clinical_text": "Mujer de 32 años presenta mialgias y dolor punzante en ambos brazos. Refiere que la molestia reaparece periódicamente.\n\nPresenta una clara tendencia a centrar la atención en procesos corporales con frecuente somatización de sus vivencias. Asimismo, describe severas dificultades para lidiar con el estrés y momentos de crisis psicológica, sintiendo que carece de recursos para controlar las demandas emocionales e imprevistos cotidianos.\n\nExploración física: dolor a la presión en musculatura paravertebral y antebrazos, movilidad activa y pasiva completa.",
+    "icf_codes": [
+      "b280",
+      "b1602",
+      "d240"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b1602",
+      "b280",
+      "d240"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b1602",
+      "b280",
+      "d240"
+    ],
+    "predicted_icf_it2": [
+      "b1602",
+      "b280",
+      "d240"
+    ],
+    "predicted_icf_it3": [
+      "b1602",
+      "b280",
+      "d240"
+    ]
+  },
+  {
+    "id_code_combination": "029",
+    "id_clinical_text": "029_3",
+    "clinical_text": "Paciente varón de 61 años que consulta por dolor de tipo quemazón generalizado. Describe que el malestar se distribuye por varias zonas corporales.\n\nEl paciente verbaliza ideas sobrevaloradas en relación con su dolencia, manteniendo la creencia firme de un deterioro irreversible. Muestra un deficiente manejo del estrés y sobrecarga psicológica, refiriendo que cualquier exigencia psicológica supera completamente sus mecanismos de afrontamiento.\n\nExploración: alodinia al roce superficial en tórax y extremidades, balance de movilidad articular sin restricciones objetivas.",
+    "icf_codes": [
+      "b280",
+      "b1602",
+      "d240"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b1602",
+      "b280",
+      "d240"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b1602",
+      "b280",
+      "d240"
+    ],
+    "predicted_icf_it2": [
+      "b1602",
+      "b280",
+      "d240"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b1602",
+      "d240"
+    ]
+  },
+  {
+    "id_code_combination": "030",
+    "id_clinical_text": "030_1",
+    "clinical_text": "Varón de 34 años. Acude por dolor sordo en hombro derecho de larga evolución.\n\nRefiere que la persistencia del síntoma le ocasiona dificultad para analizar y resolver problemas cotidianos o evaluar opciones ante imprevistos sencillos. Asimismo, manifiesta estar limitado para tocar la guitarra española, afición que representa su principal actividad de ocio.\n\nEn la entrevista destaca la influencia del entorno directo, comentando que su mujer opina que el dolor es fruto de la imaginación y tiende a minusvalorar sus quejas.",
+    "icf_codes": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "030",
+    "id_clinical_text": "030_2",
+    "clinical_text": "Mujer de 62 años. Consulta por molestia constante descrita como dolor de características quemantes en zona cervical.\n\nPresenta alteración en la ejecución de tareas de procesamiento práctico, refiriendo complicación para resolver problemas sencillos del día a día y sopesar alternativas. Señala también el abandono de sus hábitos recreativos, siendo incapaz de participar en su club de lectura.\n\nEn cuanto al contexto relacional cercano, expresa molestia porque su hijo cree que inventa la intensidad del síntoma para justificar su inactividad.",
+    "icf_codes": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "030",
+    "id_clinical_text": "030_3",
+    "clinical_text": "Varón de 25 años. Valoración por mialgias continuas en extremidades sin causa aparente clara.\n\nEn el plano cognitivo-funcional, describe un bloqueo para encontrar soluciones ante problemas cotidianos cuando se le presentan contratiempos. En el ámbito del tiempo libre, ha suspendido la práctica de la fotografía de naturaleza por incomodidad física.\n\nRespecto a la dinámica familiar, refiere frustración ya que su hermano se muestra escéptico ante sus dolencias y cuestiona la veracidad de lo que siente.",
+    "icf_codes": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d175",
+      "d920",
+      "e410"
+    ]
+  },
+  {
+    "id_code_combination": "031",
+    "id_clinical_text": "031_1",
+    "clinical_text": "Varón de 45 años que acude a valoración refiriendo dolor sordo en zona lumbar y cadera izquierda de larga evolución.\n\nRefiere que las molestias interfieren en su vida personal, notando dificultades para relacionarse activamente con sus hijos adolescentes durante el día a día. Manifiesta además un distanciamiento progresivo con su pareja en el ámbito afectivo debido al impacto directo del malestar persistente. Señala que cuenta con el apoyo incondicional de sus padres y hermanos, quienes conviven cerca y tratan de ayudarle constantemente.",
+    "icf_codes": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ]
+  },
+  {
+    "id_code_combination": "031",
+    "id_clinical_text": "031_2",
+    "clinical_text": "Mujer de 29 años presenta cuadro de malestar persistente expresado como una sensación de quemazón y dolor difuso en hemicuerpo derecho.\n\nDurante el interrogatorio clínico expresa un progresivo deterioro en el trato diario con sus hermanos a raíz del malestar constante. Asimismo, describe una clara afectación directa en sus relaciones íntimas con su esposo, repercutiendo en la esfera conyugal. En el ámbito de los familiares cercanos, refiere que mantiene a sus hijos pequeños como su principal red de contención cercana en el hogar.",
+    "icf_codes": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ]
+  },
+  {
+    "id_code_combination": "031",
+    "id_clinical_text": "031_3",
+    "clinical_text": "Paciente varón de 62 años acude por mialgia punzante y continua a nivel dorsal e interescapular.\n\nRelata que el síntoma persistente genera tensión en el contacto familiar con su hija mayor, dificultando el mantenimiento de una dinámica fluida. En la esfera de pareja, refiere evitación de la cercanía íntima y sentimental con su mujer ante la falta de confort físico. En relación al entorno doméstico, convive únicamente con su esposa como único núcleo familiar directo que le acompaña en el proceso.",
+    "icf_codes": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d760",
+      "d770",
+      "e310"
+    ]
+  },
+  {
+    "id_code_combination": "032",
+    "id_clinical_text": "032_1",
+    "clinical_text": "Varón de 28 años, acude por dolor de espalda sordo y constante de más de 8 meses de evolución. Comenta que la persistencia del dolor le desorganiza totalmente su rutina diaria, impidiéndole completar sus actividades en los horarios previstos. Asimismo, refiere haber abandonado la práctica de baloncesto los fines de semana y el salir a fotografiar la ciudad, que eran sus principales actividades de ocio.\n\nExploración física: movilidad activa de columna sin bloqueos pero con molestia difusa en rango final de flexión. Palpación muscular paravertebral dolorosa. Se pauta tabla de movilidad activa y organización de pausas en la jornada.",
+    "icf_codes": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d230",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "032",
+    "id_clinical_text": "032_2",
+    "clinical_text": "Mujer de 54 años que consulta por dolor articular generalizado de tipo punzante presente desde hace 2 años. Explica que la intensidad fluctuante de las molestias altera la ejecución de sus actividades habituales de la jornada, teniendo severas dificultades para estructurar su día a día. Señala además que ya no puede disfrutar de su tiempo libre, habiendo dejado de ir al teatro o acudir a clases de jardinería.\n\nExploración física: hiperalgesia difusa a la presión manual en musculatura pericapsular de miembros. Movilidad articular conservada en todos los planos.",
+    "icf_codes": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d230",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "032",
+    "id_clinical_text": "032_3",
+    "clinical_text": "Varón de 67 años que acude a revisión refiriendo mialgia difusa y quemazón en ambos miembros inferiores de larga evolución. Refiere que debido a estas sensaciones dolorosas no logra coordinar sus planes ni cumplir con su agenda diaria, viéndose obligado a interrumpir frecuentemente su programación personal. Manifiesta también imposibilidad para participar en sus aficiones de entretenimiento, habiendo discontinuado el asistir a su club de ajedrez y realizar viajes de placer.\n\nExploración física: sensibilidad superficial conservada, alodinia táctil en cara anterior de muslos. Sin hallazgos neurológicos focales.",
+    "icf_codes": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d230",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d230",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "033",
+    "id_clinical_text": "033_1",
+    "clinical_text": "Varón de 28 años que acude a consulta por dolor punzante en la región lumbar de varios meses de evolución. Durante la entrevista expresa que las molestias le generan dificultad para mantener la interacción habitual con sus hermanos en los encuentros del núcleo familiar.\n\nExploración física: palpación dolorosa en musculatura paravertebral L3-L5, rango articular activo de columna conservado, flexión lumbar con molestia al final del rango. SLR negativo bilateral.",
+    "icf_codes": [
+      "b280",
+      "d760"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d760"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d760"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d760"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d760"
+    ]
+  },
+  {
+    "id_code_combination": "033",
+    "id_clinical_text": "033_2",
+    "clinical_text": "Mujer de 62 años que acude por dolor sordo en ambos hombros de más de un año de evolución. Explica que la presencia del síntoma interfiere de forma directa en el desarrollo de la relación y contacto habitual con sus hijos.\n\nExploración física: dolor a la movilidad pasiva de ambos hombros en abducción superior a 90 grados, arcos de movimiento completos, maniobras de atrapamiento subacromial negativas.",
+    "icf_codes": [
+      "b280",
+      "d760"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d760"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d760"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d760"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d760"
+    ]
+  },
+  {
+    "id_code_combination": "033",
+    "id_clinical_text": "033_3",
+    "clinical_text": "Paciente de 45 años, varón, que acude por dolor de características quemantes en la zona dorsal. Refiere que la persistencia del malestar dificulta sostener la relación de parentesco con su padre, limitando la fluidez del trato personal entre ambos.\n\nExploración física: dolor focalizado a la palpación en apófisis espinosas D6-D8. Movilidad articular dorsal activa sin restricciones mecánicas, test de compresión axial negativo.",
+    "icf_codes": [
+      "b280",
+      "d760"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d760"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d760"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d760"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d760"
+    ]
+  },
+  {
+    "id_code_combination": "034",
+    "id_clinical_text": "034_1",
+    "clinical_text": "Varón de 62 años. Consulta por dolor sordo en ambos miembros inferiores de meses de evolución. En la valoración inicial se observa una postura rígida con enlentecimiento psicomotor evidente al responder a las indicaciones y al realizar movimientos corporales. Refiere severa dificultad para andar distancias cortas por la calle.\n\nExploración física: Marcha cautelosa y lenta. Escala analógica del dolor 6/10.",
+    "icf_codes": [
+      "b147",
+      "b280",
+      "d450"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b147",
+      "b280",
+      "d450"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b147",
+      "b280",
+      "d450"
+    ],
+    "predicted_icf_it2": [
+      "b147",
+      "b280",
+      "d450"
+    ],
+    "predicted_icf_it3": [
+      "b147",
+      "b280",
+      "d450"
+    ]
+  },
+  {
+    "id_code_combination": "034",
+    "id_clinical_text": "034_2",
+    "clinical_text": "Mujer de 28 años. Acude por dolor punzante generalizado que se percibe con mayor intensidad en tobillos. Muestra un estado de agitación psicomotora con inquietud motora constante durante la entrevista, cambiando de postura de forma impulsiva. Describe imposibilidad de andar sobre superficies irregulares sin un claro empeoramiento del síntoma painful.\n\nExploración física: Apoyo plantar álgico, patrón de marcha hipercinético.",
+    "icf_codes": [
+      "b147",
+      "b280",
+      "d450"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b147",
+      "b280",
+      "d450"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b147",
+      "b280",
+      "d450"
+    ],
+    "predicted_icf_it2": [
+      "b147",
+      "b280",
+      "d450"
+    ],
+    "predicted_icf_it3": [
+      "b147",
+      "b280",
+      "d450"
+    ]
+  },
+  {
+    "id_code_combination": "034",
+    "id_clinical_text": "034_3",
+    "clinical_text": "Mujer de 74 años. Evaluada por mialgia difusa persistente en glúteos y muslos. Presenta un retraso psicomotor significativo en la ejecución de órdenes motoras simples y adopción de posturas. Refiere gran limitación al andar alrededor de obstáculos en su domicilio debido al temor al dolor.\n\nExploración física: Marcha a pasos cortos, torpeza en giros y cambios de dirección.",
+    "icf_codes": [
+      "b147",
+      "b280",
+      "d450"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b147",
+      "b280",
+      "b760",
+      "d450"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b147",
+      "b152",
+      "b280",
+      "b760",
+      "d450"
+    ],
+    "predicted_icf_it2": [
+      "b147",
+      "b280",
+      "b760",
+      "d450"
+    ],
+    "predicted_icf_it3": [
+      "b147",
+      "b152",
+      "b280",
+      "b760",
+      "d450"
+    ]
+  },
+  {
+    "id_code_combination": "035",
+    "id_clinical_text": "035_1",
+    "clinical_text": "Varón de 45 años, cartero a jornada completa. Acude a consulta por dolor sordo en miembro inferior derecho de 4 meses de evolución. Refiere que el malestar aparece progresivamente durante el reparto. Presenta dificultad para andar distancias largas, precisando pausas frecuentes. En la evaluación neuromuscular se constata debilidad a la flexión dorsal del pie derecho (4/5). Esta limitación física origina un rendimiento disminuido en su trabajo remunerado, afectando el cumplimiento de su jornada habitual.\n\nExploración física: Marcha antiálgica. Pérdida de fuerza manifiesta en dorsiflexión de tobillo derecho respecto a contralateral. Sin otras alteraciones reflejas.",
+    "icf_codes": [
+      "b280",
+      "d450",
+      "d850",
+      "b730"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b730",
+      "d450",
+      "d850"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b730",
+      "d450",
+      "d850"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b730",
+      "d450",
+      "d850"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b730",
+      "d450",
+      "d850"
+    ]
+  },
+  {
+    "id_code_combination": "035",
+    "id_clinical_text": "035_2",
+    "clinical_text": "Mujer de 58 años, dependienta de comercio a tiempo parcial. Refiere dolor lumbar constante que irradia hacia la cara anterior del muslo izquierdo de 6 meses de duración. Describe 'sensación de quemazón e inestabilidad'. Manifiesta deambulación limitada a menos de 100 metros por incremento del dolor. A la exploración física destaca pérdida de fuerza en cuádriceps izquierdo (3+/5) con claudicación ocasional. El cuadro conlleva severa afectación para mantenerse en su puesto de dependienta dentro de su trabajo remunerado.",
+    "icf_codes": [
+      "b280",
+      "d450",
+      "d850",
+      "b730"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b730",
+      "d450",
+      "d850"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b730",
+      "b760",
+      "d450",
+      "d850"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b730",
+      "d450",
+      "d850"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b730",
+      "d450",
+      "d850"
+    ]
+  },
+  {
+    "id_code_combination": "035",
+    "id_clinical_text": "035_3",
+    "clinical_text": "Varón de 32 años, electricista autónomo. Acude por dolor punzante en extremidad superior derecha y cuello de 3 meses de evolución. En la valoración se detecta déficit de fuerza en musculatura del deltoides derecho (4-/5) en comparación con lado contralateral. En el ámbito laboral presenta gran dificultad para cumplir las tareas de su empleo, reduciendo los encargos que acepta. Adicionalmente refiere torpeza al andar sobre superficies irregulares en las obras, precisando extremar la precaución durante los desplazamientos a pie.",
+    "icf_codes": [
+      "b280",
+      "d450",
+      "d850",
+      "b730"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "b730",
+      "b760",
+      "d450",
+      "d850"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "b730",
+      "b760",
+      "d450",
+      "d850"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "b730",
+      "d850",
+      "b760",
+      "d450"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "b730",
+      "b760",
+      "d450",
+      "d850"
+    ]
+  },
+  {
+    "id_code_combination": "036",
+    "id_clinical_text": "036_1",
+    "clinical_text": "Varón de 48 años que acude a consulta refiriendo dolor sordo en la zona lumbar y ambas caderas de 8 meses de evolución. Comenta que las molestias aumentan durante la noche, provocando despertares nocturnos frecuentes que le impiden un descanso reparador.\n\nEn el ámbito personal y del entorno, señala que el malestar constante limita la convivencia en el hogar, mostrando dificultad para interactuar y jugar con sus hijos. Asimismo, refiere que ha dejado de ir a pescar los fines de semana, la cual constituía su principal actividad de ocio.\n\nExploración física: molestia a la palpación en la musculatura paravertebral lumbar, movilidad activa articular conservada pero dolorosa al final del rango en flexión de tronco.",
+    "icf_codes": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "036",
+    "id_clinical_text": "036_2",
+    "clinical_text": "Mujer de 62 años que acude por dolor persistente y quemazón generalizada en miembros superiores e inferiores de más de un año de evolución. Describe una alteración importante del descanso, manifestando insomnio de conciliación tardando horas en conciliar el sueño de forma habitual.\n\nDurante la anamnesis, manifiesta que el estado sintomático ha provocado distanciamiento en el trato con sus hermanos al declinar su asistencia a los encuentros familiares. Además, lamenta haber abandonado sus clases de pintura de los martes, su afición recreativa habitual.\n\nExploración física: sensibilidad dolorosa difusa a la presión superficial en masas musculares de brazos y muslos, movilidad pasiva de extremidades sin hallazgos limitantes.",
+    "icf_codes": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "036",
+    "id_clinical_text": "036_3",
+    "clinical_text": "Paciente varón de 29 años que consulta por dolor punzante en la rodilla derecha de varios meses de evolución. Refiere que la molestia le condiciona la calidad del descanso, presentando un sueño fragmentado y no reparador debido a las posturas al dormir.\n\nRespecto a sus relaciones personales, relata que ha reducido las visitas y almuerzos semanales con sus padres por falta de disposición. Asimismo, explica que no puede jugar partidos de baloncesto con sus amigos, su pasatiempo de tiempo libre preferido.\n\nExploración clínica: balance articular de rodilla derecha completo, molestia a la palpación de la interlínea articular medial, maniobras de estabilidad de ligamentos negativas.",
+    "icf_codes": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "predicted_icf_it2": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ],
+    "predicted_icf_it3": [
+      "b134",
+      "b280",
+      "d760",
+      "d920"
+    ]
+  },
+  {
+    "id_code_combination": "037",
+    "id_clinical_text": "037_1",
+    "clinical_text": "Mujer de 52 años derivada por el traumatólogo tras consulta de revisión. Presenta un cuadro de dolor lumbar generalizado de más de 8 meses de evolución. Refiere astenia acusada y falta de energía habitual para iniciar cualquier movimiento. En la anamnesis destaca una baja tolerancia al esfuerzo físico, fatigándose rápidamente tras mínimos requerimientos. Manifiesta dificultad para andar más de dos manzanas de forma continuada. Revisa tratamiento en el que consta la toma de analgésicos pautados sin alivio completo.\n\nExploración física: Marcha lenta e inestable a los pocos metros. No déficit neurológico focal. Buena predisposición a la pauta activa propuesta en sala.",
+    "icf_codes": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e355",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e1101",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e1101",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "037",
+    "id_clinical_text": "037_2",
+    "clinical_text": "Varón de 68 años en seguimiento por su equipo de fisioterapia. Consulta por gonalgia bilateral sorda persistente. Expresa una clara pérdida de impulso y motivación para mantenerse activo diariamente. Presenta una marcada fatiga aeróbica al intentar realizar cualquier tipo de ejercicio. La autonomía funcional está alterada, apreciándose una marcha limitada a trayectos cortos en llano. Trae listado de fármacos con consumo de antiinflamatorios orales recetados de forma continuada.\n\nExploración física: Movilidad articular de rodillas conservada pero dolorosa en rangos finales. Se pauta ajuste de pauta de ejercicio progresivo suave.",
+    "icf_codes": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e355",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e1101",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e1101",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "037",
+    "id_clinical_text": "037_3",
+    "clinical_text": "Paciente mujer de 35 años, valorada previamente por Medicina Interna por dolor crónico. Refiere mialgia difusa en miembros inferiores de tipo quemazón. Asocia un acusado déficit de energía que le impide sostener la actividad habitual. En las pruebas de tolerancia aeróbica destaca una escasa resistencia física con agotamiento precoz. Describe incapacidad para andar a ritmo normal durante más de cinco minutos sin tener que detenerse. Se revisa su tratamiento analgésico habitual sin cambios recientes.\n\nExploración física: Sensibilidad conservada. Dolor a la palpación muscular difusa. Se acuerda plan conjunto de readaptación con el equipo asistencial.",
+    "icf_codes": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e355",
+      "e1101"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e1101",
+      "e355"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b130",
+      "b280",
+      "b455",
+      "d450",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it2": [
+      "b130",
+      "b280",
+      "b455",
+      "d230",
+      "d450",
+      "e1101",
+      "e355"
+    ],
+    "predicted_icf_it3": [
+      "b130",
+      "b280",
+      "b455",
+      "d230",
+      "d450",
+      "e1101",
+      "e355"
+    ]
+  },
+  {
+    "id_code_combination": "038",
+    "id_clinical_text": "038_1",
+    "clinical_text": "Mujer de 54 años que acude por dolor lumbar y generalizado de más de dos años de evolución. Refiere bastantes dificultades para pasar la fregona y limpiar el polvo en el hogar. Actualmente vive con su cónyuge, quien la asiste en la vivienda. Se encuentra pendiente de la resolución de un subsidio económico tramitado ante los servicios de la Seguridad Social.",
+    "icf_codes": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ]
+  },
+  {
+    "id_code_combination": "038",
+    "id_clinical_text": "038_2",
+    "clinical_text": "Varón de 62 años evaluado por gonalgia bilateral y dolor muscular diseminado. Describe imposibilidad de poner lavadoras o recoger la casa sin que aumente la molestia. Convive con sus tres hijos adultos. Actualmente cobra una pensión contributiva del sistema de Seguridad Social ajustada a su condición de salud.",
+    "icf_codes": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ]
+  },
+  {
+    "id_code_combination": "038",
+    "id_clinical_text": "038_3",
+    "clinical_text": "Paciente de 39 años que consulta por dolor tensional difuso de larga evolución. Presenta importantes limitaciones para planchar la ropa y barrer las estancias de la vivienda. Acude acompañada por su madre, con quien vive. Ha iniciado trámites para solicitar una ayuda de protección social en el sistema de la Seguridad Social.",
+    "icf_codes": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "predictor_model": "gemma-4-31b-it",
+    "predicted_icf_codes_consensus": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "consensus_criteria": "strict 3/3",
+    "predicted_icf_it1": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "predicted_icf_it2": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ],
+    "predicted_icf_it3": [
+      "b280",
+      "d640",
+      "e310",
+      "e570"
+    ]
+  }
+]

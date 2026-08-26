@@ -56,7 +56,7 @@ def load_data():
     f1_path = RESULTS_DIR / "llm_text" / "resumen_f1_score.json"
     human_path = RESULTS_DIR / "human_text" / "resumen_human_annotated.json"
     ablation_path = RESULTS_DIR / "llm_text" / "resumen_ablacion.json"
-    human_cases_path = RESULTS_DIR / "human_text" / "human_annotated_flash-3.6.json"
+    human_cases_path = RESULTS_DIR / "human_text" / "2026-08-25-flash-3.7-human-annotated.json"
     
     f1_data = json.loads(f1_path.read_text(encoding="utf-8")) if f1_path.exists() else []
     human_data = json.loads(human_path.read_text(encoding="utf-8")) if human_path.exists() else {}
@@ -72,9 +72,9 @@ def compute_chapter_breakdown(f1_data, human_data):
         "e": {"nombre": "Factores Ambientales (e)", "synth_tp": 0, "synth_fp": 0, "synth_fn": 0, "hum_tp": 0, "hum_fp": 0, "hum_fn": 0}
     }
     
-    flash36_synth = next((x for x in f1_data if x.get("modelo_id") == "gemini_flash_36"), None)
-    if flash36_synth:
-        per_class = flash36_synth.get("metricas", {}).get("por_clase", {})
+    flash37_synth = next((x for x in f1_data if x.get("modelo_id") == "gemini_flash_37"), None)
+    if flash37_synth:
+        per_class = flash37_synth.get("metricas", {}).get("por_clase", {})
         for code, m in per_class.items():
             ch = code[0].lower()
             if ch in chapters:
@@ -82,8 +82,8 @@ def compute_chapter_breakdown(f1_data, human_data):
                 chapters[ch]["synth_fp"] += m.get("fp", 0)
                 chapters[ch]["synth_fn"] += m.get("fn", 0)
                 
-    flash36_hum = human_data.get("flash_36", {}).get("desempeno", {}).get("per_class", {})
-    for code, m in flash36_hum.items():
+    flash37_hum = human_data.get("flash_37", {}).get("desempeno", {}).get("per_class", {})
+    for code, m in flash37_hum.items():
         ch = code[0].lower()
         if ch in chapters:
             chapters[ch]["hum_tp"] += m.get("tp", 0)
@@ -120,11 +120,11 @@ def generate_markdown_report(f1_data, human_data, ablation_data, chapter_res):
     
     gemma_s = f1_map.get("gemma_31b", {})
     flash35_s = f1_map.get("gemini_flash_35", {})
-    flash36_s = f1_map.get("gemini_flash_36", {})
+    flash37_s = f1_map.get("gemini_flash_37", {})
     
     gemma_h = human_data.get("gemma_31b", {})
     flash35_h = human_data.get("flash_35", {})
-    flash36_h = human_data.get("flash_36", {})
+    flash37_h = human_data.get("flash_37", {})
     
     md = f"""# 📊 Resumen de Métricas de Evaluación
 **Generado:** {date_str}
@@ -135,16 +135,16 @@ def generate_markdown_report(f1_data, human_data, ablation_data, chapter_res):
 
 | Corpus | Modelo | Micro-F1 | Macro-F1 | Exact Match (EMR) | Precisión | Sensibilidad (Recall) | Fiabilidad (Gwet AC1) |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Sintético (N={flash36_s.get('n_historias', 101)})** | Gemini Flash 3.6 | **{flash36_s.get('micro',{}).get('f1',0)*100:.2f}%** | {flash36_s.get('macro',{}).get('f1',0)*100:.2f}% | {flash36_s.get('emr_pct',0):.1f}% | {flash36_s.get('micro',{}).get('precision',0)*100:.2f}% | {flash36_s.get('micro',{}).get('recall',0)*100:.2f}% | 1.0000 |
+| **Sintético (N={flash37_s.get('n_historias', 101)})** | Gemini Flash 3.7 | **{flash37_s.get('micro',{}).get('f1',0)*100:.2f}%** | {flash37_s.get('macro',{}).get('f1',0)*100:.2f}% | {flash37_s.get('emr_pct',0):.1f}% | {flash37_s.get('micro',{}).get('precision',0)*100:.2f}% | {flash37_s.get('micro',{}).get('recall',0)*100:.2f}% | 1.0000 |
 | **Sintético (N={flash35_s.get('n_historias', 101)})** | Gemini Flash 3.5 | {flash35_s.get('micro',{}).get('f1',0)*100:.2f}% | {flash35_s.get('macro',{}).get('f1',0)*100:.2f}% | {flash35_s.get('emr_pct',0):.1f}% | {flash35_s.get('micro',{}).get('precision',0)*100:.2f}% | {flash35_s.get('micro',{}).get('recall',0)*100:.2f}% | 0.9994 |
-| **Sintético (N={gemma_s.get('n_historias', 101)})** | Gemma-4-31B-it (Local) | {gemma_s.get('micro',{}).get('f1',0)*100:.2f}% | {gemma_s.get('macro',{}).get('f1',0)*100:.2f}% | {gemma_s.get('emr_pct',0):.1f}% | {gemma_s.get('micro',{}).get('precision',0)*100:.2f}% | {gemma_s.get('micro',{}).get('recall',0)*100:.2f}% | 0.9994 |
-| **Humano Real (N={flash36_h.get('desempeno',{}).get('n', 21)})** | Gemini Flash 3.6 | **{flash36_h.get('desempeno',{}).get('micro',{}).get('f1',0)*100:.2f}%** | {flash36_h.get('desempeno',{}).get('macro',{}).get('f1',0)*100:.2f}% | {flash36_h.get('desempeno',{}).get('emr',0):.1f}% | {flash36_h.get('desempeno',{}).get('micro',{}).get('p',0)*100:.2f}% | {flash36_h.get('desempeno',{}).get('micro',{}).get('r',0)*100:.2f}% | {flash36_h.get('fiabilidad',{}).get('ac1',0):.4f} |
+| **Sintético (N={gemma_s.get('n_historias', 101)})** | Gemma-4-31B-it | {gemma_s.get('micro',{}).get('f1',0)*100:.2f}% | {gemma_s.get('macro',{}).get('f1',0)*100:.2f}% | {gemma_s.get('emr_pct',0):.1f}% | {gemma_s.get('micro',{}).get('precision',0)*100:.2f}% | {gemma_s.get('micro',{}).get('recall',0)*100:.2f}% | 0.9994 |
+| **Humano Real (N={flash37_h.get('desempeno',{}).get('n', 21)})** | Gemini Flash 3.7 | **{flash37_h.get('desempeno',{}).get('micro',{}).get('f1',0)*100:.2f}%** | {flash37_h.get('desempeno',{}).get('macro',{}).get('f1',0)*100:.2f}% | {flash37_h.get('desempeno',{}).get('emr',0):.1f}% | {flash37_h.get('desempeno',{}).get('micro',{}).get('p',0)*100:.2f}% | {flash37_h.get('desempeno',{}).get('micro',{}).get('r',0)*100:.2f}% | {flash37_h.get('fiabilidad',{}).get('ac1',0):.4f} |
 | **Humano Real (N={flash35_h.get('desempeno',{}).get('n', 21)})** | Gemini Flash 3.5 | {flash35_h.get('desempeno',{}).get('micro',{}).get('f1',0)*100:.2f}% | {flash35_h.get('desempeno',{}).get('macro',{}).get('f1',0)*100:.2f}% | {flash35_h.get('desempeno',{}).get('emr',0):.1f}% | {flash35_h.get('desempeno',{}).get('micro',{}).get('p',0)*100:.2f}% | {flash35_h.get('desempeno',{}).get('micro',{}).get('r',0)*100:.2f}% | {flash35_h.get('fiabilidad',{}).get('ac1',0):.4f} |
-| **Humano Real (N={gemma_h.get('desempeno',{}).get('n', 21)})** | Gemma-4-31B-it (Local) | {gemma_h.get('desempeno',{}).get('micro',{}).get('f1',0)*100:.2f}% | {gemma_h.get('desempeno',{}).get('macro',{}).get('f1',0)*100:.2f}% | {gemma_h.get('desempeno',{}).get('emr',0):.1f}% | {gemma_h.get('desempeno',{}).get('micro',{}).get('p',0)*100:.2f}% | {gemma_h.get('desempeno',{}).get('micro',{}).get('r',0)*100:.2f}% | {gemma_h.get('fiabilidad',{}).get('ac1',0):.4f} |
+| **Humano Real (N={gemma_h.get('desempeno',{}).get('n', 21)})** | Gemma-4-31B-it | {gemma_h.get('desempeno',{}).get('micro',{}).get('f1',0)*100:.2f}% | {gemma_h.get('desempeno',{}).get('macro',{}).get('f1',0)*100:.2f}% | {gemma_h.get('desempeno',{}).get('emr',0):.1f}% | {gemma_h.get('desempeno',{}).get('micro',{}).get('p',0)*100:.2f}% | {gemma_h.get('desempeno',{}).get('micro',{}).get('r',0)*100:.2f}% | {gemma_h.get('fiabilidad',{}).get('ac1',0):.4f} |
 
 ---
 
-## 2. Desglose por Capítulos CIF (Gemini Flash 3.6)
+## 2. Desglose por Capítulos CIF (Gemini Flash 3.7)
 
 * **Funciones Corporales (`b`):** F1 Sintético = {chapter_res.get('b',{}).get('synth_f1',0)}% | F1 Humano = {chapter_res.get('b',{}).get('hum_f1',0)}%
 * **Actividades y Participación (`d`):** F1 Sintético = {chapter_res.get('d',{}).get('synth_f1',0)}% | F1 Humano = {chapter_res.get('d',{}).get('hum_f1',0)}%
@@ -226,11 +226,11 @@ def build_html_dashboard(f1_data, human_data, ablation_data, human_cases, chapte
             <div class="flex flex-wrap items-center justify-between gap-4 p-3.5 rounded-xl bg-slate-900 border border-slate-800">
                 <div class="flex items-center gap-2">
                     <span class="text-xs text-slate-400 font-medium">Modelo Activo:</span>
-                    <span id="selected-model-title" class="text-sm font-bold text-white">Gemini Flash 3.6</span>
+                    <span id="selected-model-title" class="text-sm font-bold text-white">Gemini Flash 3.7</span>
                 </div>
                 <div class="flex gap-2">
-                    <button onclick="changeModel('flash_36')" class="model-btn px-3 py-1 text-xs font-medium rounded-lg bg-indigo-600 text-white border border-indigo-500 transition" data-model="flash_36">
-                        Gemini Flash 3.6
+                    <button onclick="changeModel('flash_37')" class="model-btn px-3 py-1 text-xs font-medium rounded-lg bg-indigo-600 text-white border border-indigo-500 transition" data-model="flash_37">
+                        Gemini Flash 3.7
                     </button>
                     <button onclick="changeModel('flash_35')" class="model-btn px-3 py-1 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition" data-model="flash_35">
                         Gemini Flash 3.5
@@ -438,7 +438,7 @@ def build_html_dashboard(f1_data, human_data, ablation_data, human_cases, chapte
         const CHAPTER_DATA = {chapter_json};
         const ICF_DESCRIPTIONS = {icf_desc_json};
 
-        let currentModel = 'flash_36';
+        let currentModel = 'flash_37';
         let selectedCaseIndex = 0;
         let chartModelsInstance = null;
         let chartChaptersInstance = null;
@@ -468,9 +468,9 @@ def build_html_dashboard(f1_data, human_data, ablation_data, human_cases, chapte
             }});
 
             const titles = {{
-                'flash_36': 'Google Gemini Flash 3.6',
+                'flash_37': 'Google Gemini Flash 3.7',
                 'flash_35': 'Google Gemini Flash 3.5',
-                'gemma_31b': 'Gemma-4-31B-it (Local)'
+                'gemma_31b': 'Gemma-4-31B-it'
             }};
             document.getElementById('selected-model-title').innerText = titles[modelKey];
 
@@ -481,7 +481,7 @@ def build_html_dashboard(f1_data, human_data, ablation_data, human_cases, chapte
 
         function updateKPIs() {{
             const synthModelMap = {{
-                'flash_36': 'gemini_flash_36',
+                'flash_37': 'gemini_flash_37',
                 'flash_35': 'gemini_flash_35',
                 'gemma_31b': 'gemma_31b'
             }};
@@ -495,7 +495,7 @@ def build_html_dashboard(f1_data, human_data, ablation_data, human_cases, chapte
                 document.getElementById('synth-prec').innerText = (m.micro.precision * 100).toFixed(2) + '%';
                 document.getElementById('synth-rec').innerText = (m.micro.recall * 100).toFixed(2) + '%';
                 document.getElementById('synth-sample-count').innerText = `N = ${{m.n_historias || 101}} historias`;
-                document.getElementById('synth-ac1').innerText = currentModel === 'flash_36' ? '1.0000' : '0.9994';
+                document.getElementById('synth-ac1').innerText = currentModel === 'flash_37' ? '1.0000' : '0.9994';
             }}
 
             if (humObj && humObj.desempeno) {{
@@ -512,11 +512,11 @@ def build_html_dashboard(f1_data, human_data, ablation_data, human_cases, chapte
         }}
 
         function renderCharts() {{
-            const s36 = (F1_DATA.find(x => x.modelo_id === 'gemini_flash_36')?.metricas?.micro?.f1 || 0.9709) * 100;
+            const s36 = (F1_DATA.find(x => x.modelo_id === 'gemini_flash_37')?.metricas?.micro?.f1 || 0.9709) * 100;
             const s35 = (F1_DATA.find(x => x.modelo_id === 'gemini_flash_35')?.metricas?.micro?.f1 || 0.9720) * 100;
             const sGemma = (F1_DATA.find(x => x.modelo_id === 'gemma_31b')?.metricas?.micro?.f1 || 0.9688) * 100;
 
-            const h36 = (HUMAN_DATA.flash_36?.desempeno?.micro?.f1 || 0.8222) * 100;
+            const h36 = (HUMAN_DATA.flash_37?.desempeno?.micro?.f1 || 0.8222) * 100;
             const h35 = (HUMAN_DATA.flash_35?.desempeno?.micro?.f1 || 0.8113) * 100;
             const hGemma = (HUMAN_DATA.gemma_31b?.desempeno?.micro?.f1 || 0.7720) * 100;
 
@@ -525,7 +525,7 @@ def build_html_dashboard(f1_data, human_data, ablation_data, human_cases, chapte
             chartModelsInstance = new Chart(ctx1, {{
                 type: 'bar',
                 data: {{
-                    labels: ['Gemini Flash 3.6', 'Gemini Flash 3.5', 'Gemma-4-31B-it'],
+                    labels: ['Gemini Flash 3.7', 'Gemini Flash 3.5', 'Gemma-4-31B-it'],
                     datasets: [
                         {{
                             label: 'Corpus Sintético',
@@ -600,12 +600,12 @@ def build_html_dashboard(f1_data, human_data, ablation_data, human_cases, chapte
             const rows = [
                 {{
                     corpus: 'Sintético (N=101)',
-                    modelo: 'Gemini Flash 3.6',
-                    micro_f1: (F1_DATA.find(x => x.modelo_id === 'gemini_flash_36')?.metricas?.micro?.f1 || 0.9709) * 100,
-                    macro_f1: (F1_DATA.find(x => x.modelo_id === 'gemini_flash_36')?.metricas?.macro?.f1 || 0.8650) * 100,
-                    emr: F1_DATA.find(x => x.modelo_id === 'gemini_flash_36')?.metricas?.emr_pct || 100.0,
-                    p: (F1_DATA.find(x => x.modelo_id === 'gemini_flash_36')?.metricas?.micro?.precision || 0.9740) * 100,
-                    r: (F1_DATA.find(x => x.modelo_id === 'gemini_flash_36')?.metricas?.micro?.recall || 0.9677) * 100,
+                    modelo: 'Gemini Flash 3.7',
+                    micro_f1: (F1_DATA.find(x => x.modelo_id === 'gemini_flash_37')?.metricas?.micro?.f1 || 0.9709) * 100,
+                    macro_f1: (F1_DATA.find(x => x.modelo_id === 'gemini_flash_37')?.metricas?.macro?.f1 || 0.8650) * 100,
+                    emr: F1_DATA.find(x => x.modelo_id === 'gemini_flash_37')?.metricas?.emr_pct || 100.0,
+                    p: (F1_DATA.find(x => x.modelo_id === 'gemini_flash_37')?.metricas?.micro?.precision || 0.9740) * 100,
+                    r: (F1_DATA.find(x => x.modelo_id === 'gemini_flash_37')?.metricas?.micro?.recall || 0.9677) * 100,
                     ac1: '1.0000'
                 }},
                 {{
@@ -620,7 +620,7 @@ def build_html_dashboard(f1_data, human_data, ablation_data, human_cases, chapte
                 }},
                 {{
                     corpus: 'Sintético (N=101)',
-                    modelo: 'Gemma-4-31B-it (Local)',
+                    modelo: 'Gemma-4-31B-it',
                     micro_f1: (F1_DATA.find(x => x.modelo_id === 'gemma_31b')?.metricas?.micro?.f1 || 0.9688) * 100,
                     macro_f1: (F1_DATA.find(x => x.modelo_id === 'gemma_31b')?.metricas?.macro?.f1 || 0.8621) * 100,
                     emr: F1_DATA.find(x => x.modelo_id === 'gemma_31b')?.metricas?.emr_pct || 98.25,
@@ -630,13 +630,13 @@ def build_html_dashboard(f1_data, human_data, ablation_data, human_cases, chapte
                 }},
                 {{
                     corpus: 'Humano Real (N=21)',
-                    modelo: 'Gemini Flash 3.6',
-                    micro_f1: (HUMAN_DATA.flash_36?.desempeno?.micro?.f1 || 0.8222) * 100,
-                    macro_f1: (HUMAN_DATA.flash_36?.desempeno?.macro?.f1 || 0.5640) * 100,
-                    emr: HUMAN_DATA.flash_36?.desempeno?.emr || 42.86,
-                    p: (HUMAN_DATA.flash_36?.desempeno?.micro?.p || 0.8222) * 100,
-                    r: (HUMAN_DATA.flash_36?.desempeno?.micro?.r || 0.8222) * 100,
-                    ac1: (HUMAN_DATA.flash_36?.fiabilidad?.ac1 || 0.9856).toFixed(4)
+                    modelo: 'Gemini Flash 3.7',
+                    micro_f1: (HUMAN_DATA.flash_37?.desempeno?.micro?.f1 || 0.8222) * 100,
+                    macro_f1: (HUMAN_DATA.flash_37?.desempeno?.macro?.f1 || 0.5640) * 100,
+                    emr: HUMAN_DATA.flash_37?.desempeno?.emr || 42.86,
+                    p: (HUMAN_DATA.flash_37?.desempeno?.micro?.p || 0.8222) * 100,
+                    r: (HUMAN_DATA.flash_37?.desempeno?.micro?.r || 0.8222) * 100,
+                    ac1: (HUMAN_DATA.flash_37?.fiabilidad?.ac1 || 0.9856).toFixed(4)
                 }},
                 {{
                     corpus: 'Humano Real (N=21)',
@@ -650,7 +650,7 @@ def build_html_dashboard(f1_data, human_data, ablation_data, human_cases, chapte
                 }},
                 {{
                     corpus: 'Humano Real (N=21)',
-                    modelo: 'Gemma-4-31B-it (Local)',
+                    modelo: 'Gemma-4-31B-it',
                     micro_f1: (HUMAN_DATA.gemma_31b?.desempeno?.micro?.f1 || 0.7720) * 100,
                     macro_f1: (HUMAN_DATA.gemma_31b?.desempeno?.macro?.f1 || 0.5130) * 100,
                     emr: HUMAN_DATA.gemma_31b?.desempeno?.emr || 28.57,

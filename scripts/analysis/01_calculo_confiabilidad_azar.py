@@ -2,7 +2,7 @@
 """
 ===============================================================================
 CÁLCULO DE CONFIABILIDAD Y REPRODUCIBILIDAD INTER-ITERACIONES (K = 3)
-MATRIZ ONTOLÓGICA COMPLETA DEL CORE SET CIF (114 HISTORIAS x 27 CÓDIGOS)
+MATRIZ ONTOLÓGICA COMPLETA DEL CORE SET CIF (114 HISTORIAS x 24 CÓDIGOS)
 ===============================================================================
 
 ¿Qué calcula este script?
@@ -10,18 +10,7 @@ MATRIZ ONTOLÓGICA COMPLETA DEL CORE SET CIF (114 HISTORIAS x 27 CÓDIGOS)
 Calcula la reproducibilidad intra-modelo estricta a través de las 3 iteraciones (K=3)
 sin intervención del Ground Truth (los médicos), evaluando el espacio completo de 
 decisión del Core Set CIF de dolor crónico generalizado:
-- Total unidades evaluadas = 114 historias x 27 códigos CIF = 3.078 decisiones binarias.
-
-Métricas calculadas:
-1. Document-level Exact Match (Acuerdo exacto por historia clínica 3/3).
-2. Po (Porcentaje de Acuerdo Observado en las 3.078 decisiones).
-3. Gwet's AC1 (Coeficiente de concordancia corregido por azar).
-4. Alfa de Krippendorff (α Nominal multievaluador).
-
-Referencias metodológicas para citar en la memoria:
-- Krippendorff, K. (2018). Content Analysis: An Introduction to Its Methodology (4th ed.). SAGE.
-- Gwet, K. L. (2014). Handbook of Inter-Rater Reliability (4th ed.). Advanced Analytics.
-- Artstein, R., & Poesio, M. (2008). Inter-coder agreement for computational linguistics. Computational Linguistics, 34(4), 555-596.
+- Total unidades evaluadas = 114 historias x 24 códigos CIF = 2.736 decisiones binarias.
 """
 
 import json
@@ -32,22 +21,25 @@ LLM_DIR = BASE_DIR / "results" / "llm_text"
 
 MODELOS = [
     {
+        "id": "gemma_31b",
         "nombre": "Gemma-4-31B-it",
-        "archivo": LLM_DIR / "2026-08-11_gemma-4-31b-it-codified.json"
+        "archivo": LLM_DIR / "2026-08-25_gemma_codified.json"
     },
     {
+        "id": "gemini_flash_35",
         "nombre": "Gemini Flash 3.5",
-        "archivo": LLM_DIR / "2026-08-18_gemini-flash-3.5_codified.json"
+        "archivo": LLM_DIR / "2026-08-25-flash-3.5-codified.json"
     },
     {
-        "nombre": "Gemini Flash 3.6",
-        "archivo": LLM_DIR / "2026-08-18_gemini-flash-3.6_codified.json"
+        "id": "gemini_flash_37",
+        "nombre": "Gemini Flash 3.7",
+        "archivo": LLM_DIR / "2026-08-25-3.7-flash-codified.json"
     }
 ]
 
 
 def obtener_codigos_core_set(archivos):
-    """Extrae la lista unificada de los 27 códigos CIF del Core Set."""
+    """Extrae la lista unificada de los 24 códigos CIF del Core Set."""
     codigos = set()
     for m in archivos:
         if m["archivo"].exists():
@@ -61,7 +53,7 @@ def obtener_codigos_core_set(archivos):
     return sorted(list(codigos))
 
 
-def analizar_confiabilidad_modelo(ruta_archivo: Path, nombre_modelo: str, codigos_cif: list):
+def analizar_confiabilidad_modelo(ruta_archivo: Path, nombre_modelo: str, codigos_cif: list, modelo_id: str):
     """Calcula las métricas de fiabilidad sobre la matriz ontológica completa."""
     with open(ruta_archivo, "r", encoding="utf-8") as f:
         historias = json.load(f)
@@ -79,7 +71,7 @@ def analizar_confiabilidad_modelo(ruta_archivo: Path, nombre_modelo: str, codigo
 
     emr_paciente = (acuerdos_exactos_historia / total_historias) * 100.0
 
-    # 2. Matriz Ontológica Completa (114 historias x 27 códigos = 3.078 decisiones)
+    # 2. Matriz Ontológica Completa (114 historias x 24 códigos = 2.736 decisiones)
     matriz_votos = []
     filas_111 = 0
     filas_000 = 0
@@ -104,7 +96,7 @@ def analizar_confiabilidad_modelo(ruta_archivo: Path, nombre_modelo: str, codigo
             else:
                 filas_desacuerdo += 1
 
-    N = len(matriz_votos)  # 3.078
+    N = len(matriz_votos)
     K = 3                  # 3 iteraciones
 
     # 3. Cálculo de Po (Acuerdo Observado)
@@ -135,6 +127,7 @@ def analizar_confiabilidad_modelo(ruta_archivo: Path, nombre_modelo: str, codigo
     kripp_alpha = 1.0 - (Do / De) if De != 0 else 1.0
 
     return {
+        "id": modelo_id,
         "nombre": nombre_modelo,
         "historias": total_historias,
         "emr_acuerdos": acuerdos_exactos_historia,
@@ -154,29 +147,27 @@ def main():
 
     print("=" * 95)
     print(" 🔬 EVALUACIÓN FORMAL DE REPRODUCIBILIDAD Y CONFIABILIDAD INTER-ITERACIONES (K = 3)")
-    print("    Espacio Ontológico: 114 historias x 27 códigos CIF = 3.078 decisiones binarias")
+    print(f"    Espacio Ontológico: 114 historias x {len(codigos_cif)} códigos CIF = {114*len(codigos_cif)} decisiones binarias")
     print("=" * 95)
     print(f" {'Modelo LLM Evaluado':<36} | {'Exact Match':<11} | {'Acuerdo Po':<11} | {'Gwet AC1':<10} | {'Kripp. α':<10}")
     print("-" * 95)
 
+    resultados = {}
     for m in MODELOS:
         if not m["archivo"].exists():
             print(f" [ERROR] No se encuentra el archivo: {m['archivo']}")
             continue
 
-        res = analizar_confiabilidad_modelo(m["archivo"], m["nombre"], codigos_cif)
+        res = analizar_confiabilidad_modelo(m["archivo"], m["nombre"], codigos_cif, m["id"])
+        resultados[m["id"]] = res
         print(f" {res['nombre']:<36} | {res['emr_acuerdos']:>3}/{res['historias']:<3} ({res['emr_pct']:>5.2f}%) | {res['Po']*100:>9.4f}% | {res['Gwet_AC1']:>10.4f} | {res['Krippendorff_Alpha']:>10.4f}")
 
     print("=" * 95)
-    print("""
-📊 DESGLOSE DE DECISIONES BINARIAS (GEMMA-4-31B-IT):
--------------------------------------------------
-- Total de juicios clínicos emitidos: 3.078 (114 historias x 27 códigos CIF).
-- Filas con acuerdo unánime en SÍ [1, 1, 1]: 464 (15.07% - Asignación activa).
-- Filas con acuerdo unánime en NO [0, 0, 0]: 2.612 (84.86% - Abstención diagnóstica correcta).
-- Filas con discrepancia en alguna pasada:   2 ( 0.06% - Historias #45 y #62).
-- Determinismo a nivel paciente completo:   112 / 114 (98.25%).
-""")
+
+    ruta_json = LLM_DIR / "resumen_fiabilidad.json"
+    with open(ruta_json, "w", encoding="utf-8") as f:
+        json.dump(resultados, f, indent=2, ensure_ascii=False)
+    print(f"💾 Resumen de fiabilidad guardado en: {ruta_json}")
 
 
 if __name__ == "__main__":

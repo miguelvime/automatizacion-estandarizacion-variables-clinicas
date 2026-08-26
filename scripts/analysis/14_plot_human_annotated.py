@@ -2,7 +2,7 @@
 """
 ===============================================================================
 GENERACIÓN DE FIGURAS Y GRÁFICOS DE DESEMPEÑO: HISTORIAS HUMANAS (TFM)
-EVALUACIÓN COMPARATIVA TRI-MODELO: FLASH 3.5, FLASH 3.6 Y GEMMA-4-31B-IT
+EVALUACIÓN COMPARATIVA TRI-MODELO: FLASH 3.5, FLASH 3.7 Y GEMMA-4-31B-IT
 CALIDAD DE PUBLICACIÓN CIENTÍFICA (300 DPI, FORMATO APA / EDITORIAL)
 ===============================================================================
 """
@@ -31,14 +31,14 @@ plt.rcParams['figure.dpi'] = 300
 
 COLORES_MODELOS = {
     'flash_35': '#2E86C1',   # Azul profesional
-    'flash_36': '#27AE60',   # Verde esmeralda
+    'flash_37': '#27AE60',   # Verde esmeralda
     'gemma_31b': '#E67E22'   # Ámbar / Naranja cálido
 }
 
 NOMBRES_MODELOS = {
     'flash_35': 'Gemini Flash 3.5',
-    'flash_36': 'Gemini Flash 3.6',
-    'gemma_31b': 'Gemma-4-31B-it (Local)'
+    'flash_37': 'Gemini Flash 3.7',
+    'gemma_31b': 'Gemma-4-31B-it'
 }
 
 def cargar_datos():
@@ -57,7 +57,7 @@ def figura_01_comparativa_global(datos_humano):
     
     modelos = [
         ('flash_35', NOMBRES_MODELOS['flash_35'], COLORES_MODELOS['flash_35']),
-        ('flash_36', NOMBRES_MODELOS['flash_36'], COLORES_MODELOS['flash_36']),
+        ('flash_37', NOMBRES_MODELOS['flash_37'], COLORES_MODELOS['flash_37']),
         ('gemma_31b', NOMBRES_MODELOS['gemma_31b'], COLORES_MODELOS['gemma_31b'])
     ]
     
@@ -92,7 +92,7 @@ def figura_01_comparativa_global(datos_humano):
                       label=m_nom, color=color, alpha=0.90, edgecolor='#222222', linewidth=0.8)
         
         for bar, val in zip(bars, valores):
-            ax.annotate(f'{val:.3f}' if val < 1.0 else f'{val*100:.1f}%',
+            ax.annotate(f'{val:.2f}' if val < 1.0 else f'{val*100:.1f}%',
                         xy=(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.025),
                         ha='center', va='bottom', fontsize=8.5, fontweight='bold')
 
@@ -118,7 +118,7 @@ def figura_02_precision_recall_f1(datos_humano):
     
     modelos = [
         ('flash_35', NOMBRES_MODELOS['flash_35'], COLORES_MODELOS['flash_35']),
-        ('flash_36', NOMBRES_MODELOS['flash_36'], COLORES_MODELOS['flash_36']),
+        ('flash_37', NOMBRES_MODELOS['flash_37'], COLORES_MODELOS['flash_37']),
         ('gemma_31b', NOMBRES_MODELOS['gemma_31b'], COLORES_MODELOS['gemma_31b'])
     ]
     
@@ -129,7 +129,7 @@ def figura_02_precision_recall_f1(datos_humano):
             offset = (idx - 1) * ancho
             bars = ax.bar(x + offset, valores, ancho, label=m_nom, color=color, alpha=0.90, edgecolor='#222222', linewidth=0.8)
             for bar, val in zip(bars, valores):
-                ax.annotate(f'{val:.3f}', xy=(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.015),
+                ax.annotate(f'{val:.2f}', xy=(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.015),
                             ha='center', va='bottom', fontsize=8, fontweight='bold')
                 
         ax.set_title(titulo, fontweight='bold', pad=10)
@@ -150,7 +150,7 @@ def figura_02_precision_recall_f1(datos_humano):
 def figura_03_auditoria_per_class(datos_humano):
     # Clases activas con soporte > 0
     p35 = datos_humano['flash_35']['desempeno']['per_class']
-    p36 = datos_humano['flash_36']['desempeno']['per_class']
+    p36 = datos_humano['flash_37']['desempeno']['per_class']
     pg = datos_humano['gemma_31b']['desempeno']['per_class']
     
     clases_activas = [c for c in sorted(p35.keys()) if p35[c]['soporte'] > 0]
@@ -170,7 +170,7 @@ def figura_03_auditoria_per_class(datos_humano):
     fig, ax = plt.subplots(figsize=(10.5, 11.5))
     
     rects1 = ax.barh(y - altura, f1_35, altura, label=NOMBRES_MODELOS['flash_35'], color=COLORES_MODELOS['flash_35'], alpha=0.88, edgecolor='#222222', linewidth=0.6)
-    rects2 = ax.barh(y, f1_36, altura, label=NOMBRES_MODELOS['flash_36'], color=COLORES_MODELOS['flash_36'], alpha=0.88, edgecolor='#222222', linewidth=0.6)
+    rects2 = ax.barh(y, f1_36, altura, label=NOMBRES_MODELOS['flash_37'], color=COLORES_MODELOS['flash_37'], alpha=0.88, edgecolor='#222222', linewidth=0.6)
     rects3 = ax.barh(y + altura, f1_gemma, altura, label=NOMBRES_MODELOS['gemma_31b'], color=COLORES_MODELOS['gemma_31b'], alpha=0.88, edgecolor='#222222', linewidth=0.6)
     
     ax.set_xlabel('F1-Score', fontweight='bold')
@@ -178,7 +178,6 @@ def figura_03_auditoria_per_class(datos_humano):
     ax.set_yticklabels(etiquetas, fontsize=8.5)
     ax.invert_yaxis()
     ax.set_xlim(0, 1.08)
-    ax.axvline(0.80, color='#C0392B', linestyle='--', alpha=0.75, linewidth=1.2, label='Umbral Excelencia (0.80)')
     ax.grid(axis='x', linestyle='--', alpha=0.4)
     ax.legend(frameon=True, facecolor='white', framealpha=0.95, loc='lower right', fontsize=9)
     
@@ -199,7 +198,7 @@ def figura_04_desempeno_por_componente(datos_humano):
     
     modelos = [
         ('flash_35', NOMBRES_MODELOS['flash_35'], COLORES_MODELOS['flash_35']),
-        ('flash_36', NOMBRES_MODELOS['flash_36'], COLORES_MODELOS['flash_36']),
+        ('flash_37', NOMBRES_MODELOS['flash_37'], COLORES_MODELOS['flash_37']),
         ('gemma_31b', NOMBRES_MODELOS['gemma_31b'], COLORES_MODELOS['gemma_31b'])
     ]
     
@@ -209,7 +208,7 @@ def figura_04_desempeno_por_componente(datos_humano):
         offset = (idx - 1) * ancho
         bars = ax.bar(x + offset, valores, ancho, label=m_nom, color=color, alpha=0.90, edgecolor='#222222', linewidth=0.8)
         for bar, val in zip(bars, valores):
-            ax.annotate(f'{val:.3f}', xy=(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.02),
+            ax.annotate(f'{val:.2f}', xy=(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.02),
                         ha='center', va='bottom', fontsize=8.5, fontweight='bold')
             
     ax.set_ylabel('Micro-F1 por Componente', fontweight='bold')
@@ -230,13 +229,13 @@ def figura_05_comparativa_sintetico_humano(datos_humano, datos_sintetico):
     
     modelos_syn_map = {
         'flash_35': 'gemini_flash_35',
-        'flash_36': 'gemini_flash_36',
+        'flash_37': 'gemini_flash_37',
         'gemma_31b': 'gemma_31b'
     }
     
     # Panel 1: Micro-F1 Sintético vs Humano
-    modelos_lista = ['flash_35', 'flash_36', 'gemma_31b']
-    labels = ['Gemini Flash 3.5', 'Gemini Flash 3.6', 'Gemma-4-31B-it']
+    modelos_lista = ['flash_35', 'flash_37', 'gemma_31b']
+    labels = ['Gemini Flash 3.5', 'Gemini Flash 3.7', 'Gemma-4-31B-it']
     
     f1_syn = []
     f1_hum = []
@@ -258,10 +257,10 @@ def figura_05_comparativa_sintetico_humano(datos_humano, datos_sintetico):
     rects2 = ax1.bar(x + ancho/2, f1_hum, ancho, label='Historias Fisioterapeutas (N = 21)', color='#2980B9', alpha=0.90, edgecolor='#222222')
     
     for bar in rects1:
-        ax1.annotate(f'{bar.get_height():.3f}', xy=(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.015),
+        ax1.annotate(f'{bar.get_height():.2f}', xy=(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.015),
                      ha='center', va='bottom', fontsize=8, fontweight='bold')
     for bar in rects2:
-        ax1.annotate(f'{bar.get_height():.3f}', xy=(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.015),
+        ax1.annotate(f'{bar.get_height():.2f}', xy=(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.015),
                      ha='center', va='bottom', fontsize=8, fontweight='bold', color='#1B4F72')
         
     ax1.set_title('A. Desempeño Diagnóstico (Micro-F1)', fontweight='bold', pad=10)
@@ -279,7 +278,7 @@ def figura_05_comparativa_sintetico_humano(datos_humano, datos_sintetico):
     
     for idx, (m_id, m_nom, color) in enumerate([
         ('flash_35', NOMBRES_MODELOS['flash_35'], COLORES_MODELOS['flash_35']),
-        ('flash_36', NOMBRES_MODELOS['flash_36'], COLORES_MODELOS['flash_36']),
+        ('flash_37', NOMBRES_MODELOS['flash_37'], COLORES_MODELOS['flash_37']),
         ('gemma_31b', NOMBRES_MODELOS['gemma_31b'], COLORES_MODELOS['gemma_31b'])
     ]):
         s_id = modelos_syn_map[m_id]
@@ -291,7 +290,7 @@ def figura_05_comparativa_sintetico_humano(datos_humano, datos_sintetico):
         s_prec = syn_item['metricas']['micro']['precision']
         s_rec = syn_item['metricas']['micro']['recall']
         s_emr = syn_item['metricas']['emr_pct']
-        s_ac1 = 0.9994 if m_id != 'flash_36' else 1.0000
+        s_ac1 = 0.9994 if m_id != 'flash_37' else 1.0000
         
         # human values
         h_mf1 = d_hum['desempeno']['micro']['f1']
