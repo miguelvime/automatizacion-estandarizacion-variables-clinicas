@@ -19,6 +19,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libpng-dev \
     libtiff5-dev \
     libjpeg-dev \
+    libssl-dev \
+    libharfbuzz-dev \
+    libfribidi-dev \
+    libuv1-dev \
     pandoc \
     gcc \
     g++ \
@@ -33,7 +37,7 @@ COPY requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 # 4. Instalar paquetes de R para renderizado de tablas APA en Word
-RUN Rscript -e "install.packages(c('flextable', 'officer', 'dplyr', 'jsonlite', 'readr', 'magrittr', 'tibble'), repos='https://cloud.r-project.org')"
+RUN Rscript -e "pkgs <- c('flextable', 'officer', 'dplyr', 'jsonlite', 'readr', 'magrittr', 'tibble'); install.packages(pkgs, repos='https://cloud.r-project.org'); missing <- pkgs[!pkgs %in% installed.packages()[, 'Package']]; if (length(missing) > 0) stop('Missing packages: ', paste(missing, collapse=', '))"
 
 # 5. Comando de ejecución por defecto (ejecuta toda la suite estadística)
 CMD ["python3", "scripts/analysis/ejecutar_todo.py"]

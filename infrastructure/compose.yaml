@@ -9,6 +9,8 @@ services:
       - N8N_RUNNERS_MODE=internal
       - N8N_NATIVE_PYTHON_RUNNER=true
       - N8N_PYTHON_ALLOWED_MODULES=random,math,json,datetime
+      - WEBHOOK_URL=http://localhost:5679/
+      - N8N_EDITOR_BASE_URL=http://localhost:5679/
     ports:
       - "5679:5678"
     volumes:

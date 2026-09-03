@@ -8,19 +8,19 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1856,
-        -64
+        208,
+        64
       ],
-      "id": "bb121d71-c8e1-41ec-b3dd-aa5d2bbdf955",
+      "id": "c05d259d-2569-413b-bb2a-7d48a9e007fc",
       "name": "binary_json_parser"
     },
     {
       "parameters": {
         "modelId": {
           "__rl": true,
-          "value": "models/gemma-4-31b-it",
+          "value": "models/gemini-3.8-flash",
           "mode": "list",
-          "cachedResultName": "models/gemma-4-31b-it"
+          "cachedResultName": "models/gemini-3.8-flash"
         },
         "messages": {
           "values": [
@@ -40,15 +40,15 @@
       "type": "@n8n/n8n-nodes-langchain.googleGemini",
       "typeVersion": 1.1,
       "position": [
-        -1024,
-        16
+        1040,
+        144
       ],
-      "id": "8ba36ecd-f588-44cc-ac4e-06412b62f52d",
+      "id": "a892211d-108a-4b25-b234-38595e085ceb",
       "name": "LLM",
       "credentials": {
         "googlePalmApi": {
-          "id": "UO3uWnOiqfW0Ifnw",
-          "name": "freeicf"
+          "id": "FO3zJBP9pCiJZdc1",
+          "name": "Google Gemini(PaLM) Api account"
         }
       }
     },
@@ -59,23 +59,23 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -736,
-        16
+        1328,
+        144
       ],
-      "id": "8a5e09fb-97d5-494e-90da-bd31932330c7",
+      "id": "79cfafda-4c44-4361-8414-ce046d772ea8",
       "name": "llm_output_parser"
     },
     {
       "parameters": {
-        "jsCode": "const items = $input.all();\n\n// Control de errores: Asegurar que la entrada tiene exactamente 3 iteraciones\nif (items.length !== 3) {\n  throw new Error(`Error en el flujo: Se esperaban 3 iteraciones, pero llegaron ${items.length}.`);\n}\n\n// Extraemos los arrays de códigos predichos de las 3 iteraciones\nconst codigosIt1 = items[0].json.predicted_icf_codes || [];\nconst codigosIt2 = items[1].json.predicted_icf_codes || [];\nconst codigosIt3 = items[2].json.predicted_icf_codes || [];\n\n// Intersección estricta: conservamos solo los códigos presentes en las 3 listas\nconst codigosConsenso = codigosIt1.filter(codigo => \n  codigosIt2.includes(codigo) && codigosIt3.includes(codigo)\n);\n\n// Retornamos un único objeto consolidado y aplanado\nreturn [{\n  json: {\n    // Trazabilidad del texto original\n    id_code_combination: items[0].json.id_code_combination,\n    id_clinical_text: items[0].json.id_clinical_text,\n    clinical_text: items[0].json.clinical_text,\n    icf_codes: items[0].json.icf_codes,\n    predictor_model: \"gemma-4-31b-it\",\n    \n    // Resultados del consenso\n    predicted_icf_codes_consensus: codigosConsenso,\n    consensus_criteria: \"strict 3/3\",\n    \n    // Iteraciones separadas como propiedades principales (Wide format)\n    // Esto facilita la conversión directa a columnas en Python/R/SQL\n    predicted_icf_it1: codigosIt1,\n    predicted_icf_it2: codigosIt2,\n    predicted_icf_it3: codigosIt3\n  }\n}];"
+        "jsCode": "const items = $input.all();\n\n// Control de errores: Asegurar que la entrada tiene exactamente 3 iteraciones\nif (items.length !== 3) {\n  throw new Error(`Error en el flujo: Se esperaban 3 iteraciones, pero llegaron ${items.length}.`);\n}\n\n// Extraemos los arrays de códigos predichos de las 3 iteraciones\nconst codigosIt1 = items[0].json.predicted_icf_codes || [];\nconst codigosIt2 = items[1].json.predicted_icf_codes || [];\nconst codigosIt3 = items[2].json.predicted_icf_codes || [];\n\n// Intersección estricta: conservamos solo los códigos presentes en las 3 listas\nconst codigosConsenso = codigosIt1.filter(codigo => \n  codigosIt2.includes(codigo) && codigosIt3.includes(codigo)\n);\n\n// Retornamos un único objeto consolidado y aplanado\nreturn [{\n  json: {\n    // Trazabilidad del texto original\n    id_code_combination: items[0].json.id_code_combination,\n    id_clinical_text: items[0].json.id_clinical_text,\n    clinical_text: items[0].json.clinical_text,\n    icf_codes: items[0].json.icf_codes,\n    predictor_model: \"\",\n    \n    // Resultados del consenso\n    predicted_icf_codes_consensus: codigosConsenso,\n    consensus_criteria: \"strict 3/3\",\n    \n    // Iteraciones separadas como propiedades principales (Wide format)\n    // Esto facilita la conversión directa a columnas en Python/R/SQL\n    predicted_icf_it1: codigosIt1,\n    predicted_icf_it2: codigosIt2,\n    predicted_icf_it3: codigosIt3\n  }\n}];"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -560,
-        16
+        1504,
+        144
       ],
-      "id": "57d41b3b-60c2-4848-9f97-99359d752ffe",
+      "id": "1b10950b-dee4-45df-8d22-1aff9818c066",
       "name": "consensus"
     },
     {
@@ -83,10 +83,10 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        -176,
-        -80
+        1888,
+        48
       ],
-      "id": "194cf2f4-2d41-40d2-a91b-914bfc08c303",
+      "id": "2c1d8c32-d23e-412f-8ef7-c6ab30af5600",
       "name": "No Operation, do nothing"
     },
     {
@@ -102,10 +102,10 @@
       "type": "n8n-nodes-base.convertToFile",
       "typeVersion": 1.1,
       "position": [
-        64,
-        -80
+        2128,
+        48
       ],
-      "id": "04092829-ca98-42ea-b60c-e70daf7b0a3f",
+      "id": "44e76d63-1c24-4278-9932-8e03a7e9c9b3",
       "name": "Convert to File"
     },
     {
@@ -125,12 +125,12 @@
       "type": "n8n-nodes-base.formTrigger",
       "typeVersion": 2.5,
       "position": [
-        -2032,
-        -64
+        32,
+        64
       ],
-      "id": "646e6e67-0a4d-481f-a2b3-3e170bdb4fc8",
+      "id": "2ef85020-f90a-46a1-ba0c-11562a477f95",
       "name": "upload_input",
-      "webhookId": "0a9f70b2-7b2f-49de-b27a-8c3a9e0776f4",
+      "webhookId": "30e768b7-ba04-4464-a6d6-a424807f607d",
       "alwaysOutputData": false,
       "executeOnce": false,
       "retryOnFail": false
@@ -142,10 +142,10 @@
       "type": "n8n-nodes-base.splitInBatches",
       "typeVersion": 3,
       "position": [
-        -1616,
-        -64
+        448,
+        64
       ],
-      "id": "f8df0218-6d8e-440b-a146-e8325f321064",
+      "id": "a45cc62f-eaae-4166-a794-9ffa706ed796",
       "name": "Loop Over Items"
     },
     {
@@ -154,10 +154,10 @@
       "name": "Replace Me",
       "typeVersion": 1,
       "position": [
-        -1440,
-        16
+        624,
+        144
       ],
-      "id": "78e94931-6b1d-4557-907e-6ec69551b60f"
+      "id": "d7d951e4-62da-46d3-8349-e29cf46ebeaf"
     },
     {
       "parameters": {
@@ -166,10 +166,10 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -1232,
-        16
+        832,
+        144
       ],
-      "id": "c64d64cd-d61a-4f3e-90b9-573720810331",
+      "id": "f4ba82d8-aa12-4dce-a52e-f3d57c5d8ffd",
       "name": "multiplierx3"
     },
     {
@@ -180,11 +180,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -2064,
-        -128
+        0,
+        0
       ],
       "typeVersion": 1,
-      "id": "ca0cd8a7-31fb-4d2e-bd79-28234cfff951",
+      "id": "c002fd44-43a1-4faf-bea0-e88f301284dc",
       "name": "Sticky Note"
     },
     {
@@ -194,12 +194,13 @@
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
-        -384,
-        16
+        1680,
+        144
       ],
-      "id": "385b1702-b247-4c36-a25f-d9788a49e113",
+      "id": "e136ece8-7703-4747-8106-ebae5b25f165",
       "name": "Wait",
-      "webhookId": "ff5cfb94-9790-48a7-ac31-f61e51fa8a89"
+      "webhookId": "ff5cfb94-9790-48a7-ac31-f61e51fa8a89",
+      "disabled": true
     }
   ],
   "pinData": {},
@@ -325,13 +326,13 @@
   "active": false,
   "settings": {
     "executionOrder": "v1",
-    "binaryMode": "separate",
-    "availableInMCP": false
+    "binaryMode": "separate"
   },
-  "versionId": "2c0c5505-5f55-4687-b9e1-6f4c657f4cce",
+  "versionId": "1899c5f8-ff76-45a5-b9fb-605846e5bd81",
   "meta": {
-    "instanceId": "44fbf0ed6965a74a09769e18b367d9a9eaef6bc57579db2e8bdb7023c84df464"
+    "templateCredsSetupCompleted": true,
+    "instanceId": "540854ac4ebf6df77ccbfdf70e9b01d7b39b9fa52d91444103cca30c4298346c"
   },
-  "id": "iId3EE2rgJRHLiE7",
+  "id": "x7r0yTZLavelzNeo",
   "tags": []
 }
