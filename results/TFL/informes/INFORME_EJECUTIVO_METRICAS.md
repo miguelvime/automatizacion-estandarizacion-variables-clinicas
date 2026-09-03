@@ -1,5 +1,5 @@
 # 📊 Resumen de Métricas de Evaluación
-**Generado:** 2026-08-26 14:25
+**Generado:** 2026-09-03 11:21
 
 ---
 
