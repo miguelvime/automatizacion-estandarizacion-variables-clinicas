@@ -6,13 +6,13 @@
 [![Docker Compose](https://img.shields.io/badge/docker-compose-2496ED.svg)](https://docs.docker.com/compose/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Pipeline integral para la **extracción, codificación y validación diagnóstica de texto clínico no estructurado a la Clasificación Internacional del Funcionamiento (CIF)** de la OMS mediante LLMs y consenso estricto (3/3). Validado sobre 24 categorías CIF de Dolor Crónico.
+Pipeline integral para la **extracción, codificación y validación diagnóstica de texto clínico no estructurado a la Clasificación Internacional del Funcionamiento (CIF)** de la OMS mediante LLMs y algoritmos de consenso estricto (3/3). Validado sobre 24 categorías CIF de Dolor Crónico.
 
 ---
 
-## ⚡ Reproducir el Estudio en 1 Minuto
+## ⚡ 1. Reproducir el Estudio del TFM en 1 Minuto
 
-Para ejecutar toda la batería de análisis (métricas $F_1$, confiabilidad inter-iteraciones, figuras 300 DPI y tablas APA en Word):
+Para regenerar toda la batería estadística (métricas $F_1$, confiabilidad, figuras a 300 DPI y tablas Word APA):
 
 ### Opción A: Con Docker (Recomendado — 1 solo comando)
 ```bash
@@ -25,41 +25,47 @@ cd infrastructure && docker compose run --rm analysis
 pip install -r requirements.txt
 Rscript -e "install.packages(c('flextable', 'officer', 'dplyr', 'jsonlite', 'readr', 'magrittr', 'tibble'), repos='https://cloud.r-project.org')"
 
-# 2. Ejecutar la batería completa
+# 2. Ejecutar
 python scripts/analysis/ejecutar_todo.py
 ```
 
-### 📊 ¿Dónde ver los resultados?
-Tras la ejecución, abre directamente en tu navegador o explorador:
-* **Dashboard Interactivo:** Doble clic en [`results/TFL/dashboard_resumen.html`](results/TFL/dashboard_resumen.html).
-* **Tablas Word en formato APA:** En la carpeta `results/TFL/tablas/`.
-* **Figuras en 300 DPI (PNG / PDF):** En la carpeta `results/TFL/figuras/`.
-* **Informe Resumen Ejecutivo:** [`results/TFL/informes/INFORME_EJECUTIVO_METRICAS.md`](results/TFL/informes/INFORME_EJECUTIVO_METRICAS.md).
+> **📊 ¿Dónde ver los resultados?**  
+> Abre en tu navegador [`results/TFL/dashboard_resumen.html`](results/TFL/dashboard_resumen.html) para explorar las métricas interactivas, o consulta las carpetas `results/TFL/tablas/` (Word APA) y `results/TFL/figuras/` (300 DPI).
 
 ---
 
-## 🔍 Analizar tu Propia Base de Datos (1 solo paso)
+## 🌐 2. Usar la Herramienta con tu Propia Base de Datos
 
-Para evaluar cualquier archivo JSON codificado (o probar el flujo con datos de test):
+El sistema es **universal y modular**: puedes usarlo para codificar y analizar tus propias historias clínicas hospitalarias en solo 2 pasos:
 
-```bash
-python analizar_dataset.py data/test_data/test_codifier_output.json --nombre "Mi Estudio Clínico"
+### Paso 1: Codificar tus textos clínicos
+Prepara un archivo JSON con tus notas clínicas (solo requiere el campo `clinical_text`):
+```json
+[
+  { "id_clinical_text": "01", "clinical_text": "Paciente de 45 años con dolor lumbar crónico y limitación funcional..." }
+]
 ```
-*Detecta automáticamente si el archivo tiene Gold Standard (calculando $F_1$, precisión, recall y matrices de confusión) o si son notas clínicas sin etiquetar (calculando prevalencias y frecuencias).*
+Impórtalo en el flujo de **n8n** (ver sección abajo) para procesarlo con tu LLM preferido (Gemini Cloud o Gemma local). Obtendrás un JSON codificado con consenso estricto 3/3.
+
+### Paso 2: Generar Dashboard y Reporte (1 solo comando)
+```bash
+python analizar_dataset.py ruta/a/tu_archivo_codificado.json --nombre "Mi Hospital / Cohorte 2026"
+```
+* **Auto-detección inteligente:**
+  * **Si incluye Gold Standard (`icf_codes`):** Calcula métricas diagnósticas completas ($F_1$-Score, Exact Match, Precisión, Sensibilidad y matrices de confusión caso a caso).
+  * **Si solo incluye texto clínico:** Genera métricas descriptivas poblacionales (prevalencia de patologías, categorías CIF más frecuentes y porcentaje de acuerdo).
+* **Salida instantánea:** Genera automáticamente un **Dashboard HTML interactivo autónomo** en `results/TFL/dashboard_resumen.html` y un informe ejecutivo en `results/TFL/informes/INFORME_EJECUTIVO_METRICAS.md`.
 
 ---
 
-## 🤖 Codificación con LLMs en n8n
+## 🤖 3. Configurar y Ejecutar n8n
 
-Para reproducir la codificación con los modelos desde cero:
-
-1. **Levantar n8n:** `cd infrastructure && docker compose up -d n8n` (accede en `http://localhost:5679`).
-2. **Importar el flujo:** Importa desde `n8n_workflows/` el flujo del modelo que quieras evaluar:
-   * `2026-08-25-gemini-3.7-flash-codifier.json` (Gemini Flash 3.7)
-   * `2026-08-25-gemini-3.5-flash-codifier.json` (Gemini Flash 3.5)
-   * `2026-08-25-gemma-4-31b-it-codifier.json` (Gemma-4-31B-it vía Ollama local)
-3. **Credenciales:** Pega tu API Key de Gemini o apunta a tu instancia de Ollama (`http://localhost:11434`).
-4. **Ejecutar:** Carga las historias clínicas (`data/generator_output.json`) y pulsa **Execute Workflow**.
+1. **Levantar el servicio:** `cd infrastructure && docker compose up -d n8n` (accede en `http://localhost:5679`).
+2. **Importar el flujo:** En la interfaz de n8n, importa desde `n8n_workflows/` el flujo del modelo deseado:
+   * `2026-08-25-gemini-3.7-flash-codifier.json` (Google Gemini 3.7 Flash)
+   * `2026-08-25-gemini-3.5-flash-codifier.json` (Google Gemini 3.5 Flash)
+   * `2026-08-25-gemma-4-31b-it-codifier.json` (Gemma-4-31B-it vía Ollama local en `http://localhost:11434`)
+3. **Ejecutar:** Carga tu archivo JSON y pulsa **Execute Workflow**.
 
 ---
 
@@ -67,8 +73,8 @@ Para reproducir la codificación con los modelos desde cero:
 
 ```
 2026-03-11_TFM/
-├── scripts/analysis/ejecutar_todo.py  # 🚀 Orquestador maestro que corre toda la batería estadística
-├── analizar_dataset.py               # Analizador universal para cualquier JSON
+├── scripts/analysis/ejecutar_todo.py  # 🚀 Orquestador maestro que reproduce el TFM
+├── analizar_dataset.py               # 🔍 Analizador universal de 1 paso para cualquier dataset
 ├── data/                             # Datasets (generator_output.json [N=114], physio_created [N=21])
 ├── n8n_workflows/                    # Flujos de orquestación de n8n para Gemini y Gemma
 ├── infrastructure/                   # Docker Compose y Dockerfile listos para usar
