@@ -45,7 +45,7 @@ Prepara un archivo JSON con tus notas clínicas (solo requiere el campo `clinica
   { "id_clinical_text": "01", "clinical_text": "Paciente de 45 años con dolor lumbar crónico y limitación funcional..." }
 ]
 ```
-Impórtalo en el flujo de **n8n** (ver sección abajo) para procesarlo con tu LLM preferido (Gemini Cloud o Gemma local). Obtendrás un JSON codificado con consenso estricto 3/3.
+Impórtalo en el flujo de **n8n** (ver sección abajo) para procesarlo con tu LLM preferido. Obtendrás un JSON codificado con consenso estricto 3/3.
 
 ### Paso 2: Generar Dashboard y Reporte (1 solo comando)
 ```bash
@@ -64,8 +64,9 @@ python analizar_dataset.py ruta/a/tu_archivo_codificado.json --nombre "Mi Hospit
 2. **Importar el flujo:** En la interfaz de n8n, importa desde `n8n_workflows/` el flujo del modelo deseado:
    * `2026-08-25-gemini-3.7-flash-codifier.json` (Google Gemini 3.7 Flash)
    * `2026-08-25-gemini-3.5-flash-codifier.json` (Google Gemini 3.5 Flash)
-   * `2026-08-25-gemma-4-31b-it-codifier.json` (Gemma-4-31B-it vía Ollama local en `http://localhost:11434`)
-3. **Ejecutar:** Carga tu archivo JSON y pulsa **Execute Workflow**.
+   * `2026-08-25-gemma-4-31b-it-codifier.json` (Gemma-4-31B-it)
+   * `2026-09-03_generic_LLM_codifier.json` es un workflow genérico que puedes adaptar a cualquier modelo.
+3. **Ejecutar:** pulsa **Execute Workflow**, se abrirá una ventana para cargar tu archivo JSON a codificar.
 
 ---
 
